@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>LA by Night — Kindred Codex</title>
+  <link rel="icon" type="image/png" href="vendor/favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/codex.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="codex-header">
+    <div class="brand">
+      <span class="brand-crest">🩸</span>
+      <div class="brand-text">
+        <h1>LA by Night</h1>
+        <span>Kindred Codex</span>
+      </div>
+    </div>
+    <button type="button" class="header-search-btn" onclick="openGlobalSearch()">
+      <span>🔍</span>
+      <span>Search</span>
+    </button>
+  </header>
+
+  <!-- PANELS -->
+  <main id="main-content">
+    <!-- KINDRED PANEL -->
+    <section id="view-kindred" class="view-panel active">
+      <div class="filter-bar" id="npc-filter-bar">
+        <button type="button" class="filter-pill active" onclick="setNpcFilter('all', this)">All Sects</button>
+        <button type="button" class="filter-pill" onclick="setNpcFilter('camarilla', this)">Camarilla</button>
+        <button type="button" class="filter-pill" onclick="setNpcFilter('anarch', this)">Anarch</button>
+        <button type="button" class="filter-pill" onclick="setNpcFilter('independent', this)">Independent</button>
+      </div>
+      <div class="npc-grid" id="npc-grid">
+        <!-- Rendered via app.js -->
+      </div>
+    </section>
+
+    <!-- MAP PANEL -->
+    <section id="view-map" class="view-panel">
+      <div class="map-container">
+        <div id="leaflet-map"></div>
+        <div class="map-controls-floating">
+          <button type="button" class="map-toggle-btn active" onclick="toggleTerritories(this)">Territories</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES PANEL -->
+    <section id="view-rules" class="view-panel">
+      <div class="filter-bar" id="rules-filter-bar">
+        <button type="button" class="filter-pill active" onclick="setRulesFilter('disciplines', this)">Disciplines</button>
+        <button type="button" class="filter-pill" onclick="setRulesFilter('combat', this)">Combat &amp; Systems</button>
+        <button type="button" class="filter-pill" onclick="setRulesFilter('glossary', this)">Glossary</button>
+      </div>
+      <div class="rules-search-wrap">
+        <input type="text" class="search-input" id="rules-search-input" placeholder="Search rules, powers, terms..." oninput="filterRulesSearch(this.value)">
+      </div>
+      <div id="rules-content">
+        <!-- Rendered via app.js -->
+      </div>
+    </section>
+
+    <!-- ARMORY PANEL -->
+    <section id="view-armory" class="view-panel">
+      <div class="filter-bar" id="armory-filter-bar">
+        <button type="button" class="filter-pill active" onclick="setArmoryFilter('weapon_firearm', this)">Firearms</button>
+        <button type="button" class="filter-pill" onclick="setArmoryFilter('weapon_melee', this)">Melee</button>
+        <button type="button" class="filter-pill" onclick="setArmoryFilter('armor', this)">Armor</button>
+        <button type="button" class="filter-pill" onclick="setArmoryFilter('gear', this)">Gear</button>
+        <button type="button" class="filter-pill" onclick="setArmoryFilter('all', this)">All Items</button>
+      </div>
+      <div class="rules-search-wrap">
+        <input type="text" class="search-input" id="armory-search-input" placeholder="Search weapons, armor, gear..." oninput="filterArmorySearch(this.value)">
+      </div>
+      <div class="armory-grid" id="armory-grid">
+        <!-- Rendered via app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTTOM NAVBAR -->
+  <nav class="bottom-nav">
+    <button type="button" class="nav-item active" data-tab="kindred">
+      <span class="icon">👥</span>
+      <span>Kindred</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="map">
+      <span class="icon">🗺️</span>
+      <span>LA Map</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="rules">
+      <span class="icon">📜</span>
+      <span>Rules</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="armory">
+      <span class="icon">🗡️</span>
+      <span>Armory</span>
+    </button>
+  </nav>
+
+  <!-- DOSSIER MODAL -->
+  <div class="modal-overlay" id="dossier-modal" onclick="if(event.target===this)closeDossier()">
+    <div class="modal-sheet">
+      <button type="button" class="modal-close-btn" onclick="closeDossier()">&times;</button>
+      <div id="dossier-content"></div>
+    </div>
+  </div>
+
+  <!-- GLOBAL SEARCH MODAL -->
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target===this)closeGlobalSearch()">
+    <div class="modal-sheet" style="max-height:80vh">
+      <button type="button" class="modal-close-btn" onclick="closeGlobalSearch()">&times;</button>
+      <div style="margin-bottom:14px;padding-right:40px">
+        <h3 style="font-family:var(--font-serif);font-size:16px;color:var(--crimson-vivid);margin-bottom:8px">Quick Search</h3>
+        <input type="text" id="global-search-input" class="search-input" placeholder="Search Kindred, weapons, rules..." autocomplete="off">
+      </div>
+      <div id="global-search-results"></div>
+    </div>
+  </div>
+
+  <!-- DATA & SCRIPTS -->
+  <script src="data/codex_data.js"></script>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
