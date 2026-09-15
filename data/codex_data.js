@@ -201,6 +201,298 @@ window.CODEX_DATA = {
       ]
     }
   ],
+  "pcs": [
+    {
+      "name": "Liam Johnson (\"L.J.\")",
+      "clan": "Brujah",
+      "generation": "8th",
+      "sire": "Clayton White",
+      "concept": "Criminal (GTA)",
+      "nature": "Rogue",
+      "demeanor": "Survivor",
+      "portrait": "portraits/pc_Liam_Johnson___L_J.webp",
+      "humanity": "5",
+      "willpower": "3/5",
+      "attributes": {
+        "physical": {
+          "Strength": "4",
+          "Dexterity": "3",
+          "Stamina": "3"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "1",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "4",
+          "Intelligence": "1",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "2",
+          "Athletics": "3",
+          "Awareness": "1",
+          "Brawl": "4",
+          "Empathy": "1",
+          "Expression": "",
+          "Intimidation": "3",
+          "Leadership": "",
+          "Streetwise": "1",
+          "Subterfuge": ""
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "5",
+          "Etiquette": "2",
+          "Firearms": "",
+          "Larceny": "3",
+          "Melee": "0",
+          "Performance": "",
+          "Stealth": "1",
+          "Survival": "0"
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "0",
+          "Investigation": "2",
+          "Law": "0",
+          "Medicine": "0",
+          "Occult": "0",
+          "Politics": "0",
+          "Science": "0",
+          "Technology": "1"
+        }
+      },
+      "disciplines": {
+        "Potence": "3",
+        "Celerity": "4",
+        "Presence": "1",
+        "Fortitude": "2"
+      }
+    },
+    {
+      "name": "Frederic King",
+      "clan": "Malkavian",
+      "generation": "12th",
+      "sire": "Philip Zambardo",
+      "concept": "Cult Leader / Excommunicated Amish Preacher",
+      "nature": "Idealist",
+      "demeanor": "Idealist",
+      "portrait": "portraits/pc_Frederic_King.webp",
+      "humanity": "9",
+      "willpower": "6/7",
+      "attributes": {
+        "physical": {
+          "Strength": "3",
+          "Dexterity": "4 (Lightning Reflexes)",
+          "Stamina": "4 (Tough as Nails)"
+        },
+        "social": {
+          "Charisma": "1",
+          "Manipulation": "5 (Conjurer of Facts)",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "4 (Insightful)",
+          "Intelligence": "1",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "4 (Noises)",
+          "Athletics": "4 (Acrobatics)",
+          "Awareness": "2",
+          "Brawl": "",
+          "Empathy": "1",
+          "Expression": "1",
+          "Intimidation": "",
+          "Leadership": "4",
+          "Streetwise": "",
+          "Subterfuge": ""
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "",
+          "Etiquette": "",
+          "Firearms": "",
+          "Larceny": "",
+          "Melee": "3",
+          "Performance": "2",
+          "Stealth": "3",
+          "Survival": "1"
+        },
+        "knowledges": {
+          "Academics": "",
+          "Computer": "",
+          "Finance": "",
+          "Investigation": "2",
+          "Law": "",
+          "Medicine": "",
+          "Occult": "3",
+          "Politics": "",
+          "Science": "",
+          "Technology": ""
+        }
+      },
+      "disciplines": {
+        "Auspex": "2",
+        "Dementation": "1",
+        "Obfuscate": "2"
+      }
+    },
+    {
+      "name": "Isabel Turner",
+      "clan": "Ventrue",
+      "generation": "9th",
+      "sire": "Keith Brown",
+      "concept": "Not Listed",
+      "nature": "Autocrat",
+      "demeanor": "Child",
+      "portrait": "portraits/pc_Isabel_Turner.webp",
+      "humanity": "6",
+      "willpower": "5/6",
+      "attributes": {
+        "physical": {
+          "Strength": "3",
+          "Dexterity": "3",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "5",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "4",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "3",
+          "Athletics": "3",
+          "Awareness": "3",
+          "Brawl": "0",
+          "Empathy": "2",
+          "Expression": "0",
+          "Intimidation": "4",
+          "Leadership": "4",
+          "Streetwise": "0",
+          "Subterfuge": "3"
+        },
+        "skills": {
+          "Animal Ken": "0",
+          "Crafts": "0",
+          "Drive": "1",
+          "Etiquette": "3",
+          "Firearms": "3",
+          "Larceny": "0",
+          "Melee": "0",
+          "Performance": "0",
+          "Stealth": "0",
+          "Survival": "0"
+        },
+        "knowledges": {
+          "Academics": "2",
+          "Computer": "1",
+          "Finance": "2",
+          "Investigation": "2",
+          "Law": "0",
+          "Medicine": "0",
+          "Occult": "1",
+          "Politics": "3",
+          "Science": "0",
+          "Technology": "0"
+        }
+      },
+      "disciplines": {
+        "Dominate": "4",
+        "Fortitude": "3",
+        "Presence": "2"
+      }
+    },
+    {
+      "name": "Elliot \"Shane\" Mercer",
+      "clan": "Toreador",
+      "generation": "13th",
+      "sire": "Donna Delore",
+      "concept": "Street urchin turned artistic icon",
+      "nature": "Bon Vivant",
+      "demeanor": "Conformist",
+      "portrait": "portraits/pc_Elliot__Shane__Mercer.webp",
+      "humanity": "7",
+      "willpower": "5/7",
+      "attributes": {
+        "physical": {
+          "Strength": "2",
+          "Dexterity": "3",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "4",
+          "Manipulation": "4",
+          "Appearance": "5"
+        },
+        "mental": {
+          "Perception": "2",
+          "Intelligence": "3",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "0",
+          "Athletics": "0",
+          "Awareness": "0",
+          "Brawl": "0",
+          "Empathy": "4",
+          "Expression": "0",
+          "Intimidation": "2",
+          "Leadership": "3",
+          "Streetwise": "3",
+          "Subterfuge": "4"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "2",
+          "Drive": "0",
+          "Etiquette": "0",
+          "Firearms": "1",
+          "Larceny": "2",
+          "Melee": "0",
+          "Performance": "3",
+          "Stealth": "1",
+          "Survival": "0"
+        },
+        "knowledges": {
+          "Academics": "0",
+          "Computer": "1",
+          "Finance": "0",
+          "Investigation": "3",
+          "Law": "0",
+          "Medicine": "0",
+          "Occult": "0",
+          "Politics": "3",
+          "Science": "1",
+          "Technology": "1"
+        }
+      },
+      "disciplines": {
+        "Auspex": "3",
+        "Celerity": "1",
+        "Presence": "5"
+      }
+    }
+  ],
+  "sessions": [],
   "locations": [
     {
       "name": "Dorothy Chandler Pavilion",

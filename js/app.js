@@ -38,8 +38,10 @@ function initApp() {
 function setupUI() {
   setupNavigation();
   renderKindred();
+  renderCoterie();
   renderRules();
   renderArmory();
+  renderSessions();
   initGlobalSearch();
   
   var hash = window.location.hash.replace('#', '') || 'kindred';
@@ -62,11 +64,39 @@ function setupNavigation() {
   });
 }
 
+function toggleDrawer() {
+  var drawer = document.getElementById('codex-drawer');
+  var backdrop = document.getElementById('drawer-backdrop');
+  if (drawer) drawer.classList.toggle('active');
+  if (backdrop) backdrop.classList.toggle('active');
+}
+
+function closeDrawer() {
+  var drawer = document.getElementById('codex-drawer');
+  var backdrop = document.getElementById('drawer-backdrop');
+  if (drawer) drawer.classList.remove('active');
+  if (backdrop) backdrop.classList.remove('active');
+}
+
+function navigateFromDrawer(tab, subTab) {
+  closeDrawer();
+  window.location.hash = tab;
+  switchTab(tab);
+  if (tab === 'rules' && subTab) {
+    var btn = document.querySelector('#rules-filter-bar button[onclick*="' + subTab + '"]');
+    if (btn) setRulesFilter(subTab, btn);
+  }
+}
+
 function switchTab(tabName) {
   state.activeTab = tabName;
   
   document.querySelectorAll('.nav-item').forEach(function(el) {
     el.classList.toggle('active', el.getAttribute('data-tab') === tabName);
+  });
+
+  document.querySelectorAll('.drawer-item').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-drawer-tab') === tabName);
   });
 
   document.querySelectorAll('.view-panel').forEach(function(panel) {
@@ -533,4 +563,122 @@ function formatParagraphs(text) {
   return text.split(/\n\n+/).map(function(p) {
     return '<p style="margin-bottom:8px;">' + escapeHtml(p.trim()) + '</p>';
   }).join('');
+}
+
+function renderCoterie() {
+  var pcs = (state.data && state.data.pcs) || [];
+  var container = document.getElementById('pc-grid');
+  if (!container) return;
+
+  if (pcs.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:40px;">No Coterie dossiers published yet.</p>';
+    return;
+  }
+
+  var html = '';
+  pcs.forEach(function(pc) {
+    var portraitSrc = pc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+
+    html += '<div class="npc-card" style="cursor:default;">';
+    html += '  <div class="npc-portrait-wrap">';
+    html += '    <img class="npc-portrait" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '" loading="lazy">';
+    html += '  </div>';
+    html += '  <div class="npc-info">';
+    html += '    <h3 class="npc-name">' + escapeHtml(pc.name) + '</h3>';
+    html += '    <div class="npc-badges">';
+    html += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
+    html += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation || '8th') + '</span>';
+    html += '    </div>';
+    if (pc.concept) {
+      html += '    <div class="npc-concept">' + escapeHtml(pc.concept) + '</div>';
+    }
+    if (pc.nature && pc.demeanor) {
+      html += '    <div style="font-size:11px;color:var(--text-muted);margin-top:6px;"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
+    }
+    html += '  </div>';
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+function renderSessions() {
+  var sessions = (state.data && state.data.sessions) || [];
+  var container = document.getElementById('sessions-list');
+  if (!container) return;
+
+  if (sessions.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:40px;">No Chronicle Briefings published yet.</p>';
+    return;
+  }
+
+  var html = '';
+  sessions.forEach(function(s) {
+    html += '<div class="session-card">';
+    html += '  <div class="session-card-header">';
+    html += '    <span class="session-number-badge">Session ' + s.id + '</span>';
+    if (s.date) html += '    <span class="session-date">📅 ' + escapeHtml(s.date) + '</span>';
+    html += '  </div>';
+    html += '  <h3 class="session-title">' + escapeHtml(s.title) + '</h3>';
+    if (s.summary) {
+      html += '  <div class="session-summary">' + escapeHtml(s.summary) + '</div>';
+    }
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+function updateDiceSlider(val, id) {
+  var el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+function rollV20Dice() {
+  var pool = parseInt(document.getElementById('dice-pool-slider').value) || 1;
+  var diff = parseInt(document.getElementById('dice-diff-slider').value) || 6;
+
+  var rolls = [];
+  var successes = 0;
+  var ones = 0;
+
+  for (var i = 0; i < pool; i++) {
+    var r = Math.floor(Math.random() * 10) + 1;
+    rolls.push(r);
+    if (r >= diff) successes++;
+    if (r === 1) ones++;
+  }
+
+  var netSuccesses = successes - ones;
+  var verdict = '';
+  var verdictColor = '';
+
+  if (netSuccesses > 0) {
+    verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
+    verdictColor = '#10b981';
+  } else if (successes === 0 && ones > 0) {
+    verdict = '💀 BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
+    verdictColor = '#ef4444';
+  } else {
+    verdict = 'FAILURE (0 Net Successes)';
+    verdictColor = '#9c9cae';
+  }
+
+  var verdictEl = document.getElementById('dice-verdict');
+  verdictEl.textContent = verdict;
+  verdictEl.style.color = verdictColor;
+
+  var tray = document.getElementById('dice-tray');
+  tray.innerHTML = rolls.map(function(r) {
+    var cls = 'fail';
+    if (r === 10) cls = 'crit';
+    else if (r >= diff) cls = 'success';
+    else if (r === 1) cls = 'botch';
+    return '<div class="dice-die ' + cls + '">' + r + '</div>';
+  }).join('');
+
+  var breakdown = document.getElementById('dice-breakdown');
+  breakdown.textContent = pool + 'd10 vs Diff ' + diff + ' | ' + successes + ' successes, ' + ones + ' ones = Net ' + netSuccesses;
+
+  document.getElementById('dice-result-wrap').style.display = 'block';
 }

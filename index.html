@@ -17,13 +17,83 @@
 </head>
 <body>
 
+  <!-- NAVIGATION DRAWER BACKDROP -->
+  <div id="drawer-backdrop" class="drawer-backdrop" onclick="closeDrawer()"></div>
+
+  <!-- SLIDE-OUT NAVIGATION DRAWER (ALIGNED TO DESKTOP DASHBOARD SECTIONS) -->
+  <aside id="codex-drawer" class="codex-drawer">
+    <div class="drawer-header">
+      <div class="brand">
+        <span class="brand-crest">🩸</span>
+        <div class="brand-text">
+          <div style="font-family:var(--font-serif);font-size:15px;font-weight:700;letter-spacing:1.5px;color:var(--text-main);">LA BY NIGHT</div>
+          <span style="font-size:10px;color:var(--crimson-vivid);letter-spacing:1px;font-weight:600;">CHRONICLE CODEX</span>
+        </div>
+      </div>
+      <button type="button" class="drawer-close-btn" onclick="closeDrawer()">&times;</button>
+    </div>
+    <div class="drawer-content">
+      <!-- Section: CHARACTERS -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Characters</div>
+        <a href="#kindred" class="drawer-item" data-drawer-tab="kindred" onclick="navigateFromDrawer('kindred')">
+          <span class="icon">👥</span> Kindred (NPCs)
+        </a>
+        <a href="#coterie" class="drawer-item" data-drawer-tab="coterie" onclick="navigateFromDrawer('coterie')">
+          <span class="icon">🩸</span> Coterie (PCs)
+        </a>
+      </div>
+
+      <!-- Section: WORLD -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">World</div>
+        <a href="#map" class="drawer-item" data-drawer-tab="map" onclick="navigateFromDrawer('map')">
+          <span class="icon">🗺️</span> LA Map &amp; Territories
+        </a>
+        <a href="#armory" class="drawer-item" data-drawer-tab="armory" onclick="navigateFromDrawer('armory')">
+          <span class="icon">🗡️</span> Armory &amp; Equipment
+        </a>
+      </div>
+
+      <!-- Section: GAME TOOLS -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Game Tools</div>
+        <a href="#rules" class="drawer-item" data-drawer-tab="rules" onclick="navigateFromDrawer('rules', 'disciplines')">
+          <span class="icon">⚡</span> V20 Disciplines
+        </a>
+        <a href="#rules" class="drawer-item" data-drawer-tab="rules" onclick="navigateFromDrawer('rules', 'combat')">
+          <span class="icon">🛡️</span> Combat &amp; Systems
+        </a>
+        <a href="#rules" class="drawer-item" data-drawer-tab="rules" onclick="navigateFromDrawer('rules', 'glossary')">
+          <span class="icon">📖</span> Kindred Glossary
+        </a>
+        <a href="#dice" class="drawer-item" data-drawer-tab="dice" onclick="navigateFromDrawer('dice')">
+          <span class="icon">🎲</span> V20 Dice Roller
+        </a>
+      </div>
+
+      <!-- Section: SESSIONS -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Sessions</div>
+        <a href="#sessions" class="drawer-item" data-drawer-tab="sessions" onclick="navigateFromDrawer('sessions')">
+          <span class="icon">📜</span> Chronicle Briefings
+        </a>
+      </div>
+    </div>
+  </aside>
+
   <!-- HEADER -->
   <header class="codex-header">
-    <div class="brand">
-      <span class="brand-crest">🩸</span>
-      <div class="brand-text">
-        <h1>LA by Night</h1>
-        <span>Kindred Codex</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <button type="button" class="header-menu-btn" onclick="toggleDrawer()" aria-label="Open Navigation Menu">
+        <span>☰</span>
+      </button>
+      <div class="brand">
+        <span class="brand-crest">🩸</span>
+        <div class="brand-text">
+          <h1>LA by Night</h1>
+          <span>Kindred Codex</span>
+        </div>
       </div>
     </div>
     <button type="button" class="header-search-btn" onclick="openGlobalSearch()">
@@ -43,6 +113,17 @@
         <button type="button" class="filter-pill" onclick="setNpcFilter('independent', this)">Independent</button>
       </div>
       <div class="npc-grid" id="npc-grid">
+        <!-- Rendered via app.js -->
+      </div>
+    </section>
+
+    <!-- COTERIE (PCS) PANEL -->
+    <section id="view-coterie" class="view-panel">
+      <div style="padding:14px 16px 8px;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;">
+        <h2 style="font-family:var(--font-serif);font-size:16px;color:var(--text-main);margin:0;">The Coterie</h2>
+        <span style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;">Player Characters</span>
+      </div>
+      <div class="npc-grid" id="pc-grid" style="padding:16px;">
         <!-- Rendered via app.js -->
       </div>
     </section>
@@ -88,9 +169,56 @@
         <!-- Rendered via app.js -->
       </div>
     </section>
+
+    <!-- SESSIONS (CHRONICLE BRIEFINGS) PANEL -->
+    <section id="view-sessions" class="view-panel">
+      <div style="padding:14px 16px 8px;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;">
+        <h2 style="font-family:var(--font-serif);font-size:16px;color:var(--text-main);margin:0;">Chronicle Briefings</h2>
+        <span style="font-size:11px;color:#3b82f6;text-transform:uppercase;letter-spacing:1px;">Session Recaps</span>
+      </div>
+      <div id="sessions-list" style="padding:16px;display:flex;flex-direction:column;gap:14px;">
+        <!-- Rendered via app.js -->
+      </div>
+    </section>
+
+    <!-- V20 DICE ROLLER PANEL -->
+    <section id="view-dice" class="view-panel">
+      <div style="padding:16px;max-width:500px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:18px;">
+          <h2 style="font-family:var(--font-serif);font-size:18px;color:var(--gold);margin-bottom:4px;">V20 Dice Engine</h2>
+          <p style="font-size:12px;color:var(--text-muted);margin:0;">Roll d10s with automatic target difficulty, botch, and success calculation</p>
+        </div>
+
+        <div class="dice-box">
+          <div style="margin-bottom:14px;">
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;">
+              Dice Pool: <span id="dice-pool-val" style="color:var(--crimson-vivid);font-size:14px;font-weight:700;">5</span> d10
+            </label>
+            <input type="range" id="dice-pool-slider" min="1" max="15" value="5" oninput="updateDiceSlider(this.value, 'dice-pool-val')" style="width:100%;accent-color:var(--crimson-vivid);">
+          </div>
+
+          <div style="margin-bottom:18px;">
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;">
+              Difficulty: <span id="dice-diff-val" style="color:var(--gold);font-size:14px;font-weight:700;">6</span> (Standard)
+            </label>
+            <input type="range" id="dice-diff-slider" min="2" max="10" value="6" oninput="updateDiceSlider(this.value, 'dice-diff-val')" style="width:100%;accent-color:var(--gold);">
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="rollV20Dice()" style="width:100%;padding:12px;background:var(--crimson-vivid);border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;">
+            🎲 Roll Dice
+          </button>
+
+          <div id="dice-result-wrap" style="display:none;margin-top:20px;padding-top:16px;border-top:1px solid var(--border-subtle);text-align:center;">
+            <div id="dice-verdict" style="font-size:20px;font-weight:700;margin-bottom:10px;"></div>
+            <div id="dice-tray" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px;"></div>
+            <div id="dice-breakdown" style="font-size:12px;color:var(--text-muted);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- BOTTOM NAVBAR -->
+  <!-- BOTTOM NAVBAR (RAPID THUMB ACCESS) -->
   <nav class="bottom-nav">
     <button type="button" class="nav-item active" data-tab="kindred">
       <span class="icon">👥</span>
