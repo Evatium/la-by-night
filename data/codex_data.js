@@ -11,7 +11,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Brujah",
       "portrait": "portraits/npc_4.webp",
-      "description": "A hundred kilograms of blue-collar solidity wrapped in red flannel and a tactical vest that has seen better decades. At an apparent forty-five, his grey-brown hair is cropped short in a cut that requires no mirror and no vanity. Faded blue eyes, set in a broad face cross-hatched by sun and wind, regard the world with the uncomplicated directness of a man who has never needed to lie. His frame — one-ninety centimetres of dockworker's muscle gone soft only at the edges — fills a suit the way a truck fills a parking space: functional, unapologetic. Calloused palms bear the archaeology of manual labour, and his handshake is a contract. He smells faintly of motor oil and something expensive applied as an afterthought, and his posture — shoulders open, chest forward — reads as a standing invitation rather than a threat.",
       "tropes": [
         "The Honest Man in a Den of Liars",
         "The Working-Class Elder",
@@ -32,7 +31,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "City Gangrel",
       "portrait": "portraits/npc_3.webp",
-      "description": "A woman engineered for invisibility, she wears her thirty-five apparent years like a borrowed coat. Mouse-brown hair is wrestled into a practical bun from which stray strands escape around a pair of thick-rimmed glasses that catch the light and hide the vertical-slit pupils of a nocturnal hunter. Her hazel eyes, magnified behind those lenses, catalogue everything and reveal nothing. She dresses in matte-black technician's coveralls — a backstage jumpsuit with too many pockets — and a wireless headset curves around one ear like a permanent prosthesis. A clipboard never leaves her hands. She enters rooms through gaps in attention, standing at your elbow before your hindbrain registers a presence. Her movements are feline in their economy: no wasted gesture, no unnecessary sound.",
       "tropes": [
         "The Woman Who Sees Everything",
         "Power Through Invisibility",
@@ -53,7 +51,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Nagloper (Tzimisce bloodline)",
       "portrait": "portraits/npc_2.webp",
-      "description": "He fills a doorway the way floodwater fills a basement — two and a half metres of scarred, leathery flesh moving with the hydraulic inevitability of a siege engine. His face is a topography of old wounds stretched over a skull too large for sympathy, the skin cured to the colour and texture of saddle leather by eight centuries of African sun. Milky cataracts film both eyes, rendering his gaze a blind, oceanic blankness that sees further than sight. He wears nothing decorative — no jewellery, no insignia — just coarse dark fabric draped over a frame of impossible density. When he shifts his weight, the floor registers the complaint. The air around him carries the mineral tang of old blood and wet grave earth, a scent that enters the room before he does and lingers long after.",
       "tropes": [
         "The Unstoppable Enforcer",
         "The Monster in Service",
@@ -74,7 +71,6 @@ window.CODEX_DATA = {
       "faction": "Anarch",
       "clan": "Brujah",
       "portrait": "portraits/npc_33.webp",
-      "description": "The Dust Bowl made flesh and given a century to harden, standing at the bar of The Last Round in Downtown LA, the dim yellow light of vintage pendant lamps casting long shadows across the scarred wood. He appears in his late twenties, though the weight in his eyes belongs to someone far older — a weariness earned, not borrowed. A rugged athletic build — broad shoulders, thick arms crossed over his chest, the dense musculature of manual labour rather than gym sculpting — moves beneath a simple uniform of worn blue jeans, a white t-shirt stretched across his chest, and a black leather jacket that has seen better decades. A silver ring — a wolf's head, the details worn smooth — wraps one finger. He leans against the bar with the casual authority of a man who owns the room without having to say so, a bottle of cheap beer sweating on the counter beside his elbow. His features are handsome in a rough, working-class way: a strong jaw, a nose that has been broken at least once and set imperfectly, and dark eyes that hold a steady, unnerving intensity. He does not preen or posture. He does not need to. His reputation enters rooms before he does, and the silence that follows his arrival at The Last Round is the respect accorded to someone who killed a werewolf with his bare hands and might still be deciding if he liked it.",
       "tropes": [
         "The Reluctant Hero",
         "The Working-Class Legend",
@@ -95,7 +91,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Toreador",
       "portrait": "portraits/npc_5.webp",
-      "description": "She stepped out of a 1940s nitrate print and never bothered to step back. Frozen at twenty, she possesses the delicate architecture of a bygone screen siren: a china-doll frame barely brushing one-sixty, dark silk hair that swallows lamplight, and eyes the colour of espresso that glint with permanent mischief above cheekbones sharp enough to cut reputation. Her mouth is a slash of crimson lipstick perpetually curved into a smile that could mean amusement, appetite, or the moment before a social execution. She favours bias-cut silk gowns and a long cigarette holder she waves like a conductor's baton, though no smoke ever rises from it. Every tilt of her head, every turn of her wrist, is choreographed — a performance so seamless it has consumed the performer.",
       "tropes": [
         "The Social Predator",
         "Glamour as Weapon",
@@ -116,7 +111,6 @@ window.CODEX_DATA = {
       "faction": "Anarch",
       "clan": "Brujah",
       "portrait": "portraits/npc_8.webp",
-      "description": "The Scottish Highlands live in the crags of his face — weather-beaten, unyielding, carved by centuries of cold wind and colder purpose. He stands in the门口 of a graffiti-tagged warehouse in Downtown LA, the grey pre-dawn light filtering through grimy skylights and catching the dust motes that drift like slow snow. Appearing somewhere in his late thirties, he possesses the physical density of a man who has survived everything designed to kill him — his broad frame squared to the door, arms crossed, coat hanging open like a challenge. His eyes are the colour of North Atlantic stormlight and carry the same warning: they pierce rather than observe, peeling back prevarication like old paint. A rough thatch of dark hair, streaked with iron grey, frames a brow permanently furrowed by rhetoric and resistance. He dresses in functional wool and worn leather — a heavy waxed jacket, a cable-knit sweater, trousers stained with something that might be oil or might be older — garments chosen for durability over display. A sheathed dirk is visible at his belt, worn flat against his hip, the handle worn smooth by centuries of use. His boots are caked with the mud of a dozen cities, and his hands — calloused by every weapon mankind has invented — rest at his sides with the relaxed readiness of a man who has never been surprised twice.",
       "tropes": [
         "The Revolutionary Elder",
         "The Man the Legend Outgrew",
@@ -137,7 +131,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Assamite (Vizier/Warrior crossover)",
       "portrait": "portraits/npc_6.webp",
-      "description": "Severity in human form, she wears her early thirties with the austerity of a courtroom verdict. Middle Eastern features are drawn in sharp, unadorned lines: a hawkish nose, high-planed cheekbones, and a mouth that defaults to a flat, evaluative line. Sable hair is lashed back into a ponytail so tight it seems to stretch the skin at her temples. Her eyes — dark, unblinking, forensic — move across a crime scene the way a scanner reads a document, missing nothing. She favours a tactical-cut pantsuit beneath a long wool trench coat whose hem carries the dust of a hundred investigations. Around her neck hangs a laminated credentials badge; in her gloved hands, an evidence kit worn soft at the corners. A modified service pistol rides at her hip with the familiarity of a habit.",
       "tropes": [
         "The Cop Who Transferred Precincts",
         "The Impartial Blade",
@@ -158,7 +151,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Ventrue",
       "portrait": "portraits/npc_1.webp",
-      "description": "A woman caught in amber at twenty-eight, her platinum-blonde bob razored to surgical precision above a slender neck. Arctic-blue eyes scan every room with the vigilance of prey that has learned to dress as predator. Her frame is willowy and tense beneath bespoke power suits cut in charcoal and midnight silk — haute couture worn as plate armour. She stands with a rigid, rehearsed regality, chin lifted, shoulders squared, but her gloved fingers betray a tremor when no one is watching. High cheekbones and a patrician nose lend her the look of faded English aristocracy, every line a monument to breeding that cannot quite conceal the exhaustion pooling in the hollows beneath her eyes.",
       "tropes": [
         "The Queen in a Gilded Cage",
         "The Mask That Forgot the Face Beneath",
@@ -177,7 +169,6 @@ window.CODEX_DATA = {
       "faction": "Camarilla",
       "clan": "Brujah",
       "portrait": "portraits/npc_7.webp",
-      "description": "A career soldier preserved at thirty-five, standing behind the bar of Afterlife at three in the morning, his frame backlit by the neon glow of a Lone Star sign that casts his shadow long across the scarred wooden floor. His dark hair is sheared to military shortness, the temples just beginning to silver under the dim amber light. Deep-set brown eyes hold a thousand-yard stillness — the gaze of someone who has watched decades burn and learned to ration his reactions. At one-eighty-three centimetres, his frame is lean and disciplined, one hand resting on the polished bartop, the other loosely gripping a towel. He wears a worn olive M65 field jacket draped over a plain dark henley, the jacket carrying ghost-stitching where patches were removed long ago. A faded brass Zippo and a roll of antacid tablets sit on the counter beside a half-empty glass of whiskey. The faint scent of gunpowder and stale tobacco clings to him like a second undershirt, and behind him, the shelves hold bottles arranged with the precision of a man who has learned that small controls matter.",
       "tropes": [
         "The Philosopher-King",
         "Civilized Fury",
@@ -197,7 +188,6 @@ window.CODEX_DATA = {
       "faction": "Anarch",
       "clan": "Ventrue",
       "portrait": "portraits/npc_22.webp",
-      "description": "One hundred and ninety-eight centimetres of ex-athlete turned empire-builder, he leans against the VIP railing of his own nightclub, Club Maharani in the San Fernando Valley, the stage lights below painting him in shifting washes of magenta and cyan. The bass vibrates through the floor beneath his custom sneakers as he surveys the crowd with the proprietary ease of a man who owns the room and everything in it. He appears to be in his forties, his features broad and handsome and calibrated to disarm — high-end streetwear in matte black and brushed gold adorns his frame like a second skin, a heavy silver chain visible at the open collar of his shirt. A smile that has closed a hundred deals flashes easily, but his eyes, dark and appraising, are already two steps ahead of the conversation, cataloguing faces in the crowd below. His handshake is firm, enveloping, the grip of a man who learned that physical presence is the first contract. A limited-edition Audemars Piguet peeks from beneath his sleeve. Everything about him — the custom sneakers, the careful stubble, the way he positions himself with his back to no entrance — reads as self-made royalty who has not forgotten the climb and does not intend to repeat it.",
       "tropes": [
         "The Self-Made Mogul",
         "The Maverick Leader",
