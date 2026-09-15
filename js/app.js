@@ -163,12 +163,6 @@ function openDossier(npcId) {
   h += '  </div>';
   h += '</div>';
 
-  if (npc.description) {
-    h += '<div class="dossier-section">';
-    h += '  <div class="dossier-section-title">Physical Appearance & Bearing</div>';
-    h += '  <div class="dossier-text">' + formatParagraphs(npc.description) + '</div>';
-    h += '</div>';
-  }
 
   if (npc.functions && npc.functions.length > 0) {
     h += '<div class="dossier-section">';
