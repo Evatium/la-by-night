@@ -6,7 +6,7 @@ var state = {
   activeTab: 'kindred',
   npcFilter: 'all',
   rulesFilter: 'disciplines',
-  armoryFilter: 'weapon_firearm',
+  armoryFilter: 'weapon_ranged',
   map: null,
   mapMarkers: [],
   territoryLayers: []
@@ -402,6 +402,10 @@ function renderArmory() {
 
   var filtered = items.filter(function(i) {
     if (filter === 'all') return true;
+    if (filter === 'weapon_ranged') return i.category === 'weapon_ranged';
+    if (filter === 'weapon_melee') return i.category === 'weapon_melee' || i.category === 'weapon_thrown';
+    if (filter === 'armor') return i.category === 'armor' || i.category === 'shield';
+    if (filter === 'gear') return ['explosive', 'toxin', 'hazard', 'ammo', 'sight', 'ritual_supplies', 'gear'].indexOf(i.category) !== -1;
     return i.category === filter;
   });
 
@@ -410,15 +414,29 @@ function renderArmory() {
     html += '<div class="armory-card">';
     html += '  <div class="armory-header">';
     html += '    <span class="armory-name">' + escapeHtml(item.name) + '</span>';
-    html += '    <span class="armory-type">' + escapeHtml(item.type || item.category) + '</span>';
+    var displayType = item.type || (item.category ? item.category.replace('weapon_', '') : 'item');
+    html += '    <span class="armory-type">' + escapeHtml(displayType) + '</span>';
     html += '  </div>';
 
-    if (item.damage || item.diff || item.range || item.clip) {
-      html += '  <div class="armory-stats-table">';
-      html += '    <div><span class="armory-stat-label">Damage</span><div class="armory-stat-val">' + escapeHtml(item.damage ? item.damage + (item.damage_type ? '/' + item.damage_type : '') : '—') + '</div></div>';
-      html += '    <div><span class="armory-stat-label">Diff</span><div class="armory-stat-val">' + escapeHtml(item.diff ? '' + item.diff : '—') + '</div></div>';
-      html += '    <div><span class="armory-stat-label">Range</span><div class="armory-stat-val">' + escapeHtml(item.range ? '' + item.range : '—') + '</div></div>';
-      html += '    <div><span class="armory-stat-label">Clip</span><div class="armory-stat-val">' + escapeHtml(item.clip ? '' + item.clip : '—') + '</div></div>';
+    var statList = [];
+    if (item.damage) statList.push({label: 'Damage', val: item.damage + (item.damage_type ? '/' + item.damage_type : '')});
+    if (item.diff) statList.push({label: 'Diff', val: '' + item.diff});
+    if (item.rating) statList.push({label: 'Armor', val: '' + item.rating});
+    if (item.dex_penalty) statList.push({label: 'Dex Pen', val: '' + item.dex_penalty});
+    if (item.range) statList.push({label: 'Range', val: '' + item.range});
+    if (item.rate) statList.push({label: 'Rate', val: '' + item.rate});
+    if (item.clip) statList.push({label: 'Clip', val: '' + item.clip});
+    if (item.conceal) {
+      var cMap = {'P':'Pocket','J':'Jacket','T':'Trenchcoat','N':'None'};
+      statList.push({label: 'Conceal', val: cMap[item.conceal] || item.conceal});
+    }
+
+    if (statList.length > 0) {
+      var cols = Math.min(statList.length, 4);
+      html += '  <div class="armory-stats-table" style="grid-template-columns:repeat(' + cols + ', 1fr);">';
+      statList.forEach(function(st) {
+        html += '    <div><span class="armory-stat-label">' + escapeHtml(st.label) + '</span><div class="armory-stat-val">' + escapeHtml(st.val) + '</div></div>';
+      });
       html += '  </div>';
     }
 
@@ -428,7 +446,7 @@ function renderArmory() {
     html += '</div>';
   });
 
-  container.innerHTML = html || '<p style="color:#9c9cae;padding:20px;">No items found.</p>';
+  container.innerHTML = html || '<p style="color:#9c9cae;padding:20px;">No items found in this category.</p>';
 }
 
 function setArmoryFilter(cat, btn) {
