@@ -565,6 +565,30 @@ function formatParagraphs(text) {
   }).join('');
 }
 
+function renderDots(value, max) {
+  var val = parseInt(value) || 0;
+  var maxDots = max || 5;
+  var html = '<span class="pc-dot-track">';
+  for (var i = 1; i <= maxDots; i++) {
+    if (i <= val) {
+      html += '●';
+    } else {
+      html += '<span class="pc-dot-empty">○</span>';
+    }
+  }
+  html += '</span>';
+  return html;
+}
+
+function getStatNum(obj, key) {
+  if (!obj) return 0;
+  var val = obj[key] !== undefined ? obj[key] : (obj[key.toLowerCase()] !== undefined ? obj[key.toLowerCase()] : 0);
+  if (typeof val === 'string' && val.includes('(')) {
+    val = val.split('(')[0].trim();
+  }
+  return parseInt(val) || 0;
+}
+
 function renderCoterie() {
   var pcs = (state.data && state.data.pcs) || [];
   var container = document.getElementById('pc-grid');
@@ -576,10 +600,10 @@ function renderCoterie() {
   }
 
   var html = '';
-  pcs.forEach(function(pc) {
+  pcs.forEach(function(pc, idx) {
     var portraitSrc = pc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
 
-    html += '<div class="npc-card" style="cursor:default;">';
+    html += '<div class="npc-card" onclick="openPcSheet(' + idx + ')" style="cursor:pointer;" title="Tap to open full V20 Character Sheet">';
     html += '  <div class="npc-portrait-wrap">';
     html += '    <img class="npc-portrait" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '" loading="lazy">';
     html += '  </div>';
@@ -595,11 +619,302 @@ function renderCoterie() {
     if (pc.nature && pc.demeanor) {
       html += '    <div style="font-size:11px;color:var(--text-muted);margin-top:6px;"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
     }
+    html += '    <div style="margin-top:10px;">';
+    html += '      <span class="badge" style="background:rgba(230,46,61,0.15);color:var(--crimson-vivid);border:1px solid var(--border-accent);font-size:11px;font-weight:600;">📜 Open Character Sheet &rarr;</span>';
+    html += '    </div>';
     html += '  </div>';
     html += '</div>';
   });
 
   container.innerHTML = html;
+}
+
+function openPcSheet(idx) {
+  var pcs = (state.data && state.data.pcs) || [];
+  var pc = pcs[idx];
+  if (!pc) return;
+
+  var modal = document.getElementById('pc-sheet-modal');
+  var content = document.getElementById('pc-sheet-content');
+  if (!modal || !content) return;
+
+  var portraitSrc = pc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+
+  // Tactical calculations
+  var phys = (pc.attributes && pc.attributes.physical) || {};
+  var soc = (pc.attributes && pc.attributes.social) || {};
+  var ment = (pc.attributes && pc.attributes.mental) || {};
+  var discs = pc.disciplines || {};
+
+  var dex = getStatNum(phys, 'Dexterity');
+  var wits = getStatNum(ment, 'Wits');
+  var cel = getStatNum(discs, 'Celerity');
+  var sta = getStatNum(phys, 'Stamina');
+  var fort = getStatNum(discs, 'Fortitude');
+
+  var init = dex + wits + cel;
+  var soak = sta + fort;
+  var aggSoak = fort;
+
+  var h = '';
+
+  // 1. Hero Showcase
+  h += '<div class="pc-view-hero">';
+  h += '  <img class="pc-portrait-lg" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '">';
+  h += '  <div class="pc-hero-meta">';
+  h += '    <div class="pc-hero-title">' + escapeHtml(pc.name) + '</div>';
+  if (pc.player) h += '<div style="font-size:12px;color:var(--text-muted);">Player: ' + escapeHtml(pc.player) + '</div>';
+  h += '    <div class="pc-hero-badges">';
+  h += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
+  h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation || '8th') + '</span>';
+  h += '      <span class="badge" style="border-color:var(--gold);color:var(--gold);">⚡ XP: ' + escapeHtml(pc.xp || '0') + '</span>';
+  h += '    </div>';
+  h += '    <div style="font-size:12px;color:var(--text-secondary);line-height:1.4;">';
+  if (pc.concept) h += '<div><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
+  if (pc.sire && pc.sire !== 'N/A') h += '<div><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
+  if (pc.nature && pc.demeanor) h += '<div><strong>Nature / Demeanor:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
+  h += '    </div>';
+  h += '  </div>';
+  h += '</div>';
+
+  // 2. Vitals & Virtues Card
+  var virtues = pc.virtues || {};
+  var conscience = virtues['Conscience/Conviction'] || virtues['Conscience'] || virtues['Conviction'] || '3';
+  var selfControl = virtues['Self-Control/Instinct'] || virtues['Self-Control'] || virtues['Instinct'] || '3';
+  var courage = virtues['Courage'] || '3';
+
+  h += '<div class="pc-vitals-card">';
+  h += '  <div class="pc-vitals-row">';
+  h += '    <div class="pc-vital-box">';
+  h += '      <span class="pc-vital-label">Humanity / Path</span>';
+  h += '      <div class="pc-vital-val" style="color:var(--gold);">' + escapeHtml(pc.humanity || '7') + ' ' + renderDots(pc.humanity || 7, 10) + '</div>';
+  h += '    </div>';
+  h += '    <div class="pc-vital-box">';
+  h += '      <span class="pc-vital-label">Willpower</span>';
+  h += '      <div class="pc-vital-val">' + escapeHtml(pc.willpower || '5') + '</div>';
+  h += '    </div>';
+  h += '    <div class="pc-vital-box">';
+  h += '      <span class="pc-vital-label">Blood Pool</span>';
+  h += '      <div class="pc-vital-val" style="color:var(--crimson-vivid);">' + escapeHtml(pc.blood_pool || '10') + ' <span style="font-size:11px;color:var(--text-muted);font-weight:normal;">(' + escapeHtml(pc.blood_per_turn || '1') + '/turn)</span></div>';
+  h += '    </div>';
+  h += '  </div>';
+
+  h += '  <div class="pc-tactical-banner" style="margin-bottom:8px;">';
+  h += '    <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--gold);">Virtues:</span>';
+  h += '    <div class="pc-tac-pill">Conscience: <span class="pc-tac-val">' + conscience + '</span></div>';
+  h += '    <div class="pc-tac-pill">Self-Control: <span class="pc-tac-val">' + selfControl + '</span></div>';
+  h += '    <div class="pc-tac-pill">Courage: <span class="pc-tac-val">' + courage + '</span></div>';
+  h += '  </div>';
+
+  h += '  <div class="pc-tactical-banner">';
+  h += '    <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--crimson-vivid);">Tactical Readout:</span>';
+  h += '    <div class="pc-tac-pill">⚡ Initiative: <span class="pc-tac-val">' + init + '</span></div>';
+  h += '    <div class="pc-tac-pill">🛡️ Bashing / Lethal Soak: <span class="pc-tac-val">' + soak + '</span></div>';
+  h += '    <div class="pc-tac-pill">🔥 Aggravated Soak: <span class="pc-tac-val">' + aggSoak + '</span></div>';
+  h += '  </div>';
+  h += '</div>';
+
+  // 3. Attributes Grid
+  h += '<div class="pc-attr-grid">';
+  
+  // Physical
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Physical</div>';
+  ['Strength', 'Dexterity', 'Stamina'].forEach(function(attr) {
+    var val = getStatNum(phys, attr) || 1;
+    h += '  <div class="pc-attr-row">';
+    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;">';
+    h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
+    h += '    </div>';
+    h += '  </div>';
+  });
+  h += '</div>';
+
+  // Social
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Social</div>';
+  ['Charisma', 'Manipulation', 'Appearance'].forEach(function(attr) {
+    var val = getStatNum(soc, attr) || 1;
+    h += '  <div class="pc-attr-row">';
+    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;">';
+    h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
+    h += '    </div>';
+    h += '  </div>';
+  });
+  h += '</div>';
+
+  // Mental
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Mental</div>';
+  ['Perception', 'Intelligence', 'Wits'].forEach(function(attr) {
+    var val = getStatNum(ment, attr) || 1;
+    h += '  <div class="pc-attr-row">';
+    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;">';
+    h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
+    h += '    </div>';
+    h += '  </div>';
+  });
+  h += '</div>';
+
+  h += '</div>'; // End pc-attr-grid
+
+  // 4. Abilities Grid
+  var ab = pc.abilities || {};
+  var talents = ab.talents || {};
+  var skills = ab.skills || {};
+  var knowledges = ab.knowledges || {};
+
+  h += '<div class="pc-attr-grid">';
+
+  // Talents
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Talents</div>';
+  var talentList = ['Alertness', 'Athletics', 'Awareness', 'Brawl', 'Empathy', 'Expression', 'Intimidation', 'Leadership', 'Streetwise', 'Subterfuge'];
+  talentList.forEach(function(t) {
+    var val = getStatNum(talents, t);
+    if (val > 0) {
+      h += '  <div class="pc-attr-row">';
+      h += '    <span>' + t + '</span>';
+      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
+      h += '  </div>';
+    }
+  });
+  h += '</div>';
+
+  // Skills
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Skills</div>';
+  var skillList = ['Animal Ken', 'Crafts', 'Drive', 'Etiquette', 'Firearms', 'Larceny', 'Melee', 'Performance', 'Stealth', 'Survival'];
+  skillList.forEach(function(s) {
+    var val = getStatNum(skills, s);
+    if (val > 0) {
+      h += '  <div class="pc-attr-row">';
+      h += '    <span>' + s + '</span>';
+      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
+      h += '  </div>';
+    }
+  });
+  h += '</div>';
+
+  // Knowledges
+  h += '<div class="pc-attr-col">';
+  h += '  <div class="pc-attr-col-header">Knowledges</div>';
+  var knowList = ['Academics', 'Computer', 'Finance', 'Investigation', 'Law', 'Medicine', 'Occult', 'Politics', 'Science', 'Technology'];
+  knowList.forEach(function(k) {
+    var val = getStatNum(knowledges, k);
+    if (val > 0) {
+      h += '  <div class="pc-attr-row">';
+      h += '    <span>' + k + '</span>';
+      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
+      h += '  </div>';
+    }
+  });
+  h += '</div>';
+
+  h += '</div>'; // End pc-attr-grid
+
+  // 5. Disciplines
+  var discKeys = Object.keys(discs);
+  if (discKeys.length > 0) {
+    h += '<div class="pc-section-card">';
+    h += '  <div class="pc-section-title">Disciplines</div>';
+    h += '  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:10px;">';
+    discKeys.forEach(function(dName) {
+      var dVal = parseInt(discs[dName]) || 1;
+      h += '    <div style="background:var(--bg-surface);padding:8px 12px;border-radius:6px;border:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;">';
+      h += '      <strong style="color:var(--text-main);">' + escapeHtml(dName) + '</strong>';
+      h += '      <div>' + renderDots(dVal, 5) + '</div>';
+      h += '    </div>';
+    });
+    h += '  </div>';
+    h += '</div>';
+  }
+
+  // 6. Backgrounds
+  var bgs = pc.backgrounds || {};
+  var bgKeys = Object.keys(bgs);
+  if (bgKeys.length > 0) {
+    h += '<div class="pc-section-card">';
+    h += '  <div class="pc-section-title">Backgrounds</div>';
+    h += '  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:10px;">';
+    bgKeys.forEach(function(bgKey) {
+      var bgVal = bgs[bgKey];
+      var dots = 1;
+      var desc = '';
+      if (typeof bgVal === 'object' && bgVal !== null) {
+        dots = parseInt(bgVal.value) || 1;
+        desc = bgVal.description || '';
+      } else {
+        dots = parseInt(bgVal) || 1;
+      }
+      h += '    <div style="background:var(--bg-surface);padding:8px 12px;border-radius:6px;border:1px solid var(--border-subtle);">';
+      h += '      <div style="display:flex;justify-content:space-between;align-items:center;">';
+      h += '        <strong style="color:var(--text-main);">' + escapeHtml(bgKey) + '</strong>';
+      h += '        <div>' + renderDots(dots, 5) + '</div>';
+      h += '      </div>';
+      if (desc) h += '    <div style="font-size:11px;color:var(--gold);margin-top:4px;">' + escapeHtml(desc) + '</div>';
+      h += '    </div>';
+    });
+    h += '  </div>';
+    h += '</div>';
+  }
+
+  // 7. Merits & Flaws
+  var merits = pc.merits || [];
+  var flaws = pc.flaws || [];
+  if (merits.length > 0 || flaws.length > 0) {
+    h += '<div class="pc-section-card">';
+    h += '  <div class="pc-section-title">Merits &amp; Flaws</div>';
+    if (merits.length > 0) {
+      h += '  <div style="margin-bottom:12px;">';
+      h += '    <div style="font-size:11px;font-weight:700;color:#34d399;text-transform:uppercase;margin-bottom:6px;">Merits</div>';
+      merits.forEach(function(m) {
+        h += '    <div class="merit-card">';
+        h += '      <strong style="color:#34d399;">' + escapeHtml(m.name) + '</strong>';
+        if (m.value) h += ' <span style="font-size:11px;color:var(--text-muted);">(' + escapeHtml(m.value) + ' pt)</span>';
+        if (m.desc) h += '<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.4;">' + escapeHtml(m.desc) + '</div>';
+        h += '    </div>';
+      });
+      h += '  </div>';
+    }
+    if (flaws.length > 0) {
+      h += '  <div>';
+      h += '    <div style="font-size:11px;font-weight:700;color:#f87171;text-transform:uppercase;margin-bottom:6px;">Flaws</div>';
+      flaws.forEach(function(f) {
+        h += '    <div class="flaw-card">';
+        h += '      <strong style="color:#f87171;">' + escapeHtml(f.name) + '</strong>';
+        if (f.value) h += ' <span style="font-size:11px;color:var(--text-muted);">(' + escapeHtml(f.value) + ' pt)</span>';
+        if (f.desc) h += '<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.4;">' + escapeHtml(f.desc) + '</div>';
+        h += '    </div>';
+      });
+      h += '  </div>';
+    }
+    h += '</div>';
+  }
+
+  // 8. Equipment
+  var eqList = pc.equipment || [];
+  if (eqList.length > 0) {
+    h += '<div class="pc-section-card">';
+    h += '  <div class="pc-section-title">Equipment &amp; Possessions</div>';
+    h += '  <div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    eqList.forEach(function(item) {
+      h += '    <span class="badge" style="background:var(--bg-surface);border:1px solid var(--border-subtle);color:var(--text-main);padding:4px 10px;font-size:12px;">🗡️ ' + escapeHtml(item) + '</span>';
+    });
+    h += '  </div>';
+    h += '</div>';
+  }
+
+  content.innerHTML = h;
+  modal.classList.add('active');
+}
+
+function closePcSheet() {
+  var modal = document.getElementById('pc-sheet-modal');
+  if (modal) modal.classList.remove('active');
 }
 
 function renderSessions() {

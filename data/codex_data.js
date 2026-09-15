@@ -210,9 +210,19 @@ window.CODEX_DATA = {
       "concept": "Criminal (GTA)",
       "nature": "Rogue",
       "demeanor": "Survivor",
+      "player": "",
+      "type": "Vampire",
+      "xp": "21",
       "portrait": "portraits/pc_Liam_Johnson___L_J.webp",
       "humanity": "5",
       "willpower": "3/5",
+      "blood_pool": "12/15",
+      "blood_per_turn": "3",
+      "virtues": {
+        "Conscience/Conviction": "2",
+        "Self-Control": "5",
+        "Courage": "5"
+      },
       "attributes": {
         "physical": {
           "Strength": "4",
@@ -273,7 +283,73 @@ window.CODEX_DATA = {
         "Celerity": "4",
         "Presence": "1",
         "Fortitude": "2"
-      }
+      },
+      "backgrounds": {
+        "Generation": "5",
+        "Resources": "2",
+        "Contacts": "1",
+        "Domain": {
+          "value": "4",
+          "description": "Church of the New Dawn"
+        },
+        "Retainers": {
+          "value": "1",
+          "description": "Rachel Teller"
+        }
+      },
+      "merits": [
+        {
+          "name": "Daredevil",
+          "value": "3",
+          "desc": "When attempting exceptionally risky non-combat actions, add an additional three dice to your rolls, and negate a single botch die."
+        },
+        {
+          "name": "Bruiser",
+          "value": "1",
+          "desc": "Your appearance is sufficiently thug-like to inspire fear or disquiet. All Intimidation rolls against those who have not demonstrated their physical superiority to you are at -1 difficulty."
+        },
+        {
+          "name": "Common Sense",
+          "value": "1",
+          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Addiction",
+          "value": "3",
+          "desc": "You suffer from an addiction to a substance (drugs, alcohol, adrenaline) which must be present in the blood you drink."
+        },
+        {
+          "name": "Deep Sleeper",
+          "value": "1",
+          "desc": "When you sleep, it is very difficult for you to awaken. The difficulty of any roll to awaken during the day is increased by two."
+        },
+        {
+          "name": "Amnesia",
+          "value": "2",
+          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+        },
+        {
+          "name": "New Kid (1 pt Social)",
+          "value": "1",
+          "desc": "New to the city/sect."
+        },
+        {
+          "name": "Sympathizer - Anarch (1 pt Social)",
+          "value": "1",
+          "desc": "Holds sympathies for the Anarch movement."
+        }
+      ],
+      "equipment": [
+        "Burner Phone",
+        "Gold bar worth $184,000",
+        "iPhone 17 Pro Max",
+        "$770 Cash",
+        "2020 Ford Mustang GT (Black w/ White racing stripes)",
+        "Pink Lowrider"
+      ],
+      "specialties": {}
     },
     {
       "name": "Frederic King",
@@ -283,9 +359,19 @@ window.CODEX_DATA = {
       "concept": "Cult Leader / Excommunicated Amish Preacher",
       "nature": "Idealist",
       "demeanor": "Idealist",
+      "player": "",
+      "type": "Vampire",
+      "xp": "25",
       "portrait": "portraits/pc_Frederic_King.webp",
       "humanity": "9",
       "willpower": "6/7",
+      "blood_pool": "10/11",
+      "blood_per_turn": "1",
+      "virtues": {
+        "Conscience/Conviction": "5",
+        "Self-Control": "4",
+        "Courage": "2"
+      },
       "attributes": {
         "physical": {
           "Strength": "3",
@@ -345,7 +431,54 @@ window.CODEX_DATA = {
         "Auspex": "2",
         "Dementation": "1",
         "Obfuscate": "2"
-      }
+      },
+      "backgrounds": {
+        "Generation": "1",
+        "Cult": "3",
+        "Retainers": "3",
+        "Domain": "4"
+      },
+      "merits": [
+        {
+          "name": "True Faith",
+          "value": "7",
+          "desc": "(2) You have a deep-seated faith in God. Adds one die per point to Willpower/Virtue rolls. Must have Humanity 9+ to start. Repels vampires."
+        },
+        {
+          "name": "Enchanting Voice",
+          "value": "2",
+          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+        },
+        {
+          "name": "Sabbat Survivor",
+          "value": "1",
+          "desc": "You've lived through a Sabbat attack. -1 difficulty on Perception rolls regarding Sabbat matters."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Repulsed by Garlic",
+          "value": "1",
+          "desc": "You cannot abide garlic. The smell drives you from the room unless you make a Willpower roll."
+        },
+        {
+          "name": "Cast No Reflection",
+          "value": "1",
+          "desc": "You cast no reflection. Detrimental for Masquerade. (Lasombra have this automatically, do not take as Flaw)."
+        },
+        {
+          "name": "Amnesia",
+          "value": "2",
+          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+        },
+        {
+          "name": "New Kid",
+          "value": "1",
+          "desc": "He is new to the city or sect and lacks established respect."
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
     },
     {
       "name": "Isabel Turner",
@@ -355,9 +488,19 @@ window.CODEX_DATA = {
       "concept": "Not Listed",
       "nature": "Autocrat",
       "demeanor": "Child",
+      "player": "",
+      "type": "Vampire",
+      "xp": "36",
       "portrait": "portraits/pc_Isabel_Turner.webp",
       "humanity": "6",
       "willpower": "5/6",
+      "blood_pool": "11/14",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "4"
+      },
       "attributes": {
         "physical": {
           "Strength": "3",
@@ -417,7 +560,51 @@ window.CODEX_DATA = {
         "Dominate": "4",
         "Fortitude": "3",
         "Presence": "2"
-      }
+      },
+      "backgrounds": {
+        "Generation": {
+          "value": "4",
+          "description": "8th Generation heritage via Ventrue lineage"
+        },
+        "Resources": {
+          "value": "4",
+          "description": "Century City investment portfolio"
+        },
+        "Retainers": {
+          "value": "1",
+          "description": "Personal executive assistant"
+        },
+        "Domain": {
+          "value": "4",
+          "description": "Downtown luxury penthouse & boardroom suite"
+        }
+      },
+      "merits": [
+        {
+          "name": "Enchanting Voice",
+          "value": "2",
+          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+        },
+        {
+          "name": "Eat Food",
+          "value": "1",
+          "desc": "You have the capacity to eat food and even savor its taste, though you cannot derive nourishment and must heave it back up later. Useful for masquerading as human."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Amnesia",
+          "value": "2",
+          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+        },
+        {
+          "name": "New Kid",
+          "value": "1",
+          "desc": "She is new to the city or sect and lacks established respect."
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
     },
     {
       "name": "Elliot \"Shane\" Mercer",
@@ -427,9 +614,19 @@ window.CODEX_DATA = {
       "concept": "Street urchin turned artistic icon",
       "nature": "Bon Vivant",
       "demeanor": "Conformist",
+      "player": "",
+      "type": "Vampire",
+      "xp": "6",
       "portrait": "portraits/pc_Elliot__Shane__Mercer.webp",
       "humanity": "7",
       "willpower": "5/7",
+      "blood_pool": "9/10",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "4",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
       "attributes": {
         "physical": {
           "Strength": "2",
@@ -489,7 +686,74 @@ window.CODEX_DATA = {
         "Auspex": "3",
         "Celerity": "1",
         "Presence": "5"
-      }
+      },
+      "backgrounds": {
+        "Mentor": "1",
+        "Contacts": "2",
+        "Haven": "2",
+        "Domain": "4"
+      },
+      "merits": [
+        {
+          "name": "Enchanting Voice",
+          "value": "2",
+          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+        },
+        {
+          "name": "Open Road",
+          "value": "2",
+          "desc": "You like to travel and know safe routes. You can move between cities unimpeded by random encounters."
+        },
+        {
+          "name": "Friend of the Underground",
+          "value": "3",
+          "desc": "You know your way around sewers and tunnels. -1 difficulty on subterranean rolls. Nosferatu are not inclined to kill you on sight."
+        },
+        {
+          "name": "Natural Leader",
+          "value": "1",
+          "desc": "You are gifted with a certain magnetism to which others naturally defer. You receive two extra dice when making Leadership rolls. Requires Charisma 3+."
+        },
+        {
+          "name": "Eat Food",
+          "value": "1",
+          "desc": "You have the capacity to eat food and even savor its taste, though you cannot derive nourishment and must heave it back up later. Useful for masquerading as human."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Amnesia",
+          "value": "2",
+          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+        },
+        {
+          "name": "Infertile Vitae",
+          "value": "5",
+          "desc": "You cannot create any childer. Those you try to Embrace die."
+        },
+        {
+          "name": "Hunted",
+          "value": "4",
+          "desc": "You are pursued by a fanatical witch-hunter who believes you are a danger to humanity."
+        },
+        {
+          "name": "Clan Enmity",
+          "value": "4",
+          "desc": "One Clan in particular wants you dead. Every member of that Clan is hostile to you."
+        },
+        {
+          "name": "New Kid",
+          "value": "1",
+          "desc": "He is a fresh face in the LA scene with zero social leverage."
+        },
+        {
+          "name": "Boon (1 pt)",
+          "value": "1",
+          "desc": "Shane owes Lydia for her help with the hunters."
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
     }
   ],
   "sessions": [],

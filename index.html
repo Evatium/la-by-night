@@ -238,11 +238,19 @@
     </button>
   </nav>
 
-  <!-- DOSSIER MODAL -->
+  <!-- DOSSIER MODAL (REDACTED FOR NPCS) -->
   <div class="modal-overlay" id="dossier-modal" onclick="if(event.target===this)closeDossier()">
     <div class="modal-sheet">
       <button type="button" class="modal-close-btn" onclick="closeDossier()">&times;</button>
       <div id="dossier-content"></div>
+    </div>
+  </div>
+
+  <!-- PC CHARACTER SHEET MODAL (FULL VIEW MODE FOR COTERIE PCS) -->
+  <div class="modal-overlay" id="pc-sheet-modal" onclick="if(event.target===this)closePcSheet()">
+    <div class="modal-sheet sheet-wide">
+      <button type="button" class="modal-close-btn" onclick="closePcSheet()">&times;</button>
+      <div id="pc-sheet-content"></div>
     </div>
   </div>
 
