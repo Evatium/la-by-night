@@ -1,10 +1,15 @@
 /* LA by Night — Player Codex Web App Core */
 'use strict';
 
+var DEFAULT_PORTRAIT = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="150" viewBox="0 0 120 150" fill="%2314141e"><rect width="100%" height="100%"/><circle cx="60" cy="55" r="24" fill="%232c2c3e"/><path d="M25 130c0-22 18-38 35-38s35 16 35 38z" fill="%232c2c3e"/></svg>';
+
 var state = {
   data: null,
   activeTab: 'kindred',
   npcFilter: 'all',
+  mapCategoryFilter: 'all',
+  mapSearchQuery: '',
+  mapViewMode: 'map',
   rulesFilter: 'disciplines',
   armoryFilter: 'weapon_ranged',
   map: null,
@@ -132,7 +137,7 @@ function renderKindred() {
 
   var html = '';
   filtered.forEach(function(npc) {
-    var portraitSrc = npc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="130" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="24" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+    var portraitSrc = npc.portrait || DEFAULT_PORTRAIT;
     var factionClass = 'badge-faction-' + (npc.faction || 'independent').toLowerCase();
 
     html += '<div class="npc-card" onclick="openDossier(' + npc.id + ')">';
@@ -172,7 +177,7 @@ function openDossier(npcId) {
 
   var modal = document.getElementById('dossier-modal');
   var content = document.getElementById('dossier-content');
-  var portraitSrc = npc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+  var portraitSrc = npc.portrait || DEFAULT_PORTRAIT;
   var factionClass = 'badge-faction-' + (npc.faction || 'independent').toLowerCase();
 
   var h = '';
@@ -192,7 +197,6 @@ function openDossier(npcId) {
   }
   h += '  </div>';
   h += '</div>';
-
 
   if (npc.functions && npc.functions.length > 0) {
     h += '<div class="dossier-section">';
@@ -225,6 +229,7 @@ function closeDossier() {
   if (modal) modal.classList.remove('active');
 }
 
+/* ─── INTERACTIVE MAP & DIRECTORY ENGINE (ZERO EMOJIS) ─── */
 function initMap() {
   if (state.map || !window.L) return;
 
@@ -264,41 +269,257 @@ function initMap() {
     }
   });
 
-  var locations = (state.data && state.data.locations) || [];
-  locations.forEach(function(loc) {
-    if (!loc.lat || !loc.lng) return;
+  renderMapMarkers();
+  renderMapDirectory();
+}
 
-    var color = '#ef4444';
-    var iconEmoji = '📍';
-    if (loc.map_type === 'elysium') { color = '#d4af37'; iconEmoji = '🏛️'; }
-    else if (loc.map_type === 'club' || loc.map_type === 'hangout') { color = '#3b82f6'; iconEmoji = '🍸'; }
-    else if (loc.map_type === 'haven') { color = '#8b5cf6'; iconEmoji = '🏰'; }
-    else if (loc.map_type === 'front') { color = '#10b981'; iconEmoji = '🏢'; }
+function getFilteredLocations() {
+  var locations = (state.data && state.data.locations) || [];
+  var cat = state.mapCategoryFilter;
+  var q = (state.mapSearchQuery || '').toLowerCase().trim();
+
+  return locations.filter(function(loc) {
+    if (!loc.lat || !loc.lng) return false;
+
+    if (cat !== 'all') {
+      if (cat === 'pc_haven') {
+        if (!loc.is_pc_location) return false;
+      } else if (cat === 'haven') {
+        if (!loc.is_haven || loc.is_pc_location) return false;
+      } else if (cat === 'elysium') {
+        if (loc.map_type !== 'elysium') return false;
+      } else if (cat === 'club') {
+        if (loc.map_type !== 'club' && loc.map_type !== 'hangout') return false;
+      } else if (cat === 'front') {
+        if (loc.map_type !== 'front' && loc.map_type !== 'business') return false;
+      } else if (cat === 'domain') {
+        if (loc.map_type !== 'domain') return false;
+      }
+    }
+
+    if (q) {
+      var nameMatch = (loc.name || '').toLowerCase().includes(q);
+      var distMatch = (loc.district || '').toLowerCase().includes(q);
+      var descMatch = (loc.description || '').toLowerCase().includes(q);
+      var charMatch = loc.characters && loc.characters.some(function(c) {
+        return (c.name || '').toLowerCase().includes(q);
+      });
+      if (!nameMatch && !distMatch && !descMatch && !charMatch) return false;
+    }
+
+    return true;
+  });
+}
+
+function renderMapMarkers() {
+  if (!state.map) return;
+
+  state.mapMarkers.forEach(function(entry) {
+    state.map.removeLayer(entry.marker);
+  });
+  state.mapMarkers = [];
+
+  var filtered = getFilteredLocations();
+
+  filtered.forEach(function(loc) {
+    var isPc = loc.is_pc_location;
+    var isHaven = loc.is_haven;
+    var pinColor = '#ef4444';
+    var border = '2px solid #fff';
+
+    if (loc.map_type === 'elysium') {
+      pinColor = '#d4af37';
+      border = '2px solid #fff';
+    } else if (isPc) {
+      pinColor = '#d4af37';
+      border = '2px solid #e62e3d';
+    } else if (isHaven) {
+      pinColor = '#8b5cf6';
+      border = '2px solid #ddd';
+    } else if (loc.map_type === 'club' || loc.map_type === 'hangout') {
+      pinColor = '#38bdf8';
+      border = '2px solid #fff';
+    } else if (loc.map_type === 'front' || loc.map_type === 'business') {
+      pinColor = '#10b981';
+      border = '2px solid #fff';
+    } else if (loc.map_type === 'domain') {
+      pinColor = '#f59e0b';
+      border = '2px solid #fff';
+    }
+
+    var pinHtml = '<div class="custom-pin-element' + (isPc ? ' pc-pin' : '') + '">';
+    if (isPc) {
+      pinHtml += '<div class="pc-pin-halo"></div>';
+    }
+    pinHtml += '<div class="pin-dot" style="background:' + pinColor + ';border:' + border + ';"></div>';
+    pinHtml += '</div>';
 
     var customIcon = L.divIcon({
-      className: 'custom-map-pin',
-      html: '<div style="background:' + color + ';width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 0 8px rgba(0,0,0,0.6);font-size:14px;">' + iconEmoji + '</div>',
-      iconSize: [28, 28],
-      iconAnchor: [14, 14],
-      popupAnchor: [0, -14]
+      className: 'custom-map-div-icon',
+      html: pinHtml,
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+      popupAnchor: [0, -12]
     });
 
     var marker = L.marker([loc.lat, loc.lng], { icon: customIcon }).addTo(state.map);
 
-    var popupHtml = '<div style="color:#111;font-family:sans-serif;max-width:240px;">';
-    popupHtml += '<h4 style="margin:0 0 4px 0;font-size:14px;color:#8b0000;">' + escapeHtml(loc.name) + '</h4>';
-    popupHtml += '<div style="font-size:11px;color:#666;text-transform:uppercase;font-weight:600;margin-bottom:6px;">' + escapeHtml(loc.district || '') + ' &bull; ' + escapeHtml(loc.map_type || '') + '</div>';
-    if (loc.description) {
-      popupHtml += '<p style="font-size:12px;margin:0 0 6px 0;line-height:1.4;">' + escapeHtml(loc.description.substring(0, 160)) + '...</p>';
+    var popupHtml = '<div style="font-family:var(--font-sans);max-width:260px;padding:2px;">';
+    popupHtml += '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">';
+    popupHtml += '  <h4 style="margin:0;font-family:var(--font-serif);font-size:14px;color:var(--text-main);font-weight:700;">' + escapeHtml(loc.name) + '</h4>';
+    if (isPc) {
+      popupHtml += '  <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);border:1px solid var(--gold);font-size:9.5px;font-weight:700;">[COTERIE]</span>';
+    } else if (loc.map_type === 'elysium') {
+      popupHtml += '  <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);font-size:9.5px;font-weight:700;">[ELYSIUM]</span>';
+    } else if (isHaven) {
+      popupHtml += '  <span class="badge" style="background:rgba(139,92,246,0.2);color:#a78bfa;font-size:9.5px;font-weight:700;">[HAVEN]</span>';
     }
+    popupHtml += '</div>';
+
+    popupHtml += '<div style="font-size:11px;color:var(--gold);text-transform:uppercase;font-weight:600;letter-spacing:0.8px;margin-bottom:6px;">' + escapeHtml(loc.district || '') + '</div>';
+
+    if (loc.description) {
+      popupHtml += '<p style="font-size:12px;color:var(--text-secondary);margin:0 0 6px 0;line-height:1.4;">' + escapeHtml(loc.description.substring(0, 180)) + (loc.description.length > 180 ? '...' : '') + '</p>';
+    }
+
     if (loc.characters && loc.characters.length > 0) {
-      popupHtml += '<div style="font-size:11px;border-top:1px solid #ddd;padding-top:4px;margin-top:4px;"><strong>Known Kindred:</strong> ' + loc.characters.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
+      var pcResidents = loc.characters.filter(function(c) { return c.is_pc; });
+      var npcResidents = loc.characters.filter(function(c) { return !c.is_pc; });
+
+      popupHtml += '<div style="font-size:11px;border-top:1px solid var(--border-subtle);padding-top:4px;margin-top:6px;">';
+      if (pcResidents.length > 0) {
+        popupHtml += '<div style="color:var(--gold);margin-bottom:2px;"><strong>Known Coterie:</strong> ' + pcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
+      }
+      if (npcResidents.length > 0) {
+        popupHtml += '<div style="color:var(--text-muted);"><strong>Known Kindred:</strong> ' + npcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
+      }
+      popupHtml += '</div>';
     }
     popupHtml += '</div>';
 
     marker.bindPopup(popupHtml);
-    state.mapMarkers.push(marker);
+    state.mapMarkers.push({ loc: loc, marker: marker });
   });
+}
+
+function renderMapDirectory() {
+  var container = document.getElementById('map-directory-list');
+  if (!container) return;
+
+  var filtered = getFilteredLocations();
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:40px;">No locations found matching filter criteria.</p>';
+    return;
+  }
+
+  var html = '';
+  filtered.forEach(function(loc) {
+    var isPc = loc.is_pc_location;
+    var isHaven = loc.is_haven;
+
+    html += '<div class="loc-directory-card">';
+    html += '  <div class="loc-dir-header">';
+    html += '    <div class="loc-dir-title">' + escapeHtml(loc.name) + '</div>';
+    if (isPc) {
+      html += '    <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);border:1px solid var(--gold);font-size:9.5px;font-weight:700;">[COTERIE BASE]</span>';
+    } else if (loc.map_type === 'elysium') {
+      html += '    <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);font-size:9.5px;font-weight:700;">[ELYSIUM]</span>';
+    } else if (isHaven) {
+      html += '    <span class="badge" style="background:rgba(139,92,246,0.2);color:#a78bfa;font-size:9.5px;font-weight:700;">[HAVEN]</span>';
+    } else if (loc.map_type === 'club' || loc.map_type === 'hangout') {
+      html += '    <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;font-size:9.5px;font-weight:700;">[CLUB]</span>';
+    } else if (loc.map_type === 'front' || loc.map_type === 'business') {
+      html += '    <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981;font-size:9.5px;font-weight:700;">[FRONT]</span>';
+    } else if (loc.map_type === 'domain') {
+      html += '    <span class="badge" style="background:rgba(245,158,11,0.15);color:#f59e0b;font-size:9.5px;font-weight:700;">[DOMAIN]</span>';
+    }
+    html += '  </div>';
+
+    html += '  <div class="loc-dir-district">' + escapeHtml(loc.district || 'Los Angeles') + '</div>';
+
+    if (loc.description) {
+      html += '  <div class="loc-dir-desc">' + escapeHtml(loc.description) + '</div>';
+    }
+
+    if (loc.characters && loc.characters.length > 0) {
+      var pcResidents = loc.characters.filter(function(c) { return c.is_pc; });
+      var npcResidents = loc.characters.filter(function(c) { return !c.is_pc; });
+
+      html += '  <div class="loc-dir-residents">';
+      if (pcResidents.length > 0) {
+        html += '    <div style="color:var(--gold);margin-bottom:2px;"><strong>Coterie:</strong> ' + pcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
+      }
+      if (npcResidents.length > 0) {
+        html += '    <div><strong>Known Kindred:</strong> ' + npcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
+      }
+      html += '  </div>';
+    }
+
+    html += '  <div class="loc-dir-actions">';
+    html += '    <button type="button" class="btn-locate-map" onclick="focusLocationOnMap(' + loc.lat + ',' + loc.lng + ',\'' + escapeHtml(loc.name).replace(/'/g, "\\'") + '\')">Locate on Map &rarr;</button>';
+    html += '  </div>';
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+function setMapCategoryFilter(cat, btn) {
+  state.mapCategoryFilter = cat;
+  var bar = document.getElementById('map-filter-bar');
+  if (bar) {
+    bar.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+  }
+  if (btn) btn.classList.add('active');
+
+  renderMapMarkers();
+  renderMapDirectory();
+}
+
+function filterMapLocations(query) {
+  state.mapSearchQuery = query;
+  renderMapMarkers();
+  renderMapDirectory();
+}
+
+function switchMapMode(mode) {
+  state.mapViewMode = mode;
+  var mapCanvas = document.getElementById('map-canvas-container');
+  var dirList = document.getElementById('map-directory-list');
+  var btnMap = document.getElementById('btn-mode-map');
+  var btnList = document.getElementById('btn-mode-list');
+
+  if (mode === 'map') {
+    if (mapCanvas) mapCanvas.style.display = 'block';
+    if (dirList) dirList.style.display = 'none';
+    if (btnMap) btnMap.classList.add('active');
+    if (btnList) btnList.classList.remove('active');
+    if (state.map) {
+      setTimeout(function() { state.map.invalidateSize(); }, 100);
+    }
+  } else {
+    if (mapCanvas) mapCanvas.style.display = 'none';
+    if (dirList) dirList.style.display = 'flex';
+    if (btnMap) btnMap.classList.remove('active');
+    if (btnList) btnList.classList.add('active');
+    renderMapDirectory();
+  }
+}
+
+function focusLocationOnMap(lat, lng, locName) {
+  switchMapMode('map');
+  if (!state.map) {
+    initMap();
+  }
+  state.map.setView([lat, lng], 15, { animate: true });
+  
+  var entry = state.mapMarkers.find(function(m) {
+    return m.loc.name === locName || (Math.abs(m.loc.lat - lat) < 0.0001 && Math.abs(m.loc.lng - lng) < 0.0001);
+  });
+  if (entry) {
+    entry.marker.openPopup();
+  }
 }
 
 function toggleTerritories(btn) {
@@ -329,7 +550,7 @@ function renderRules() {
       html += '<div class="accordion-item" id="disc-acc-' + idx + '">';
       html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
       html += '    <span class="accordion-title">' + escapeHtml(d.name || key) + '</span>';
-      html += '    <span class="accordion-arrow">▼</span>';
+      html += '    <span class="accordion-arrow">&#9660;</span>';
       html += '  </div>';
       html += '  <div class="accordion-body">';
       if (d.description) {
@@ -362,7 +583,7 @@ function renderRules() {
       html += '<div class="accordion-item ' + (idx === 0 ? 'open' : '') + '">';
       html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
       html += '    <span class="accordion-title">' + escapeHtml(m.title) + '</span>';
-      html += '    <span class="accordion-arrow">▼</span>';
+      html += '    <span class="accordion-arrow">&#9660;</span>';
       html += '  </div>';
       html += '  <div class="accordion-body">';
       html += '    <pre style="white-space:pre-wrap;font-family:inherit;font-size:12px;line-height:1.6;">' + escapeHtml(m.content) + '</pre>';
@@ -380,7 +601,7 @@ function renderRules() {
       html += '<div class="accordion-item">';
       html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
       html += '    <span class="accordion-title">' + escapeHtml(term) + '</span>';
-      html += '    <span class="accordion-arrow">▼</span>';
+      html += '    <span class="accordion-arrow">&#9660;</span>';
       html += '  </div>';
       html += '  <div class="accordion-body">';
       html += '    <p>' + escapeHtml(def) + '</p>';
@@ -516,6 +737,19 @@ function initGlobalSearch() {
       });
     }
 
+    var locations = (state.data && state.data.locations) || [];
+    var matchLocs = locations.filter(function(l) {
+      return (l.name + ' ' + (l.district || '') + ' ' + (l.description || '')).toLowerCase().includes(q);
+    }).slice(0, 4);
+    if (matchLocs.length > 0) {
+      h += '<div style="font-size:11px;color:var(--gold);margin:12px 0 6px 0;font-weight:700;">LOCATIONS (' + matchLocs.length + ')</div>';
+      matchLocs.forEach(function(l) {
+        h += '<div style="background:var(--bg-surface);padding:8px;border-radius:6px;margin-bottom:4px;font-size:12px;cursor:pointer;" onclick="closeGlobalSearch();switchTab(\'map\');focusLocationOnMap(' + l.lat + ',' + l.lng + ',\'' + escapeHtml(l.name).replace(/'/g, "\\'") + '\')">';
+        h += '  <strong>' + escapeHtml(l.name) + '</strong> (' + escapeHtml(l.district || '') + ') - <span style="color:var(--text-muted);">' + escapeHtml((l.description || '').substring(0, 70)) + '...</span>';
+        h += '</div>';
+      });
+    }
+
     var items = (state.data && state.data.items) || [];
     var matchItems = items.filter(function(i) {
       return (i.name + ' ' + (i.notes||'') + ' ' + (i.type||'')).toLowerCase().includes(q);
@@ -589,6 +823,7 @@ function getStatNum(obj, key) {
   return parseInt(val) || 0;
 }
 
+/* ─── COTERIE & PC FULL V20 SHEET VIEW ENGINE ─── */
 function renderCoterie() {
   var pcs = (state.data && state.data.pcs) || [];
   var container = document.getElementById('pc-grid');
@@ -601,7 +836,7 @@ function renderCoterie() {
 
   var html = '';
   pcs.forEach(function(pc, idx) {
-    var portraitSrc = pc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+    var portraitSrc = pc.portrait || DEFAULT_PORTRAIT;
 
     html += '<div class="npc-card" onclick="openPcSheet(' + idx + ')" style="cursor:pointer;" title="Tap to open full V20 Character Sheet">';
     html += '  <div class="npc-portrait-wrap">';
@@ -620,7 +855,7 @@ function renderCoterie() {
       html += '    <div style="font-size:11px;color:var(--text-muted);margin-top:6px;"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
     }
     html += '    <div style="margin-top:10px;">';
-    html += '      <span class="badge" style="background:rgba(230,46,61,0.15);color:var(--crimson-vivid);border:1px solid var(--border-accent);font-size:11px;font-weight:600;">📜 Open Character Sheet &rarr;</span>';
+    html += '      <span class="badge" style="background:rgba(230,46,61,0.15);color:var(--crimson-vivid);border:1px solid var(--border-accent);font-size:11px;font-weight:600;">View Character Sheet &rarr;</span>';
     html += '    </div>';
     html += '  </div>';
     html += '</div>';
@@ -638,9 +873,8 @@ function openPcSheet(idx) {
   var content = document.getElementById('pc-sheet-content');
   if (!modal || !content) return;
 
-  var portraitSrc = pc.portrait || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="160" fill="%2316161f"><rect width="100%" height="100%"/><text x="50%" y="50%" fill="%239c9cae" font-size="32" text-anchor="middle" dominant-baseline="middle">🧛</text></svg>';
+  var portraitSrc = pc.portrait || DEFAULT_PORTRAIT;
 
-  // Tactical calculations
   var phys = (pc.attributes && pc.attributes.physical) || {};
   var soc = (pc.attributes && pc.attributes.social) || {};
   var ment = (pc.attributes && pc.attributes.mental) || {};
@@ -667,7 +901,7 @@ function openPcSheet(idx) {
   h += '    <div class="pc-hero-badges">';
   h += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
   h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation || '8th') + '</span>';
-  h += '      <span class="badge" style="border-color:var(--gold);color:var(--gold);">⚡ XP: ' + escapeHtml(pc.xp || '0') + '</span>';
+  h += '      <span class="badge" style="border-color:var(--gold);color:var(--gold);">XP: ' + escapeHtml(pc.xp || '0') + '</span>';
   h += '    </div>';
   h += '    <div style="font-size:12px;color:var(--text-secondary);line-height:1.4;">';
   if (pc.concept) h += '<div><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
@@ -708,9 +942,9 @@ function openPcSheet(idx) {
 
   h += '  <div class="pc-tactical-banner">';
   h += '    <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--crimson-vivid);">Tactical Readout:</span>';
-  h += '    <div class="pc-tac-pill">⚡ Initiative: <span class="pc-tac-val">' + init + '</span></div>';
-  h += '    <div class="pc-tac-pill">🛡️ Bashing / Lethal Soak: <span class="pc-tac-val">' + soak + '</span></div>';
-  h += '    <div class="pc-tac-pill">🔥 Aggravated Soak: <span class="pc-tac-val">' + aggSoak + '</span></div>';
+  h += '    <div class="pc-tac-pill">Initiative: <span class="pc-tac-val">' + init + '</span></div>';
+  h += '    <div class="pc-tac-pill">Bashing / Lethal Soak: <span class="pc-tac-val">' + soak + '</span></div>';
+  h += '    <div class="pc-tac-pill">Aggravated Soak: <span class="pc-tac-val">' + aggSoak + '</span></div>';
   h += '  </div>';
   h += '</div>';
 
@@ -759,7 +993,7 @@ function openPcSheet(idx) {
   });
   h += '</div>';
 
-  h += '</div>'; // End pc-attr-grid
+  h += '</div>';
 
   // 4. Abilities Grid
   var ab = pc.abilities || {};
@@ -814,7 +1048,7 @@ function openPcSheet(idx) {
   });
   h += '</div>';
 
-  h += '</div>'; // End pc-attr-grid
+  h += '</div>';
 
   // 5. Disciplines
   var discKeys = Object.keys(discs);
@@ -902,7 +1136,7 @@ function openPcSheet(idx) {
     h += '  <div class="pc-section-title">Equipment &amp; Possessions</div>';
     h += '  <div style="display:flex;flex-wrap:wrap;gap:6px;">';
     eqList.forEach(function(item) {
-      h += '    <span class="badge" style="background:var(--bg-surface);border:1px solid var(--border-subtle);color:var(--text-main);padding:4px 10px;font-size:12px;">🗡️ ' + escapeHtml(item) + '</span>';
+      h += '    <span class="badge" style="background:var(--bg-surface);border:1px solid var(--border-subtle);color:var(--text-main);padding:4px 10px;font-size:12px;">' + escapeHtml(item) + '</span>';
     });
     h += '  </div>';
     h += '</div>';
@@ -932,7 +1166,7 @@ function renderSessions() {
     html += '<div class="session-card">';
     html += '  <div class="session-card-header">';
     html += '    <span class="session-number-badge">Session ' + s.id + '</span>';
-    if (s.date) html += '    <span class="session-date">📅 ' + escapeHtml(s.date) + '</span>';
+    if (s.date) html += '    <span class="session-date">' + escapeHtml(s.date) + '</span>';
     html += '  </div>';
     html += '  <h3 class="session-title">' + escapeHtml(s.title) + '</h3>';
     if (s.summary) {
@@ -972,7 +1206,7 @@ function rollV20Dice() {
     verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
     verdictColor = '#10b981';
   } else if (successes === 0 && ones > 0) {
-    verdict = '💀 BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
+    verdict = 'BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
     verdictColor = '#ef4444';
   } else {
     verdict = 'FAILURE (0 Net Successes)';

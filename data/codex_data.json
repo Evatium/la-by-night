@@ -5,211 +5,212 @@
   "npcs": [
     {
       "id": 4,
-      "name": "\"Big\" Ed Hurley — Seneschal of Los Angeles",
-      "aliases": "The Prince's Shield, The Honest Brujah, The Union Man",
-      "concept": "Loyal 9th-generation Brujah Seneschal of Los Angeles; former union organizer who serves as Prince Meredith's iron shield against Seth Cyntach's shadow manipulations.",
+      "name": "—\"—B—i—g—\"— —E—d— —H—u—r—l—e—y— ——— —S—e—n—e—s—c—h—a—l— —o—f— —L—o—s— —A—n—g—e—l—e—s—",
+      "aliases": "—T—h—e— —P—r—i—n—c—e—'—s— —S—h—i—e—l—d—,— —T—h—e— —H—o—n—e—s—t— —B—r—u—j—a—h—,— —T—h—e— —U—n—i—o—n— —M—a—n—",
+      "concept": "—L—o—y—a—l— —9—t—h—-—g—e—n—e—r—a—t—i—o—n— —B—r—u—j—a—h— —S—e—n—e—s—c—h—a—l— —o—f— —L—o—s— —A—n—g—e—l—e—s—;— —f—o—r—m—e—r— —u—n—i—o—n— —o—r—g—a—n—i—z—e—r— —w—h—o— —s—e—r—v—e—s— —a—s— —P—r—i—n—c—e— —M—e—r—e—d—i—t—h—'—s— —i—r—o—n— —s—h—i—e—l—d— —a—g—a—i—n—s—t— —S—e—t—h— —C—y—n—t—a—c—h—'—s— —s—h—a—d—o—w— —m—a—n—i—p—u—l—a—t—i—o—n—s—.—",
       "faction": "Camarilla",
       "clan": "Brujah",
       "portrait": "portraits/npc_4.webp",
       "tropes": [
-        "The Honest Man in a Den of Liars",
-        "The Working-Class Elder",
-        "The Shield Who Has Opinions"
+        "—T—h—e— —H—o—n—e—s—t— —M—a—n— —i—n— —a— —D—e—n— —o—f— —L—i—a—r—s—",
+        "—T—h—e— —W—o—r—k—i—n—g—-—C—l—a—s—s— —E—l—d—e—r—",
+        "—T—h—e— —S—h—i—e—l—d— —W—h—o— —H—a—s— —O—p—i—n—i—o—n—s—"
       ],
       "functions": [
-        "Reliable NPC ally for PCs with integrity. His support comes without hidden agendas.",
-        "Resource for practical help — vehicles, safe houses, mechanical expertise.",
-        "His watchful eye on Seth makes him a natural conspirator for limiting Seth's power.",
-        "As Seneschal, speaks with the Prince's authority in her absence."
+        "—R—e—l—i—a—b—l—e— —N—P—C— —a—l—l—y— —f—o—r— —P—C—s— —w—i—t—h— —i—n—t—e—g—r—i—t—y—.— —H—i—s— —s—u—p—p—o—r—t— —c—o—m—e—s— —w—i—t—h—o—u—t— —h—i—d—d—e—n— —a—g—e—n—d—a—s—.—",
+        "—R—e—s—o—u—r—c—e— —f—o—r— —p—r—a—c—t—i—c—a—l— —h—e—l—p— ——— —v—e—h—i—c—l—e—s—,— —s—a—f—e— —h—o—u—s—e—s—,— —m—e—c—h—a—n—i—c—a—l— —e—x—p—e—r—t—i—s—e—.—",
+        "—H—i—s— —w—a—t—c—h—f—u—l— —e—y—e— —o—n— —S—e—t—h— —m—a—k—e—s— —h—i—m— —a— —n—a—t—u—r—a—l— —c—o—n—s—p—i—r—a—t—o—r— —f—o—r— —l—i—m—i—t—i—n—g— —S—e—t—h—'—s— —p—o—w—e—r—.—",
+        "—A—s— —S—e—n—e—s—c—h—a—l—,— —s—p—e—a—k—s— —w—i—t—h— —t—h—e— —P—r—i—n—c—e—'—s— —a—u—t—h—o—r—i—t—y— —i—n— —h—e—r— —a—b—s—e—n—c—e—.—"
       ]
     },
     {
       "id": 3,
-      "name": "Amanda Byers — Keeper of Elysium",
-      "aliases": "The Invisible Secretary, The Archivist, The Woman of a Thousand Notes",
-      "concept": "Sharp, vigilant 11th-generation City Gangrel Keeper of Elysium; fiercely loyal to Prince Meredith and dedicated to keeping court grounds secure from Seth Cyntach's shadow reach.",
+      "name": "—A—m—a—n—d—a— —B—y—e—r—s— ——— —K—e—e—p—e—r— —o—f— —E—l—y—s—i—u—m—",
+      "aliases": "—T—h—e— —I—n—v—i—s—i—b—l—e— —S—e—c—r—e—t—a—r—y—,— —T—h—e— —A—r—c—h—i—v—i—s—t—,— —T—h—e— —W—o—m—a—n— —o—f— —a— —T—h—o—u—s—a—n—d— —N—o—t—e—s—",
+      "concept": "—S—h—a—r—p—,— —v—i—g—i—l—a—n—t— —1—1—t—h—-—g—e—n—e—r—a—t—i—o—n— —C—i—t—y— —G—a—n—g—r—e—l— —K—e—e—p—e—r— —o—f— —E—l—y—s—i—u—m—;— —f—i—e—r—c—e—l—y— —l—o—y—a—l— —t—o— —P—r—i—n—c—e— —M—e—r—e—d—i—t—h— —a—n—d— —d—e—d—i—c—a—t—e—d— —t—o— —k—e—e—p—i—n—g— —c—o—u—r—t— —g—r—o—u—n—d—s— —s—e—c—u—r—e— —f—r—o—m— —S—e—t—h— —C—y—n—t—a—c—h—'—s— —s—h—a—d—o—w— —r—e—a—c—h—.—",
       "faction": "Camarilla",
       "clan": "City Gangrel",
       "portrait": "portraits/npc_3.webp",
       "tropes": [
-        "The Woman Who Sees Everything",
-        "Power Through Invisibility",
-        "The Archivist as Threat"
+        "—T—h—e— —W—o—m—a—n— —W—h—o— —S—e—e—s— —E—v—e—r—y—t—h—i—n—g—",
+        "—P—o—w—e—r— —T—h—r—o—u—g—h— —I—n—v—i—s—i—b—i—l—i—t—y—",
+        "—T—h—e— —A—r—c—h—i—v—i—s—t— —a—s— —T—h—r—e—a—t—"
       ],
       "functions": [
-        "Information broker — records on every Kindred interaction at Elysium. Her archive spans decades.",
-        "Gateway to the Prince. Impressing or deceiving her is required before gaining an audience with Meredith.",
-        "Eidetic Memory means she never forgets a slight or a secret. Dangerous enemy, invaluable ally.",
-        "Controls access to the Dorothy Chandler Pavilion — the city's primary Elysium."
+        "—I—n—f—o—r—m—a—t—i—o—n— —b—r—o—k—e—r— ——— —r—e—c—o—r—d—s— —o—n— —e—v—e—r—y— —K—i—n—d—r—e—d— —i—n—t—e—r—a—c—t—i—o—n— —a—t— —E—l—y—s—i—u—m—.— —H—e—r— —a—r—c—h—i—v—e— —s—p—a—n—s— —d—e—c—a—d—e—s—.—",
+        "—G—a—t—e—w—a—y— —t—o— —t—h—e— —P—r—i—n—c—e—.— —I—m—p—r—e—s—s—i—n—g— —o—r— —d—e—c—e—i—v—i—n—g— —h—e—r— —i—s— —r—e—q—u—i—r—e—d— —b—e—f—o—r—e— —g—a—i—n—i—n—g— —a—n— —a—u—d—i—e—n—c—e— —w—i—t—h— —M—e—r—e—d—i—t—h—.—",
+        "—E—i—d—e—t—i—c— —M—e—m—o—r—y— —m—e—a—n—s— —s—h—e— —n—e—v—e—r— —f—o—r—g—e—t—s— —a— —s—l—i—g—h—t— —o—r— —a— —s—e—c—r—e—t—.— —D—a—n—g—e—r—o—u—s— —e—n—e—m—y—,— —i—n—v—a—l—u—a—b—l—e— —a—l—l—y—.—",
+        "—C—o—n—t—r—o—l—s— —a—c—c—e—s—s— —t—o— —t—h—e— —D—o—r—o—t—h—y— —C—h—a—n—d—l—e—r— —P—a—v—i—l—i—o—n— ——— —t—h—e— —c—i—t—y—'—s— —p—r—i—m—a—r—y— —E—l—y—s—i—u—m—.—"
       ]
     },
     {
       "id": 2,
-      "name": "Anthohimondrona Tsuoranoannddy — Sheriff of Los Angeles",
-      "aliases": "The Implacable Executioner, The Nagloper, The Elder's Hound",
-      "concept": "Terrifying 7th-generation Nagloper Sheriff of Los Angeles; monstrous bloodline enforcer secretly loyal to Seth Cyntach who granted him status, titles, and a settled unlife.",
+      "name": "—A—n—t—h—o—h—i—m—o—n—d—r—o—n—a— —T—s—u—o—r—a—n—o—a—n—n—d—d—y— ——— —S—h—e—r—i—f—f— —o—f— —L—o—s— —A—n—g—e—l—e—s—",
+      "aliases": "—T—h—e— —I—m—p—l—a—c—a—b—l—e— —E—x—e—c—u—t—i—o—n—e—r—,— —T—h—e— —N—a—g—l—o—p—e—r—,— —T—h—e— —E—l—d—e—r—'—s— —H—o—u—n—d—",
+      "concept": "—T—e—r—r—i—f—y—i—n—g— —7—t—h—-—g—e—n—e—r—a—t—i—o—n— —N—a—g—l—o—p—e—r— —S—h—e—r—i—f—f— —o—f— —L—o—s— —A—n—g—e—l—e—s—;— —m—o—n—s—t—r—o—u—s— —b—l—o—o—d—l—i—n—e— —e—n—f—o—r—c—e—r— —s—e—c—r—e—t—l—y— —l—o—y—a—l— —t—o— —S—e—t—h— —C—y—n—t—a—c—h— —w—h—o— —g—r—a—n—t—e—d— —h—i—m— —s—t—a—t—u—s—,— —t—i—t—l—e—s—,— —a—n—d— —a— —s—e—t—t—l—e—d— —u—n—l—i—f—e—.—",
       "faction": "Camarilla",
       "clan": "Nagloper (Tzimisce bloodline)",
       "portrait": "portraits/npc_2.webp",
       "tropes": [
-        "The Unstoppable Enforcer",
-        "The Monster in Service",
-        "The Weapon With a Secret Master"
+        "—T—h—e— —U—n—s—t—o—p—p—a—b—l—e— —E—n—f—o—r—c—e—r—",
+        "—T—h—e— —M—o—n—s—t—e—r— —i—n— —S—e—r—v—i—c—e—",
+        "—T—h—e— —W—e—a—p—o—n— —W—i—t—h— —a— —S—e—c—r—e—t— —M—a—s—t—e—r—"
       ],
       "functions": [
-        "Primary physical threat of the Camarilla — the answer to any challenge that cannot be answered with words.",
-        "His secret bond is a long-burning plot bomb. Whoever controls his hidden master controls the city's law enforcement.",
-        "PCs who discover his bondage gain immense leverage over the Camarilla; those who do not are in constant danger.",
-        "His forensic skills make him more than a brute — he can track, analyze, and deduce with terrifying precision."
+        "—P—r—i—m—a—r—y— —p—h—y—s—i—c—a—l— —t—h—r—e—a—t— —o—f— —t—h—e— —C—a—m—a—r—i—l—l—a— ——— —t—h—e— —a—n—s—w—e—r— —t—o— —a—n—y— —c—h—a—l—l—e—n—g—e— —t—h—a—t— —c—a—n—n—o—t— —b—e— —a—n—s—w—e—r—e—d— —w—i—t—h— —w—o—r—d—s—.—",
+        "—H—i—s— —s—e—c—r—e—t— —b—o—n—d— —i—s— —a— —l—o—n—g—-—b—u—r—n—i—n—g— —p—l—o—t— —b—o—m—b—.— —W—h—o—e—v—e—r— —c—o—n—t—r—o—l—s— —h—i—s— —h—i—d—d—e—n— —m—a—s—t—e—r— —c—o—n—t—r—o—l—s— —t—h—e— —c—i—t—y—'—s— —l—a—w— —e—n—f—o—r—c—e—m—e—n—t—.—",
+        "—P—C—s— —w—h—o— —d—i—s—c—o—v—e—r— —h—i—s— —b—o—n—d—a—g—e— —g—a—i—n— —i—m—m—e—n—s—e— —l—e—v—e—r—a—g—e— —o—v—e—r— —t—h—e— —C—a—m—a—r—i—l—l—a—;— —t—h—o—s—e— —w—h—o— —d—o— —n—o—t— —a—r—e— —i—n— —c—o—n—s—t—a—n—t— —d—a—n—g—e—r—.—",
+        "—H—i—s— —f—o—r—e—n—s—i—c— —s—k—i—l—l—s— —m—a—k—e— —h—i—m— —m—o—r—e— —t—h—a—n— —a— —b—r—u—t—e— ——— —h—e— —c—a—n— —t—r—a—c—k—,— —a—n—a—l—y—z—e—,— —a—n—d— —d—e—d—u—c—e— —w—i—t—h— —t—e—r—r—i—f—y—i—n—g— —p—r—e—c—i—s—i—o—n—.—"
       ]
     },
     {
       "id": 33,
-      "name": "Armando \"Nines\" Rodriguez — Anarch Baron of Downtown",
-      "aliases": "Nines, The Giant Killer, The Reluctant Hero",
-      "concept": "Dust Bowl refugee; living embodiment of the Unbound spirit and street Baron of Downtown LA.",
+      "name": "—A—r—m—a—n—d—o— —\"—N—i—n—e—s—\"— —R—o—d—r—i—g—u—e—z— ——— —A—n—a—r—c—h— —B—a—r—o—n— —o—f— —D—o—w—n—t—o—w—n—",
+      "aliases": "—N—i—n—e—s—,— —T—h—e— —G—i—a—n—t— —K—i—l—l—e—r—,— —T—h—e— —R—e—l—u—c—t—a—n—t— —H—e—r—o—",
+      "concept": "—D—u—s—t— —B—o—w—l— —r—e—f—u—g—e—e—;— —l—i—v—i—n—g— —e—m—b—o—d—i—m—e—n—t— —o—f— —t—h—e— —U—n—b—o—u—n—d— —s—p—i—r—i—t— —a—n—d— —s—t—r—e—e—t— —B—a—r—o—n— —o—f— —D—o—w—n—t—o—w—n— —L—A—.—",
       "faction": "Anarch",
       "clan": "Brujah",
       "portrait": "portraits/npc_33.webp",
       "tropes": [
-        "The Reluctant Hero",
-        "The Working-Class Legend",
-        "The Giant Killer"
+        "—T—h—e— —R—e—l—u—c—t—a—n—t— —H—e—r—o—",
+        "—T—h—e— —W—o—r—k—i—n—g—-—C—l—a—s—s— —L—e—g—e—n—d—",
+        "—T—h—e— —G—i—a—n—t— —K—i—l—l—e—r—"
       ],
       "functions": [
-        "Primary physical deterrent for Downtown Anarchs.",
-        "The Last Round is a de facto Anarch safe haven.",
-        "Primary recruiter — neonates idolize his history.",
-        "Camarilla's most feared street fighter."
+        "—P—r—i—m—a—r—y— —p—h—y—s—i—c—a—l— —d—e—t—e—r—r—e—n—t— —f—o—r— —D—o—w—n—t—o—w—n— —A—n—a—r—c—h—s—.—",
+        "—T—h—e— —L—a—s—t— —R—o—u—n—d— —i—s— —a— —d—e— —f—a—c—t—o— —A—n—a—r—c—h— —s—a—f—e— —h—a—v—e—n—.—",
+        "—P—r—i—m—a—r—y— —r—e—c—r—u—i—t—e—r— ——— —n—e—o—n—a—t—e—s— —i—d—o—l—i—z—e— —h—i—s— —h—i—s—t—o—r—y—.—",
+        "—C—a—m—a—r—i—l—l—a—'—s— —m—o—s—t— —f—e—a—r—e—d— —s—t—r—e—e—t— —f—i—g—h—t—e—r—.—"
       ]
     },
     {
       "id": 5,
-      "name": "Audrey Horne — Harpy of Los Angeles",
-      "aliases": "The Social Arbiter, The Silk Dagger, The 1940s Ghost",
-      "concept": "The undisputed Court Harpy of Los Angeles, presiding over traditional Elysium salons, social prestige, and formal Boon ledgers.",
+      "name": "—A—u—d—r—e—y— —H—o—r—n—e— ——— —H—a—r—p—y— —o—f— —L—o—s— —A—n—g—e—l—e—s—",
+      "aliases": "—T—h—e— —S—o—c—i—a—l— —A—r—b—i—t—e—r—,— —T—h—e— —S—i—l—k— —D—a—g—g—e—r—,— —T—h—e— —1—9—4—0—s— —G—h—o—s—t—",
+      "concept": "—T—h—e— —u—n—d—i—s—p—u—t—e—d— —C—o—u—r—t— —H—a—r—p—y— —o—f— —L—o—s— —A—n—g—e—l—e—s—,— —p—r—e—s—i—d—i—n—g— —o—v—e—r— —t—r—a—d—i—t—i—o—n—a—l— —E—l—y—s—i—u—m— —s—a—l—o—n—s—,— —s—o—c—i—a—l— —p—r—e—s—t—i—g—e—,— —a—n—d— —f—o—r—m—a—l— —B—o—o—n— —l—e—d—g—e—r—s—.—",
       "faction": "Camarilla",
       "clan": "Toreador",
       "portrait": "portraits/npc_5.webp",
       "tropes": [
-        "The Social Predator",
-        "Glamour as Weapon",
-        "The Woman Who Knows Exactly What She Is Doing"
+        "—T—h—e— —S—o—c—i—a—l— —P—r—e—d—a—t—o—r—",
+        "—G—l—a—m—o—u—r— —a—s— —W—e—a—p—o—n—",
+        "—T—h—e— —W—o—m—a—n— —W—h—o— —K—n—o—w—s— —E—x—a—c—t—l—y— —W—h—a—t— —S—h—e— —I—s— —D—o—i—n—g—"
       ],
       "functions": [
-        "Boon economy gatekeeper — decides which favors are recognized by the court. Her approval elevates; her displeasure strands.",
-        "Can be cultivated as an ally against Seth if approached with drama and spectacle — she is bored.",
-        "Her Ward (mortal relative) is a pressure point. Anyone who discovers this holds a knife to her throat.",
-        "Controls information flow at Elysium through her network of social spies."
+        "—B—o—o—n— —e—c—o—n—o—m—y— —g—a—t—e—k—e—e—p—e—r— ——— —d—e—c—i—d—e—s— —w—h—i—c—h— —f—a—v—o—r—s— —a—r—e— —r—e—c—o—g—n—i—z—e—d— —b—y— —t—h—e— —c—o—u—r—t—.— —H—e—r— —a—p—p—r—o—v—a—l— —e—l—e—v—a—t—e—s—;— —h—e—r— —d—i—s—p—l—e—a—s—u—r—e— —s—t—r—a—n—d—s—.—",
+        "—C—a—n— —b—e— —c—u—l—t—i—v—a—t—e—d— —a—s— —a—n— —a—l—l—y— —a—g—a—i—n—s—t— —S—e—t—h— —i—f— —a—p—p—r—o—a—c—h—e—d— —w—i—t—h— —d—r—a—m—a— —a—n—d— —s—p—e—c—t—a—c—l—e— ——— —s—h—e— —i—s— —b—o—r—e—d—.—",
+        "—H—e—r— —W—a—r—d— —(—m—o—r—t—a—l— —r—e—l—a—t—i—v—e—)— —i—s— —a— —p—r—e—s—s—u—r—e— —p—o—i—n—t—.— —A—n—y—o—n—e— —w—h—o— —d—i—s—c—o—v—e—r—s— —t—h—i—s— —h—o—l—d—s— —a— —k—n—i—f—e— —t—o— —h—e—r— —t—h—r—o—a—t—.—",
+        "—C—o—n—t—r—o—l—s— —i—n—f—o—r—m—a—t—i—o—n— —f—l—o—w— —a—t— —E—l—y—s—i—u—m— —t—h—r—o—u—g—h— —h—e—r— —n—e—t—w—o—r—k— —o—f— —s—o—c—i—a—l— —s—p—i—e—s—.—"
       ]
     },
     {
       "id": 8,
-      "name": "Jeremy MacNeil — Anarch Leader",
-      "aliases": "The Legend, The Architect of the Free State, The Scottish Revolutionary",
-      "concept": "Legendary Scottish rebel and architect of the First Anarch Revolt in Los Angeles.",
+      "name": "—J—e—r—e—m—y— —M—a—c—N—e—i—l— ——— —A—n—a—r—c—h— —L—e—a—d—e—r—",
+      "aliases": "—T—h—e— —L—e—g—e—n—d—,— —T—h—e— —A—r—c—h—i—t—e—c—t— —o—f— —t—h—e— —F—r—e—e— —S—t—a—t—e—,— —T—h—e— —S—c—o—t—t—i—s—h— —R—e—v—o—l—u—t—i—o—n—a—r—y—",
+      "concept": "—L—e—g—e—n—d—a—r—y— —S—c—o—t—t—i—s—h— —r—e—b—e—l— —a—n—d— —a—r—c—h—i—t—e—c—t— —o—f— —t—h—e— —F—i—r—s—t— —A—n—a—r—c—h— —R—e—v—o—l—t— —i—n— —L—o—s— —A—n—g—e—l—e—s—.—",
       "faction": "Anarch",
       "clan": "Brujah",
       "portrait": "portraits/npc_8.webp",
       "tropes": [
-        "The Revolutionary Elder",
-        "The Man the Legend Outgrew",
-        "The Weight of Being Right for Too Long"
+        "—T—h—e— —R—e—v—o—l—u—t—i—o—n—a—r—y— —E—l—d—e—r—",
+        "—T—h—e— —M—a—n— —t—h—e— —L—e—g—e—n—d— —O—u—t—g—r—e—w—",
+        "—T—h—e— —W—e—i—g—h—t— —o—f— —B—e—i—n—g— —R—i—g—h—t— —f—o—r— —T—o—o— —L—o—n—g—"
       ],
       "functions": [
-        "Nominal authority of the Anarch Free State — his approval opens doors.",
-        "Direct conflict with him is a death sentence. PCs should work with or around him.",
-        "His Overextended flaw means cracks are showing in the Free State.",
-        "Font of revolutionary history — has been fighting the Camarilla for centuries."
+        "—N—o—m—i—n—a—l— —a—u—t—h—o—r—i—t—y— —o—f— —t—h—e— —A—n—a—r—c—h— —F—r—e—e— —S—t—a—t—e— ——— —h—i—s— —a—p—p—r—o—v—a—l— —o—p—e—n—s— —d—o—o—r—s—.—",
+        "—D—i—r—e—c—t— —c—o—n—f—l—i—c—t— —w—i—t—h— —h—i—m— —i—s— —a— —d—e—a—t—h— —s—e—n—t—e—n—c—e—.— —P—C—s— —s—h—o—u—l—d— —w—o—r—k— —w—i—t—h— —o—r— —a—r—o—u—n—d— —h—i—m—.—",
+        "—H—i—s— —O—v—e—r—e—x—t—e—n—d—e—d— —f—l—a—w— —m—e—a—n—s— —c—r—a—c—k—s— —a—r—e— —s—h—o—w—i—n—g— —i—n— —t—h—e— —F—r—e—e— —S—t—a—t—e—.—",
+        "—F—o—n—t— —o—f— —r—e—v—o—l—u—t—i—o—n—a—r—y— —h—i—s—t—o—r—y— ——— —h—a—s— —b—e—e—n— —f—i—g—h—t—i—n—g— —t—h—e— —C—a—m—a—r—i—l—l—a— —f—o—r— —c—e—n—t—u—r—i—e—s—.—"
       ]
     },
     {
       "id": 6,
-      "name": "Laleh Al-Khoury — Deputy Sheriff & Masquerade Auditor",
-      "aliases": "The Masquerade Auditor, The Forensic Enforcer",
-      "concept": "Methodical 9th-generation Assamite Deputy Sheriff and Masquerade auditor; loyal to Seth Cyntach who negotiated her clan contract, court standing, and protection in LA.",
+      "name": "—L—a—l—e—h— —A—l—-—K—h—o—u—r—y— ——— —D—e—p—u—t—y— —S—h—e—r—i—f—f— —&— —M—a—s—q—u—e—r—a—d—e— —A—u—d—i—t—o—r—",
+      "aliases": "—T—h—e— —M—a—s—q—u—e—r—a—d—e— —A—u—d—i—t—o—r—,— —T—h—e— —F—o—r—e—n—s—i—c— —E—n—f—o—r—c—e—r—",
+      "concept": "—M—e—t—h—o—d—i—c—a—l— —9—t—h—-—g—e—n—e—r—a—t—i—o—n— —A—s—s—a—m—i—t—e— —D—e—p—u—t—y— —S—h—e—r—i—f—f— —a—n—d— —M—a—s—q—u—e—r—a—d—e— —a—u—d—i—t—o—r—;— —l—o—y—a—l— —t—o— —S—e—t—h— —C—y—n—t—a—c—h— —w—h—o— —n—e—g—o—t—i—a—t—e—d— —h—e—r— —c—l—a—n— —c—o—n—t—r—a—c—t—,— —c—o—u—r—t— —s—t—a—n—d—i—n—g—,— —a—n—d— —p—r—o—t—e—c—t—i—o—n— —i—n— —L—A—.—",
       "faction": "Camarilla",
       "clan": "Assamite (Vizier/Warrior crossover)",
       "portrait": "portraits/npc_6.webp",
       "tropes": [
-        "The Cop Who Transferred Precincts",
-        "The Impartial Blade",
-        "The Investigator Elders Fear"
+        "—T—h—e— —C—o—p— —W—h—o— —T—r—a—n—s—f—e—r—r—e—d— —P—r—e—c—i—n—c—t—s—",
+        "—T—h—e— —I—m—p—a—r—t—i—a—l— —B—l—a—d—e—",
+        "—T—h—e— —I—n—v—e—s—t—i—g—a—t—o—r— —E—l—d—e—r—s— —F—e—a—r—"
       ],
       "functions": [
-        "Deputy Sheriff — the investigative arm the Sheriff's raw force cannot perform.",
-        "Her impartiality means PCs can trust her more than most NPCs.",
-        "LAPD contacts can redirect mortal investigations away from Kindred scenes.",
-        "Carries the Six Traditions like a Bible — can quote chapter and verse."
+        "—D—e—p—u—t—y— —S—h—e—r—i—f—f— ——— —t—h—e— —i—n—v—e—s—t—i—g—a—t—i—v—e— —a—r—m— —t—h—e— —S—h—e—r—i—f—f—'—s— —r—a—w— —f—o—r—c—e— —c—a—n—n—o—t— —p—e—r—f—o—r—m—.—",
+        "—H—e—r— —i—m—p—a—r—t—i—a—l—i—t—y— —m—e—a—n—s— —P—C—s— —c—a—n— —t—r—u—s—t— —h—e—r— —m—o—r—e— —t—h—a—n— —m—o—s—t— —N—P—C—s—.—",
+        "—L—A—P—D— —c—o—n—t—a—c—t—s— —c—a—n— —r—e—d—i—r—e—c—t— —m—o—r—t—a—l— —i—n—v—e—s—t—i—g—a—t—i—o—n—s— —a—w—a—y— —f—r—o—m— —K—i—n—d—r—e—d— —s—c—e—n—e—s—.—",
+        "—C—a—r—r—i—e—s— —t—h—e— —S—i—x— —T—r—a—d—i—t—i—o—n—s— —l—i—k—e— —a— —B—i—b—l—e— ——— —c—a—n— —q—u—o—t—e— —c—h—a—p—t—e—r— —a—n—d— —v—e—r—s—e—.—"
       ]
     },
     {
       "id": 1,
-      "name": "Meredith Vereira — Prince of Los Angeles",
-      "aliases": "The Reluctant Crown, The Velvet Puppet",
-      "concept": "Ventrue 8th-generation Prince of Los Angeles; sponsored by Seth Cyntach after Sebastian LaCroix vanished 15 years ago, now a seasoned ruler plotting to break free of Seth's shadow using 1920s Masquerade breach evidence before Archon Theo Bell.",
+      "name": "—M—e—r—e—d—i—t—h— —V—e—r—e—i—r—a— ——— —P—r—i—n—c—e— —o—f— —L—o—s— —A—n—g—e—l—e—s—",
+      "aliases": "—T—h—e— —R—e—l—u—c—t—a—n—t— —C—r—o—w—n—,— —T—h—e— —V—e—l—v—e—t— —P—u—p—p—e—t—",
+      "concept": "—V—e—n—t—r—u—e— —8—t—h—-—g—e—n—e—r—a—t—i—o—n— —P—r—i—n—c—e— —o—f— —L—o—s— —A—n—g—e—l—e—s—;— —s—p—o—n—s—o—r—e—d— —b—y— —S—e—t—h— —C—y—n—t—a—c—h— —a—f—t—e—r— —S—e—b—a—s—t—i—a—n— —L—a—C—r—o—i—x— —v—a—n—i—s—h—e—d— —1—5— —y—e—a—r—s— —a—g—o—,— —n—o—w— —a— —s—e—a—s—o—n—e—d— —r—u—l—e—r— —p—l—o—t—t—i—n—g— —t—o— —b—r—e—a—k— —f—r—e—e— —o—f— —S—e—t—h—'—s— —s—h—a—d—o—w— —u—s—i—n—g— —1—9—2—0—s— —M—a—s—q—u—e—r—a—d—e— —b—r—e—a—c—h— —e—v—i—d—e—n—c—e— —b—e—f—o—r—e— —A—r—c—h—o—n— —T—h—e—o— —B—e—l—l—.—",
       "faction": "Camarilla",
       "clan": "Ventrue",
       "portrait": "portraits/npc_1.webp",
       "tropes": [
-        "The Queen in a Gilded Cage",
-        "The Mask That Forgot the Face Beneath",
-        "Power as Survival"
+        "—T—h—e— —Q—u—e—e—n— —i—n— —a— —G—i—l—d—e—d— —C—a—g—e—",
+        "—T—h—e— —M—a—s—k— —T—h—a—t— —F—o—r—g—o—t— —t—h—e— —F—a—c—e— —B—e—n—e—a—t—h—",
+        "—P—o—w—e—r— —a—s— —S—u—r—v—i—v—a—l—"
       ],
       "functions": [
-        "The reigning Prince of Los Angeles, defending the Burbank-to-San Diego corridor against the northern Sabbat invasion.",
-        "A central patron, quest-giver, and political sovereign for Camarilla and mercenary PCs."
+        "—T—h—e— —r—e—i—g—n—i—n—g— —P—r—i—n—c—e— —o—f— —L—o—s— —A—n—g—e—l—e—s—,— —d—e—f—e—n—d—i—n—g— —t—h—e— —B—u—r—b—a—n—k—-—t—o—-—S—a—n— —D—i—e—g—o— —c—o—r—r—i—d—o—r— —a—g—a—i—n—s—t— —t—h—e— —n—o—r—t—h—e—r—n— —S—a—b—b—a—t— —i—n—v—a—s—i—o—n—.—",
+        "—O—r—c—h—e—s—t—r—a—t—i—n—g— —a— —c—o—v—e—r—t— —p—a—l—a—c—e— —c—o—u—p— —t—o— —p—e—r—m—a—n—e—n—t—l—y— —s—e—v—e—r— —S—e—t—h— —C—y—n—t—a—c—h—'—s— —c—o—n—t—r—o—l— —o—v—e—r— —t—h—e— —C—a—m—a—r—i—l—l—a— —c—o—u—r—t—.—",
+        "—A— —c—e—n—t—r—a—l— —p—a—t—r—o—n—,— —q—u—e—s—t—-—g—i—v—e—r—,— —a—n—d— —p—o—l—i—t—i—c—a—l— —s—o—v—e—r—e—i—g—n— —f—o—r— —C—a—m—a—r—i—l—l—a— —a—n—d— —m—e—r—c—e—n—a—r—y— —P—C—s—.—"
       ]
     },
     {
       "id": 7,
-      "name": "Salvador Garcia — Brujah Primogen",
-      "aliases": "The Scholar-Warrior, Defender of the Tower",
-      "concept": "High-ranking Brujah Primogen and classical philosopher staunchly loyal to Prince Meredith and the Camarilla, rejecting Anarch chaos in favor of civilized order.",
+      "name": "—S—a—l—v—a—d—o—r— —G—a—r—c—i—a— ——— —B—r—u—j—a—h— —P—r—i—m—o—g—e—n—",
+      "aliases": "—T—h—e— —S—c—h—o—l—a—r—-—W—a—r—r—i—o—r—,— —D—e—f—e—n—d—e—r— —o—f— —t—h—e— —T—o—w—e—r—",
+      "concept": "—H—i—g—h—-—r—a—n—k—i—n—g— —B—r—u—j—a—h— —P—r—i—m—o—g—e—n— —a—n—d— —c—l—a—s—s—i—c—a—l— —p—h—i—l—o—s—o—p—h—e—r— —s—t—a—u—n—c—h—l—y— —l—o—y—a—l— —t—o— —P—r—i—n—c—e— —M—e—r—e—d—i—t—h— —a—n—d— —t—h—e— —C—a—m—a—r—i—l—l—a—,— —r—e—j—e—c—t—i—n—g— —A—n—a—r—c—h— —c—h—a—o—s— —i—n— —f—a—v—o—r— —o—f— —c—i—v—i—l—i—z—e—d— —o—r—d—e—r—.—",
       "faction": "Camarilla",
       "clan": "Brujah",
       "portrait": "portraits/npc_7.webp",
       "tropes": [
-        "The Philosopher-King",
-        "Civilized Fury",
-        "The Pillar of Order"
+        "—T—h—e— —P—h—i—l—o—s—o—p—h—e—r—-—K—i—n—g—",
+        "—C—i—v—i—l—i—z—e—d— —F—u—r—y—",
+        "—T—h—e— —P—i—l—l—a—r— —o—f— —O—r—d—e—r—"
       ],
       "functions": [
-        "Serves as the Camarilla's intellectual champion against Anarch propaganda.",
-        "Provides a staunchly loyal Brujah perspective on Prince Meredith's council.",
-        "A key political ally for PCs attempting to navigate Camarilla high society."
+        "—S—e—r—v—e—s— —a—s— —t—h—e— —C—a—m—a—r—i—l—l—a—'—s— —i—n—t—e—l—l—e—c—t—u—a—l— —c—h—a—m—p—i—o—n— —a—g—a—i—n—s—t— —A—n—a—r—c—h— —p—r—o—p—a—g—a—n—d—a—.—",
+        "—P—r—o—v—i—d—e—s— —a— —s—t—a—u—n—c—h—l—y— —l—o—y—a—l— —B—r—u—j—a—h— —p—e—r—s—p—e—c—t—i—v—e— —o—n— —P—r—i—n—c—e— —M—e—r—e—d—i—t—h—'—s— —c—o—u—n—c—i—l—.—",
+        "—A— —k—e—y— —p—o—l—i—t—i—c—a—l— —a—l—l—y— —f—o—r— —P—C—s— —a—t—t—e—m—p—t—i—n—g— —t—o— —n—a—v—i—g—a—t—e— —C—a—m—a—r—i—l—l—a— —h—i—g—h— —s—o—c—i—e—t—y—.—"
       ]
     },
     {
       "id": 22,
-      "name": "Victor Temple — Music Mogul Baron",
-      "aliases": "The Self-Made Mogul, The Baron of the Valley",
-      "concept": "Ventrue music entrepreneur and charismatic Anarch Baron of the San Fernando Valley.",
+      "name": "—V—i—c—t—o—r— —T—e—m—p—l—e— ——— —M—u—s—i—c— —M—o—g—u—l— —B—a—r—o—n—",
+      "aliases": "—T—h—e— —S—e—l—f—-—M—a—d—e— —M—o—g—u—l—,— —T—h—e— —B—a—r—o—n— —o—f— —t—h—e— —V—a—l—l—e—y—",
+      "concept": "—V—e—n—t—r—u—e— —m—u—s—i—c— —e—n—t—r—e—p—r—e—n—e—u—r— —a—n—d— —c—h—a—r—i—s—m—a—t—i—c— —A—n—a—r—c—h— —B—a—r—o—n— —o—f— —t—h—e— —S—a—n— —F—e—r—n—a—n—d—o— —V—a—l—l—e—y—.—",
       "faction": "Anarch",
       "clan": "Ventrue",
       "portrait": "portraits/npc_22.webp",
       "tropes": [
-        "The Self-Made Mogul",
-        "The Maverick Leader",
-        "The Father with Secrets"
+        "—T—h—e— —S—e—l—f—-—M—a—d—e— —M—o—g—u—l—",
+        "—T—h—e— —M—a—v—e—r—i—c—k— —L—e—a—d—e—r—",
+        "—T—h—e— —F—a—t—h—e—r— —w—i—t—h— —S—e—c—r—e—t—s—"
       ],
       "functions": [
-        "Anarch financial engine in the San Fernando Valley.",
-        "Club Maharani and Temple of Boom label are his true domains.",
-        "Provides sanctuary for Thin-Bloods and Caitiff.",
-        "His mortal children are a Masquerade vulnerability."
+        "—A—n—a—r—c—h— —f—i—n—a—n—c—i—a—l— —e—n—g—i—n—e— —i—n— —t—h—e— —S—a—n— —F—e—r—n—a—n—d—o— —V—a—l—l—e—y—.—",
+        "—C—l—u—b— —M—a—h—a—r—a—n—i— —a—n—d— —T—e—m—p—l—e— —o—f— —B—o—o—m— —l—a—b—e—l— —a—r—e— —h—i—s— —t—r—u—e— —d—o—m—a—i—n—s—.—",
+        "—P—r—o—v—i—d—e—s— —s—a—n—c—t—u—a—r—y— —f—o—r— —T—h—i—n—-—B—l—o—o—d—s— —a—n—d— —C—a—i—t—i—f—f—.—",
+        "—H—i—s— —m—o—r—t—a—l— —c—h—i—l—d—r—e—n— —a—r—e— —a— —M—a—s—q—u—e—r—a—d—e— —v—u—l—n—e—r—a—b—i—l—i—t—y—.—"
       ]
     }
   ],
   "pcs": [
     {
-      "name": "Liam Johnson (\"L.J.\")",
+      "name": "—L—i—a—m— —J—o—h—n—s—o—n— —(—\"—L—.—J—.—\"—)—",
       "clan": "Brujah",
       "generation": "8th",
-      "sire": "Clayton White",
-      "concept": "Criminal (GTA)",
-      "nature": "Rogue",
-      "demeanor": "Survivor",
+      "sire": "—C—l—a—y—t—o—n— —W—h—i—t—e—",
+      "concept": "—C—r—i—m—i—n—a—l— —(—G—T—A—)—",
+      "nature": "—R—o—g—u—e—",
+      "demeanor": "—S—u—r—v—i—v—o—r—",
       "player": "",
       "type": "Vampire",
       "xp": "21",
@@ -299,66 +300,66 @@
       },
       "merits": [
         {
-          "name": "Daredevil",
+          "name": "—D—a—r—e—d—e—v—i—l—",
           "value": "3",
-          "desc": "When attempting exceptionally risky non-combat actions, add an additional three dice to your rolls, and negate a single botch die."
+          "desc": "—W—h—e—n— —a—t—t—e—m—p—t—i—n—g— —e—x—c—e—p—t—i—o—n—a—l—l—y— —r—i—s—k—y— —n—o—n—-—c—o—m—b—a—t— —a—c—t—i—o—n—s—,— —a—d—d— —a—n— —a—d—d—i—t—i—o—n—a—l— —t—h—r—e—e— —d—i—c—e— —t—o— —y—o—u—r— —r—o—l—l—s—,— —a—n—d— —n—e—g—a—t—e— —a— —s—i—n—g—l—e— —b—o—t—c—h— —d—i—e—.—"
         },
         {
-          "name": "Bruiser",
+          "name": "—B—r—u—i—s—e—r—",
           "value": "1",
-          "desc": "Your appearance is sufficiently thug-like to inspire fear or disquiet. All Intimidation rolls against those who have not demonstrated their physical superiority to you are at -1 difficulty."
+          "desc": "—Y—o—u—r— —a—p—p—e—a—r—a—n—c—e— —i—s— —s—u—f—f—i—c—i—e—n—t—l—y— —t—h—u—g—-—l—i—k—e— —t—o— —i—n—s—p—i—r—e— —f—e—a—r— —o—r— —d—i—s—q—u—i—e—t—.— —A—l—l— —I—n—t—i—m—i—d—a—t—i—o—n— —r—o—l—l—s— —a—g—a—i—n—s—t— —t—h—o—s—e— —w—h—o— —h—a—v—e— —n—o—t— —d—e—m—o—n—s—t—r—a—t—e—d— —t—h—e—i—r— —p—h—y—s—i—c—a—l— —s—u—p—e—r—i—o—r—i—t—y— —t—o— —y—o—u— —a—r—e— —a—t— —-—1— —d—i—f—f—i—c—u—l—t—y—.—"
         },
         {
-          "name": "Common Sense",
+          "name": "—C—o—m—m—o—n— —S—e—n—s—e—",
           "value": "1",
-          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
+          "desc": "—Y—o—u— —h—a—v—e— —a— —s—i—g—n—i—f—i—c—a—n—t— —a—m—o—u—n—t— —o—f— —p—r—a—c—t—i—c—a—l—,— —e—v—e—r—y—d—a—y— —w—i—s—d—o—m—.— —T—h—e— —S—t—o—r—y—t—e—l—l—e—r— —c—a—n— —m—a—k—e— —s—u—g—g—e—s—t—i—o—n—s— —o—r— —w—a—r—n—i—n—g—s— —w—h—e—n— —y—o—u— —a—r—e— —a—b—o—u—t— —t—o— —a—c—t— —c—o—n—t—r—a—r—y— —t—o— —c—o—m—m—o—n— —s—e—n—s—e—.—"
         }
       ],
       "flaws": [
         {
-          "name": "Addiction",
+          "name": "—A—d—d—i—c—t—i—o—n—",
           "value": "3",
-          "desc": "You suffer from an addiction to a substance (drugs, alcohol, adrenaline) which must be present in the blood you drink."
+          "desc": "—Y—o—u— —s—u—f—f—e—r— —f—r—o—m— —a—n— —a—d—d—i—c—t—i—o—n— —t—o— —a— —s—u—b—s—t—a—n—c—e— —(—d—r—u—g—s—,— —a—l—c—o—h—o—l—,— —a—d—r—e—n—a—l—i—n—e—)— —w—h—i—c—h— —m—u—s—t— —b—e— —p—r—e—s—e—n—t— —i—n— —t—h—e— —b—l—o—o—d— —y—o—u— —d—r—i—n—k—.—"
         },
         {
-          "name": "Deep Sleeper",
+          "name": "—D—e—e—p— —S—l—e—e—p—e—r—",
           "value": "1",
-          "desc": "When you sleep, it is very difficult for you to awaken. The difficulty of any roll to awaken during the day is increased by two."
+          "desc": "—W—h—e—n— —y—o—u— —s—l—e—e—p—,— —i—t— —i—s— —v—e—r—y— —d—i—f—f—i—c—u—l—t— —f—o—r— —y—o—u— —t—o— —a—w—a—k—e—n—.— —T—h—e— —d—i—f—f—i—c—u—l—t—y— —o—f— —a—n—y— —r—o—l—l— —t—o— —a—w—a—k—e—n— —d—u—r—i—n—g— —t—h—e— —d—a—y— —i—s— —i—n—c—r—e—a—s—e—d— —b—y— —t—w—o—.—"
         },
         {
-          "name": "Amnesia",
+          "name": "—A—m—n—e—s—i—a—",
           "value": "2",
-          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+          "desc": "—Y—o—u— —a—r—e— —u—n—a—b—l—e— —t—o— —r—e—m—e—m—b—e—r— —y—o—u—r— —p—a—s—t—,— —y—o—u—r—s—e—l—f—,— —o—r— —y—o—u—r— —f—a—m—i—l—y—.— —Y—o—u—r— —h—i—s—t—o—r—y— —i—s— —u—p— —t—o— —t—h—e— —S—t—o—r—y—t—e—l—l—e—r—.—"
         },
         {
-          "name": "New Kid (1 pt Social)",
+          "name": "—N—e—w— —K—i—d— —(—1— —p—t— —S—o—c—i—a—l—)—",
           "value": "1",
-          "desc": "New to the city/sect."
+          "desc": "—N—e—w— —t—o— —t—h—e— —c—i—t—y—/—s—e—c—t—.—"
         },
         {
-          "name": "Sympathizer - Anarch (1 pt Social)",
+          "name": "—S—y—m—p—a—t—h—i—z—e—r— —-— —A—n—a—r—c—h— —(—1— —p—t— —S—o—c—i—a—l—)—",
           "value": "1",
-          "desc": "Holds sympathies for the Anarch movement."
+          "desc": "—H—o—l—d—s— —s—y—m—p—a—t—h—i—e—s— —f—o—r— —t—h—e— —A—n—a—r—c—h— —m—o—v—e—m—e—n—t—.—"
         }
       ],
       "equipment": [
-        "Burner Phone",
-        "Gold bar worth $184,000",
-        "iPhone 17 Pro Max",
-        "$770 Cash",
-        "2020 Ford Mustang GT (Black w/ White racing stripes)",
-        "Pink Lowrider"
+        "—B—u—r—n—e—r— —P—h—o—n—e—",
+        "—G—o—l—d— —b—a—r— —w—o—r—t—h— —$—1—8—4—,—0—0—0—",
+        "—i—P—h—o—n—e— —1—7— —P—r—o— —M—a—x—",
+        "—$—7—7—0— —C—a—s—h—",
+        "—2—0—2—0— —F—o—r—d— —M—u—s—t—a—n—g— —G—T— —(—B—l—a—c—k— —w—/— —W—h—i—t—e— —r—a—c—i—n—g— —s—t—r—i—p—e—s—)—",
+        "—P—i—n—k— —L—o—w—r—i—d—e—r—"
       ],
       "specialties": {}
     },
     {
-      "name": "Frederic King",
+      "name": "—F—r—e—d—e—r—i—c— —K—i—n—g—",
       "clan": "Malkavian",
       "generation": "12th",
-      "sire": "Philip Zambardo",
-      "concept": "Cult Leader / Excommunicated Amish Preacher",
-      "nature": "Idealist",
-      "demeanor": "Idealist",
+      "sire": "—P—h—i—l—i—p— —Z—a—m—b—a—r—d—o—",
+      "concept": "—C—u—l—t— —L—e—a—d—e—r— —/— —E—x—c—o—m—m—u—n—i—c—a—t—e—d— —A—m—i—s—h— —P—r—e—a—c—h—e—r—",
+      "nature": "—I—d—e—a—l—i—s—t—",
+      "demeanor": "—I—d—e—a—l—i—s—t—",
       "player": "",
       "type": "Vampire",
       "xp": "25",
@@ -440,54 +441,54 @@
       },
       "merits": [
         {
-          "name": "True Faith",
+          "name": "—T—r—u—e— —F—a—i—t—h—",
           "value": "7",
-          "desc": "(2) You have a deep-seated faith in God. Adds one die per point to Willpower/Virtue rolls. Must have Humanity 9+ to start. Repels vampires."
+          "desc": "—(—2—)— —Y—o—u— —h—a—v—e— —a— —d—e—e—p—-—s—e—a—t—e—d— —f—a—i—t—h— —i—n— —G—o—d—.— —A—d—d—s— —o—n—e— —d—i—e— —p—e—r— —p—o—i—n—t— —t—o— —W—i—l—l—p—o—w—e—r—/—V—i—r—t—u—e— —r—o—l—l—s—.— —M—u—s—t— —h—a—v—e— —H—u—m—a—n—i—t—y— —9—+— —t—o— —s—t—a—r—t—.— —R—e—p—e—l—s— —v—a—m—p—i—r—e—s—.—"
         },
         {
-          "name": "Enchanting Voice",
+          "name": "—E—n—c—h—a—n—t—i—n—g— —V—o—i—c—e—",
           "value": "2",
-          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+          "desc": "—T—h—e—r—e— —i—s— —s—o—m—e—t—h—i—n—g— —a—b—o—u—t— —y—o—u—r— —v—o—i—c—e— —t—h—a—t— —o—t—h—e—r—s— —c—a—n—n—o—t— —i—g—n—o—r—e—.— —T—h—e— —d—i—f—f—i—c—u—l—t—i—e—s— —o—f— —a—l—l— —r—o—l—l—s— —i—n—v—o—l—v—i—n—g— —t—h—e— —u—s—e— —o—f— —t—h—e— —v—o—i—c—e— —t—o— —p—e—r—s—u—a—d—e—,— —c—h—a—r—m—,— —o—r— —c—o—m—m—a—n—d— —a—r—e— —r—e—d—u—c—e—d— —b—y— —t—w—o—.—"
         },
         {
-          "name": "Sabbat Survivor",
+          "name": "—S—a—b—b—a—t— —S—u—r—v—i—v—o—r—",
           "value": "1",
-          "desc": "You've lived through a Sabbat attack. -1 difficulty on Perception rolls regarding Sabbat matters."
+          "desc": "—Y—o—u—'—v—e— —l—i—v—e—d— —t—h—r—o—u—g—h— —a— —S—a—b—b—a—t— —a—t—t—a—c—k—.— —-—1— —d—i—f—f—i—c—u—l—t—y— —o—n— —P—e—r—c—e—p—t—i—o—n— —r—o—l—l—s— —r—e—g—a—r—d—i—n—g— —S—a—b—b—a—t— —m—a—t—t—e—r—s—.—"
         }
       ],
       "flaws": [
         {
-          "name": "Repulsed by Garlic",
+          "name": "—R—e—p—u—l—s—e—d— —b—y— —G—a—r—l—i—c—",
           "value": "1",
-          "desc": "You cannot abide garlic. The smell drives you from the room unless you make a Willpower roll."
+          "desc": "—Y—o—u— —c—a—n—n—o—t— —a—b—i—d—e— —g—a—r—l—i—c—.— —T—h—e— —s—m—e—l—l— —d—r—i—v—e—s— —y—o—u— —f—r—o—m— —t—h—e— —r—o—o—m— —u—n—l—e—s—s— —y—o—u— —m—a—k—e— —a— —W—i—l—l—p—o—w—e—r— —r—o—l—l—.—"
         },
         {
-          "name": "Cast No Reflection",
+          "name": "—C—a—s—t— —N—o— —R—e—f—l—e—c—t—i—o—n—",
           "value": "1",
-          "desc": "You cast no reflection. Detrimental for Masquerade. (Lasombra have this automatically, do not take as Flaw)."
+          "desc": "—Y—o—u— —c—a—s—t— —n—o— —r—e—f—l—e—c—t—i—o—n—.— —D—e—t—r—i—m—e—n—t—a—l— —f—o—r— —M—a—s—q—u—e—r—a—d—e—.— —(—L—a—s—o—m—b—r—a— —h—a—v—e— —t—h—i—s— —a—u—t—o—m—a—t—i—c—a—l—l—y—,— —d—o— —n—o—t— —t—a—k—e— —a—s— —F—l—a—w—)—.—"
         },
         {
-          "name": "Amnesia",
+          "name": "—A—m—n—e—s—i—a—",
           "value": "2",
-          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+          "desc": "—Y—o—u— —a—r—e— —u—n—a—b—l—e— —t—o— —r—e—m—e—m—b—e—r— —y—o—u—r— —p—a—s—t—,— —y—o—u—r—s—e—l—f—,— —o—r— —y—o—u—r— —f—a—m—i—l—y—.— —Y—o—u—r— —h—i—s—t—o—r—y— —i—s— —u—p— —t—o— —t—h—e— —S—t—o—r—y—t—e—l—l—e—r—.—"
         },
         {
-          "name": "New Kid",
+          "name": "—N—e—w— —K—i—d—",
           "value": "1",
-          "desc": "He is new to the city or sect and lacks established respect."
+          "desc": "—H—e— —i—s— —n—e—w— —t—o— —t—h—e— —c—i—t—y— —o—r— —s—e—c—t— —a—n—d— —l—a—c—k—s— —e—s—t—a—b—l—i—s—h—e—d— —r—e—s—p—e—c—t—.—"
         }
       ],
       "equipment": [],
       "specialties": {}
     },
     {
-      "name": "Isabel Turner",
+      "name": "—I—s—a—b—e—l— —T—u—r—n—e—r—",
       "clan": "Ventrue",
       "generation": "9th",
-      "sire": "Keith Brown",
-      "concept": "Not Listed",
-      "nature": "Autocrat",
-      "demeanor": "Child",
+      "sire": "—K—e—i—t—h— —B—r—o—w—n—",
+      "concept": "—N—o—t— —L—i—s—t—e—d—",
+      "nature": "—A—u—t—o—c—r—a—t—",
+      "demeanor": "—C—h—i—l—d—",
       "player": "",
       "type": "Vampire",
       "xp": "36",
@@ -581,39 +582,39 @@
       },
       "merits": [
         {
-          "name": "Enchanting Voice",
+          "name": "—E—n—c—h—a—n—t—i—n—g— —V—o—i—c—e—",
           "value": "2",
-          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+          "desc": "—T—h—e—r—e— —i—s— —s—o—m—e—t—h—i—n—g— —a—b—o—u—t— —y—o—u—r— —v—o—i—c—e— —t—h—a—t— —o—t—h—e—r—s— —c—a—n—n—o—t— —i—g—n—o—r—e—.— —T—h—e— —d—i—f—f—i—c—u—l—t—i—e—s— —o—f— —a—l—l— —r—o—l—l—s— —i—n—v—o—l—v—i—n—g— —t—h—e— —u—s—e— —o—f— —t—h—e— —v—o—i—c—e— —t—o— —p—e—r—s—u—a—d—e—,— —c—h—a—r—m—,— —o—r— —c—o—m—m—a—n—d— —a—r—e— —r—e—d—u—c—e—d— —b—y— —t—w—o—.—"
         },
         {
-          "name": "Eat Food",
+          "name": "—E—a—t— —F—o—o—d—",
           "value": "1",
-          "desc": "You have the capacity to eat food and even savor its taste, though you cannot derive nourishment and must heave it back up later. Useful for masquerading as human."
+          "desc": "—Y—o—u— —h—a—v—e— —t—h—e— —c—a—p—a—c—i—t—y— —t—o— —e—a—t— —f—o—o—d— —a—n—d— —e—v—e—n— —s—a—v—o—r— —i—t—s— —t—a—s—t—e—,— —t—h—o—u—g—h— —y—o—u— —c—a—n—n—o—t— —d—e—r—i—v—e— —n—o—u—r—i—s—h—m—e—n—t— —a—n—d— —m—u—s—t— —h—e—a—v—e— —i—t— —b—a—c—k— —u—p— —l—a—t—e—r—.— —U—s—e—f—u—l— —f—o—r— —m—a—s—q—u—e—r—a—d—i—n—g— —a—s— —h—u—m—a—n—.—"
         }
       ],
       "flaws": [
         {
-          "name": "Amnesia",
+          "name": "—A—m—n—e—s—i—a—",
           "value": "2",
-          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+          "desc": "—Y—o—u— —a—r—e— —u—n—a—b—l—e— —t—o— —r—e—m—e—m—b—e—r— —y—o—u—r— —p—a—s—t—,— —y—o—u—r—s—e—l—f—,— —o—r— —y—o—u—r— —f—a—m—i—l—y—.— —Y—o—u—r— —h—i—s—t—o—r—y— —i—s— —u—p— —t—o— —t—h—e— —S—t—o—r—y—t—e—l—l—e—r—.—"
         },
         {
-          "name": "New Kid",
+          "name": "—N—e—w— —K—i—d—",
           "value": "1",
-          "desc": "She is new to the city or sect and lacks established respect."
+          "desc": "—S—h—e— —i—s— —n—e—w— —t—o— —t—h—e— —c—i—t—y— —o—r— —s—e—c—t— —a—n—d— —l—a—c—k—s— —e—s—t—a—b—l—i—s—h—e—d— —r—e—s—p—e—c—t—.—"
         }
       ],
       "equipment": [],
       "specialties": {}
     },
     {
-      "name": "Elliot \"Shane\" Mercer",
+      "name": "—E—l—l—i—o—t— —\"—S—h—a—n—e—\"— —M—e—r—c—e—r—",
       "clan": "Toreador",
       "generation": "13th",
-      "sire": "Donna Delore",
-      "concept": "Street urchin turned artistic icon",
-      "nature": "Bon Vivant",
-      "demeanor": "Conformist",
+      "sire": "—D—o—n—n—a— —D—e—l—o—r—e—",
+      "concept": "—S—t—r—e—e—t— —u—r—c—h—i—n— —t—u—r—n—e—d— —a—r—t—i—s—t—i—c— —i—c—o—n—",
+      "nature": "—B—o—n— —V—i—v—a—n—t—",
+      "demeanor": "—C—o—n—f—o—r—m—i—s—t—",
       "player": "",
       "type": "Vampire",
       "xp": "6",
@@ -695,61 +696,61 @@
       },
       "merits": [
         {
-          "name": "Enchanting Voice",
+          "name": "—E—n—c—h—a—n—t—i—n—g— —V—o—i—c—e—",
           "value": "2",
-          "desc": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two."
+          "desc": "—T—h—e—r—e— —i—s— —s—o—m—e—t—h—i—n—g— —a—b—o—u—t— —y—o—u—r— —v—o—i—c—e— —t—h—a—t— —o—t—h—e—r—s— —c—a—n—n—o—t— —i—g—n—o—r—e—.— —T—h—e— —d—i—f—f—i—c—u—l—t—i—e—s— —o—f— —a—l—l— —r—o—l—l—s— —i—n—v—o—l—v—i—n—g— —t—h—e— —u—s—e— —o—f— —t—h—e— —v—o—i—c—e— —t—o— —p—e—r—s—u—a—d—e—,— —c—h—a—r—m—,— —o—r— —c—o—m—m—a—n—d— —a—r—e— —r—e—d—u—c—e—d— —b—y— —t—w—o—.—"
         },
         {
-          "name": "Open Road",
+          "name": "—O—p—e—n— —R—o—a—d—",
           "value": "2",
-          "desc": "You like to travel and know safe routes. You can move between cities unimpeded by random encounters."
+          "desc": "—Y—o—u— —l—i—k—e— —t—o— —t—r—a—v—e—l— —a—n—d— —k—n—o—w— —s—a—f—e— —r—o—u—t—e—s—.— —Y—o—u— —c—a—n— —m—o—v—e— —b—e—t—w—e—e—n— —c—i—t—i—e—s— —u—n—i—m—p—e—d—e—d— —b—y— —r—a—n—d—o—m— —e—n—c—o—u—n—t—e—r—s—.—"
         },
         {
-          "name": "Friend of the Underground",
+          "name": "—F—r—i—e—n—d— —o—f— —t—h—e— —U—n—d—e—r—g—r—o—u—n—d—",
           "value": "3",
-          "desc": "You know your way around sewers and tunnels. -1 difficulty on subterranean rolls. Nosferatu are not inclined to kill you on sight."
+          "desc": "—Y—o—u— —k—n—o—w— —y—o—u—r— —w—a—y— —a—r—o—u—n—d— —s—e—w—e—r—s— —a—n—d— —t—u—n—n—e—l—s—.— —-—1— —d—i—f—f—i—c—u—l—t—y— —o—n— —s—u—b—t—e—r—r—a—n—e—a—n— —r—o—l—l—s—.— —N—o—s—f—e—r—a—t—u— —a—r—e— —n—o—t— —i—n—c—l—i—n—e—d— —t—o— —k—i—l—l— —y—o—u— —o—n— —s—i—g—h—t—.—"
         },
         {
-          "name": "Natural Leader",
+          "name": "—N—a—t—u—r—a—l— —L—e—a—d—e—r—",
           "value": "1",
-          "desc": "You are gifted with a certain magnetism to which others naturally defer. You receive two extra dice when making Leadership rolls. Requires Charisma 3+."
+          "desc": "—Y—o—u— —a—r—e— —g—i—f—t—e—d— —w—i—t—h— —a— —c—e—r—t—a—i—n— —m—a—g—n—e—t—i—s—m— —t—o— —w—h—i—c—h— —o—t—h—e—r—s— —n—a—t—u—r—a—l—l—y— —d—e—f—e—r—.— —Y—o—u— —r—e—c—e—i—v—e— —t—w—o— —e—x—t—r—a— —d—i—c—e— —w—h—e—n— —m—a—k—i—n—g— —L—e—a—d—e—r—s—h—i—p— —r—o—l—l—s—.— —R—e—q—u—i—r—e—s— —C—h—a—r—i—s—m—a— —3—+—.—"
         },
         {
-          "name": "Eat Food",
+          "name": "—E—a—t— —F—o—o—d—",
           "value": "1",
-          "desc": "You have the capacity to eat food and even savor its taste, though you cannot derive nourishment and must heave it back up later. Useful for masquerading as human."
+          "desc": "—Y—o—u— —h—a—v—e— —t—h—e— —c—a—p—a—c—i—t—y— —t—o— —e—a—t— —f—o—o—d— —a—n—d— —e—v—e—n— —s—a—v—o—r— —i—t—s— —t—a—s—t—e—,— —t—h—o—u—g—h— —y—o—u— —c—a—n—n—o—t— —d—e—r—i—v—e— —n—o—u—r—i—s—h—m—e—n—t— —a—n—d— —m—u—s—t— —h—e—a—v—e— —i—t— —b—a—c—k— —u—p— —l—a—t—e—r—.— —U—s—e—f—u—l— —f—o—r— —m—a—s—q—u—e—r—a—d—i—n—g— —a—s— —h—u—m—a—n—.—"
         }
       ],
       "flaws": [
         {
-          "name": "Amnesia",
+          "name": "—A—m—n—e—s—i—a—",
           "value": "2",
-          "desc": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller."
+          "desc": "—Y—o—u— —a—r—e— —u—n—a—b—l—e— —t—o— —r—e—m—e—m—b—e—r— —y—o—u—r— —p—a—s—t—,— —y—o—u—r—s—e—l—f—,— —o—r— —y—o—u—r— —f—a—m—i—l—y—.— —Y—o—u—r— —h—i—s—t—o—r—y— —i—s— —u—p— —t—o— —t—h—e— —S—t—o—r—y—t—e—l—l—e—r—.—"
         },
         {
-          "name": "Infertile Vitae",
+          "name": "—I—n—f—e—r—t—i—l—e— —V—i—t—a—e—",
           "value": "5",
-          "desc": "You cannot create any childer. Those you try to Embrace die."
+          "desc": "—Y—o—u— —c—a—n—n—o—t— —c—r—e—a—t—e— —a—n—y— —c—h—i—l—d—e—r—.— —T—h—o—s—e— —y—o—u— —t—r—y— —t—o— —E—m—b—r—a—c—e— —d—i—e—.—"
         },
         {
-          "name": "Hunted",
+          "name": "—H—u—n—t—e—d—",
           "value": "4",
-          "desc": "You are pursued by a fanatical witch-hunter who believes you are a danger to humanity."
+          "desc": "—Y—o—u— —a—r—e— —p—u—r—s—u—e—d— —b—y— —a— —f—a—n—a—t—i—c—a—l— —w—i—t—c—h—-—h—u—n—t—e—r— —w—h—o— —b—e—l—i—e—v—e—s— —y—o—u— —a—r—e— —a— —d—a—n—g—e—r— —t—o— —h—u—m—a—n—i—t—y—.—"
         },
         {
-          "name": "Clan Enmity",
+          "name": "—C—l—a—n— —E—n—m—i—t—y—",
           "value": "4",
-          "desc": "One Clan in particular wants you dead. Every member of that Clan is hostile to you."
+          "desc": "—O—n—e— —C—l—a—n— —i—n— —p—a—r—t—i—c—u—l—a—r— —w—a—n—t—s— —y—o—u— —d—e—a—d—.— —E—v—e—r—y— —m—e—m—b—e—r— —o—f— —t—h—a—t— —C—l—a—n— —i—s— —h—o—s—t—i—l—e— —t—o— —y—o—u—.—"
         },
         {
-          "name": "New Kid",
+          "name": "—N—e—w— —K—i—d—",
           "value": "1",
-          "desc": "He is a fresh face in the LA scene with zero social leverage."
+          "desc": "—H—e— —i—s— —a— —f—r—e—s—h— —f—a—c—e— —i—n— —t—h—e— —L—A— —s—c—e—n—e— —w—i—t—h— —z—e—r—o— —s—o—c—i—a—l— —l—e—v—e—r—a—g—e—.—"
         },
         {
-          "name": "Boon (1 pt)",
+          "name": "—B—o—o—n— —(—1— —p—t—)—",
           "value": "1",
-          "desc": "Shane owes Lydia for her help with the hunters."
+          "desc": "—S—h—a—n—e— —o—w—e—s— —L—y—d—i—a— —f—o—r— —h—e—r— —h—e—l—p— —w—i—t—h— —t—h—e— —h—u—n—t—e—r—s—.—"
         }
       ],
       "equipment": [],
@@ -759,58 +760,62 @@
   "sessions": [],
   "locations": [
     {
-      "name": "Dorothy Chandler Pavilion",
-      "district": "Downtown LA",
+      "name": "—D—o—r—o—t—h—y— —C—h—a—n—d—l—e—r— —P—a—v—i—l—i—o—n—",
+      "district": "—D—o—w—n—t—o—w—n— —L—A—",
       "map_type": "elysium",
       "lat": 34.0566,
       "lng": -118.2483,
-      "description": "Established in the 1960s, the Dorothy Chandler Pavilion has stood as a beacon of Los Angeles culture and high society. Under the glittering chandeliers, Kindred elites whisper secrets and broker deals that shape the city's future. It operates as the Prince's primary Elysium, a neutral ground where the Masquerade is paramount and violence is strictly forbidden. Over decades, it has witnessed the rise and fall of countless Kindred factions, cementing its place as the center of formal Kindred society. The Pavilion is a grand, sweeping structure of glass, marble, and curved concrete. Inside, plush red carpets, crystal chandeliers, and wide staircases provide an opulent setting, contrasting the stark realities of Kindred existence.",
-      "physical_description": "The Pavilion is a grand, sweeping structure of glass, marble, and curved concrete. Inside, plush red carpets, crystal chandeliers, and wide staircases provide an opulent setting, contrasting the stark realities of Kindred existence.",
-      "history": "Established in the 1960s, the Dorothy Chandler Pavilion has stood as a beacon of Los Angeles culture and high society. Under the glittering chandeliers, Kindred elites whisper secrets and broker deals that shape the city's future. It operates as the Prince's primary Elysium, a neutral ground where the Masquerade is paramount and violence is strictly forbidden. Over decades, it has witnessed the rise and fall of countless Kindred factions, cementing its place as the center of formal Kindred society.",
+      "description": "—E—s—t—a—b—l—i—s—h—e—d— —i—n— —t—h—e— —1—9—6—0—s—,— —t—h—e— —D—o—r—o—t—h—y— —C—h—a—n—d—l—e—r— —P—a—v—i—l—i—o—n— —h—a—s— —s—t—o—o—d— —a—s— —a— —b—e—a—c—o—n— —o—f— —L—o—s— —A—n—g—e—l—e—s— —c—u—l—t—u—r—e— —a—n—d— —h—i—g—h— —s—o—c—i—e—t—y—.— —U—n—d—e—r— —t—h—e— —g—l—i—t—t—e—r—i—n—g— —c—h—a—n—d—e—l—i—e—r—s—,— —K—i—n—d—r—e—d— —e—l—i—t—e—s— —w—h—i—s—p—e—r— —s—e—c—r—e—t—s— —a—n—d— —b—r—o—k—e—r— —d—e—a—l—s— —t—h—a—t— —s—h—a—p—e— —t—h—e— —c—i—t—y—'—s— —f—u—t—u—r—e—.— —I—t— —o—p—e—r—a—t—e—s— —a—s— —t—h—e— —P—r—i—n—c—e—'—s— —p—r—i—m—a—r—y— —E—l—y—s—i—u—m—,— —a— —n—e—u—t—r—a—l— —g—r—o—u—n—d— —w—h—e—r—e— —t—h—e— —M—a—s—q—u—e—r—a—d—e— —i—s— —p—a—r—a—m—o—u—n—t— —a—n—d— —v—i—o—l—e—n—c—e— —i—s— —s—t—r—i—c—t—l—y— —f—o—r—b—i—d—d—e—n—.— —O—v—e—r— —d—e—c—a—d—e—s—,— —i—t— —h—a—s— —w—i—t—n—e—s—s—e—d— —t—h—e— —r—i—s—e— —a—n—d— —f—a—l—l— —o—f— —c—o—u—n—t—l—e—s—s— —K—i—n—d—r—e—d— —f—a—c—t—i—o—n—s—,— —c—e—m—e—n—t—i—n—g— —i—t—s— —p—l—a—c—e— —a—s— —t—h—e— —c—e—n—t—e—r— —o—f— —f—o—r—m—a—l— —K—i—n—d—r—e—d— —s—o—c—i—e—t—y—.— —T—h—e— —P—a—v—i—l—i—o—n— —i—s— —a— —g—r—a—n—d—,— —s—w—e—e—p—i—n—g— —s—t—r—u—c—t—u—r—e— —o—f— —g—l—a—s—s—,— —m—a—r—b—l—e—,— —a—n—d— —c—u—r—v—e—d— —c—o—n—c—r—e—t—e—.— —I—n—s—i—d—e—,— —p—l—u—s—h— —r—e—d— —c—a—r—p—e—t—s—,— —c—r—y—s—t—a—l— —c—h—a—n—d—e—l—i—e—r—s—,— —a—n—d— —w—i—d—e— —s—t—a—i—r—c—a—s—e—s— —p—r—o—v—i—d—e— —a—n— —o—p—u—l—e—n—t— —s—e—t—t—i—n—g—,— —c—o—n—t—r—a—s—t—i—n—g— —t—h—e— —s—t—a—r—k— —r—e—a—l—i—t—i—e—s— —o—f— —K—i—n—d—r—e—d— —e—x—i—s—t—e—n—c—e—.—",
+      "notes": "",
+      "is_pc_location": false,
       "characters": [
         {
           "id": 1,
-          "name": "Meredith Vereira",
-          "relationship": "operates"
+          "name": "—M—e—r—e—d—i—t—h— —V—e—r—e—i—r—a—",
+          "is_pc": false,
+          "relationship": "—o—p—e—r—a—t—e—s—"
         },
         {
           "id": 3,
-          "name": "Amanda Byers",
-          "relationship": "operates"
+          "name": "—A—m—a—n—d—a— —B—y—e—r—s—",
+          "is_pc": false,
+          "relationship": "—o—p—e—r—a—t—e—s—"
         }
       ]
     },
     {
-      "name": "Bar Afterlife",
-      "district": "Downtown LA",
-      "map_type": "club",
+      "name": "—B—a—r— —A—f—t—e—r—l—i—f—e—",
+      "district": "—D—o—w—n—t—o—w—n— —L—A—",
+      "map_type": "hangout",
       "lat": 33.93,
       "lng": -118.2537,
-      "description": "Opening its doors in the late 1990s as a speakeasy, Bar Afterlife quickly evolved into a high-end downtown establishment. Salvador Garcia curates its operations as an exclusive philosophical salon for the Camarilla. Here, neonates and ancillae alike debate the finer points of the Traditions and Kindred philosophy, free from mortal eavesdropping. Hidden behind an unmarked steel door in an alley, the bar features exposed brick walls, dim incandescent lighting, and leather booths. A small stage occasionally hosts spoken-word poetry or jazz.",
-      "physical_description": "Hidden behind an unmarked steel door in an alley, the bar features exposed brick walls, dim incandescent lighting, and leather booths. A small stage occasionally hosts spoken-word poetry or jazz.",
-      "history": "Opening its doors in the late 1990s as a speakeasy, Bar Afterlife quickly evolved into a high-end downtown establishment. Salvador Garcia curates its operations as an exclusive philosophical salon for the Camarilla. Here, neonates and ancillae alike debate the finer points of the Traditions and Kindred philosophy, free from mortal eavesdropping.",
+      "description": "—O—p—e—n—i—n—g— —i—t—s— —d—o—o—r—s— —i—n— —t—h—e— —l—a—t—e— —1—9—9—0—s— —a—s— —a— —s—p—e—a—k—e—a—s—y—,— —B—a—r— —A—f—t—e—r—l—i—f—e— —q—u—i—c—k—l—y— —e—v—o—l—v—e—d— —i—n—t—o— —a— —h—i—g—h—-—e—n—d— —d—o—w—n—t—o—w—n— —e—s—t—a—b—l—i—s—h—m—e—n—t—.— —S—a—l—v—a—d—o—r— —G—a—r—c—i—a— —c—u—r—a—t—e—s— —i—t—s— —o—p—e—r—a—t—i—o—n—s— —a—s— —a—n— —e—x—c—l—u—s—i—v—e— —p—h—i—l—o—s—o—p—h—i—c—a—l— —s—a—l—o—n— —f—o—r— —t—h—e— —C—a—m—a—r—i—l—l—a—.— —H—e—r—e—,— —n—e—o—n—a—t—e—s— —a—n—d— —a—n—c—i—l—l—a—e— —a—l—i—k—e— —d—e—b—a—t—e— —t—h—e— —f—i—n—e—r— —p—o—i—n—t—s— —o—f— —t—h—e— —T—r—a—d—i—t—i—o—n—s— —a—n—d— —K—i—n—d—r—e—d— —p—h—i—l—o—s—o—p—h—y—,— —f—r—e—e— —f—r—o—m— —m—o—r—t—a—l— —e—a—v—e—s—d—r—o—p—p—i—n—g—.— —H—i—d—d—e—n— —b—e—h—i—n—d— —a—n— —u—n—m—a—r—k—e—d— —s—t—e—e—l— —d—o—o—r— —i—n— —a—n— —a—l—l—e—y—,— —t—h—e— —b—a—r— —f—e—a—t—u—r—e—s— —e—x—p—o—s—e—d— —b—r—i—c—k— —w—a—l—l—s—,— —d—i—m— —i—n—c—a—n—d—e—s—c—e—n—t— —l—i—g—h—t—i—n—g—,— —a—n—d— —l—e—a—t—h—e—r— —b—o—o—t—h—s—.— —A— —s—m—a—l—l— —s—t—a—g—e— —o—c—c—a—s—i—o—n—a—l—l—y— —h—o—s—t—s— —s—p—o—k—e—n—-—w—o—r—d— —p—o—e—t—r—y— —o—r— —j—a—z—z—.—",
+      "notes": "",
+      "is_pc_location": false,
       "characters": [
         {
           "id": 7,
-          "name": "Salvador Garcia",
-          "relationship": "operates"
+          "name": "—S—a—l—v—a—d—o—r— —G—a—r—c—i—a—",
+          "is_pc": false,
+          "relationship": "—o—p—e—r—a—t—e—s—"
         }
       ]
     },
     {
-      "name": "The Last Round",
-      "district": "Culver City & Santa Monica (Anarch)",
-      "map_type": "domain",
+      "name": "—T—h—e— —L—a—s—t— —R—o—u—n—d—",
+      "district": "—C—u—l—v—e—r— —C—i—t—y— —&— —S—a—n—t—a— —M—o—n—i—c—a— —(—A—n—a—r—c—h—)—",
+      "map_type": "hangout",
       "lat": 34.025,
       "lng": -118.396,
-      "description": "A legendary Anarch stronghold, The Last Round is a local working-class bar serving as a front for community defense militias. Armando 'Nines' Rodriguez established it as a safe haven and rallying point for Kindred who reject the Camarilla's strictures. The bar has weathered numerous raids and skirmishes, its walls bearing the scars of past conflicts. It remains the beating heart of the Anarch movement in LA, where political debates turn into brawls and revolutionary plans are hatched over cheap beer and blood. It is fiercely defended by a loyal cadre of Brujah and unaligned neonates. A gritty, dimly lit dive bar with scuffed hardwood floors, a battered mahogany bar, and vintage neon beer signs buzzing faintly. Pool tables dominate the back room, and the air is heavy with the smell of stale smoke, spilled liquor, and old blood.",
-      "physical_description": "A gritty, dimly lit dive bar with scuffed hardwood floors, a battered mahogany bar, and vintage neon beer signs buzzing faintly. Pool tables dominate the back room, and the air is heavy with the smell of stale smoke, spilled liquor, and old blood.",
-      "history": "A legendary Anarch stronghold, The Last Round is a local working-class bar serving as a front for community defense militias. Armando 'Nines' Rodriguez established it as a safe haven and rallying point for Kindred who reject the Camarilla's strictures. The bar has weathered numerous raids and skirmishes, its walls bearing the scars of past conflicts. It remains the beating heart of the Anarch movement in LA, where political debates turn into brawls and revolutionary plans are hatched over cheap beer and blood. It is fiercely defended by a loyal cadre of Brujah and unaligned neonates.",
+      "description": "—A— —l—e—g—e—n—d—a—r—y— —A—n—a—r—c—h— —s—t—r—o—n—g—h—o—l—d—,— —T—h—e— —L—a—s—t— —R—o—u—n—d— —i—s— —a— —l—o—c—a—l— —w—o—r—k—i—n—g—-—c—l—a—s—s— —b—a—r— —s—e—r—v—i—n—g— —a—s— —a— —f—r—o—n—t— —f—o—r— —c—o—m—m—u—n—i—t—y— —d—e—f—e—n—s—e— —m—i—l—i—t—i—a—s—.— —A—r—m—a—n—d—o— —'—N—i—n—e—s—'— —R—o—d—r—i—g—u—e—z— —e—s—t—a—b—l—i—s—h—e—d— —i—t— —a—s— —a— —s—a—f—e— —h—a—v—e—n— —a—n—d— —r—a—l—l—y—i—n—g— —p—o—i—n—t— —f—o—r— —K—i—n—d—r—e—d— —w—h—o— —r—e—j—e—c—t— —t—h—e— —C—a—m—a—r—i—l—l—a—'—s— —s—t—r—i—c—t—u—r—e—s—.— —T—h—e— —b—a—r— —h—a—s— —w—e—a—t—h—e—r—e—d— —n—u—m—e—r—o—u—s— —r—a—i—d—s— —a—n—d— —s—k—i—r—m—i—s—h—e—s—,— —i—t—s— —w—a—l—l—s— —b—e—a—r—i—n—g— —t—h—e— —s—c—a—r—s— —o—f— —p—a—s—t— —c—o—n—f—l—i—c—t—s—.— —I—t— —r—e—m—a—i—n—s— —t—h—e— —b—e—a—t—i—n—g— —h—e—a—r—t— —o—f— —t—h—e— —A—n—a—r—c—h— —m—o—v—e—m—e—n—t— —i—n— —L—A—,— —w—h—e—r—e— —p—o—l—i—t—i—c—a—l— —d—e—b—a—t—e—s— —t—u—r—n— —i—n—t—o— —b—r—a—w—l—s— —a—n—d— —r—e—v—o—l—u—t—i—o—n—a—r—y— —p—l—a—n—s— —a—r—e— —h—a—t—c—h—e—d— —o—v—e—r— —c—h—e—a—p— —b—e—e—r— —a—n—d— —b—l—o—o—d—.— —I—t— —i—s— —f—i—e—r—c—e—l—y— —d—e—f—e—n—d—e—d— —b—y— —a— —l—o—y—a—l— —c—a—d—r—e— —o—f— —B—r—u—j—a—h— —a—n—d— —u—n—a—l—i—g—n—e—d— —n—e—o—n—a—t—e—s—.— —A— —g—r—i—t—t—y—,— —d—i—m—l—y— —l—i—t— —d—i—v—e— —b—a—r— —w—i—t—h— —s—c—u—f—f—e—d— —h—a—r—d—w—o—o—d— —f—l—o—o—r—s—,— —a— —b—a—t—t—e—r—e—d— —m—a—h—o—g—a—n—y— —b—a—r—,— —a—n—d— —v—i—n—t—a—g—e— —n—e—o—n— —b—e—e—r— —s—i—g—n—s— —b—u—z—z—i—n—g— —f—a—i—n—t—l—y—.— —P—o—o—l— —t—a—b—l—e—s— —d—o—m—i—n—a—t—e— —t—h—e— —b—a—c—k— —r—o—o—m—,— —a—n—d— —t—h—e— —a—i—r— —i—s— —h—e—a—v—y— —w—i—t—h— —t—h—e— —s—m—e—l—l— —o—f— —s—t—a—l—e— —s—m—o—k—e—,— —s—p—i—l—l—e—d— —l—i—q—u—o—r—,— —a—n—d— —o—l—d— —b—l—o—o—d—.—",
+      "notes": "—A—n—a—r—c—h— —E—l—y—s—i—u—m— —a—n—d— —s—t—r—o—n—g—h—o—l—d—.—",
+      "is_pc_location": false,
       "characters": [
         {
           "id": 33,
-          "name": "Armando \"Nines\" Rodriguez",
-          "relationship": "operates"
+          "name": "—A—r—m—a—n—d—o— —\"—N—i—n—e—s—\"— —R—o—d—r—i—g—u—e—z—",
+          "is_pc": false,
+          "relationship": "—o—p—e—r—a—t—e—s—"
         }
       ]
     }
