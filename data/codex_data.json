@@ -208,6 +208,7 @@
       "clan": "Brujah",
       "generation": "8th",
       "sire": "—C—l—a—y—t—o—n— —W—h—i—t—e—",
+      "domitor": "",
       "concept": "—C—r—i—m—i—n—a—l— —(—G—T—A—)—",
       "nature": "—R—o—g—u—e—",
       "demeanor": "—S—u—r—v—i—v—o—r—",
@@ -357,6 +358,7 @@
       "clan": "Malkavian",
       "generation": "12th",
       "sire": "—P—h—i—l—i—p— —Z—a—m—b—a—r—d—o—",
+      "domitor": "",
       "concept": "—C—u—l—t— —L—e—a—d—e—r— —/— —E—x—c—o—m—m—u—n—i—c—a—t—e—d— —A—m—i—s—h— —P—r—e—a—c—h—e—r—",
       "nature": "—I—d—e—a—l—i—s—t—",
       "demeanor": "—I—d—e—a—l—i—s—t—",
@@ -486,6 +488,7 @@
       "clan": "Ventrue",
       "generation": "9th",
       "sire": "—K—e—i—t—h— —B—r—o—w—n—",
+      "domitor": "",
       "concept": "—N—o—t— —L—i—s—t—e—d—",
       "nature": "—A—u—t—o—c—r—a—t—",
       "demeanor": "—C—h—i—l—d—",
@@ -612,6 +615,7 @@
       "clan": "Toreador",
       "generation": "13th",
       "sire": "—D—o—n—n—a— —D—e—l—o—r—e—",
+      "domitor": "",
       "concept": "—S—t—r—e—e—t— —u—r—c—h—i—n— —t—u—r—n—e—d— —a—r—t—i—s—t—i—c— —i—c—o—n—",
       "nature": "—B—o—n— —V—i—v—a—n—t—",
       "demeanor": "—C—o—n—f—o—r—m—i—s—t—",
@@ -754,6 +758,759 @@
         }
       ],
       "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—K—a—t—r—i—n—e— —S—t—e—r—l—i—n—g— ——— —D—i—s—g—r—a—c—e—d— —D—r—o—n—e— —T—e—c—h—n—i—c—i—a—n—",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "domitor": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "concept": "—D—i—s—g—r—a—c—e—d— —D—r—o—n—e— —T—e—c—h—n—i—c—i—a—n— ——— —M—a—l—k—a—v—i—a—n— —g—h—o—u—l— —a—n—d— —h—a—c—k—e—r—.— —(—V—2—0— —C—o—r—e— —p—.—8—7—;— —V—2—0— —C—o—r—e— —p—.—4—9—7—-—4—9—8—:— —G—h—o—u—l—s—)—",
+      "nature": "—V—i—s—i—o—n—a—r—y— ——— —S—e—e—k—s— —i—n—n—e—r— —p—e—a—c—e— —a—n—d— —e—n—g—i—n—e—e—r—i—n—g— —r—e—t—u—r—n— —(—V—2—0— —C—o—r—e—,— —p—.—1—0—3—)—",
+      "demeanor": "—P—e—r—f—e—c—t—i—o—n—i—s—t— ——— —I—m—p—o—s—s—i—b—l—e— —s—t—a—n—d—a—r—d—s— —(—V—2—0— —C—o—r—e—,— —p—.—1—0—2—)—",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "5",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "2",
+        "Self-Control": "2",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "2",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "2",
+          "Manipulation": "2",
+          "Appearance": "3"
+        },
+        "mental": {
+          "Perception": "4",
+          "Intelligence": "4",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "2",
+          "Athletics": "0",
+          "Awareness": "1",
+          "Brawl": "0",
+          "Empathy": "1",
+          "Expression": "0",
+          "Intimidation": "0",
+          "Leadership": "0",
+          "Streetwise": "1",
+          "Subterfuge": "1"
+        },
+        "skills": {
+          "Animal Ken": "1",
+          "Crafts": "3",
+          "Drive": "1",
+          "Etiquette": "0",
+          "Firearms": "1",
+          "Larceny": "3",
+          "Melee": "0",
+          "Performance": "0",
+          "Stealth": "2",
+          "Survival": "0"
+        },
+        "knowledges": {
+          "Academics": "4",
+          "Computer": "4",
+          "Finance": "2",
+          "Investigation": "3",
+          "Law": "2",
+          "Medicine": "0",
+          "Occult": "3",
+          "Politics": "2",
+          "Science": "4",
+          "Technology": "3"
+        }
+      },
+      "disciplines": {
+        "Obfuscate": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "—C—o—m—p—u—t—e—r— —A—p—t—i—t—u—d—e— —(—2—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—7—6—)—",
+          "value": "2",
+          "desc": "—Y—o—u— —a—r—e— —f—a—m—i—l—i—a—r— —w—i—t—h— —a—n—d— —t—a—l—e—n—t—e—d— —i—n— —t—h—e— —u—s—e—s— —o—f— —c—o—m—p—u—t—e—r— —e—q—u—i—p—m—e—n—t—.— —A—l—l— —r—o—l—l—s— —i—n—v—o—l—v—i—n—g— —c—o—m—p—u—t—e—r—s— —a—r—e— —a—t— —-—2— —d—i—f—f—i—c—u—l—t—y— —f—o—r— —y—o—u—.—"
+        },
+        {
+          "name": "—C—o—n—c—e—n—t—r—a—t—i—o—n— —(—1—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—7—6—)—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —t—h—e— —a—b—i—l—i—t—y— —t—o— —f—o—c—u—s— —y—o—u—r— —m—i—n—d— —a—n—d— —s—h—u—t— —o—u—t— —a—n—y— —d—i—s—t—r—a—c—t—i—o—n—s— —o—r— —a—n—n—o—y—a—n—c—e—s—.— —Y—o—u— —a—r—e— —u—n—a—f—f—e—c—t—e—d— —b—y— —p—e—n—a—l—t—i—e—s— —f—r—o—m— —d—i—s—t—r—a—c—t—i—n—g— —c—i—r—c—u—m—s—t—a—n—c—e—s—.—"
+        },
+        {
+          "name": "—C—o—l—d—l—y— —L—o—g—i—c—a—l—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —k—n—a—c—k— —f—o—r— —s—e—p—a—r—a—t—i—n—g— —f—a—c—t—u—a—l— —r—e—p—o—r—t—i—n—g— —f—r—o—m— —e—m—o—t—i—o—n—a—l— —c—o—l—o—r—a—t—i—o—n—.— —-—1— —d—i—f—f—i—c—u—l—t—y— —o—n— —a—l—l— —r—o—l—l—s— —r—e—q—u—i—r—i—n—g— —l—o—g—i—c— —o—r— —s—e—e—i—n—g— —t—h—r—o—u—g—h— —e—m—o—t—i—o—n—a—l— —c—l—o—u—d—i—n—g—.—"
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—S—h—o—r—t— —(—1—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—9—0—)—",
+          "value": "1",
+          "desc": "—Y—o—u— —a—r—e— —w—e—l—l— —b—e—l—o—w— —a—v—e—r—a—g—e— —h—e—i—g—h—t— —(—4—.—5— —f—t— —/— —1—.—5—m— —o—r— —l—e—s—s—)—.— —R—u—n—n—i—n—g— —s—p—e—e—d— —i—s— —h—a—l—f— —o—f— —a—v—e—r—a—g—e—.— —R—e—a—c—h— —i—s— —l—i—m—i—t—e—d—.—"
+        },
+        {
+          "name": "—S—h—y—",
+          "value": "1",
+          "desc": "—Y—o—u— —a—r—e— —i—l—l— —a—t— —e—a—s—e— —w—i—t—h— —p—e—o—p—l—e—.— —+—2— —d—i—f—f—i—c—u—l—t—y— —o—n— —S—o—c—i—a—l— —r—o—l—l—s— —w—i—t—h— —s—t—r—a—n—g—e—r—s—.— —+—3— —i—f— —c—e—n—t—e—r— —o—f— —a—t—t—e—n—t—i—o—n—.—"
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—J—o—h—n— —C—a—r—m—a—c— ——— —M—o—d—e—r—n— —A—m—i—s—h— —M—a—r—k—e—t—i—n—g— —F—r—e—e—l—a—n—c—e—r—",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "domitor": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "concept": "—M—o—d—e—r—n— —A—m—i—s—h— —M—a—r—k—e—t—i—n—g— ——— —G—h—o—u—l— —m—a—n—a—g—i—n—g— —M—a—s—q—u—e—r—a—d—e— —n—a—r—r—a—t—i—v—e—s— —f—o—r— —F—r—e—d—e—r—i—c— —K—i—n—g—.— —(—V—2—0— —C—o—r—e— —p—.—8—7—;— —V—2—0— —C—o—r—e— —p—.—4—9—7—-—4—9—8—)—",
+      "nature": "—C—o—n—f—o—r—m—i—s—t— ——— —B—a—l—a—n—c—e—s— —u—p—b—r—i—n—g—i—n—g— —w—i—t—h— —d—a—r—k— —s—e—r—v—i—c—e— —(—V—2—0— —C—o—r—e—,— —p—.—9—7—)—",
+      "demeanor": "—F—a—n—a—t—i—c— ——— —F—r—e—d—e—r—i—c—'—s— —s—e—r—v—i—c—e— —i—s— —n—e—w— —c—o—n—g—r—e—g—a—t—i—o—n— —(—V—2—0— —C—o—r—e—,— —p—.—9—7—)—",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "6",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "2",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "4",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "2",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "1",
+          "Athletics": "1",
+          "Awareness": "2",
+          "Brawl": "0",
+          "Empathy": "3",
+          "Expression": "3",
+          "Intimidation": "1",
+          "Leadership": "3",
+          "Streetwise": "3",
+          "Subterfuge": "2"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "3",
+          "Etiquette": "2",
+          "Firearms": "1",
+          "Larceny": "0",
+          "Melee": "0",
+          "Performance": "2",
+          "Stealth": "1",
+          "Survival": "1"
+        },
+        "knowledges": {
+          "Academics": "2",
+          "Computer": "2",
+          "Finance": "2",
+          "Investigation": "3",
+          "Law": "3",
+          "Medicine": "0",
+          "Occult": "1",
+          "Politics": "2",
+          "Science": "0",
+          "Technology": "0"
+        }
+      },
+      "disciplines": {
+        "Dementation": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "—O—r—a—c—u—l—a—r— —A—b—i—l—i—t—y— —(—3—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—3—)—",
+          "value": "3",
+          "desc": "—Y—o—u— —c—a—n— —s—e—e— —a—n—d— —i—n—t—e—r—p—r—e—t— —s—i—g—n—s— —a—n—d— —o—m—e—n—s— —r—e—g—a—r—d—i—n—g— —t—h—e— —f—u—t—u—r—e— —a—n—d— —p—r—e—s—e—n—t—.—"
+        },
+        {
+          "name": "—C—o—m—m—o—n— —S—e—n—s—e— —(—1—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—7—6—)—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —s—i—g—n—i—f—i—c—a—n—t— —a—m—o—u—n—t— —o—f— —p—r—a—c—t—i—c—a—l—,— —e—v—e—r—y—d—a—y— —w—i—s—d—o—m—.— —T—h—e— —S—t—o—r—y—t—e—l—l—e—r— —c—a—n— —m—a—k—e— —s—u—g—g—e—s—t—i—o—n—s— —o—r— —w—a—r—n—i—n—g—s— —w—h—e—n— —y—o—u— —a—r—e— —a—b—o—u—t— —t—o— —a—c—t— —c—o—n—t—r—a—r—y— —t—o— —c—o—m—m—o—n— —s—e—n—s—e—.—"
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—L—a—m—e— —(—3—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—8—)—",
+          "value": "3",
+          "desc": "—Y—o—u—r— —l—e—g—s— —a—r—e— —d—a—m—a—g—e—d—.— —W—a—l—k—i—n—g— —s—p—e—e—d— —i—s— —1—/—4— —n—o—r—m—a—l—,— —r—u—n—n—i—n—g— —i—s— —i—m—p—o—s—s—i—b—l—e—.—"
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—G—e—o—r—g—e— —M—i—c—h—a—e—l— ——— —A—m—i—s—h— —V—e—t—e—r—a—n— —C—o—m—b—a—t— —S—p—e—c—i—a—l—i—s—t—",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "domitor": "—F—r—e—d—e—r—i—c— —K—i—n—g— —(—M—a—l—k—a—v—i—a—n—)—",
+      "concept": "—A—m—i—s—h— —V—e—t—e—r—a—n— —C—o—m—b—a—t— —S—p—e—c—i—a—l—i—s—t— ——— —F—r—e—d—e—r—i—c— —K—i—n—g—'—s— —f—i—r—e—a—r—m—s— —s—p—e—c—i—a—l—i—s—t—.— —(—V—2—0— —C—o—r—e— —p—.—8—7—;— —V—2—0— —C—o—r—e— —p—.—4—9—7—-—4—9—8—)—",
+      "nature": "—C—o—n—f—o—r—m—i—s—t— ——— —S—e—e—k—s— —s—t—a—b—i—l—i—t—y— —i—n— —c—h—a—o—s— —(—V—2—0— —C—o—r—e—,— —p—.—9—7—)—",
+      "demeanor": "—F—a—n—a—t—i—c— ——— —F—r—e—d—e—r—i—c— —l—o—y—a—l—t—y— —a—s— —n—e—w— —c—o—v—e—n—a—n—t— —(—V—2—0— —C—o—r—e—,— —p—.—9—7—)—",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "6",
+      "willpower": "5",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "3",
+          "Dexterity": "4",
+          "Stamina": "4"
+        },
+        "social": {
+          "Charisma": "2",
+          "Manipulation": "2",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "4 (Tactical)",
+          "Intelligence": "2",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "3",
+          "Athletics": "3",
+          "Awareness": "2",
+          "Brawl": "2",
+          "Empathy": "2",
+          "Expression": "0",
+          "Intimidation": "1",
+          "Leadership": "1",
+          "Streetwise": "2",
+          "Subterfuge": "0"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "2",
+          "Drive": "3",
+          "Etiquette": "1",
+          "Firearms": "4 (Marksmanship)",
+          "Larceny": "1",
+          "Melee": "1",
+          "Performance": "0",
+          "Stealth": "3",
+          "Survival": "2"
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "0",
+          "Investigation": "1",
+          "Law": "1",
+          "Medicine": "2",
+          "Occult": "0",
+          "Politics": "0",
+          "Science": "0",
+          "Technology": "2"
+        }
+      },
+      "disciplines": {
+        "Auspex": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "—F—r—i—e—n—d—l—y— —F—a—c—e— —(—1—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—7—7—)—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —f—a—c—e— —t—h—a—t— —r—e—m—i—n—d—s— —e—v—e—r—y—o—n—e— —o—f— —s—o—m—e—o—n—e—,— —l—e—a—v—i—n—g— —y—o—u— —a—t— —-—1— —d—i—f—f—i—c—u—l—t—y— —o—n— —a—l—l— —a—p—p—r—o—p—r—i—a—t—e— —S—o—c—i—a—l—-—b—a—s—e—d— —r—o—l—l—s— —i—n—v—o—l—v—i—n—g— —s—t—r—a—n—g—e—r—s— —(—f—i—r—s—t— —m—e—e—t—i—n—g— —o—n—l—y—)—.—"
+        },
+        {
+          "name": "—M—a—g—i—c— —R—e—s—i—s—t—a—n—c—e— —(—2—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—1—)—",
+          "value": "2",
+          "desc": "—Y—o—u— —h—a—v—e— —a—n— —i—n—h—e—r—e—n—t— —r—e—s—i—s—t—a—n—c—e— —t—o— —m—a—g—i—c—.— —T—h—e— —d—i—f—f—i—c—u—l—t—y— —o—f— —a—l—l— —s—p—e—l—l—s— —(—T—r—e—m—e—r—e— —r—i—t—u—a—l—s—,— —e—t—c—.—)— —i—s— —t—w—o— —h—i—g—h—e—r— —w—h—e—n— —d—i—r—e—c—t—e—d— —a—t— —y—o—u—.— —Y—o—u— —m—a—y— —n—e—v—e—r— —l—e—a—r—n— —T—h—a—u—m—a—t—u—r—g—y—.—"
+        },
+        {
+          "name": "—L—a—w—m—a—n—'—s— —F—r—i—e—n—d—",
+          "value": "2",
+          "desc": "—T—h—e— —l—o—c—a—l— —S—h—e—r—i—f—f— —o—r— —B—i—s—h—o—p— —l—i—k—e—s— —y—o—u—.— —H—e— —o—v—e—r—l—o—o—k—s— —m—i—n—o—r— —t—r—e—s—p—a—s—s—e—s— —a—n—d— —w—a—r—n—s— —y—o—u— —o—f— —c—r—a—c—k—d—o—w—n—s—.—"
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—P—T—S—D— —(—2—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—8—)—",
+          "value": "2",
+          "desc": ""
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—J—a—d—e— —N—g—u—y—e—n— ——— —T—h—e— —A—s—p—i—r—i—n—g— —A—c—t—r—e—s—s— —G—h—o—u—l— —-— —D—e—a—d—",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "—U—n—n—a—m—e—d— —T—o—r—e—a—d—o—r— —o—r— —V—e—n—t—r—u—e— —p—a—t—r—o—n—",
+      "domitor": "—U—n—n—a—m—e—d— —T—o—r—e—a—d—o—r— —o—r— —V—e—n—t—r—u—e— —p—a—t—r—o—n—",
+      "concept": "—A—s—p—i—r—i—n—g— —A—c—t—r—e—s—s— —G—h—o—u—l— ——— —A— —T—o—r—e—a—d—o—r—/—V—e—n—t—r—u—e— —g—h—o—u—l— —s—t—u—d—y—i—n—g— —a—t— —t—h—e— —S—t—e—l—l—a—r—i—s— —C—o—n—s—e—r—v—a—t—o—r—y—.— —(—V—2—0— —C—o—r—e— —p—.—8—7—;— —V—2—0— —C—o—r—e— —p—.—4—9—7—-—4—9—8—)—",
+      "nature": "—G—a—l—l—a—n—t— ——— —P—e—r—f—o—r—m—s— —l—i—f—e— —a—s— —a— —s—c—e—n—e— —s—h—e— —i—s— —d—i—r—e—c—t—i—n—g— —(—V—2—0— —C—o—r—e—,— —p—.—9—7—)—",
+      "demeanor": "—C—e—l—e—b—r—a—n—t— ——— —F—i—n—d—s— —j—o—y— —i—n— —t—h—e— —p—a—s—s—i—o—n— —o—f— —p—e—r—f—o—r—m—a—n—c—e— —(—V—2—0— —C—o—r—e—,— —p—.—9—6—)—",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "8",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "4",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "",
+          "Dexterity": "",
+          "Stamina": ""
+        },
+        "social": {
+          "Charisma": "4",
+          "Manipulation": "4",
+          "Appearance": "5"
+        },
+        "mental": {
+          "Perception": "",
+          "Intelligence": "",
+          "Wits": ""
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "",
+          "Athletics": "",
+          "Awareness": "",
+          "Brawl": "",
+          "Empathy": "4",
+          "Expression": "4",
+          "Intimidation": "",
+          "Leadership": "",
+          "Streetwise": "",
+          "Subterfuge": "3"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "",
+          "Etiquette": "3",
+          "Firearms": "",
+          "Larceny": "",
+          "Melee": "",
+          "Performance": "5",
+          "Stealth": "",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "",
+          "Computer": "",
+          "Finance": "",
+          "Investigation": "",
+          "Law": "",
+          "Medicine": "",
+          "Occult": "",
+          "Politics": "",
+          "Science": "",
+          "Technology": ""
+        }
+      },
+      "disciplines": {
+        "Potence": "1",
+        "Presence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "—E—n—c—h—a—n—t—i—n—g— —V—o—i—c—e— —(—2—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—7—7—)—",
+          "value": "2",
+          "desc": ""
+        },
+        {
+          "name": "—S—e—d—u—c—t—r—e—s—s— —(—1—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—4—)—",
+          "value": "1",
+          "desc": ""
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—A—d—d—i—c—t—i—o—n— —(—3—p—t—,— —V—2—0— —C—o—r—e— —p—.—4—8—6—)— ——— —K—i—n—d—r—e—d— —V—i—t—a—e—",
+          "value": "3",
+          "desc": ""
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—C—h—r—i—s— —P—a—r—t—l—o—w—",
+      "clan": "Ghoul",
+      "generation": "",
+      "sire": "—E—l—l—i—o—t— —\"—S—h—a—n—e—\"— —M—e—r—c—e—r—",
+      "domitor": "—E—l—l—i—o—t— —\"—S—h—a—n—e—\"— —M—e—r—c—e—r—",
+      "concept": "—R—e—t—i—r—e—d— —S—o—l—d—i—e—r—",
+      "nature": "—S—o—l—d—i—e—r—",
+      "demeanor": "—A—u—t—o—c—r—a—t—",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "6",
+      "willpower": "6",
+      "blood_pool": "1",
+      "blood_per_turn": "1",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "4"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "3",
+          "Dexterity": "4",
+          "Stamina": "3"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "1",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "4",
+          "Intelligence": "1",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "3",
+          "Athletics": "3",
+          "Awareness": "0",
+          "Brawl": "1",
+          "Empathy": "0",
+          "Expression": "0",
+          "Intimidation": "0",
+          "Leadership": "1",
+          "Streetwise": "0",
+          "Subterfuge": "0"
+        },
+        "skills": {
+          "Animal Ken": "0",
+          "Crafts": "0",
+          "Drive": "2",
+          "Etiquette": "0",
+          "Firearms": "4 (Marksmanship)",
+          "Larceny": "0",
+          "Melee": "3",
+          "Performance": "0",
+          "Stealth": "4 (Silent Movement)",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "0",
+          "Computer": "1",
+          "Finance": "0",
+          "Investigation": "0",
+          "Law": "2",
+          "Medicine": "2",
+          "Occult": "0",
+          "Politics": "0",
+          "Science": "0",
+          "Technology": ""
+        }
+      },
+      "disciplines": {
+        "Potence": "1",
+        "Auspex": "1"
+      },
+      "backgrounds": {
+        "Resources": "2",
+        "Alternate Identity": "2",
+        "Contacts": "1"
+      },
+      "merits": [
+        {
+          "name": "—C—o—d—e— —o—f— —H—o—n—o—r—",
+          "value": "2",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —p—e—r—s—o—n—a—l— —c—o—d—e— —o—f— —e—t—h—i—c—s— —t—o— —w—h—i—c—h— —y—o—u— —a—d—h—e—r—e— —s—t—r—i—c—t—l—y—.— —G—a—i—n— —t—w—o— —a—d—d—i—t—i—o—n—a—l— —d—i—c—e— —t—o— —a—l—l— —W—i—l—l—p—o—w—e—r— —o—r— —V—i—r—t—u—e— —r—o—l—l—s— —w—h—e—n— —a—c—t—i—n—g— —i—n— —a—c—c—o—r—d—a—n—c—e— —w—i—t—h— —y—o—u—r— —c—o—d—e—.—"
+        },
+        {
+          "name": "—E—a—r—l—y— —R—i—s—e—r—",
+          "value": "1",
+          "desc": "—Y—o—u— —s—e—e—m— —t—o— —h—a—v—e— —t—h—e— —a—b—i—l—i—t—y— —t—o— —w—o—r—k— —o—n— —l—e—s—s— —r—e—s—t— —t—h—a—n— —y—o—u—r— —f—e—l—l—o—w— —v—a—m—p—i—r—e—s—.— —Y—o—u—r— —H—u—m—a—n—i—t—y— —o—r— —P—a—t—h— —s—c—o—r—e— —i—s— —c—o—n—s—i—d—e—r—e—d— —t—o— —b—e— —1—0— —f—o—r— —p—u—r—p—o—s—e—s— —o—f— —d—e—c—i—d—i—n—g— —w—h—e—n— —y—o—u— —r—i—s—e— —e—a—c—h— —e—v—e—n—i—n—g—.—"
+        },
+        {
+          "name": "—A—m—b—i—d—e—x—t—r—o—u—s—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —h—i—g—h— —d—e—g—r—e—e— —o—f— —o—f—f—-—h—a—n—d— —d—e—x—t—e—r—i—t—y— —a—n—d— —c—a—n— —p—e—r—f—o—r—m— —t—a—s—k—s— —w—i—t—h— —t—h—e— —'—w—r—o—n—g—'— —h—a—n—d— —a—t— —n—o— —p—e—n—a—l—t—y—.— —Y—o—u— —d—o— —n—o—t— —s—u—f—f—e—r— —a— —d—i—f—f—i—c—u—l—t—y— —p—e—n—a—l—t—y— —i—f— —y—o—u— —u—s—e— —t—w—o— —w—e—a—p—o—n—s—.—"
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—S—o—f—t—-—H—e—a—r—t—e—d—",
+          "value": "1",
+          "desc": "—Y—o—u— —c—a—n—n—o—t— —s—t—a—n—d— —t—o— —w—a—t—c—h— —o—t—h—e—r—s— —s—u—f—f—e—r—.— —M—u—s—t— —m—a—k—e— —W—i—l—l—p—o—w—e—r— —r—o—l—l— —t—o— —c—a—u—s—e— —p—a—i—n—.— —R—e—q—u—i—r—e—s— —H—u—m—a—n—i—t—y— —7—+—.—"
+        },
+        {
+          "name": "—N—i—g—h—t—m—a—r—e—s—",
+          "value": "1",
+          "desc": "—Y—o—u— —e—x—p—e—r—i—e—n—c—e— —h—o—r—r—e—n—d—o—u—s— —n—i—g—h—t—m—a—r—e—s— —e—v—e—r—y— —t—i—m—e— —y—o—u— —s—l—e—e—p—.— —U—p—o—n— —a—w—a—k—e—n—i—n—g—,— —m—a—k—e— —a— —W—i—l—l—p—o—w—e—r— —r—o—l—l— —o—r— —l—o—s—e— —a— —d—i—e— —o—n— —a—l—l— —a—c—t—i—o—n—s— —f—o—r— —t—h—e— —n—i—g—h—t—.—"
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—R—a—c—h—e—l— —T—e—l—l—e—r—",
+      "clan": "",
+      "generation": "",
+      "sire": "—L—i—a—m— —J—o—h—n—s—o—n—",
+      "domitor": "—L—i—a—m— —J—o—h—n—s—o—n—",
+      "concept": "",
+      "nature": "",
+      "demeanor": "",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "5",
+      "willpower": "6",
+      "blood_pool": "1",
+      "blood_per_turn": "1",
+      "virtues": {
+        "Conscience/Conviction": "",
+        "Self-Control": "",
+        "Courage": ""
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "1",
+          "Dexterity": "3",
+          "Stamina": "3"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "2",
+          "Appearance": "5"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "1",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "2",
+          "Athletics": "2",
+          "Awareness": "1",
+          "Brawl": "1",
+          "Empathy": "2",
+          "Expression": "2",
+          "Intimidation": "2",
+          "Leadership": "3",
+          "Streetwise": "2",
+          "Subterfuge": "2"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "3",
+          "Etiquette": "2",
+          "Firearms": "2",
+          "Larceny": "3",
+          "Melee": "1",
+          "Performance": "2",
+          "Stealth": "2",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "1",
+          "Investigation": "2",
+          "Law": "2",
+          "Medicine": "",
+          "Occult": "",
+          "Politics": "1",
+          "Science": "",
+          "Technology": "1"
+        }
+      },
+      "disciplines": {
+        "Potence": "1",
+        "Presence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "—A—m—b—i—d—e—x—t—r—o—u—s—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —h—i—g—h— —d—e—g—r—e—e— —o—f— —o—f—f—-—h—a—n—d— —d—e—x—t—e—r—i—t—y— —a—n—d— —c—a—n— —p—e—r—f—o—r—m— —t—a—s—k—s— —w—i—t—h— —t—h—e— —'—w—r—o—n—g—'— —h—a—n—d— —a—t— —n—o— —p—e—n—a—l—t—y—.— —Y—o—u— —d—o— —n—o—t— —s—u—f—f—e—r— —a— —d—i—f—f—i—c—u—l—t—y— —p—e—n—a—l—t—y— —i—f— —y—o—u— —u—s—e— —t—w—o— —w—e—a—p—o—n—s—.—"
+        },
+        {
+          "name": "—L—u—c—k—y—",
+          "value": "3",
+          "desc": "—Y—o—u— —w—e—r—e— —b—o—r—n— —l—u—c—k—y—.— —Y—o—u— —m—a—y— —r—e—p—e—a—t— —a—n—y— —t—h—r—e—e— —f—a—i—l—e—d— —r—o—l—l—s— —p—e—r— —s—t—o—r—y—,— —i—n—c—l—u—d—i—n—g— —b—o—t—c—h—e—s—,— —b—u—t— —y—o—u— —m—a—y— —t—r—y— —o—n—l—y— —o—n—c—e— —p—e—r— —f—a—i—l—e—d— —r—o—l—l—.—"
+        }
+      ],
+      "flaws": [],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "—M—r—s—.— —M—a—r—t—h—a— —G—a—b—l—e— ——— —T—h—e— —F—a—i—t—h—f—u—l— —M—a—t—r—i—a—r—c—h—",
+      "clan": "Mortal",
+      "generation": "N/A",
+      "sire": "—N—/—A—",
+      "domitor": "",
+      "concept": "—O—l—d— —C—h—r—i—s—t—i—a—n— —F—a—c—e—b—o—o—k— —L—a—d—y— —&— —V—o—l—u—n—t—e—e—r— —C—o—o—r—d—i—n—a—t—o—r—.— —M—a—n—a—g—e—s— —c—h—u—r—c—h— —p—r—a—y—e—r— —c—h—a—i—n—s—,— —l—o—c—a—l— —b—a—k—e— —s—a—l—e—s—,— —a—n—d— —c—h—a—r—i—t—y— —d—r—i—v—e—s—.— —S—e—e—s— —F—r—e—d—e—r—i—k— —a—s— —a— —h—o—l—y—,— —a—s—c—e—t—i—c— —m—i—n—i—s—t—e—r— —u—n—d—e—r— —a— —s—o—l—e—m—n— —v—o—w— —o—f— —s—i—l—e—n—c—e— —r—e—c—o—v—e—r—i—n—g— —f—r—o—m— —a—n— —o—r—d—e—a—l—.—",
+      "nature": "—C—a—r—e—g—i—v—e—r— ——— —D—e—e—p—l—y— —f—u—l—f—i—l—l—e—d— —b—y— —l—o—o—k—i—n—g— —a—f—t—e—r— —t—h—o—s—e— —i—n— —p—h—y—s—i—c—a—l— —o—r— —s—p—i—r—i—t—u—a—l— —n—e—e—d—.—",
+      "demeanor": "—T—r—a—d—i—t—i—o—n—a—l—i—s—t— ——— —R—e—s—p—e—c—t—f—u—l—,— —c—h—u—r—c—h—-—g—o—i—n—g— —e—l—d—e—r—l—y— —g—r—a—n—d—m—o—t—h—e—r— —w—h—o— —v—a—l—u—e—s— —f—a—i—t—h—,— —m—a—n—n—e—r—s—,— —a—n—d— —c—o—m—m—u—n—i—t—y—.—",
+      "player": "",
+      "type": "Mortal",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "8",
+      "willpower": "4",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "4",
+        "Self-Control": "4",
+        "Courage": "2"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "1",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "2",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "2",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "1",
+          "Athletics": "",
+          "Awareness": "",
+          "Brawl": "",
+          "Empathy": "3",
+          "Expression": "2",
+          "Intimidation": "",
+          "Leadership": "",
+          "Streetwise": "",
+          "Subterfuge": ""
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "2",
+          "Drive": "2",
+          "Etiquette": "3",
+          "Firearms": "",
+          "Larceny": "",
+          "Melee": "",
+          "Performance": "",
+          "Stealth": "",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "1",
+          "Investigation": "",
+          "Law": "",
+          "Medicine": "1",
+          "Occult": "",
+          "Politics": "",
+          "Science": "",
+          "Technology": ""
+        }
+      },
+      "disciplines": {},
+      "backgrounds": {
+        "Allies": "2",
+        "Contacts": "2",
+        "Resources": "2"
+      },
+      "merits": [
+        {
+          "name": "—C—o—m—m—o—n— —S—e—n—s—e—",
+          "value": "1",
+          "desc": "—Y—o—u— —h—a—v—e— —a— —s—i—g—n—i—f—i—c—a—n—t— —a—m—o—u—n—t— —o—f— —p—r—a—c—t—i—c—a—l—,— —e—v—e—r—y—d—a—y— —w—i—s—d—o—m—.— —T—h—e— —S—t—o—r—y—t—e—l—l—e—r— —c—a—n— —m—a—k—e— —s—u—g—g—e—s—t—i—o—n—s— —o—r— —w—a—r—n—i—n—g—s— —w—h—e—n— —y—o—u— —a—r—e— —a—b—o—u—t— —t—o— —a—c—t— —c—o—n—t—r—a—r—y— —t—o— —c—o—m—m—o—n— —s—e—n—s—e—.—"
+        }
+      ],
+      "flaws": [
+        {
+          "name": "—T—e—c—h—n—o—l—o—g—i—c—a—l—l—y— —C—h—a—l—l—e—n—g—e—d—",
+          "value": "1",
+          "desc": "—Y—o—u— —s—t—r—u—g—g—l—e— —w—i—t—h— —m—o—d—e—r—n— —d—e—v—i—c—e—s—;— —r—e—l—i—e—s— —s—t—r—i—c—t—l—y— —o—n— —s—i—m—p—l—e— —i—P—a—d— —t—a—p—s—,— —F—a—c—e—b—o—o—k— —M—e—s—s—e—n—g—e—r—,— —a—n—d— —p—h—o—n—e— —c—a—l—l—s—.—"
+        }
+      ],
+      "equipment": [
+        "—G—o—l—d—-—r—i—m—m—e—d— —r—e—a—d—i—n—g— —g—l—a—s—s—e—s— —o—n— —a— —b—e—a—d—e—d— —l—a—n—y—a—r—d—",
+        "—i—P—a—d— —i—n— —a— —f—l—o—r—a—l— —q—u—i—l—t—e—d— —c—a—s—e— —(—F—a—c—e—b—o—o—k— —n—o—t—i—f—i—c—a—t—i—o—n—s— —o—n— —m—a—x—i—m—u—m— —v—o—l—u—m—e—)—",
+        "—F—l—o—r—a—l— —h—a—n—d—b—a—g— —w—i—t—h— —p—e—p—p—e—r—m—i—n—t— —&— —b—u—t—t—e—r—s—c—o—t—c—h— —h—a—r—d— —c—a—n—d—i—e—s—",
+        "—S—u—n—d—a—y— —c—h—u—r—c—h— —b—u—l—l—e—t—i—n—",
+        "—K—e—y—s— —t—o— —2—0—0—4— —B—u—i—c—k— —L—e—S—a—b—r—e—"
+      ],
       "specialties": {}
     }
   ],

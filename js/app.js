@@ -6,6 +6,7 @@ var DEFAULT_PORTRAIT = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/20
 var state = {
   data: null,
   activeTab: 'kindred',
+  pcCategoryFilter: 'all',
   npcFilter: 'all',
   mapCategoryFilter: 'all',
   mapSearchQuery: '',
@@ -15,6 +16,17 @@ var state = {
   map: null,
   mapMarkers: [],
   territoryLayers: []
+};
+
+var TAB_CONFIG = {
+  'kindred': { title: 'Kindred', sub: 'NPC Dossiers' },
+  'pcs': { title: 'Player Characters', sub: 'Kindred & Ghouls' },
+  'coterie': { title: 'Player Characters', sub: 'Kindred & Ghouls' },
+  'map': { title: 'LA Map', sub: 'Territories & Locations' },
+  'rules': { title: 'Rules & Systems', sub: 'V20 Reference' },
+  'armory': { title: 'Armory', sub: 'Weapons & Equipment' },
+  'sessions': { title: 'Chronicle Briefings', sub: 'Session Debriefs' },
+  'dice': { title: 'V20 Dice Engine', sub: 'Probability Roller' }
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -43,7 +55,7 @@ function initApp() {
 function setupUI() {
   setupNavigation();
   renderKindred();
-  renderCoterie();
+  renderPlayerCharacters();
   renderRules();
   renderArmory();
   renderSessions();
@@ -94,11 +106,14 @@ function navigateFromDrawer(tab, subTab) {
 }
 
 function switchTab(tabName) {
+  if (tabName === 'coterie') tabName = 'pcs';
   state.activeTab = tabName;
-  
-  document.querySelectorAll('.nav-item').forEach(function(el) {
-    el.classList.toggle('active', el.getAttribute('data-tab') === tabName);
-  });
+
+  var conf = TAB_CONFIG[tabName] || { title: (tabName ? tabName.toUpperCase() : 'CODEX'), sub: '' };
+  var titleEl = document.getElementById('header-tab-title');
+  var subEl = document.getElementById('header-tab-subtitle');
+  if (titleEl) titleEl.textContent = conf.title;
+  if (subEl) subEl.textContent = conf.sub;
 
   document.querySelectorAll('.drawer-item').forEach(function(el) {
     el.classList.toggle('active', el.getAttribute('data-drawer-tab') === tabName);
@@ -724,6 +739,21 @@ function initGlobalSearch() {
     }
 
     var h = '';
+    var pcs = (state.data && state.data.pcs) || [];
+    var matchPcs = pcs.filter(function(p) {
+      return (p.name + ' ' + (p.clan || '') + ' ' + (p.player || '') + ' ' + (p.concept || '')).toLowerCase().includes(q);
+    });
+    if (matchPcs.length > 0) {
+      h += '<div style="font-size:11px;color:var(--gold);margin-bottom:6px;font-weight:700;">PLAYER CHARACTERS (' + matchPcs.length + ')</div>';
+      matchPcs.forEach(function(p) {
+        var pIdx = pcs.indexOf(p);
+        var typeLabel = p.type === 'Ghoul' ? 'Ghoul' : (p.clan || 'Kindred');
+        h += '<div class="npc-card" style="margin-bottom:8px;padding:8px;cursor:pointer;" onclick="closeGlobalSearch();openPcSheet(' + pIdx + ')">';
+        h += '  <strong>' + escapeHtml(p.name) + '</strong> (' + escapeHtml(typeLabel) + ') - <span style="color:#9c9cae;font-size:12px;">' + escapeHtml(p.concept || '') + '</span>';
+        h += '</div>';
+      });
+    }
+
     var npcs = (state.data && state.data.npcs) || [];
     var matchNpcs = npcs.filter(function(n) {
       return (n.name + ' ' + (n.aliases||'') + ' ' + (n.clan||'') + ' ' + (n.concept||'')).toLowerCase().includes(q);
@@ -823,40 +853,90 @@ function getStatNum(obj, key) {
   return parseInt(val) || 0;
 }
 
-/* ─── COTERIE & PC FULL V20 SHEET VIEW ENGINE ─── */
-function renderCoterie() {
+/* ─── PLAYER CHARACTERS (KINDRED & GHOULS) VIEW ENGINE ─── */
+function setPcCategoryFilter(cat, btn) {
+  state.pcCategoryFilter = cat;
+  var filterBar = document.getElementById('pc-filter-bar');
+  if (filterBar) {
+    filterBar.querySelectorAll('.filter-pill').forEach(function(p) {
+      p.classList.remove('active');
+    });
+  }
+  if (btn) btn.classList.add('active');
+  renderPlayerCharacters();
+}
+
+function renderPlayerCharacters() {
   var pcs = (state.data && state.data.pcs) || [];
-  var container = document.getElementById('pc-grid');
+  var container = document.getElementById('pc-directory-list');
   if (!container) return;
 
-  if (pcs.length === 0) {
-    container.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:40px;">No Coterie dossiers published yet.</p>';
+  var filter = (state.pcCategoryFilter || 'all').toLowerCase();
+  var filtered = pcs.filter(function(pc) {
+    if (filter === 'all') return true;
+    var pcType = (pc.type || 'Vampire').toLowerCase();
+    if (filter === 'vampire') {
+      return pcType === 'vampire' || pcType === 'kindred';
+    }
+    if (filter === 'ghoul') {
+      return pcType === 'ghoul' || pcType === 'retainer' || pcType === 'mortal';
+    }
+    return pcType === filter;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-muted);padding:30px;text-align:center;">No player characters match the selected filter.</p>';
     return;
   }
 
   var html = '';
-  pcs.forEach(function(pc, idx) {
-    var portraitSrc = pc.portrait || DEFAULT_PORTRAIT;
+  filtered.forEach(function(pc) {
+    var realIdx = pcs.indexOf(pc);
+    var pcType = (pc.type || 'Vampire').toLowerCase();
+    var isGhoul = (pcType === 'ghoul' || pcType === 'retainer');
+    var isMortal = (pcType === 'mortal');
 
-    html += '<div class="npc-card" onclick="openPcSheet(' + idx + ')" style="cursor:pointer;" title="Tap to open full V20 Character Sheet">';
-    html += '  <div class="npc-portrait-wrap">';
-    html += '    <img class="npc-portrait" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '" loading="lazy">';
-    html += '  </div>';
-    html += '  <div class="npc-info">';
-    html += '    <h3 class="npc-name">' + escapeHtml(pc.name) + '</h3>';
-    html += '    <div class="npc-badges">';
-    html += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
-    html += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation || '8th') + '</span>';
+    var typeBadge = '';
+    if (isGhoul) {
+      typeBadge = '<span class="badge-pc-ghoul">[Ghoul - Retainer]</span>';
+    } else if (isMortal) {
+      typeBadge = '<span class="badge-pc-mortal">[Mortal]</span>';
+    } else {
+      typeBadge = '<span class="badge-pc-vampire">[Vampire - ' + escapeHtml(pc.clan || 'Kindred') + ']</span>';
+    }
+
+    html += '<div class="pc-compact-card" onclick="openPcSheet(' + realIdx + ')" role="button" tabindex="0">';
+    html += '  <div class="pc-compact-header">';
+    html += '    <div>';
+    html += '      <div class="pc-compact-name">' + escapeHtml(pc.name) + '</div>';
+    if (pc.player) {
+      html += '      <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Player: ' + escapeHtml(pc.player) + '</div>';
+    }
     html += '    </div>';
+    html += '    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">';
+    html +=        typeBadge;
+    if (!isGhoul && !isMortal && pc.generation) {
+      html += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation) + '</span>';
+    }
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div class="pc-compact-meta">';
     if (pc.concept) {
-      html += '    <div class="npc-concept">' + escapeHtml(pc.concept) + '</div>';
+      html += '    <div class="pc-compact-meta-item"><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
+    }
+    if (isGhoul && pc.domitor) {
+      html += '    <div class="pc-compact-meta-item"><strong>Domitor:</strong> ' + escapeHtml(pc.domitor) + '</div>';
+    } else if (!isGhoul && !isMortal && pc.sire && pc.sire !== 'N/A') {
+      html += '    <div class="pc-compact-meta-item"><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
     }
     if (pc.nature && pc.demeanor) {
-      html += '    <div style="font-size:11px;color:var(--text-muted);margin-top:6px;"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
+      html += '    <div class="pc-compact-meta-item"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
     }
-    html += '    <div style="margin-top:10px;">';
-    html += '      <span class="badge" style="background:rgba(230,46,61,0.15);color:var(--crimson-vivid);border:1px solid var(--border-accent);font-size:11px;font-weight:600;">View Character Sheet &rarr;</span>';
-    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div class="pc-compact-footer">';
+    html += '    <button type="button" class="btn-view-sheet-pill">View Character Sheet &rarr;</button>';
     html += '  </div>';
     html += '</div>';
   });
@@ -874,6 +954,9 @@ function openPcSheet(idx) {
   if (!modal || !content) return;
 
   var portraitSrc = pc.portrait || DEFAULT_PORTRAIT;
+  var pcType = (pc.type || 'Vampire').toLowerCase();
+  var isGhoul = (pcType === 'ghoul' || pcType === 'retainer');
+  var isMortal = (pcType === 'mortal');
 
   var phys = (pc.attributes && pc.attributes.physical) || {};
   var soc = (pc.attributes && pc.attributes.social) || {};
@@ -892,20 +975,34 @@ function openPcSheet(idx) {
 
   var h = '';
 
-  // 1. Hero Showcase
+  // 1. Hero Showcase (Portrait revealed inside sheet modal on click)
   h += '<div class="pc-view-hero">';
   h += '  <img class="pc-portrait-lg" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '">';
   h += '  <div class="pc-hero-meta">';
   h += '    <div class="pc-hero-title">' + escapeHtml(pc.name) + '</div>';
   if (pc.player) h += '<div style="font-size:12px;color:var(--text-muted);">Player: ' + escapeHtml(pc.player) + '</div>';
   h += '    <div class="pc-hero-badges">';
-  h += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
-  h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation || '8th') + '</span>';
-  h += '      <span class="badge" style="border-color:var(--gold);color:var(--gold);">XP: ' + escapeHtml(pc.xp || '0') + '</span>';
+  if (isGhoul) {
+    h += '      <span class="badge-pc-ghoul">[Ghoul - Retainer]</span>';
+  } else if (isMortal) {
+    h += '      <span class="badge-pc-mortal">[Mortal]</span>';
+  } else {
+    h += '      <span class="badge badge-clan">' + escapeHtml(pc.clan || 'Kindred') + '</span>';
+    if (pc.generation) {
+      h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation) + '</span>';
+    }
+  }
+  if (pc.xp) {
+    h += '      <span class="badge" style="border-color:var(--gold);color:var(--gold);">XP: ' + escapeHtml(pc.xp) + '</span>';
+  }
   h += '    </div>';
   h += '    <div style="font-size:12px;color:var(--text-secondary);line-height:1.4;">';
   if (pc.concept) h += '<div><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
-  if (pc.sire && pc.sire !== 'N/A') h += '<div><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
+  if (isGhoul && pc.domitor) {
+    h += '<div><strong>Domitor:</strong> ' + escapeHtml(pc.domitor) + '</div>';
+  } else if (!isGhoul && !isMortal && pc.sire && pc.sire !== 'N/A') {
+    h += '<div><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
+  }
   if (pc.nature && pc.demeanor) h += '<div><strong>Nature / Demeanor:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
   h += '    </div>';
   h += '  </div>';
@@ -928,8 +1025,8 @@ function openPcSheet(idx) {
   h += '      <div class="pc-vital-val">' + escapeHtml(pc.willpower || '5') + '</div>';
   h += '    </div>';
   h += '    <div class="pc-vital-box">';
-  h += '      <span class="pc-vital-label">Blood Pool</span>';
-  h += '      <div class="pc-vital-val" style="color:var(--crimson-vivid);">' + escapeHtml(pc.blood_pool || '10') + ' <span style="font-size:11px;color:var(--text-muted);font-weight:normal;">(' + escapeHtml(pc.blood_per_turn || '1') + '/turn)</span></div>';
+  h += '      <span class="pc-vital-label">' + (isGhoul ? 'Vitae Pool' : (isMortal ? 'Blood Points' : 'Blood Pool')) + '</span>';
+  h += '      <div class="pc-vital-val" style="color:var(--crimson-vivid);">' + escapeHtml(pc.blood_pool || (isGhoul ? '2' : '10')) + ' <span style="font-size:11px;color:var(--text-muted);font-weight:normal;">(' + escapeHtml(pc.blood_per_turn || '1') + '/turn)</span></div>';
   h += '    </div>';
   h += '  </div>';
 

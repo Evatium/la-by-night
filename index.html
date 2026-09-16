@@ -51,13 +51,13 @@
           </span>
           Kindred (NPCs)
         </a>
-        <a href="#coterie" class="drawer-item" data-drawer-tab="coterie" onclick="navigateFromDrawer('coterie')">
+        <a href="#pcs" class="drawer-item" data-drawer-tab="pcs" onclick="navigateFromDrawer('pcs')">
           <span class="drawer-icon-svg" style="color:var(--gold);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </span>
-          PC Sheets (Coterie)
+          Player Characters
         </a>
       </div>
 
@@ -145,28 +145,19 @@
     </div>
   </aside>
 
-  <!-- HEADER -->
+  <!-- DYNAMIC HEADER WITH EXPANDABLE DRAWER TRIGGER -->
   <header class="codex-header">
-    <div style="display:flex;align-items:center;gap:8px;">
-      <button type="button" class="header-menu-btn" onclick="toggleDrawer()" aria-label="Open Navigation Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button type="button" class="header-menu-btn" onclick="toggleDrawer()" aria-label="Open Navigation Menu" title="Open Navigation Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <div class="brand">
-        <span class="brand-crest">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--crimson-vivid)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="7" r="4"></circle>
-            <line x1="12" y1="11" x2="12" y2="21"></line>
-            <line x1="8" y1="14" x2="16" y2="14"></line>
-          </svg>
-        </span>
-        <div class="brand-text">
-          <h1>LA by Night</h1>
-          <span>Kindred Codex</span>
-        </div>
+      <div class="header-tab-indicator">
+        <h1 id="header-tab-title" class="header-tab-title">Kindred</h1>
+        <span id="header-tab-subtitle" class="header-tab-subtitle">NPC Dossiers</span>
       </div>
     </div>
     <button type="button" class="header-search-btn" onclick="openGlobalSearch()">
@@ -193,14 +184,15 @@
       </div>
     </section>
 
-    <!-- COTERIE (PCS) PANEL -->
-    <section id="view-coterie" class="view-panel">
-      <div style="padding:14px 16px 8px;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;">
-        <h2 style="font-family:var(--font-serif);font-size:16px;color:var(--text-main);margin:0;">The Coterie</h2>
-        <span style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:600;">Player Characters</span>
+    <!-- PLAYER CHARACTERS (PCS & GHOULS) PANEL -->
+    <section id="view-pcs" class="view-panel">
+      <div class="filter-bar" id="pc-filter-bar" style="margin-bottom:14px;">
+        <button type="button" class="filter-pill active" onclick="setPcCategoryFilter('all', this)">All Characters</button>
+        <button type="button" class="filter-pill" onclick="setPcCategoryFilter('vampire', this)">Kindred (Vampires)</button>
+        <button type="button" class="filter-pill" onclick="setPcCategoryFilter('ghoul', this)">Ghouls &amp; Retainers</button>
       </div>
-      <div class="npc-grid" id="pc-grid" style="padding:16px;">
-        <!-- Rendered via app.js -->
+      <div class="pc-directory-container" id="pc-directory-list">
+        <!-- Rendered via app.js (Compact cards, portraits shown on click) -->
       </div>
     </section>
 
@@ -330,58 +322,6 @@
     </section>
   </main>
 
-  <!-- BOTTOM NAVBAR (RAPID THUMB ACCESS WITH DEDICATED PC SHEETS MENU ITEM) -->
-  <nav class="bottom-nav">
-    <button type="button" class="nav-item active" data-tab="kindred">
-      <span class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-        </svg>
-      </span>
-      <span>Kindred</span>
-    </button>
-    <button type="button" class="nav-item" data-tab="coterie">
-      <span class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-      </span>
-      <span>PC Sheets</span>
-    </button>
-    <button type="button" class="nav-item" data-tab="map">
-      <span class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-          <line x1="8" y1="2" x2="8" y2="18"></line>
-          <line x1="16" y1="6" x2="16" y2="22"></line>
-        </svg>
-      </span>
-      <span>LA Map</span>
-    </button>
-    <button type="button" class="nav-item" data-tab="rules">
-      <span class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-        </svg>
-      </span>
-      <span>Rules</span>
-    </button>
-    <button type="button" class="nav-item" data-tab="armory">
-      <span class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="22" y1="12" x2="18" y2="12"></line>
-          <line x1="6" y1="12" x2="2" y2="12"></line>
-          <line x1="12" y1="6" x2="12" y2="2"></line>
-          <line x1="12" y1="22" x2="12" y2="18"></line>
-        </svg>
-      </span>
-      <span>Armory</span>
-    </button>
-  </nav>
-
   <!-- DOSSIER MODAL (REDACTED FOR NPCS) -->
   <div class="modal-overlay" id="dossier-modal" onclick="if(event.target===this)closeDossier()">
     <div class="modal-sheet">
@@ -390,7 +330,7 @@
     </div>
   </div>
 
-  <!-- PC CHARACTER SHEET MODAL (FULL VIEW MODE FOR COTERIE PCS) -->
+  <!-- PC CHARACTER SHEET MODAL (FULL VIEW MODE WITH PORTRAIT) -->
   <div class="modal-overlay" id="pc-sheet-modal" onclick="if(event.target===this)closePcSheet()">
     <div class="modal-sheet sheet-wide">
       <button type="button" class="modal-close-btn" onclick="closePcSheet()">&times;</button>
