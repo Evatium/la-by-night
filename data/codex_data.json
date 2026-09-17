@@ -24,6 +24,26 @@
       ]
     },
     {
+      "id": 64,
+      "name": "Alberto Giovanni — The Handsome Frontman",
+      "aliases": "The Face of the Empire, Lucia's Shield",
+      "concept": "Polished mortuary chain executive managing estate logistics and money laundering for Clan Giovanni.",
+      "faction": "Independent",
+      "clan": "Giovanni",
+      "portrait": "portraits/npc_64.webp",
+      "tropes": [
+        "The Handsome Shield",
+        "The Devoted Servant Who Is Also a Weapon",
+        "The Face That Hides the Monster"
+      ],
+      "functions": [
+        "Visible entry point to Giovanni interests. Easier to befriend than Lucia.",
+        "His celebrity status provides Masquerade cover.",
+        "Handles all mortal operations — lawsuits, inspections, PR.",
+        "Opens doors in LA food and entertainment industries."
+      ]
+    },
+    {
       "id": 3,
       "name": "Amanda Byers — Keeper of Elysium",
       "aliases": "The Invisible Secretary, The Archivist, The Woman of a Thousand Notes",
@@ -61,6 +81,25 @@
         "His secret bond is a long-burning plot bomb. Whoever controls his hidden master controls the city's law enforcement.",
         "PCs who discover his bondage gain immense leverage over the Camarilla; those who do not are in constant danger.",
         "His forensic skills make him more than a brute — he can track, analyze, and deduce with terrifying precision."
+      ]
+    },
+    {
+      "id": 127,
+      "name": "Archon Theo Bell — Iron Hammer of the Justicariat",
+      "aliases": "Archon Bell, The Iron Brujah, Pascek's Right Hand",
+      "concept": "Legendary 8th-generation Brujah Archon to Justicar Pascek; arrived in Los Angeles to command Camarilla military operations against the northern Sabbat expansion and audit city leadership.",
+      "faction": "Camarilla",
+      "clan": "Brujah",
+      "portrait": "portraits/npc_127.webp",
+      "tropes": [
+        "The Reluctant Soldier",
+        "The Iron Archon",
+        "The Hammer of Justice"
+      ],
+      "functions": [
+        "Supreme Camarilla military commander in Southern California fighting the Sabbat expansion.",
+        "The pivotal judge before whom Prince Meredith can present her 1920s Masquerade evidence against Seth Cyntach.",
+        "A legendary ally or terrifying commander for the PCs on high-stakes frontline missions."
       ]
     },
     {
@@ -104,6 +143,167 @@
       ]
     },
     {
+      "id": 126,
+      "name": "Balthazar 'Ace' Landon — High Regent of Los Angeles",
+      "aliases": "High Regent Landon, Ace, Pontifex's Advisor Emeritus, The Vizier Who Eats Echoes",
+      "concept": "Master strategist, former Seattle detective, and 7th-generation High Regent of Los Angeles; practitioner of the ancient Via Consuasor and Pontifex's Advisor Emeritus whose chantry was devastated on Night 1 while he was away.",
+      "faction": "Camarilla",
+      "clan": "Tremere",
+      "portrait": "portraits/npc_126.webp",
+      "tropes": [
+        "The Grand Vizier",
+        "The Detective Magus",
+        "The Patient Architect",
+        "The Diablerist Scholar"
+      ],
+      "functions": [
+        "High Regent of Los Angeles and senior occult counselor to the Camarilla court.",
+        "Orchestrating the reconstruction of the Tremere Chantry following the Night 1 Sabbat massacre at House Crimson Sigils.",
+        "A master patron, occult problem-solver, and dangerous chessmaster for the PCs."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Ewald Borsodi — Glam-Rock Director & Money Launderer",
+      "aliases": "The Artistic Launderer, Darling",
+      "concept": "1970s Glam-Rock music video director laundering millions through Hollywood studio fronts.",
+      "faction": "Camarilla",
+      "clan": "Toreador",
+      "portrait": "portraits/npc_13.webp",
+      "tropes": [
+        "The Artist as Criminal",
+        "The Performer Who Means It",
+        "Beauty Concealing Calculation"
+      ],
+      "functions": [
+        "Financial launderer for Camarilla elite. His art events are perfect Masquerade-friendly settings for meetings.",
+        "His Bill flaw is leverage for enemies.",
+        "Can turn dirty money into clean art sales.",
+        "Essential to the city's economy of secrets."
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Father Adrian Thorne — The Vatican Liaison",
+      "aliases": "The Wolf in Holy Vestments, The Confessor",
+      "concept": "Archdiocese financial administrator and liaison; keeps the Vatican Inquisitions blind to LA Kindred.",
+      "faction": "Camarilla",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_21.webp",
+      "tropes": [
+        "The Wolf in Holy Vestments",
+        "The Church as Intelligence Network",
+        "The Haunted Man Who Earned His Ghost"
+      ],
+      "functions": [
+        "Early warning system for Second Inquisition. Moles in the Vatican.",
+        "His ghost flaw is an environmental hazard that can expose him.",
+        "Church Influence moves assets via diplomatic pouches.",
+        "Hunters in the Diocese must go through him."
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Father Raphaël Ambrosius Costeau",
+      "aliases": "The Shadowed Priest, The Confessor of the Void, Raphael",
+      "concept": "Shadowed Priest of the Abyss",
+      "faction": "Sabbat",
+      "clan": "Lasombra",
+      "portrait": "portraits/npc_43.webp",
+      "tropes": [
+        "The Corrupted Priest",
+        "The Abyss Gazes Also",
+        "The Information Broker's Broker",
+        "The True Believer in Darkness"
+      ],
+      "functions": [
+        "Sabbat spiritual authority in LA — oversees the Vaulderie, Ritae, and pack loyalty.",
+        "Abyss Mysticism occultist and combat juggernaut.",
+        "Key conduit in the quest to recover and replicate the blood of Svarog for Dmitry Shemyaka.",
+        "Direct ideological and spiritual foil to Father Adrian Thorne."
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Freesoul Shabaz — Civil Rights Brawler",
+      "aliases": "Kevin Miller (birth name), The Gentle Giant",
+      "concept": "1960s civil rights activist turned frontline South LA Gangrel street defender.",
+      "faction": "Anarch",
+      "clan": "Gangrel",
+      "portrait": "portraits/npc_25.webp",
+      "tropes": [
+        "The True Believer",
+        "The Contradiction Made Flesh",
+        "Idealism at 125 Kilograms"
+      ],
+      "functions": [
+        "Anarch heavy combat resource.",
+        "His Campfire Parleys are rare neutral space between sects.",
+        "His ideology creates social friction with Camarilla PCs.",
+        "Even the Sheriff avoids killing him — would ignite the Gangrel population."
+      ]
+    },
+    {
+      "id": 30,
+      "name": "George \"Shadowfox\" Lipton — Subterranean Hermit",
+      "aliases": "Shadowfox, The Keeper of the Labyrinth",
+      "concept": "Centenarian tunnel excavator who mapped and built the subterranean labyrinth under Los Angeles.",
+      "faction": "Camarilla",
+      "clan": "Nosferatu",
+      "portrait": "portraits/npc_30.webp",
+      "tropes": [
+        "The Ghost in the Machine",
+        "The Underground Hermit",
+        "The Keeper of the Labyrinth"
+      ],
+      "functions": [
+        "Ultimate gatekeeper to LA's underworld — nobody knows the tunnels better.",
+        "Provides secure movement across LA undetected.",
+        "Requires respect for territory and discretion.",
+        "Map includes passages beneath Elysium and havens."
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Jack \"Smiling Jack\" Drake — The Corrupting Mentor",
+      "aliases": "Smiling Jack, The Pirate King",
+      "concept": "Former pirate second mate and legendary Anarch mentor; the smiling avatar of chaos.",
+      "faction": "Anarch",
+      "clan": "Brujah",
+      "portrait": "portraits/npc_36.webp",
+      "tropes": [
+        "The Pirate King in Rags",
+        "The Corrupting Mentor",
+        "The Man Who Knew Caine (Allegedly)"
+      ],
+      "functions": [
+        "The Anarchs' \"Nuclear Option\" — disrupts everyone, manages nothing.",
+        "Primary chaos source in LA. Behind LaCroix's downfall.",
+        "Teaches survival while ensuring PCs destroy his enemies.",
+        "Encyclopedia of Anarch history. Master combatant."
+      ]
+    },
+    {
+      "id": 122,
+      "name": "Jacob Singer",
+      "aliases": "The Soldier",
+      "concept": "Ex-army conspiracy veteran wielding Judgment & Martyrdom Virtues (Discern, Smolder, Ravage) to create supernatural kill zones.",
+      "faction": "Hunter",
+      "clan": "Mortal (Imbued)",
+      "portrait": "portraits/npc_122.webp",
+      "tropes": [
+        "The Old Soldier",
+        "The Conspiracy Nut (Right)",
+        "I Told You They Existed"
+      ],
+      "functions": [
+        "Breach-and-clear and overwatch.",
+        "Discern: night vision + superior Second Sight ? vampires read paler, veins visible, watch them breathe, clock the fangs.",
+        "Smolder: Obtenebration-2-style smoke that deadens mortal and most supernatural senses; hunters see through it with Second Sight.",
+        "Ravage (Martyrdom 3): 6m-range lethal vs supernaturals; mortals stunned but unharmed; caster takes 1 bashing."
+      ]
+    },
+    {
       "id": 8,
       "name": "Jeremy MacNeil — Anarch Leader",
       "aliases": "The Legend, The Architect of the Free State, The Scottish Revolutionary",
@@ -121,6 +321,27 @@
         "Direct conflict with him is a death sentence. PCs should work with or around him.",
         "His Overextended flaw means cracks are showing in the Free State.",
         "Font of revolutionary history — has been fighting the Camarilla for centuries."
+      ]
+    },
+    {
+      "id": 121,
+      "name": "Joshua Preston",
+      "aliases": "The Preacher",
+      "concept": "Imbued heavy weapons zealot wielding Judgment & Vengeance Virtues (Strike, Smite, Track) against monsters.",
+      "faction": "Hunter",
+      "clan": "Mortal (Imbued)",
+      "portrait": "portraits/npc_121.webp",
+      "tropes": [
+        "The Holy Warrior",
+        "Faith Is a Weapon",
+        "The Martyr"
+      ],
+      "functions": [
+        "Frontline tank via Surge (1 res: +10 physical dots, max trait 6).",
+        "Cleave: his melee weapon deals lethal damage and +2 (approx. stake/edged rules, HH2 tactics chapter).",
+        "Trail: touch a supernatural ? smoky trail lasting days; target sees it only with Perception+Awareness diff 7 and Auspex.",
+        "Pierce (1 res): lie detection; touch a witness to see their last supernatural encounter; touch a supernatural to see a specific period of its past.",
+        "Ward: True Faith repel (HH2 p.83-85) ? no concentration; approaching costs diff-8 Stamina + 1 WP (after the first)."
       ]
     },
     {
@@ -144,6 +365,167 @@
       ]
     },
     {
+      "id": 34,
+      "name": "Louis Charles Fortier de la Bellière — Anarch Baron of West LA",
+      "aliases": "The Displaced Aristocrat, The Honorable Defector",
+      "concept": "French noble and refined Baron of West LA; a gentleman of the Old World in the Free States.",
+      "faction": "Anarch",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_34.webp",
+      "tropes": [
+        "The Displaced Aristocrat",
+        "The Honorable Defector",
+        "The Velvet Glove"
+      ],
+      "functions": [
+        "High-society alternative for Anarchs rejecting street aesthetics.",
+        "Owner of Club Zombie and Sepulcre VIP area.",
+        "His wealth is vital to the Anarch movement.",
+        "His \"New Promise Mandarinate\" ties make him suspicious."
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Lucia Giovanni — The Corpse-Chef",
+      "aliases": "The Necromantic Mogul, The Chef of the Dead",
+      "concept": "Culinary necromancer catering high-end illicit flesh feasts and spirit banquets in Arcadia.",
+      "faction": "Independent",
+      "clan": "Giovanni",
+      "portrait": "portraits/npc_23.webp",
+      "tropes": [
+        "The Monster in the Kitchen",
+        "The Puppeteer Who Prefers the Shadows",
+        "Body Horror as Craft"
+      ],
+      "functions": [
+        "LA Giovanni operations center. Controls food distribution.",
+        "Her \"Test Kitchen\" herd provides bespoke blood to the elite.",
+        "Necromancy 4 is uniquely useful for ghost-related plots.",
+        "Can weaponize body chemistry from across a room."
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Marcus \"Silky\" Holloway — The Port Authority",
+      "aliases": "Silky, The Suave Industrialist",
+      "concept": "Ventrue commercial baron overseeing the legal container shipping lines, customs officials, and corporate shipping docks of the Port of Los Angeles.",
+      "faction": "Camarilla",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_19.webp",
+      "tropes": [
+        "The Suave Industrialist",
+        "The Union Man Who Became Management",
+        "Power as Infrastructure"
+      ],
+      "functions": [
+        "Camarilla's smuggling backbone — moves goods without digital record.",
+        "His Lifesaver flaw creates vulnerability using dock workers.",
+        "Ghost Port project is a plot hook for Second Inquisition activity.",
+        "Controls everything entering LA through the port."
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Marguerite Foccart — The Eternal Lover of the Revolution",
+      "aliases": "The Revolutionary Socialite, The Muse of Rebellion",
+      "concept": "Exiled French noblewoman and philanthropic Baron of the movement’s inner council.",
+      "faction": "Anarch",
+      "clan": "Brujah",
+      "portrait": "portraits/npc_37.webp",
+      "tropes": [
+        "The Revolutionary Socialite",
+        "The Lady of Fate",
+        "The Muse of Rebellion"
+      ],
+      "functions": [
+        "Social glue of high-level Anarch leadership.",
+        "MacNeil's lover and Attucks's sire — immense informal influence.",
+        "Provides soft power — philanthropy and finance.",
+        "Gatekeeper for Old Guard introductions."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Maria Estavez — Camarilla Internal Affairs Investigator",
+      "aliases": "The Forensic Enforcer, The New Guard, The Unblinking Eye",
+      "concept": "Former LAPD internal affairs detective; merciless auditor of Masquerade coverups.",
+      "faction": "Camarilla",
+      "clan": "Brujah",
+      "portrait": "portraits/npc_10.webp",
+      "tropes": [
+        "The Cop Who Actually Believes in the Law",
+        "The Brujah Who Never Frenzies",
+        "The Investigator as Threat"
+      ],
+      "functions": [
+        "Camarilla's forensic investigator — if you left evidence, she will find it.",
+        "Her Rigid Device flaw can be exploited by procedurally correct traps.",
+        "Inc orruptible in pursuit of facts. A potential obstacle or asset.",
+        "Proves Brujah can be disciplined Camarilla loyalists."
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Mark E. Waggoner — The Legacy Litigator",
+      "aliases": "The Bridge, The Golden Boy",
+      "concept": "Junior corporate litigator managing local courtroom injunctions and court records.",
+      "faction": "Camarilla",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_20.webp",
+      "tropes": [
+        "The Idealist in a Corrupt System",
+        "The Lawyer Who Believes in the Law",
+        "The Golden Boy with a Nuclear Sire"
+      ],
+      "functions": [
+        "Only NPC who can broker legal disputes between sects.",
+        "His Universal Kindred Code is a long-burn city-wide plot.",
+        "His test-case hunt for Elder accountability could catch a PC's patron.",
+        "Mentor 5 (Matilda) is a nuclear deterrent."
+      ]
+    },
+    {
+      "id": 134,
+      "name": "Matilda Monclair — The Iron Aristocrat",
+      "aliases": "",
+      "concept": "Retired Methuselah-level Ventrue ex-PC living in secluded luxury in Pacific Palisades; legendary combat and political survivor of the previous chronicle who owns the ultra-exclusive Velvet Manifesto gentleman's club and brothel, entrusting city legal affairs to her childe Mark E. Waggoner.",
+      "faction": "Autarkis",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_134.webp",
+      "tropes": [
+        "The Retired Apex Predator",
+        "The Iron Aristocrat",
+        "The Veteran Queen",
+        "The Protective Matron"
+      ],
+      "functions": [
+        "Childe mentor and patron to Mark E. Waggoner (#20).",
+        "Old campaign comrade and philosophical peer to High Regent Balthazar Landon (#126).",
+        "A retired Methuselah-tier sovereign presence in Pacific Palisades whose sovereign neutrality is respected by both Camarilla and Anarchs.",
+        "Proprietor of The Velvet Manifesto—a hyper-exclusive gentleman's club and confidential sanctuary for elite patrons."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Maximo \"Max\" Vane — The Reluctant Blood-Thief",
+      "aliases": "The Janitor, The Failed Embrace, The Blood-Pharmacist",
+      "concept": "Former sound mixer and musician struggling with the Beast and feeding ethics.",
+      "faction": "Camarilla",
+      "clan": "Toreador",
+      "portrait": "portraits/npc_14.webp",
+      "tropes": [
+        "Jerry Smith (Rick and Morty)",
+        "The Mole (Office Space)",
+        "The Pathetic Man Who Is Secretly Essential"
+      ],
+      "functions": [
+        "Black-market blood supply for desperate Neonates. His hospital access is unique and valuable.",
+        "His doctor-curation scheme is a surreal mystery or comedy hook.",
+        "Almost everyone in LA owes him a small favour.",
+        "Can provide medical supplies, information, and access to St. Claire's Hospital."
+      ]
+    },
+    {
       "id": 1,
       "name": "Meredith Vereira — Prince of Los Angeles",
       "aliases": "The Reluctant Crown, The Velvet Puppet",
@@ -159,6 +541,101 @@
       "functions": [
         "The reigning Prince of Los Angeles, defending the Burbank-to-San Diego corridor against the northern Sabbat invasion.",
         "A central patron, quest-giver, and political sovereign for Camarilla and mercenary PCs."
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Misty \"Riot\" Vane — Rowdy Punk Roadie",
+      "aliases": "Riot, The Loud Friend",
+      "concept": "Whiskey a Go Go punk rock roadie turned frontline Anarch shock-trooper.",
+      "faction": "Anarch",
+      "clan": "Gangrel",
+      "portrait": "portraits/npc_26.webp",
+      "tropes": [
+        "The Loyal Brawler",
+        "The Loud Friend With the Quiet Core",
+        "Punk as Care"
+      ],
+      "functions": [
+        "Street-level muscle with punk community roots.",
+        "Her missing bartender investigation is a ready-made PC entry point.",
+        "Short Fuse is a social liability in delicate scenes.",
+        "Her Sal connection gives access to wisdom she has not earned yet."
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Norma Jennings ? Ventrue Primogen & Estate Litigator",
+      "aliases": "The Succession Architect, The Phoenix Protocol",
+      "concept": "Ventrue Primogen on Meredith's council; master estate litigator, identity fabricator, and quiet political stabilizer who provides institutional shielding for court members while managing high-society trusts.",
+      "faction": "Camarilla",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_18.webp",
+      "tropes": [
+        "The Fixer With Her Own Agenda",
+        "The Lawyer as Predator",
+        "The Embezzler in Plain Sight"
+      ],
+      "functions": [
+        "The Phoenix Protocol — legal identity recycling. PCs will eventually need her.",
+        "Her skimming is a powder keg; whoever finds it first controls her.",
+        "Her Anarch leak investigation could accidentally expose the wrong people.",
+        "Gatekeeper of legal immortality."
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Philip Zambardo — The Hollow Saint",
+      "aliases": "",
+      "concept": "Tactical Nihilist / Prophet of the Void — Stanford prison experiment architect. Sire of Frederic King.",
+      "faction": "Sabbat",
+      "clan": "Malkavian Antitribu",
+      "portrait": "portraits/npc_46.webp",
+      "tropes": [
+        "The Hollow Saint"
+      ],
+      "functions": [
+        "Sabbat convert. Former Camarilla idealist."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Rebecca Taverley — Anarch Electronic Warfare Specialist",
+      "aliases": "The Digital Dissident, The Signal Runner, The Mesh-Queen",
+      "concept": "Anarch Brujah comms commander specializing in tactical radio interception, police scanner spoofing, and frontline electronic warfare against Sabbat assault packs.",
+      "faction": "Anarch",
+      "clan": "Brujah",
+      "portrait": "portraits/npc_9.webp",
+      "tropes": [
+        "The Hacker as Revolutionary",
+        "The Brujah Who Moved the Fight Online",
+        "Dead Man's Switches Everywhere"
+      ],
+      "functions": [
+        "Digital infrastructure for the Anarch movement — Signal bypasses Aegis Trust surveillance.",
+        "Social media bombs (dead man's switches) make her dangerous to threaten.",
+        "Natural counterpoint to Maria Estavez — mirror-image Brujah on opposite sides.",
+        "Can provide clean phones, encrypted channels, and digital identities."
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Salomon \"Big Sal\" Two-Rivers — Stoic Gangrel Mentor",
+      "aliases": "Big Sal, The Old Head",
+      "concept": "Indigenous wilderness scout and elder mentor guarding the mountain passes into LA.",
+      "faction": "Anarch",
+      "clan": "Gangrel",
+      "portrait": "portraits/npc_27.webp",
+      "tropes": [
+        "The Elder Who Buried Everyone He Loved",
+        "The Mentor as Anchor",
+        "The Long View"
+      ],
+      "functions": [
+        "Gangrel elder resource for PCs who show respect.",
+        "His mediator role gives cross-sect Gangrel intelligence.",
+        "Quiet Heart makes him immune to social manipulation.",
+        "WWII experience makes him a skilled tactician."
       ]
     },
     {
@@ -181,23 +658,160 @@
       ]
     },
     {
-      "id": 22,
-      "name": "Victor Temple — Music Mogul Baron",
-      "aliases": "The Self-Made Mogul, The Baron of the Valley",
-      "concept": "Ventrue music entrepreneur and charismatic Anarch Baron of the San Fernando Valley.",
-      "faction": "Anarch",
-      "clan": "Ventrue",
-      "portrait": "portraits/npc_22.webp",
+      "id": 32,
+      "name": "Sarah \"Peek\" Jenkins — Emotional Security Auditor",
+      "aliases": "Peek, The Sysadmin of Souls, The Crack Seer",
+      "concept": "The Midnight Radio Oracle & Ambient Soundscaper",
+      "faction": "Camarilla",
+      "clan": "Malkavian",
+      "portrait": "portraits/npc_32.webp",
       "tropes": [
-        "The Self-Made Mogul",
-        "The Maverick Leader",
-        "The Father with Secrets"
+        "The Creepy Scientist",
+        "The Prophet of Data",
+        "The Sysadmin of Souls"
       ],
       "functions": [
-        "Anarch financial engine in the San Fernando Valley.",
-        "Club Maharani and Temple of Boom label are his true domains.",
-        "Provides sanctuary for Thin-Bloods and Caitiff.",
-        "His mortal children are a Masquerade vulnerability."
+        "Seth's early-warning system — audits recruits and double-agents.",
+        "Terrifying obstacle for PCs relying on Subterfuge.",
+        "Can \"diagnose\" derangements with supernatural precision."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Sasha Beaumont — PR Gatekeeper & Rival Harpy",
+      "aliases": "The Brand Manager, The Image Architect",
+      "concept": "Elite mortal PR gatekeeper and tabloid fixer who cleans up celebrity Masquerade incidents and runs court whisper campaigns.",
+      "faction": "Camarilla",
+      "clan": "Toreador",
+      "portrait": "portraits/npc_15.webp",
+      "tropes": [
+        "The PR Machine",
+        "The Taste-Maker",
+        "Power Through Narrative Control"
+      ],
+      "functions": [
+        "Camarilla crisis communications — essential after Masquerade breaches.",
+        "Her Shade obsession ties her to street-level plots.",
+        "Rival to Audrey Horne creates Toreador political tension.",
+        "Controls which stories reach the mortal world."
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Satan-Hearted Bonetopick",
+      "aliases": "Bonetopick, Satan-Heart, The Bone Sculptor",
+      "concept": "Monstrous, bestial Tzimisce pack brute breeding fleshcrafted ghoul-hound monstrosities in subterranean abandoned rail tunnels.",
+      "faction": "Sabbat",
+      "clan": "Tzimisce",
+      "portrait": "portraits/npc_63.webp",
+      "tropes": [
+        "The Flesh is a Canvas",
+        "Pain is the Purifier",
+        "I Will Perfect You"
+      ],
+      "functions": [
+        "Cult leader and fleshcrafter, providing unique body modifications for Sabbat and other Kindred",
+        "To establish a new creed of flesh-worshippers that transcends the Masquerade",
+        "Sabbat loyalist, but not aligned with any pack; views the Camarilla as calcified husks"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Seth Cyntach — The Shadow King",
+      "aliases": "Vasylko of the Black Mire (true name), The Invisible Hand",
+      "concept": "Lowest-generation Camarilla elder in Los Angeles (since the 1800s); puppetmaster who sponsored Meredith after LaCroix vanished 15 years ago, shameful sire to Sabbat warlord Dmitry, and master of the Sheriff and Deputy.",
+      "faction": "Camarilla",
+      "clan": "Ventrue",
+      "portrait": "portraits/npc_17.webp",
+      "tropes": [
+        "The Puppetmaster",
+        "The Power Behind the Throne",
+        "The Shameful Sire",
+        "Ancient Hubris"
+      ],
+      "functions": [
+        "The hidden sovereign of the Camarilla in LA, manipulating court policy from the shadows.",
+        "The secret patron of Sheriff Tsuoranoannddy and Deputy Laleh, creating a split loyalty within the Tower.",
+        "Vulnerable to Meredith's secret dossier regarding a catastrophic 1920s Masquerade breach."
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Silas \"Root\" Thorne ? Nosferatu Primogen & Infrastructure Admin",
+      "aliases": "Root, The Digital Sin-Eater, The Iron Curtain",
+      "concept": "Nosferatu Primogen of Los Angeles; master hardware engineer and subterranean infrastructure admin who maintains the physical fiber-optic cables, sewage junction monitors, and encrypted network hubs beneath Downtown.",
+      "faction": "Camarilla",
+      "clan": "Nosferatu",
+      "portrait": "portraits/npc_28.webp",
+      "tropes": [
+        "The IT Guy as Spymaster",
+        "The Monster Who Maintains the Lie",
+        "The Most Dangerous Man in the Room"
+      ],
+      "functions": [
+        "Masquerade maintenance — essential after any public incident.",
+        "His Dead Man's Switch is a city-ending plot bomb.",
+        "Moles inside the Second Inquisition make him uniquely valuable.",
+        "Controls LA's digital narrative — shadow-bans, deepfakes, scrubs."
+      ]
+    },
+    {
+      "id": 128,
+      "name": "Special Agent Dale Cooper ? Malkavian Primogen",
+      "aliases": "",
+      "concept": "Dapper, brilliant FBI Special Agent and 8th-generation Malkavian Primogen of Los Angeles; investigates the cosmic and supernatural mysteries of the city through intuitive dream logic, tape recordings to 'Diane', Tibetan deduction methods, and an unyielding reverence for damn fine cherry pie and black coffee.",
+      "faction": "Camarilla",
+      "clan": "Malkavian",
+      "portrait": "portraits/npc_128.webp",
+      "tropes": [
+        "The Eccentric Detective",
+        "The Prophet in the Suit",
+        "Damn Fine Coffee",
+        "The Dream-Walker"
+      ],
+      "functions": [
+        "The Malkavian Primogen on Prince Meredith's council, offering enigmatic yet piercingly accurate prophecies regarding the Sabbat invasion and Jyhad maneuvers.",
+        "A senior federal liaison operating within the LAPD and FBI West Coast bureaus, quietly steering mortal investigators away from Masquerade breaches.",
+        "An eccentric patron and mentor who approaches the PCs with cryptic dream-clues, audio cassette memos, and esoteric investigative assignments."
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Tiffany \"Lydia\" Salazar ? Financial Cryptographer & Systems Architect",
+      "aliases": "Lydia, _0b1ivi0n_, The Digital Firewall",
+      "concept": "Nosferatu elite software architect managing Camarilla offshore financial crypto-vaults, Century City banking backdoors, and electronic Boon registries.",
+      "faction": "Camarilla",
+      "clan": "Nosferatu",
+      "portrait": "portraits/npc_29.webp",
+      "tropes": [
+        "The Prodigy",
+        "The Machine Who Loves Order",
+        "Data as Weapon"
+      ],
+      "functions": [
+        "Maintains Camarilla digital security networks.",
+        "Can scrub digital evidence of Kindred activity for a price.",
+        "Her contempt for Luddite Elders creates exploitable friction.",
+        "Knows passwords and backdoors to every Camarilla digital system."
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Vivienne \"V\" St. Claire — Avant-Garde Tech-Designer",
+      "aliases": "The Couture Curator, V, The Sensory Designer",
+      "concept": "Avant-garde tech-couture designer and trendsetter hosting underground crossover fashion salons for neonates and creative Anarchs.",
+      "faction": "Camarilla",
+      "clan": "Toreador",
+      "portrait": "portraits/npc_16.webp",
+      "tropes": [
+        "The Mad Fashion Scientist",
+        "Art Serving Power",
+        "The Creator Whose Work Could Change Everything"
+      ],
+      "functions": [
+        "Her \"Invisible Identity\" project has faction-wide implications.",
+        "Her Shade obsession connects high society to street plots.",
+        "Can create custom supernatural clothing for PCs."
       ]
     }
   ],
@@ -1558,6 +2172,553 @@
       ]
     },
     {
+      "name": "Waggoner Boutique Litigation Firm",
+      "district": "Downtown LA",
+      "map_type": "business",
+      "lat": 34.052,
+      "lng": -118.254,
+      "description": "An elite corporate law firm that has quietly served the Camarilla's legal needs for decades. Managed by Mark E. Waggoner and Abraham DuSable, the firm specializes in managing complex Kindred real-estate trusts, establishing shell corporations, and providing legal shielding against mortal scrutiny. Occupying a high floor in a modern high-rise, the offices are decorated in minimalist, expensive taste with panoramic views of the city, frosted glass partitions, and a massive mahogany conference table.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 20,
+          "name": "Mark E. Waggoner",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "St. Claire's Hospital",
+      "district": "Downtown LA",
+      "map_type": "blood",
+      "lat": 34.054,
+      "lng": -118.267,
+      "description": "A bustling downtown hospital that handles a massive volume of trauma cases. Maximo Vane utilizes his position as a night-shift janitor to navigate the hospital corridors unnoticed, quietly procuring blood bags and covering the tracks of reckless Kindred feeding in the ER. A sprawling, chaotic medical complex. The upper floors are modern and sterile, but the basement levels—where the morgue, laundry, and supplies are located—are dimly lit, industrial, and rarely frequented.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 14,
+          "name": "Maximo Vane",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "The Wilshire Regency, Unit 34",
+      "district": "Downtown LA",
+      "map_type": "haven",
+      "lat": 34.0488,
+      "lng": -118.2518,
+      "description": "A high-end duplex occupying the 17th floor of a Downtown luxury residential tower. Acquired through mortal shell companies, it serves as Isabel's primary haven and an occasional safe house for her coterie. Floor-to-ceiling blast-tinted windows overlook the Downtown skyline. The interior is a sprawling expanse of minimalist luxury, featuring soundproofed walls and state-of-the-art security.",
+      "notes": "",
+      "is_pc_location": true,
+      "characters": [
+        {
+          "id": 2,
+          "name": "Isabel Turner",
+          "is_pc": true,
+          "relationship": "owner"
+        },
+        {
+          "id": 0,
+          "name": "Liam",
+          "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 1,
+          "name": "Frederic",
+          "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 3,
+          "name": "Shane",
+          "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 4,
+          "name": "Katrine",
+          "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 5,
+          "name": "John",
+          "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 6,
+          "name": "George",
+          "is_pc": true,
+          "relationship": "frequents"
+        }
+      ]
+    },
+    {
+      "name": "Metro Red Line Access Tunnel 4",
+      "district": "Downtown LA",
+      "map_type": "haven",
+      "lat": 34.052,
+      "lng": -118.243,
+      "description": "An abandoned, sealed-off intersection of three subway service tunnels deep beneath the streets of Downtown. It provides little more than absolute darkness and structural shielding from the sun. A run-down, mostly empty expanse of weeping concrete and rusted rebar, accessed via a heavy iron manhole cover. It is utterly devoid of comfort, reeking of ozone and standing water.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Los Angeles City Hall & County Hall of Records",
+      "district": "Downtown LA",
+      "map_type": "bureaucracy",
+      "lat": 34.0537,
+      "lng": -118.2427,
+      "description": "The 27-story municipal nexus of Los Angeles, housing city council chambers, property deeds, vital archives, and civil records.",
+      "notes": "High-security municipal building. Ideal for bureaucratic manipulation and deed investigation.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "The Subterranean Cistern Basilica (The Sunken Vaults of Mulholland)",
+      "district": "Downtown LA",
+      "map_type": "hangout",
+      "lat": 34.0545,
+      "lng": -118.2385,
+      "description": "Massive 1914 subterranean vaulted cistern 80 feet beneath the downtown rail yards, serving as the sovereign underground palace, communications relay, and communal sanctuary of Los Angeles's Nosferatu Warrens.",
+      "notes": "Requires Athletics (Diff 7) or secret Nosferatu tunnel knowledge to enter through submerged siphons. Security: Obfuscate 5 warding glyphs and acoustic vibration sensors.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 28,
+          "name": "Silas \"Root\" Thorne",
+          "is_pc": false,
+          "relationship": "Keeper of the Vaults"
+        },
+        {
+          "id": 30,
+          "name": "George \"Shadowfox\" Lipton",
+          "is_pc": false,
+          "relationship": "Communications Overseer"
+        }
+      ]
+    },
+    {
+      "name": "The Golden Gopher",
+      "district": "Downtown LA",
+      "map_type": "hangout",
+      "lat": 34.045,
+      "lng": -118.2562,
+      "description": "Dimly lit historic 1905 cocktail lounge operating under an antique 19th-century liquor license allowing package to-go liquor. Serves as the informal late-night gathering dive for Camarilla internal affairs investigators, hounds, and neonate auditors.",
+      "notes": "Feeding Difficulty: 5 among drunk hipsters and late-night revelers. Safe for discrete blood exchanges in private back booths.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 10,
+          "name": "Maria Estavez",
+          "is_pc": false,
+          "relationship": "Internal Auditor & Hound"
+        }
+      ]
+    },
+    {
+      "name": "Chinatown Central Plaza & Empress Tea Pavilion",
+      "district": "Downtown LA",
+      "map_type": "hangout",
+      "lat": 34.065,
+      "lng": -118.237,
+      "description": "Historic 1938 ceremonial plaza featuring grand pagoda gateways, stone Foo dogs, neon lotus lanterns, and private upper-floor tea salons. The sovereign diplomatic heart of the Quincunx and Kuei-jin in Los Angeles.",
+      "notes": "Recognized sovereign Quincunx territory. Western Kindred entering without formal diplomatic escort or Shen invitation suffer heavy social penalties (Diff 8 on all Social rolls).",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "The Varnish",
+      "district": "Downtown LA",
+      "map_type": "hangout",
+      "lat": 34.0445,
+      "lng": -118.252,
+      "description": "Legendary speakeasy hidden behind an unmarked vintage wooden door in the back of Cole's French Dip. Dimly lit, wood-paneled craft cocktail sanctum favored by discrete neonates and confidential couriers.",
+      "notes": "No standing room permitted; intimate table seating ensures quiet conversations are contained. Subterfuge and Etiquette Diff 6.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Neon Temple",
+      "district": "Beverly Hills & Bel Air",
+      "map_type": "elysium",
+      "lat": 34.0736,
+      "lng": -118.4004,
+      "description": "Once a sprawling private compound, the Neon Temple was seized during an early Anarch uprising. Now, Jeremy MacNeil commands it as a fortified central hub and heavily monitored Anarch leadership stronghold, coordinating the defense of the Free States from its secure command center. A massive estate hidden behind high ivy-covered walls and wrought-iron gates. The grounds feature state-of-the-art security cameras, reinforced structures, and a surprisingly utilitarian command bunker beneath the main house.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 8,
+          "name": "Jeremy MacNeil",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Club Zombie",
+      "district": "Beverly Hills & Bel Air",
+      "map_type": "hangout",
+      "lat": 34.075,
+      "lng": -118.405,
+      "description": "An elite cultural sanctuary and VIP lounge catering to Kindred seeking high-end entertainment without the stifling rules of Elysium. Louis Charles Fortier de la Bellière oversees the club, ensuring it remains a profitable venture and a neutral meeting ground for diverse factions. A highly exclusive nightclub featuring velvet ropes, pulsating electronic music, and secluded VIP booths draped in sheer fabrics, designed for private conversations and discreet feeding.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 34,
+          "name": "Louis Charles Fortier de la Bellière",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Pacific Breeze Apartments, Unit 12B",
+      "district": "Torrance & South Bay",
+      "map_type": "haven",
+      "lat": 33.8358,
+      "lng": -118.3406,
+      "description": "A cheap, unassuming one-bedroom apartment in a dense residential block of Torrance. It serves as Liam Johnson's low-profile haven, easily blending in with the mortal working-class churn. A plain, ground-floor unit in a slightly weathered stucco complex. The blinds are perpetually drawn, and the interior is sparse, favoring function and low rent over aesthetics.",
+      "notes": "",
+      "is_pc_location": true,
+      "characters": [
+        {
+          "id": 0,
+          "name": "Liam Johnson",
+          "is_pc": true,
+          "relationship": "owner"
+        }
+      ]
+    },
+    {
+      "name": "The Lighthouse Cafe",
+      "district": "Torrance & South Bay",
+      "map_type": "hangout",
+      "lat": 33.8618,
+      "lng": -118.3995,
+      "description": "Legendary 1940s West Coast jazz and live music sanctuary located on Pier Avenue in Hermosa Beach. The brick-walled haven is the preferred strategy parlour for Toreador rebels and South Bay border defenders.",
+      "notes": "Live music creates acoustic masking (+2 Diff to external listening devices). Excellent location for discreet Anarch border councils.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Old Town Torrance Historic Depot & Surplus Yards",
+      "district": "Torrance & South Bay",
+      "map_type": "hangout",
+      "lat": 33.834,
+      "lng": -118.312,
+      "description": "Restored 1912 Pacific Electric red-brick train depot surrounded by industrial manufacturing warehouses and surplus yards. Covert tactical staging base for mortal vampire hunters.",
+      "notes": "Covert armory and staging base for mortal hunters (Imbued). Kindred approaching the perimeter are subject to passive thermal sensors and hidden perimeter cameras.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 121,
+          "name": "Joshua Preston",
+          "is_pc": false,
+          "relationship": "Tactical Assault Specialist"
+        },
+        {
+          "id": 122,
+          "name": "Jacob Singer",
+          "is_pc": false,
+          "relationship": "Trapmaster & Demolitions"
+        }
+      ]
+    },
+    {
+      "name": "Chatsworth Railway Tunnels",
+      "district": "Northern San Fernando Valley",
+      "map_type": "hangout",
+      "lat": 34.265,
+      "lng": -118.61,
+      "description": "Abandoned railway tunnels cutting through the rugged terrain. Satan-Hearted Bonetopick has transformed these forgotten passages into a nightmarish breeding ground for fleshcrafted hound monstrosities, preparing bio-weapons for Sabbat war parties. Dark, cavernous, and echoing with unearthly howls. The tunnels are lined with visceral organic matter and makeshift cages containing horrifying amalgamations of flesh and bone.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 63,
+          "name": "Satan-Hearted Bonetopick",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "The Santa Susana Monastic Redoubt (The Obsidian Cathedral)",
+      "district": "Northern San Fernando Valley",
+      "map_type": "elysium",
+      "lat": 34.271,
+      "lng": -118.634,
+      "description": "Fortified stone monastery and Cold War command redoubt in the sandstone bluffs of the Santa Susana Pass; supreme Sabbat crusade headquarters.",
+      "notes": "Supreme Sabbat Sect Headquarters and command haven.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "The Rawhide Saloon & Canyon Roadhouse",
+      "district": "Northern San Fernando Valley",
+      "map_type": "hangout",
+      "lat": 34.258,
+      "lng": -118.605,
+      "description": "Gritty, neon-lit roadhouse at the base of Chatsworth Pass catering to outlaw bikers, truckers, and Sabbat frontline shock troops.",
+      "notes": "Sabbat frontline biker roadhouse and shovelhead recruitment hangout.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "GameRealm Retro Arcade & Midnight LAN Lounge",
+      "district": "Northern San Fernando Valley",
+      "map_type": "hangout",
+      "lat": 34.168,
+      "lng": -118.349,
+      "description": "Bustling 24-hour retro arcade and esports gaming venue featuring vintage arcade cabinets, CRT fighting-game rigs, and high-speed LAN booths. Front and tech headquarters for Anarch electronic warfare specialists.",
+      "notes": "Computers / Hacking rolls made inside the VIP LAN suite gain +2 dice due to dedicated multi-gigabit fiber backbones and hardware VPN routers. Feeding Diff: 6 among caffeinated nocturnal gamers.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 9,
+          "name": "Rebecca Taverley",
+          "is_pc": false,
+          "relationship": "Electronic Warfare Specialist"
+        }
+      ]
+    },
+    {
+      "name": "Corbin Bowl & Retro Lounge",
+      "district": "Northern San Fernando Valley",
+      "map_type": "hangout",
+      "lat": 34.1725,
+      "lng": -118.5535,
+      "description": "Classic mid-century bowling alley featuring a dimly lit retro cocktail lounge, neon bowling lanes, and vintage arcade cabinets. Behind the crash of bowling pins, Sabbat pack logisticians coordinate covert weapon shipments.",
+      "notes": "Acoustic cover from pinfall gives -2 Difficulty to concealing verbal conversations from mundane eavesdroppers. Rear loading bay handles heavy crates unobserved.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Tonga Hut Tiki Lounge",
+      "district": "Northern San Fernando Valley",
+      "map_type": "hangout",
+      "lat": 34.1865,
+      "lng": -118.397,
+      "description": "Los Angeles's oldest continuously operating tiki bar (founded 1958), featuring bamboo walls, retro jukebox, Polynesian carvings, and the secret 'Drooling Bastard' cocktail society. Shadowy refuge for eccentric Kindred outcasts.",
+      "notes": "Deep ambient darkness grants +1 die to Obfuscate declarations made from the corner bamboo booths.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Pinnacle Vault",
+      "district": "Pasadena, Glendale & East LA (Camarilla)",
+      "map_type": "hangout",
+      "lat": 34.14,
+      "lng": -118.25,
+      "description": "Front for performance art and money laundering, recently subjected to a raid. An opulent underground gallery space currently showing signs of forced entry.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 13,
+          "name": "Ewald Borsodi",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Burbank Airport Maintenance Hangar 7",
+      "district": "Pasadena, Glendale & East LA (Camarilla)",
+      "map_type": "haven",
+      "lat": 34.2,
+      "lng": -118.36,
+      "description": "A private, reinforced aircraft maintenance facility situated on the northern perimeter of Hollywood Burbank Airport. Repurposed by Archon Theo Bell as a secure Camarilla forward operating base and tactical staging post during the counter-offensive against the Sabbat. A cavernous industrial hangar with high corrugated steel arches, smelling heavily of jet propellant and machine oil.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 127,
+          "name": "Archon Theo Bell",
+          "is_pc": false,
+          "relationship": "commands forward operations from"
+        },
+        {
+          "id": 4,
+          "name": "\"Big\" Ed Hurley",
+          "is_pc": false,
+          "relationship": "liaisons with Archon Bell at"
+        }
+      ]
+    },
+    {
+      "name": "The Velvet Manifesto",
+      "district": "West Los Angeles (Anarch)",
+      "map_type": "hangout",
+      "lat": 34.0522,
+      "lng": -118.445,
+      "description": "Ultra-exclusive gentleman's club and brothel catering strictly to multimillionaires. A lavishly decorated, unmarked townhouse with heavy velvet drapes.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 134,
+          "name": "Matilda Monclair",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "The Canvas Underground",
+      "district": "West Los Angeles (Anarch)",
+      "map_type": "hangout",
+      "lat": 34.04,
+      "lng": -118.46,
+      "description": "Independent artist collectives and radical theater spaces. A converted industrial warehouse adorned with chaotic, shifting art pieces.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "Venice Beach Boardwalk & Skate Park",
+      "district": "West Los Angeles (Anarch)",
+      "map_type": "landmark",
+      "lat": 33.987,
+      "lng": -118.4735,
+      "description": "Famed bohemian promenade, world-renowned concrete skate park, graffiti art walls, and midnight drum circles along the ocean. The spiritual haven and rally ground for Los Angeles's Thin-Blooded Kindred.",
+      "notes": "Thin-Blooded Kindred find shelter and mutual aid here. Streetwise rolls gain -1 Difficulty when locating contraband or seeking outcasts.",
+      "is_pc_location": false,
+      "characters": []
+    },
+    {
+      "name": "West Covina Estate",
+      "district": "Outlying Areas & Specialized Domains",
+      "map_type": "haven",
+      "lat": 34.068,
+      "lng": -117.938,
+      "description": "Acquired in the late 1990s as Clan Giovanni's primary sovereign stronghold in the eastern San Gabriel Valley. Colloquially dubbed Villa di Bellarosa by the family, the estate operates on paper under the Bellarosa Holdings & Culinary Arts Foundation — an airtight legal trust managed by estate attorney Alberto Giovanni. The property provides absolute autonomy from both the Camarilla court and Anarch baronies, functioning as an independent diplomatic sanctuary and the primary logistical staging ground for Lucia Giovanni's dual empire: high-end culinary media syndication on the surface, and subterranean spirit banquets, corpse-processing, and necromantic consulting for elite kindred in the crypts below. Secluded in the oak-shaded heights of the South Hills in West Covina, the estate is shielded by 3.6-meter wrought-iron perimeter walls with discrete camera gargoyles and hydraulic driveway bollards. The main residence is a grand Mediterranean Renaissance palazzo of pale Roman travertine and terracotta roofing, featuring 5.5-meter coffered ceilings, Carrara marble fireplaces, Renaissance martyrdom paintings, and a Michelin-grade commercial test kitchen. Behind a secure wine vault, a hydraulic elevator descends 9 meters into a chilled (3°C) subterranean mortuary crypt equipped with stainless dissection tables, anatomical blast freezers, and a sunken circular amphitheater paved in black obsidian slabs ringed with salt channels and cold-iron braziers.",
+      "notes": "",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 23,
+          "name": "Lucia Giovanni",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 64,
+          "name": "Alberto Giovanni",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Church of the New Dawn",
+      "district": "Outlying Areas & Specialized Domains",
+      "map_type": "auditorium",
+      "lat": 34.0535,
+      "lng": -117.9103,
+      "description": "Spanning roughly 10,100 m² (parish grounds & perimeter) along East Amar Road in West Covina, the Church of the New Dawn is the heavily fortified primary domain of the PC coterie. Operating under the mundane zoning and cover of an alternative spiritual ministry, the compound combines civilian community amenities - including an athletic gym, private cinema, fellowship dormitories, and an indoor shooting range with a secure armory - with rigorous defensive infrastructure. The renovated bell tower serves as a high-altitude tactical watchpoint and sniper nest overseeing the perimeter and approach routes. Below ground, an extensive network of service tunnels and drainage canals links the daylight-proof, warded basement haven to municipal culverts and emergency escape routes, secured by perimeter deterrent trenches and discrete utility fail-safes.",
+      "notes": "Main Domain & Operational Bastion of the PC Coterie. Zoning: Church / Religious Assembly 10,100 m² lot (parish grounds & perimeter). Facilities: Sanctuary, Dormitories, Gym, Cinema/Screening Room, Indoor Shooting Range, Secure Armory. Defenses: Bell Tower Sniper Nest & Thermal Overwatch (Katrine/Odin feed), Concealed Natural Gas Blast Fail-Safe Line, Perimeter Deterrent Trenches, Subterranean Service Tunnels & Drainage Runoff Routes.",
+      "is_pc_location": true,
+      "characters": [
+        {
+          "id": 0,
+          "name": "Liam Johnson",
+          "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 1,
+          "name": "Frederic King",
+          "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 2,
+          "name": "Isabel Turner",
+          "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 4,
+          "name": "Katrine Sterling",
+          "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 5,
+          "name": "John Carmac",
+          "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 6,
+          "name": "George Michael",
+          "is_pc": true,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Starlight Motor Inn",
+      "district": "Outlying Areas & Specialized Domains",
+      "map_type": "haven",
+      "lat": 34.0686,
+      "lng": -117.939,
+      "description": "A run-down, cash-only motel on the outskirts of West Covina. Frederic King and his retinue of ghouls frequently rent out a block of rooms at the far end of the lot for discrete daylight resting and off-the-books meetings. A classic L-shaped, two-story motor inn with peeling mint-green paint and a flickering neon sign. The rooms at the back face a concrete wall, offering perfect seclusion and heavy, light-blocking drapes.",
+      "notes": "",
+      "is_pc_location": true,
+      "characters": [
+        {
+          "id": 1,
+          "name": "Frederic King",
+          "is_pc": true,
+          "relationship": "frequents"
+        }
+      ]
+    },
+    {
+      "name": "Double R Diner",
+      "district": "Long Beach (Camarilla)",
+      "map_type": "hangout",
+      "lat": 33.768,
+      "lng": -118.195,
+      "description": "Iconic 24-hour chrome-and-vinyl diner serving legendary cherry pie and strong coffee. Operated by Norma Jennings and Shelly Johnson, it functions as a neutral parley sanctuary and the operational base for Special Agent Dale Cooper's LAPD investigations.",
+      "notes": "Elysium / Neutral ground.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 18,
+          "name": "Norma Jennings",
+          "is_pc": false,
+          "relationship": "Proprietor & Matron"
+        },
+        {
+          "id": 128,
+          "name": "Special Agent Dale Cooper",
+          "is_pc": false,
+          "relationship": "Investigative Liaison"
+        },
+        {
+          "id": 4,
+          "name": "\"Big\" Ed Hurley",
+          "is_pc": false,
+          "relationship": "Protective Shield"
+        }
+      ]
+    },
+    {
       "name": "The Last Round",
       "district": "Culver City & Santa Monica (Anarch)",
       "map_type": "hangout",
@@ -1572,6 +2733,24 @@
           "name": "Armando \"Nines\" Rodriguez",
           "is_pc": false,
           "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "Santa Monica Pier & Historic Looff Carousel",
+      "district": "Culver City & Santa Monica (Anarch)",
+      "map_type": "landmark",
+      "lat": 34.0099,
+      "lng": -118.4965,
+      "description": "World-famous 1909 ocean pier featuring the historic 1916 Looff Hippodrome carousel and neon Ferris wheel. The crashing surf and nighttime sea mist make it the open-air coastal domain of Anarch Gangrel guardians.",
+      "notes": "Gangrel characters gain +1 die to Animalism rolls when interacting with marine fauna and coastal gulls. Pier pylons provide concealment for coastal ingress.",
+      "is_pc_location": false,
+      "characters": [
+        {
+          "id": 27,
+          "name": "Salomon \"Big Sal\" Two-Rivers",
+          "is_pc": false,
+          "relationship": "Coastal Guardian"
         }
       ]
     }
