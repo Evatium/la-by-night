@@ -300,6 +300,23 @@
             <input type="range" id="dice-diff-slider" min="2" max="10" value="6" oninput="updateDiceSlider(this.value, 'dice-diff-val')" style="width:100%;accent-color:var(--gold);">
           </div>
 
+          <div class="dice-options-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
+            <label class="dice-option-card" style="display:flex;align-items:center;gap:8px;background:var(--bg-surface);padding:10px 12px;border:1px solid var(--border-subtle);border-radius:8px;cursor:pointer;font-size:12px;color:var(--text-main);user-select:none;">
+              <input type="checkbox" id="dice-specialty-toggle" style="accent-color:var(--gold);width:16px;height:16px;cursor:pointer;">
+              <div>
+                <strong style="display:block;color:var(--gold);font-size:11.5px;">Specialty</strong>
+                <span style="font-size:10.5px;color:var(--text-muted);">10s double</span>
+              </div>
+            </label>
+            <label class="dice-option-card" style="display:flex;align-items:center;gap:8px;background:var(--bg-surface);padding:10px 12px;border:1px solid var(--border-subtle);border-radius:8px;cursor:pointer;font-size:12px;color:var(--text-main);user-select:none;">
+              <input type="checkbox" id="dice-willpower-toggle" style="accent-color:var(--crimson-vivid);width:16px;height:16px;cursor:pointer;">
+              <div>
+                <strong style="display:block;color:var(--crimson-vivid);font-size:11.5px;">Willpower</strong>
+                <span style="font-size:10.5px;color:var(--text-muted);">+1 Auto / No Botch</span>
+              </div>
+            </label>
+          </div>
+
           <button type="button" class="btn btn-primary" onclick="rollV20Dice()" style="width:100%;padding:12px;background:var(--crimson-vivid);border:none;border-radius:8px;font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="4"></rect>

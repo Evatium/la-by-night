@@ -1283,31 +1283,55 @@ function updateDiceSlider(val, id) {
 function rollV20Dice() {
   var pool = parseInt(document.getElementById('dice-pool-slider').value) || 1;
   var diff = parseInt(document.getElementById('dice-diff-slider').value) || 6;
+  var specialty = document.getElementById('dice-specialty-toggle') ? document.getElementById('dice-specialty-toggle').checked : false;
+  var willpower = document.getElementById('dice-willpower-toggle') ? document.getElementById('dice-willpower-toggle').checked : false;
 
   var rolls = [];
-  var successes = 0;
+  var rawSuccesses = 0;
+  var tens = 0;
   var ones = 0;
 
   for (var i = 0; i < pool; i++) {
     var r = Math.floor(Math.random() * 10) + 1;
     rolls.push(r);
-    if (r >= diff) successes++;
+    if (r >= diff) rawSuccesses++;
+    if (r === 10) tens++;
     if (r === 1) ones++;
   }
 
-  var netSuccesses = successes - ones;
+  // If specialty is applied, each 10 yields 1 additional success (10s count as 2 successes)
+  var bonusSpecialtySuccesses = specialty ? tens : 0;
+  var totalRolledSuccesses = rawSuccesses + bonusSpecialtySuccesses;
+
+  var netSuccesses = 0;
   var verdict = '';
   var verdictColor = '';
 
-  if (netSuccesses > 0) {
+  if (willpower) {
+    // Willpower rules (V20 Core p. 267):
+    // 1. Grants +1 automatic success.
+    // 2. Rolled 1s cannot cancel this automatic success (1s only cancel rolled successes).
+    // 3. Guarantees the roll CANNOT botch under any circumstances.
+    var rolledNet = Math.max(0, totalRolledSuccesses - ones);
+    netSuccesses = rolledNet + 1;
     verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
     verdictColor = '#10b981';
-  } else if (successes === 0 && ones > 0) {
-    verdict = 'BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
-    verdictColor = '#ef4444';
   } else {
-    verdict = 'FAILURE (0 Net Successes)';
-    verdictColor = '#9c9cae';
+    // Standard V20 resolution without Willpower
+    var rolledNet = totalRolledSuccesses - ones;
+    if (totalRolledSuccesses === 0 && ones > 0) {
+      netSuccesses = -ones;
+      verdict = 'BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
+      verdictColor = '#ef4444';
+    } else if (rolledNet <= 0) {
+      netSuccesses = 0;
+      verdict = 'FAILURE (0 Net Successes)';
+      verdictColor = '#9c9cae';
+    } else {
+      netSuccesses = rolledNet;
+      verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
+      verdictColor = '#10b981';
+    }
   }
 
   var verdictEl = document.getElementById('dice-verdict');
@@ -1315,16 +1339,37 @@ function rollV20Dice() {
   verdictEl.style.color = verdictColor;
 
   var tray = document.getElementById('dice-tray');
-  tray.innerHTML = rolls.map(function(r) {
+  var trayHtml = rolls.map(function(r) {
     var cls = 'fail';
-    if (r === 10) cls = 'crit';
-    else if (r >= diff) cls = 'success';
-    else if (r === 1) cls = 'botch';
-    return '<div class="dice-die ' + cls + '">' + r + '</div>';
+    var label = r;
+    if (r === 10) {
+      cls = 'crit';
+      if (specialty) label = '10<span style="font-size:9px;display:block;line-height:1;margin-top:2px;">(x2)</span>';
+    } else if (r >= diff) {
+      cls = 'success';
+    } else if (r === 1) {
+      cls = 'botch';
+    }
+    return '<div class="dice-die ' + cls + '">' + label + '</div>';
   }).join('');
 
+  if (willpower) {
+    trayHtml += '<div class="dice-die wp-die" title="Willpower Auto-Success">+1 WP</div>';
+  }
+
+  tray.innerHTML = trayHtml;
+
   var breakdown = document.getElementById('dice-breakdown');
-  breakdown.textContent = pool + 'd10 vs Diff ' + diff + ' | ' + successes + ' successes, ' + ones + ' ones = Net ' + netSuccesses;
+  var bd = pool + 'd10 vs Diff ' + diff;
+  if (specialty) bd += ' [Specialty]';
+  if (willpower) bd += ' [Willpower]';
+  bd += ' | ' + totalRolledSuccesses + ' rolled successes';
+  if (specialty && tens > 0) bd += ' (' + rawSuccesses + ' + ' + tens + ' crit bonus)';
+  bd += ', ' + ones + ' ' + (ones === 1 ? 'one' : 'ones');
+  if (willpower) bd += ', +1 WP auto';
+  bd += ' = Net ' + netSuccesses;
+
+  breakdown.textContent = bd;
 
   document.getElementById('dice-result-wrap').style.display = 'block';
 }
