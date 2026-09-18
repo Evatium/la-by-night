@@ -14,6 +14,7 @@ var state = {
   rulesFilter: 'disciplines',
   armoryFilter: 'weapon_ranged',
   map: null,
+  infoWindow: null,
   mapMarkers: [],
   territoryLayers: []
 };
@@ -127,8 +128,8 @@ function switchTab(tabName) {
     setTimeout(function() {
       if (!state.map) {
         initMap();
-      } else {
-        state.map.invalidateSize();
+      } else if (window.google && window.google.maps) {
+        google.maps.event.trigger(state.map, 'resize');
       }
     }, 200);
   }
@@ -244,41 +245,192 @@ function closeDossier() {
   if (modal) modal.classList.remove('active');
 }
 
-/* ─── INTERACTIVE MAP & DIRECTORY ENGINE (ZERO EMOJIS) ─── */
+/* ─── GOOGLE MAPS PLATFORM & DIRECTORY ENGINE (ZERO EMOJIS) ─── */
+var darkThemeStyle = [
+  { "elementType": "geometry", "stylers": [{ "color": "#0d0d12" }] },
+  { "elementType": "labels.text.stroke", "stylers": [{ "color": "#0d0d12" }, { "weight": 2 }] },
+  { "elementType": "labels.text.fill", "stylers": [{ "color": "#8c8c9e" }] },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#d4af37" }]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.icon",
+    "stylers": [{ "visibility": "off" }]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#6e6e80" }]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#131a16" }]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#3f5947" }]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#1b1b26" }]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [{ "color": "#12121c" }]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [{ "visibility": "off" }]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#9ca3af" }]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#282637" }]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [{ "color": "#151420" }]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.icon",
+    "stylers": [{ "visibility": "off" }]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#d4af37" }]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#171722" }]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#a88835" }]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#08080d" }]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "color": "#3d4458" }]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.stroke",
+    "stylers": [{ "color": "#08080d" }]
+  }
+];
+
+var TYPE_CONFIG = {
+  haven:       { label: 'Haven',            color: '#c41e3a', border: '#ff4d6d' },
+  elysium:     { label: 'Elysium',          color: '#d4af37', border: '#ffd700' },
+  hangout:     { label: 'Club / Hangout',   color: '#ec4899', border: '#f472b6' },
+  club:        { label: 'Club / Hangout',   color: '#ec4899', border: '#f472b6' },
+  business:    { label: 'Business / Front', color: '#3b82f6', border: '#60a5fa' },
+  front:       { label: 'Business / Front', color: '#3b82f6', border: '#60a5fa' },
+  landmark:    { label: 'Landmark',         color: '#10b981', border: '#34d399' },
+  neutral:     { label: 'Landmark',         color: '#10b981', border: '#34d399' },
+  domain:      { label: 'Domain',           color: '#f59e0b', border: '#fbbf24' },
+  blood:       { label: 'Blood Source',     color: '#dc2626', border: '#ef4444' },
+  bureaucracy: { label: 'Bureaucracy',      color: '#0284c7', border: '#38bdf8' },
+  auditorium:  { label: 'Auditorium',       color: '#8b5cf6', border: '#a78bfa' }
+};
+
+function getMapConfigForType(t, isPc) {
+  if (isPc) {
+    return { label: 'Coterie Base', color: '#d4af37', border: '#ffd700' };
+  }
+  var norm = (t || 'business').toLowerCase().trim();
+  return TYPE_CONFIG[norm] || { label: t || 'Location', color: '#6b7280', border: '#9ca3af' };
+}
+
 function initMap() {
-  if (state.map || !window.L) return;
+  if (state.map) return;
+  if (!window.google || !window.google.maps) {
+    var fallbackContainer = document.getElementById('codex-map') || document.getElementById('leaflet-map');
+    if (fallbackContainer && !fallbackContainer.dataset.initFailed) {
+      fallbackContainer.dataset.initFailed = 'true';
+      fallbackContainer.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#d4af37;text-align:center;padding:20px;background:#0d0d12;"><div style="font-family:var(--font-serif);font-size:16px;font-weight:700;margin-bottom:8px;">Initializing LA Territory Map...</div><div style="font-size:12px;color:#9c9cae;">Connecting to Google Maps Platform. If this persists, please verify your internet connection.</div></div>';
+      setTimeout(function() {
+        if (window.google && window.google.maps && !state.map) {
+          fallbackContainer.innerHTML = '';
+          initMap();
+        }
+      }, 600);
+    }
+    return;
+  }
 
-  var container = document.getElementById('leaflet-map');
+  var container = document.getElementById('codex-map') || document.getElementById('leaflet-map');
   if (!container) return;
+  container.innerHTML = '';
 
-  state.map = L.map('leaflet-map', {
-    center: [34.0522, -118.28],
+  var darkStyledMapType = new google.maps.StyledMapType(darkThemeStyle, { name: 'Nocturnal' });
+
+  state.map = new google.maps.Map(container, {
+    center: { lat: 34.0522, lng: -118.28 },
     zoom: 11,
     minZoom: 9,
-    maxZoom: 16,
-    zoomControl: false
+    maxZoom: 18,
+    mapId: "DEMO_MAP_ID",
+    disableDefaultUI: true,
+    zoomControl: true,
+    zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_BOTTOM },
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
+    backgroundColor: '#0a0a0c'
   });
 
-  L.control.zoom({ position: 'bottomright' }).addTo(state.map);
+  state.map.mapTypes.set('dark', darkStyledMapType);
+  state.map.setMapTypeId('dark');
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap, &copy; CARTO',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(state.map);
+  state.infoWindow = new google.maps.InfoWindow();
+  state.map.addListener('click', function() {
+    if (state.infoWindow) state.infoWindow.close();
+  });
 
+  // Territories (Sect Influence Zones)
   var territories = (state.data && state.data.territories) || {};
+  state.territoryLayers = [];
   Object.keys(territories).forEach(function(key) {
     var t = territories[key];
-    if (t.polygon && t.polygon.length > 0) {
-      var poly = L.polygon(t.polygon, {
-        color: t.color || '#e63946',
+    if (t.polygon && t.polygon.length >= 3) {
+      var paths = t.polygon.map(function(pt) {
+        return { lat: Number(pt[0]), lng: Number(pt[1]) };
+      });
+      var poly = new google.maps.Polygon({
+        paths: paths,
+        strokeColor: t.color || '#e63946',
+        strokeOpacity: 0.85,
+        strokeWeight: 2,
         fillColor: t.fillColor || t.color || '#e63946',
-        fillOpacity: t.fillOpacity || 0.2,
-        weight: 2
-      }).addTo(state.map);
-      poly.bindTooltip('<strong>' + escapeHtml(t.name) + '</strong><br>' + escapeHtml(t.description || ''), {
-        sticky: true
+        fillOpacity: (t.fillOpacity !== undefined ? t.fillOpacity : 0.2),
+        map: state.map
+      });
+      poly.addListener('click', function() {
+        if (state.infoWindow) state.infoWindow.close();
       });
       state.territoryLayers.push(poly);
     }
@@ -326,94 +478,166 @@ function getFilteredLocations() {
   });
 }
 
+function buildPopupHTML(loc) {
+  var isPc = !!loc.is_pc_location;
+  var isHaven = !!loc.is_haven;
+  var cfg = getMapConfigForType(loc.map_type, isPc);
+
+  var html = '<div class="map-noir-popup" style="min-width:240px;max-width:320px;font-family:var(--font-sans);color:#e4e4eb;line-height:1.5;">';
+  html += '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">';
+  html += '  <div style="font-size:15px;font-weight:700;color:#ffd700;font-family:var(--font-serif);line-height:1.3;">' + escapeHtml(loc.name) + '</div>';
+  if (isPc) {
+    html += '  <span class="badge" style="background:rgba(212,175,55,0.25);color:#ffd700;border:1px solid #ffd700;font-size:9.5px;font-weight:800;white-space:nowrap;padding:1px 5px;border-radius:3px;">[COTERIE BASE]</span>';
+  } else if (loc.map_type === 'elysium') {
+    html += '  <span class="badge" style="background:rgba(212,175,55,0.2);color:#ffd700;border:1px solid rgba(212,175,55,0.5);font-size:9.5px;font-weight:700;white-space:nowrap;padding:1px 5px;border-radius:3px;">[ELYSIUM]</span>';
+  } else if (isHaven) {
+    html += '  <span class="badge" style="background:rgba(196,30,58,0.2);color:#ff6b81;border:1px solid rgba(196,30,58,0.5);font-size:9.5px;font-weight:700;white-space:nowrap;padding:1px 5px;border-radius:3px;">[HAVEN]</span>';
+  }
+  html += '</div>';
+
+  html += '<div style="display:flex;gap:5px;margin-bottom:8px;flex-wrap:wrap;">';
+  html += '  <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;padding:2px 7px;border-radius:4px;background:' + cfg.color + '33;color:' + cfg.border + ';border:1px solid ' + cfg.color + '88;">' + escapeHtml(cfg.label) + '</span>';
+  if (loc.district) {
+    html += '  <span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,0.06);color:#a0a0b8;border:1px solid rgba(255,255,255,0.12);">' + escapeHtml(loc.district) + '</span>';
+  }
+  html += '</div>';
+
+  if (loc.description) {
+    var desc = loc.description;
+    if (desc.length > 260) desc = desc.substring(0, 260) + '...';
+    html += '<div style="font-size:12px;line-height:1.45;color:#e4e4ee;margin-bottom:8px;">' + escapeHtml(desc).replace(/\n/g, '<br>') + '</div>';
+  }
+
+  if (loc.notes) {
+    html += '<div style="font-size:11px;color:#ffe599;background:rgba(212,175,55,0.12);padding:5px 9px;border-left:3px solid #ffd700;border-radius:3px;margin-bottom:8px;line-height:1.4;">' + escapeHtml(loc.notes) + '</div>';
+  }
+
+  if (loc.characters && loc.characters.length > 0) {
+    var pcResidents = loc.characters.filter(function(c) { return c.is_pc || c.type === 'pc'; });
+    var npcResidents = loc.characters.filter(function(c) { return !(c.is_pc || c.type === 'pc'); });
+
+    html += '<div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.12);font-size:11.5px;">';
+    if (pcResidents.length > 0) {
+      html += '<div style="margin-bottom:3px;color:#ffd700;"><strong style="font-size:10.5px;text-transform:uppercase;letter-spacing:0.3px;">Known Coterie:</strong> ' + pcResidents.map(function(c){ return '<span style="color:#ffd700;font-weight:600;">' + escapeHtml(c.name) + '</span>' + (c.relationship ? ' <span style="font-size:10.5px;color:#a0a0b8;">(' + escapeHtml(c.relationship) + ')</span>' : ''); }).join(', ') + '</div>';
+    }
+    if (npcResidents.length > 0) {
+      html += '<div style="color:#c4c4d4;"><strong style="font-size:10.5px;text-transform:uppercase;letter-spacing:0.3px;color:#ff6b81;">Known Kindred:</strong> ' + npcResidents.map(function(c){ return '<span style="color:#e4e4ee;font-weight:600;">' + escapeHtml(c.name) + '</span>' + (c.relationship ? ' <span style="font-size:10.5px;color:#a0a0b8;">(' + escapeHtml(c.relationship) + ')</span>' : ''); }).join(', ') + '</div>';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function createMarker(loc) {
+  if (!loc.lat || !loc.lng || !state.map) return null;
+  var isPc = !!loc.is_pc_location;
+  var cfg = getMapConfigForType(loc.map_type, isPc);
+
+  var pinEl = document.createElement('div');
+  pinEl.className = 'custom-pin-element' + (isPc ? ' pc-pin' : '');
+
+  if (isPc) {
+    var halo = document.createElement('div');
+    halo.className = 'pc-pin-halo';
+    pinEl.appendChild(halo);
+  }
+
+  var svgNS = "http://www.w3.org/2000/svg";
+  var svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", "24");
+  svg.setAttribute("height", "32");
+  svg.setAttribute("viewBox", "0 0 24 32");
+  svg.style.display = "block";
+  svg.style.overflow = "visible";
+  svg.style.filter = "drop-shadow(0 2px 5px rgba(0,0,0,0.85))";
+
+  var path = document.createElementNS(svgNS, "path");
+  path.setAttribute("d", "M12 0C5.373 0 0 5.373 0 12C0 20.5 12 32 12 32C12 32 24 20.5 24 12C24 5.373 18.627 0 12 0Z");
+  path.setAttribute("fill", cfg.color);
+  path.setAttribute("stroke", isPc ? "#ffd700" : cfg.border);
+  path.setAttribute("stroke-width", isPc ? "2" : "1.5");
+  svg.appendChild(path);
+
+  var circle = document.createElementNS(svgNS, "circle");
+  circle.setAttribute("cx", "12");
+  circle.setAttribute("cy", "11.5");
+  circle.setAttribute("r", "7");
+  circle.setAttribute("fill", "#121216");
+  circle.setAttribute("opacity", "0.9");
+  svg.appendChild(circle);
+
+  var dot = document.createElementNS(svgNS, "circle");
+  dot.setAttribute("cx", "12");
+  dot.setAttribute("cy", "11.5");
+  dot.setAttribute("r", "3.2");
+  dot.setAttribute("fill", isPc ? "#ffd700" : cfg.border);
+  svg.appendChild(dot);
+
+  pinEl.appendChild(svg);
+
+  if (isPc) {
+    var star = document.createElement('div');
+    star.className = 'pc-star-badge';
+    star.textContent = '★';
+    pinEl.appendChild(star);
+  }
+
+  var marker;
+  if (window.google && google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+    marker = new google.maps.marker.AdvancedMarkerElement({
+      map: state.map,
+      position: { lat: Number(loc.lat), lng: Number(loc.lng) },
+      content: pinEl,
+      title: loc.name
+    });
+
+    marker.addListener('click', function() {
+      if (state.infoWindow) {
+        state.infoWindow.setContent(buildPopupHTML(loc));
+        state.infoWindow.open({
+          anchor: marker,
+          map: state.map,
+          shouldFocus: false
+        });
+      }
+    });
+  } else {
+    marker = new google.maps.Marker({
+      map: state.map,
+      position: { lat: Number(loc.lat), lng: Number(loc.lng) },
+      title: loc.name
+    });
+    marker.addListener('click', function() {
+      if (state.infoWindow) {
+        state.infoWindow.setContent(buildPopupHTML(loc));
+        state.infoWindow.open(state.map, marker);
+      }
+    });
+  }
+
+  return marker;
+}
+
 function renderMapMarkers() {
   if (!state.map) return;
 
   state.mapMarkers.forEach(function(entry) {
-    state.map.removeLayer(entry.marker);
+    if (entry.marker) {
+      if (entry.marker.map !== undefined) entry.marker.map = null;
+      else if (typeof entry.marker.setMap === 'function') entry.marker.setMap(null);
+    }
   });
   state.mapMarkers = [];
 
   var filtered = getFilteredLocations();
 
   filtered.forEach(function(loc) {
-    var isPc = loc.is_pc_location;
-    var isHaven = loc.is_haven;
-    var pinColor = '#ef4444';
-    var border = '2px solid #fff';
-
-    if (loc.map_type === 'elysium') {
-      pinColor = '#d4af37';
-      border = '2px solid #fff';
-    } else if (isPc) {
-      pinColor = '#d4af37';
-      border = '2px solid #e62e3d';
-    } else if (isHaven) {
-      pinColor = '#8b5cf6';
-      border = '2px solid #ddd';
-    } else if (loc.map_type === 'club' || loc.map_type === 'hangout') {
-      pinColor = '#38bdf8';
-      border = '2px solid #fff';
-    } else if (loc.map_type === 'front' || loc.map_type === 'business') {
-      pinColor = '#10b981';
-      border = '2px solid #fff';
-    } else if (loc.map_type === 'domain') {
-      pinColor = '#f59e0b';
-      border = '2px solid #fff';
+    var marker = createMarker(loc);
+    if (marker) {
+      state.mapMarkers.push({ loc: loc, marker: marker });
     }
-
-    var pinHtml = '<div class="custom-pin-element' + (isPc ? ' pc-pin' : '') + '">';
-    if (isPc) {
-      pinHtml += '<div class="pc-pin-halo"></div>';
-    }
-    pinHtml += '<div class="pin-dot" style="background:' + pinColor + ';border:' + border + ';"></div>';
-    pinHtml += '</div>';
-
-    var customIcon = L.divIcon({
-      className: 'custom-map-div-icon',
-      html: pinHtml,
-      iconSize: [22, 22],
-      iconAnchor: [11, 11],
-      popupAnchor: [0, -12]
-    });
-
-    var marker = L.marker([loc.lat, loc.lng], { icon: customIcon }).addTo(state.map);
-
-    var popupHtml = '<div style="font-family:var(--font-sans);max-width:260px;padding:2px;">';
-    popupHtml += '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">';
-    popupHtml += '  <h4 style="margin:0;font-family:var(--font-serif);font-size:14px;color:var(--text-main);font-weight:700;">' + escapeHtml(loc.name) + '</h4>';
-    if (isPc) {
-      popupHtml += '  <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);border:1px solid var(--gold);font-size:9.5px;font-weight:700;">[COTERIE]</span>';
-    } else if (loc.map_type === 'elysium') {
-      popupHtml += '  <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);font-size:9.5px;font-weight:700;">[ELYSIUM]</span>';
-    } else if (isHaven) {
-      popupHtml += '  <span class="badge" style="background:rgba(139,92,246,0.2);color:#a78bfa;font-size:9.5px;font-weight:700;">[HAVEN]</span>';
-    }
-    popupHtml += '</div>';
-
-    popupHtml += '<div style="font-size:11px;color:var(--gold);text-transform:uppercase;font-weight:600;letter-spacing:0.8px;margin-bottom:6px;">' + escapeHtml(loc.district || '') + '</div>';
-
-    if (loc.description) {
-      popupHtml += '<p style="font-size:12px;color:var(--text-secondary);margin:0 0 6px 0;line-height:1.4;">' + escapeHtml(loc.description.substring(0, 180)) + (loc.description.length > 180 ? '...' : '') + '</p>';
-    }
-
-    if (loc.characters && loc.characters.length > 0) {
-      var pcResidents = loc.characters.filter(function(c) { return c.is_pc; });
-      var npcResidents = loc.characters.filter(function(c) { return !c.is_pc; });
-
-      popupHtml += '<div style="font-size:11px;border-top:1px solid var(--border-subtle);padding-top:4px;margin-top:6px;">';
-      if (pcResidents.length > 0) {
-        popupHtml += '<div style="color:var(--gold);margin-bottom:2px;"><strong>Known Coterie:</strong> ' + pcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
-      }
-      if (npcResidents.length > 0) {
-        popupHtml += '<div style="color:var(--text-muted);"><strong>Known Kindred:</strong> ' + npcResidents.map(function(c){ return escapeHtml(c.name); }).join(', ') + '</div>';
-      }
-      popupHtml += '</div>';
-    }
-    popupHtml += '</div>';
-
-    marker.bindPopup(popupHtml);
-    state.mapMarkers.push({ loc: loc, marker: marker });
   });
 }
 
@@ -433,33 +657,35 @@ function renderMapDirectory() {
     var isPc = loc.is_pc_location;
     var isHaven = loc.is_haven;
 
-    html += '<div class="loc-directory-card">';
+    html += '<div class="loc-directory-card' + (isPc ? ' pc-card' : '') + '">';
     html += '  <div class="loc-dir-header">';
-    html += '    <div class="loc-dir-title">' + escapeHtml(loc.name) + '</div>';
+    html += '    <div class="loc-dir-name">' + escapeHtml(loc.name) + '</div>';
+    html += '    <div class="loc-dir-badges">';
     if (isPc) {
-      html += '    <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);border:1px solid var(--gold);font-size:9.5px;font-weight:700;">[COTERIE BASE]</span>';
+      html += '      <span class="badge" style="background:rgba(212,175,55,0.25);color:#ffd700;border:1px solid #ffd700;font-size:9.5px;font-weight:800;">[COTERIE BASE]</span>';
     } else if (loc.map_type === 'elysium') {
-      html += '    <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);font-size:9.5px;font-weight:700;">[ELYSIUM]</span>';
+      html += '      <span class="badge" style="background:rgba(212,175,55,0.2);color:#ffd700;font-size:9.5px;font-weight:700;">[ELYSIUM]</span>';
     } else if (isHaven) {
-      html += '    <span class="badge" style="background:rgba(139,92,246,0.2);color:#a78bfa;font-size:9.5px;font-weight:700;">[HAVEN]</span>';
+      html += '      <span class="badge" style="background:rgba(196,30,58,0.2);color:#ff6b81;font-size:9.5px;font-weight:700;">[HAVEN]</span>';
     } else if (loc.map_type === 'club' || loc.map_type === 'hangout') {
-      html += '    <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;font-size:9.5px;font-weight:700;">[CLUB]</span>';
+      html += '      <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8;font-size:9.5px;font-weight:700;">[CLUB]</span>';
     } else if (loc.map_type === 'front' || loc.map_type === 'business') {
-      html += '    <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981;font-size:9.5px;font-weight:700;">[FRONT]</span>';
+      html += '      <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981;font-size:9.5px;font-weight:700;">[FRONT]</span>';
     } else if (loc.map_type === 'domain') {
-      html += '    <span class="badge" style="background:rgba(245,158,11,0.15);color:#f59e0b;font-size:9.5px;font-weight:700;">[DOMAIN]</span>';
+      html += '      <span class="badge" style="background:rgba(245,158,11,0.15);color:#f59e0b;font-size:9.5px;font-weight:700;">[DOMAIN]</span>';
     }
+    html += '    </div>';
     html += '  </div>';
 
-    html += '  <div class="loc-dir-district">' + escapeHtml(loc.district || 'Los Angeles') + '</div>';
+    html += '  <div class="loc-dir-district" style="font-size:11px;color:var(--gold);text-transform:uppercase;font-weight:600;letter-spacing:0.8px;">' + escapeHtml(loc.district || 'Los Angeles') + '</div>';
 
     if (loc.description) {
       html += '  <div class="loc-dir-desc">' + escapeHtml(loc.description) + '</div>';
     }
 
     if (loc.characters && loc.characters.length > 0) {
-      var pcResidents = loc.characters.filter(function(c) { return c.is_pc; });
-      var npcResidents = loc.characters.filter(function(c) { return !c.is_pc; });
+      var pcResidents = loc.characters.filter(function(c) { return c.is_pc || c.type === 'pc'; });
+      var npcResidents = loc.characters.filter(function(c) { return !(c.is_pc || c.type === 'pc'); });
 
       html += '  <div class="loc-dir-residents">';
       if (pcResidents.length > 0) {
@@ -510,8 +736,10 @@ function switchMapMode(mode) {
     if (dirList) dirList.style.display = 'none';
     if (btnMap) btnMap.classList.add('active');
     if (btnList) btnList.classList.remove('active');
-    if (state.map) {
-      setTimeout(function() { state.map.invalidateSize(); }, 100);
+    if (state.map && window.google && window.google.maps) {
+      setTimeout(function() {
+        google.maps.event.trigger(state.map, 'resize');
+      }, 100);
     }
   } else {
     if (mapCanvas) mapCanvas.style.display = 'none';
@@ -527,13 +755,25 @@ function focusLocationOnMap(lat, lng, locName) {
   if (!state.map) {
     initMap();
   }
-  state.map.setView([lat, lng], 15, { animate: true });
-  
+  if (!state.map) return;
+
+  state.map.panTo({ lat: Number(lat), lng: Number(lng) });
+  state.map.setZoom(15);
+
   var entry = state.mapMarkers.find(function(m) {
     return m.loc.name === locName || (Math.abs(m.loc.lat - lat) < 0.0001 && Math.abs(m.loc.lng - lng) < 0.0001);
   });
-  if (entry) {
-    entry.marker.openPopup();
+  if (entry && state.infoWindow) {
+    state.infoWindow.setContent(buildPopupHTML(entry.loc));
+    if (window.google && google.maps.marker && google.maps.marker.AdvancedMarkerElement && entry.marker instanceof google.maps.marker.AdvancedMarkerElement) {
+      state.infoWindow.open({
+        anchor: entry.marker,
+        map: state.map,
+        shouldFocus: false
+      });
+    } else {
+      state.infoWindow.open(state.map, entry.marker);
+    }
   }
 }
 
@@ -541,8 +781,7 @@ function toggleTerritories(btn) {
   var show = !btn.classList.contains('active');
   btn.classList.toggle('active', show);
   state.territoryLayers.forEach(function(poly) {
-    if (show) state.map.addLayer(poly);
-    else state.map.removeLayer(poly);
+    poly.setMap(show ? state.map : null);
   });
 }
 
