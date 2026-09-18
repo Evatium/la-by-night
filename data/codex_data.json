@@ -5,8 +5,8 @@
   "npcs": [
     {
       "id": 4,
-      "name": "\"Big\" Ed Hurley — Seneschal of Los Angeles",
-      "aliases": "The Prince's Shield, The Honest Brujah, The Union Man",
+      "name": "\"Big\" Ed Hurley",
+      "aliases": "Big · Seneschal of LA",
       "concept": "Loyal 9th-generation Brujah Seneschal of Los Angeles; former union organizer who serves as Prince Meredith's iron shield against Seth Cyntach's shadow manipulations.",
       "faction": "Camarilla",
       "clan": "Brujah",
@@ -25,8 +25,8 @@
     },
     {
       "id": 64,
-      "name": "Alberto Giovanni — The Handsome Frontman",
-      "aliases": "The Face of the Empire, Lucia's Shield",
+      "name": "Alberto Giovanni",
+      "aliases": "Mortuary Executive · Giovanni Front",
       "concept": "Polished mortuary chain executive managing estate logistics and money laundering for Clan Giovanni.",
       "faction": "Independent",
       "clan": "Giovanni",
@@ -45,8 +45,8 @@
     },
     {
       "id": 3,
-      "name": "Amanda Byers — Keeper of Elysium",
-      "aliases": "The Invisible Secretary, The Archivist, The Woman of a Thousand Notes",
+      "name": "Amanda Byers",
+      "aliases": "The Archivist · Keeper of Elysium",
       "concept": "Sharp, vigilant 11th-generation City Gangrel Keeper of Elysium; fiercely loyal to Prince Meredith and dedicated to keeping court grounds secure from Seth Cyntach's shadow reach.",
       "faction": "Camarilla",
       "clan": "City Gangrel",
@@ -65,8 +65,8 @@
     },
     {
       "id": 2,
-      "name": "Anthohimondrona Tsuoranoannddy — Sheriff of Los Angeles",
-      "aliases": "The Implacable Executioner, The Nagloper, The Elder's Hound",
+      "name": "Anthohimondrona Tsuoranoannddy",
+      "aliases": "The Nagloper · Sheriff of LA",
       "concept": "Terrifying 7th-generation Nagloper Sheriff of Los Angeles; monstrous bloodline enforcer secretly loyal to Seth Cyntach who granted him status, titles, and a settled unlife.",
       "faction": "Camarilla",
       "clan": "Nagloper (Tzimisce bloodline)",
@@ -85,8 +85,8 @@
     },
     {
       "id": 127,
-      "name": "Archon Theo Bell — Iron Hammer of the Justicariat",
-      "aliases": "Archon Bell, The Iron Brujah, Pascek's Right Hand",
+      "name": "Archon Theo Bell",
+      "aliases": "Archon Bell · Camarilla Military Commander",
       "concept": "Legendary 8th-generation Brujah Archon to Justicar Pascek; arrived in Los Angeles to command Camarilla military operations against the northern Sabbat expansion and audit city leadership.",
       "faction": "Camarilla",
       "clan": "Brujah",
@@ -104,8 +104,8 @@
     },
     {
       "id": 33,
-      "name": "Armando \"Nines\" Rodriguez — Anarch Baron of Downtown",
-      "aliases": "Nines, The Giant Killer, The Reluctant Hero",
+      "name": "Armando \"Nines\" Rodriguez",
+      "aliases": "Nines · Baron of Downtown LA",
       "concept": "Dust Bowl refugee; living embodiment of the Unbound spirit and street Baron of Downtown LA.",
       "faction": "Anarch",
       "clan": "Brujah",
@@ -124,8 +124,8 @@
     },
     {
       "id": 5,
-      "name": "Audrey Horne — Harpy of Los Angeles",
-      "aliases": "The Social Arbiter, The Silk Dagger, The 1940s Ghost",
+      "name": "Audrey Horne",
+      "aliases": "The Silk Dagger · Court Harpy",
       "concept": "The undisputed Court Harpy of Los Angeles, presiding over traditional Elysium salons, social prestige, and formal Boon ledgers.",
       "faction": "Camarilla",
       "clan": "Toreador",
@@ -144,8 +144,8 @@
     },
     {
       "id": 126,
-      "name": "Balthazar 'Ace' Landon — High Regent of Los Angeles",
-      "aliases": "High Regent Landon, Ace, Pontifex's Advisor Emeritus, The Vizier Who Eats Echoes",
+      "name": "Balthazar 'Ace' Landon",
+      "aliases": "Ace · High Regent of Los Angeles",
       "concept": "Master strategist, former Seattle detective, and 7th-generation High Regent of Los Angeles; practitioner of the ancient Via Consuasor and Pontifex's Advisor Emeritus whose chantry was devastated on Night 1 while he was away.",
       "faction": "Camarilla",
       "clan": "Tremere",
@@ -164,8 +164,8 @@
     },
     {
       "id": 13,
-      "name": "Ewald Borsodi — Glam-Rock Director & Money Launderer",
-      "aliases": "The Artistic Launderer, Darling",
+      "name": "Ewald Borsodi",
+      "aliases": "Music Director · Studio Launderer",
       "concept": "1970s Glam-Rock music video director laundering millions through Hollywood studio fronts.",
       "faction": "Camarilla",
       "clan": "Toreador",
@@ -184,8 +184,8 @@
     },
     {
       "id": 21,
-      "name": "Father Adrian Thorne — The Vatican Liaison",
-      "aliases": "The Wolf in Holy Vestments, The Confessor",
+      "name": "Father Adrian Thorne",
+      "aliases": "Archdiocese Mole · Shadow Confessor",
       "concept": "Archdiocese financial administrator and liaison; keeps the Vatican Inquisitions blind to LA Kindred.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -205,7 +205,7 @@
     {
       "id": 43,
       "name": "Father Raphaël Ambrosius Costeau",
-      "aliases": "The Shadowed Priest, The Confessor of the Void, Raphael",
+      "aliases": "Shadow Priest · Sabbat Pack Confessor",
       "concept": "Shadowed Priest of the Abyss",
       "faction": "Sabbat",
       "clan": "Lasombra",
@@ -225,8 +225,8 @@
     },
     {
       "id": 25,
-      "name": "Freesoul Shabaz — Civil Rights Brawler",
-      "aliases": "Kevin Miller (birth name), The Gentle Giant",
+      "name": "Freesoul Shabaz",
+      "aliases": "Street Consigliere · South LA Guard",
       "concept": "1960s civil rights activist turned frontline South LA Gangrel street defender.",
       "faction": "Anarch",
       "clan": "Gangrel",
@@ -245,8 +245,8 @@
     },
     {
       "id": 30,
-      "name": "George \"Shadowfox\" Lipton — Subterranean Hermit",
-      "aliases": "Shadowfox, The Keeper of the Labyrinth",
+      "name": "George \"Shadowfox\" Lipton",
+      "aliases": "Shadowfox · Labyrinth Tunnel Master",
       "concept": "Centenarian tunnel excavator who mapped and built the subterranean labyrinth under Los Angeles.",
       "faction": "Camarilla",
       "clan": "Nosferatu",
@@ -265,8 +265,8 @@
     },
     {
       "id": 36,
-      "name": "Jack \"Smiling Jack\" Drake — The Corrupting Mentor",
-      "aliases": "Smiling Jack, The Pirate King",
+      "name": "Jack \"Smiling Jack\" Drake",
+      "aliases": "Smiling Jack · Rogue Rebel Mentor",
       "concept": "Former pirate second mate and legendary Anarch mentor; the smiling avatar of chaos.",
       "faction": "Anarch",
       "clan": "Brujah",
@@ -286,7 +286,7 @@
     {
       "id": 122,
       "name": "Jacob Singer",
-      "aliases": "The Soldier",
+      "aliases": "The Soldier · Imbued Breach Specialist",
       "concept": "Ex-army conspiracy veteran wielding Judgment & Martyrdom Virtues (Discern, Smolder, Ravage) to create supernatural kill zones.",
       "faction": "Hunter",
       "clan": "Mortal (Imbued)",
@@ -298,15 +298,15 @@
       ],
       "functions": [
         "Breach-and-clear and overwatch.",
-        "Discern: night vision + superior Second Sight ? vampires read paler, veins visible, watch them breathe, clock the fangs.",
+        "Discern: night vision + superior Second Sight — vampires read paler, veins visible, watch them breathe, clock the fangs.",
         "Smolder: Obtenebration-2-style smoke that deadens mortal and most supernatural senses; hunters see through it with Second Sight.",
         "Ravage (Martyrdom 3): 6m-range lethal vs supernaturals; mortals stunned but unharmed; caster takes 1 bashing."
       ]
     },
     {
       "id": 8,
-      "name": "Jeremy MacNeil — Anarch Leader",
-      "aliases": "The Legend, The Architect of the Free State, The Scottish Revolutionary",
+      "name": "Jeremy MacNeil",
+      "aliases": "The Legend · Free State Founder",
       "concept": "Legendary Scottish rebel and architect of the First Anarch Revolt in Los Angeles.",
       "faction": "Anarch",
       "clan": "Brujah",
@@ -326,7 +326,7 @@
     {
       "id": 121,
       "name": "Joshua Preston",
-      "aliases": "The Preacher",
+      "aliases": "The Preacher · Imbued Vengeance Zealot",
       "concept": "Imbued heavy weapons zealot wielding Judgment & Vengeance Virtues (Strike, Smite, Track) against monsters.",
       "faction": "Hunter",
       "clan": "Mortal (Imbued)",
@@ -339,15 +339,15 @@
       "functions": [
         "Frontline tank via Surge (1 res: +10 physical dots, max trait 6).",
         "Cleave: his melee weapon deals lethal damage and +2 (approx. stake/edged rules, HH2 tactics chapter).",
-        "Trail: touch a supernatural ? smoky trail lasting days; target sees it only with Perception+Awareness diff 7 and Auspex.",
+        "Trail: touch a supernatural — smoky trail lasting days; target sees it only with Perception+Awareness diff 7 and Auspex.",
         "Pierce (1 res): lie detection; touch a witness to see their last supernatural encounter; touch a supernatural to see a specific period of its past.",
-        "Ward: True Faith repel (HH2 p.83-85) ? no concentration; approaching costs diff-8 Stamina + 1 WP (after the first)."
+        "Ward: True Faith repel (HH2 p.83-85) — no concentration; approaching costs diff-8 Stamina + 1 WP (after the first)."
       ]
     },
     {
       "id": 6,
-      "name": "Laleh Al-Khoury — Deputy Sheriff & Masquerade Auditor",
-      "aliases": "The Masquerade Auditor, The Forensic Enforcer",
+      "name": "Laleh Al-Khoury",
+      "aliases": "Deputy Sheriff · Masquerade Auditor",
       "concept": "Methodical 9th-generation Assamite Deputy Sheriff and Masquerade auditor; loyal to Seth Cyntach who negotiated her clan contract, court standing, and protection in LA.",
       "faction": "Camarilla",
       "clan": "Assamite (Vizier/Warrior crossover)",
@@ -366,8 +366,8 @@
     },
     {
       "id": 34,
-      "name": "Louis Charles Fortier de la Bellière — Anarch Baron of West LA",
-      "aliases": "The Displaced Aristocrat, The Honorable Defector",
+      "name": "Louis Charles Fortier de la Bellière",
+      "aliases": "The Old-World Baron · West LA Ruler",
       "concept": "French noble and refined Baron of West LA; a gentleman of the Old World in the Free States.",
       "faction": "Anarch",
       "clan": "Ventrue",
@@ -386,8 +386,8 @@
     },
     {
       "id": 23,
-      "name": "Lucia Giovanni — The Corpse-Chef",
-      "aliases": "The Necromantic Mogul, The Chef of the Dead",
+      "name": "Lucia Giovanni",
+      "aliases": "Culinary Necromancer · Flesh Caterer",
       "concept": "Culinary necromancer catering high-end illicit flesh feasts and spirit banquets in Arcadia.",
       "faction": "Independent",
       "clan": "Giovanni",
@@ -406,8 +406,8 @@
     },
     {
       "id": 19,
-      "name": "Marcus \"Silky\" Holloway — The Port Authority",
-      "aliases": "Silky, The Suave Industrialist",
+      "name": "Marcus \"Silky\" Holloway",
+      "aliases": "Silky · Port Authority Baron",
       "concept": "Ventrue commercial baron overseeing the legal container shipping lines, customs officials, and corporate shipping docks of the Port of Los Angeles.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -426,8 +426,8 @@
     },
     {
       "id": 37,
-      "name": "Marguerite Foccart — The Eternal Lover of the Revolution",
-      "aliases": "The Revolutionary Socialite, The Muse of Rebellion",
+      "name": "Marguerite Foccart",
+      "aliases": "Salon Host · Anarch Patron",
       "concept": "Exiled French noblewoman and philanthropic Baron of the movement’s inner council.",
       "faction": "Anarch",
       "clan": "Brujah",
@@ -446,8 +446,8 @@
     },
     {
       "id": 10,
-      "name": "Maria Estavez — Camarilla Internal Affairs Investigator",
-      "aliases": "The Forensic Enforcer, The New Guard, The Unblinking Eye",
+      "name": "Maria Estavez",
+      "aliases": "Internal Affairs · Forensic Auditor",
       "concept": "Former LAPD internal affairs detective; merciless auditor of Masquerade coverups.",
       "faction": "Camarilla",
       "clan": "Brujah",
@@ -466,8 +466,8 @@
     },
     {
       "id": 20,
-      "name": "Mark E. Waggoner — The Legacy Litigator",
-      "aliases": "The Bridge, The Golden Boy",
+      "name": "Mark E. Waggoner",
+      "aliases": "Courtroom Counsel · Elysium Lawyer",
       "concept": "Junior corporate litigator managing local courtroom injunctions and court records.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -486,8 +486,8 @@
     },
     {
       "id": 134,
-      "name": "Matilda Monclair — The Iron Aristocrat",
-      "aliases": "",
+      "name": "Matilda Monclair",
+      "aliases": "The Iron Aristocrat · Palisades Elder",
       "concept": "Retired Methuselah-level Ventrue ex-PC living in secluded luxury in Pacific Palisades; legendary combat and political survivor of the previous chronicle who owns the ultra-exclusive Velvet Manifesto gentleman's club and brothel, entrusting city legal affairs to her childe Mark E. Waggoner.",
       "faction": "Autarkis",
       "clan": "Ventrue",
@@ -507,8 +507,8 @@
     },
     {
       "id": 14,
-      "name": "Maximo \"Max\" Vane — The Reluctant Blood-Thief",
-      "aliases": "The Janitor, The Failed Embrace, The Blood-Pharmacist",
+      "name": "Maximo \"Max\" Vane",
+      "aliases": "Max · Black-Market Blood Chemist",
       "concept": "Former sound mixer and musician struggling with the Beast and feeding ethics.",
       "faction": "Camarilla",
       "clan": "Toreador",
@@ -527,8 +527,8 @@
     },
     {
       "id": 1,
-      "name": "Meredith Vereira — Prince of Los Angeles",
-      "aliases": "The Reluctant Crown, The Velvet Puppet",
+      "name": "Meredith Vereira",
+      "aliases": "The Reluctant Crown · Prince of LA",
       "concept": "Ventrue 8th-generation Prince of Los Angeles; sponsored by Seth Cyntach after Sebastian LaCroix vanished 15 years ago, now a seasoned ruler plotting to break free of Seth's shadow using 1920s Masquerade breach evidence before Archon Theo Bell.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -545,8 +545,8 @@
     },
     {
       "id": 26,
-      "name": "Misty \"Riot\" Vane — Rowdy Punk Roadie",
-      "aliases": "Riot, The Loud Friend",
+      "name": "Misty \"Riot\" Vane",
+      "aliases": "Riot · Street Scout & Brawler",
       "concept": "Whiskey a Go Go punk rock roadie turned frontline Anarch shock-trooper.",
       "faction": "Anarch",
       "clan": "Gangrel",
@@ -565,8 +565,8 @@
     },
     {
       "id": 18,
-      "name": "Norma Jennings ? Ventrue Primogen & Estate Litigator",
-      "aliases": "The Succession Architect, The Phoenix Protocol",
+      "name": "Norma Jennings",
+      "aliases": "Estate Litigator · Ventrue Primogen",
       "concept": "Ventrue Primogen on Meredith's council; master estate litigator, identity fabricator, and quiet political stabilizer who provides institutional shielding for court members while managing high-society trusts.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -585,8 +585,8 @@
     },
     {
       "id": 46,
-      "name": "Philip Zambardo — The Hollow Saint",
-      "aliases": "",
+      "name": "Philip Zambardo",
+      "aliases": "Prophet of the Void · Sabbat Psychologist",
       "concept": "Tactical Nihilist / Prophet of the Void — Stanford prison experiment architect. Sire of Frederic King.",
       "faction": "Sabbat",
       "clan": "Malkavian Antitribu",
@@ -600,8 +600,8 @@
     },
     {
       "id": 9,
-      "name": "Rebecca Taverley — Anarch Electronic Warfare Specialist",
-      "aliases": "The Digital Dissident, The Signal Runner, The Mesh-Queen",
+      "name": "Rebecca Taverley",
+      "aliases": "Signal Runner · Anarch Comms Chief",
       "concept": "Anarch Brujah comms commander specializing in tactical radio interception, police scanner spoofing, and frontline electronic warfare against Sabbat assault packs.",
       "faction": "Anarch",
       "clan": "Brujah",
@@ -620,8 +620,8 @@
     },
     {
       "id": 27,
-      "name": "Salomon \"Big Sal\" Two-Rivers — Stoic Gangrel Mentor",
-      "aliases": "Big Sal, The Old Head",
+      "name": "Salomon \"Big Sal\" Two-Rivers",
+      "aliases": "Big Sal · Veteran Gangrel Mentor",
       "concept": "Indigenous wilderness scout and elder mentor guarding the mountain passes into LA.",
       "faction": "Anarch",
       "clan": "Gangrel",
@@ -640,8 +640,8 @@
     },
     {
       "id": 7,
-      "name": "Salvador Garcia — Brujah Primogen",
-      "aliases": "The Scholar-Warrior, Defender of the Tower",
+      "name": "Salvador Garcia",
+      "aliases": "Scholar-Warrior · Brujah Primogen",
       "concept": "High-ranking Brujah Primogen and classical philosopher staunchly loyal to Prince Meredith and the Camarilla, rejecting Anarch chaos in favor of civilized order.",
       "faction": "Camarilla",
       "clan": "Brujah",
@@ -659,8 +659,8 @@
     },
     {
       "id": 32,
-      "name": "Sarah \"Peek\" Jenkins — Emotional Security Auditor",
-      "aliases": "Peek, The Sysadmin of Souls, The Crack Seer",
+      "name": "Sarah \"Peek\" Jenkins",
+      "aliases": "Peek · Midnight Radio Oracle",
       "concept": "The Midnight Radio Oracle & Ambient Soundscaper",
       "faction": "Camarilla",
       "clan": "Malkavian",
@@ -678,8 +678,8 @@
     },
     {
       "id": 15,
-      "name": "Sasha Beaumont — PR Gatekeeper & Rival Harpy",
-      "aliases": "The Brand Manager, The Image Architect",
+      "name": "Sasha Beaumont",
+      "aliases": "PR Gatekeeper · Tabloid Fixer",
       "concept": "Elite mortal PR gatekeeper and tabloid fixer who cleans up celebrity Masquerade incidents and runs court whisper campaigns.",
       "faction": "Camarilla",
       "clan": "Toreador",
@@ -699,7 +699,7 @@
     {
       "id": 63,
       "name": "Satan-Hearted Bonetopick",
-      "aliases": "Bonetopick, Satan-Heart, The Bone Sculptor",
+      "aliases": "Bonetopick · Beast Fleshcrafter",
       "concept": "Monstrous, bestial Tzimisce pack brute breeding fleshcrafted ghoul-hound monstrosities in subterranean abandoned rail tunnels.",
       "faction": "Sabbat",
       "clan": "Tzimisce",
@@ -717,8 +717,8 @@
     },
     {
       "id": 17,
-      "name": "Seth Cyntach — The Shadow King",
-      "aliases": "Vasylko of the Black Mire (true name), The Invisible Hand",
+      "name": "Seth Cyntach",
+      "aliases": "Shadow Sovereign · Ventrue Elder",
       "concept": "Lowest-generation Camarilla elder in Los Angeles (since the 1800s); puppetmaster who sponsored Meredith after LaCroix vanished 15 years ago, shameful sire to Sabbat warlord Dmitry, and master of the Sheriff and Deputy.",
       "faction": "Camarilla",
       "clan": "Ventrue",
@@ -737,8 +737,8 @@
     },
     {
       "id": 28,
-      "name": "Silas \"Root\" Thorne ? Nosferatu Primogen & Infrastructure Admin",
-      "aliases": "Root, The Digital Sin-Eater, The Iron Curtain",
+      "name": "Silas \"Root\" Thorne",
+      "aliases": "Root · Primogen & Infrastructure Sysadmin",
       "concept": "Nosferatu Primogen of Los Angeles; master hardware engineer and subterranean infrastructure admin who maintains the physical fiber-optic cables, sewage junction monitors, and encrypted network hubs beneath Downtown.",
       "faction": "Camarilla",
       "clan": "Nosferatu",
@@ -757,8 +757,8 @@
     },
     {
       "id": 128,
-      "name": "Special Agent Dale Cooper ? Malkavian Primogen",
-      "aliases": "",
+      "name": "Special Agent Dale Cooper",
+      "aliases": "Special Agent · Malkavian Primogen",
       "concept": "Dapper, brilliant FBI Special Agent and 8th-generation Malkavian Primogen of Los Angeles; investigates the cosmic and supernatural mysteries of the city through intuitive dream logic, tape recordings to 'Diane', Tibetan deduction methods, and an unyielding reverence for damn fine cherry pie and black coffee.",
       "faction": "Camarilla",
       "clan": "Malkavian",
@@ -777,8 +777,8 @@
     },
     {
       "id": 29,
-      "name": "Tiffany \"Lydia\" Salazar ? Financial Cryptographer & Systems Architect",
-      "aliases": "Lydia, _0b1ivi0n_, The Digital Firewall",
+      "name": "Tiffany \"Lydia\" Salazar",
+      "aliases": "Lydia · Crypto Architect & Financial Vault",
       "concept": "Nosferatu elite software architect managing Camarilla offshore financial crypto-vaults, Century City banking backdoors, and electronic Boon registries.",
       "faction": "Camarilla",
       "clan": "Nosferatu",
@@ -797,8 +797,8 @@
     },
     {
       "id": 16,
-      "name": "Vivienne \"V\" St. Claire — Avant-Garde Tech-Designer",
-      "aliases": "The Couture Curator, V, The Sensory Designer",
+      "name": "Vivienne \"V\" St. Claire",
+      "aliases": "V · Tech-Couture Salon Host",
       "concept": "Avant-garde tech-couture designer and trendsetter hosting underground crossover fashion salons for neonates and creative Anarchs.",
       "faction": "Camarilla",
       "clan": "Toreador",
@@ -1374,437 +1374,6 @@
       "specialties": {}
     },
     {
-      "name": "Katrine Sterling — Disgraced Drone Technician",
-      "clan": "Ghoul",
-      "generation": "N/A",
-      "sire": "Frederic King (Malkavian)",
-      "domitor": "Frederic King (Malkavian)",
-      "concept": "Disgraced Drone Technician — Malkavian ghoul and hacker. (V20 Core p.87; V20 Core p.497-498: Ghouls)",
-      "nature": "Visionary — Seeks inner peace and engineering return (V20 Core, p.103)",
-      "demeanor": "Perfectionist — Impossible standards (V20 Core, p.102)",
-      "player": "",
-      "type": "Ghoul",
-      "xp": "0",
-      "portrait": "",
-      "humanity": "5",
-      "willpower": "6",
-      "blood_pool": "",
-      "blood_per_turn": "",
-      "virtues": {
-        "Conscience/Conviction": "2",
-        "Self-Control": "2",
-        "Courage": "3"
-      },
-      "attributes": {
-        "physical": {
-          "Strength": "2",
-          "Dexterity": "2",
-          "Stamina": "2"
-        },
-        "social": {
-          "Charisma": "2",
-          "Manipulation": "2",
-          "Appearance": "3"
-        },
-        "mental": {
-          "Perception": "4",
-          "Intelligence": "4",
-          "Wits": "3"
-        }
-      },
-      "abilities": {
-        "talents": {
-          "Alertness": "2",
-          "Athletics": "0",
-          "Awareness": "1",
-          "Brawl": "0",
-          "Empathy": "1",
-          "Expression": "0",
-          "Intimidation": "0",
-          "Leadership": "0",
-          "Streetwise": "1",
-          "Subterfuge": "1"
-        },
-        "skills": {
-          "Animal Ken": "1",
-          "Crafts": "3",
-          "Drive": "1",
-          "Etiquette": "0",
-          "Firearms": "1",
-          "Larceny": "3",
-          "Melee": "0",
-          "Performance": "0",
-          "Stealth": "2",
-          "Survival": "0"
-        },
-        "knowledges": {
-          "Academics": "4",
-          "Computer": "4",
-          "Finance": "2",
-          "Investigation": "3",
-          "Law": "2",
-          "Medicine": "0",
-          "Occult": "3",
-          "Politics": "2",
-          "Science": "4",
-          "Technology": "3"
-        }
-      },
-      "disciplines": {
-        "Obfuscate": "1",
-        "Potence": "1"
-      },
-      "backgrounds": {},
-      "merits": [
-        {
-          "name": "Computer Aptitude (2pt, V20 Core p.476)",
-          "value": "2",
-          "desc": "You are familiar with and talented in the uses of computer equipment. All rolls involving computers are at -2 difficulty for you."
-        },
-        {
-          "name": "Concentration (1pt, V20 Core p.476)",
-          "value": "1",
-          "desc": "You have the ability to focus your mind and shut out any distractions or annoyances. You are unaffected by penalties from distracting circumstances."
-        },
-        {
-          "name": "Coldly Logical",
-          "value": "1",
-          "desc": "You have a knack for separating factual reporting from emotional coloration. -1 difficulty on all rolls requiring logic or seeing through emotional clouding."
-        }
-      ],
-      "flaws": [
-        {
-          "name": "Short (1pt, V20 Core p.490)",
-          "value": "1",
-          "desc": "You are well below average height (4.5 ft / 1.5m or less). Running speed is half of average. Reach is limited."
-        },
-        {
-          "name": "Shy",
-          "value": "1",
-          "desc": "You are ill at ease with people. +2 difficulty on Social rolls with strangers. +3 if center of attention."
-        }
-      ],
-      "equipment": [],
-      "specialties": {}
-    },
-    {
-      "name": "John Carmac — Modern Amish Marketing Freelancer",
-      "clan": "Ghoul",
-      "generation": "N/A",
-      "sire": "Frederic King (Malkavian)",
-      "domitor": "Frederic King (Malkavian)",
-      "concept": "Modern Amish Marketing — Ghoul managing Masquerade narratives for Frederic King. (V20 Core p.87; V20 Core p.497-498)",
-      "nature": "Conformist — Balances upbringing with dark service (V20 Core, p.97)",
-      "demeanor": "Fanatic — Frederic's service is new congregation (V20 Core, p.97)",
-      "player": "",
-      "type": "Ghoul",
-      "xp": "0",
-      "portrait": "",
-      "humanity": "6",
-      "willpower": "6",
-      "blood_pool": "",
-      "blood_per_turn": "",
-      "virtues": {
-        "Conscience/Conviction": "3",
-        "Self-Control": "3",
-        "Courage": "3"
-      },
-      "attributes": {
-        "physical": {
-          "Strength": "2",
-          "Dexterity": "2",
-          "Stamina": "2"
-        },
-        "social": {
-          "Charisma": "3",
-          "Manipulation": "4",
-          "Appearance": "2"
-        },
-        "mental": {
-          "Perception": "3",
-          "Intelligence": "2",
-          "Wits": "3"
-        }
-      },
-      "abilities": {
-        "talents": {
-          "Alertness": "1",
-          "Athletics": "1",
-          "Awareness": "2",
-          "Brawl": "0",
-          "Empathy": "3",
-          "Expression": "3",
-          "Intimidation": "1",
-          "Leadership": "3",
-          "Streetwise": "3",
-          "Subterfuge": "2"
-        },
-        "skills": {
-          "Animal Ken": "",
-          "Crafts": "",
-          "Drive": "3",
-          "Etiquette": "2",
-          "Firearms": "1",
-          "Larceny": "0",
-          "Melee": "0",
-          "Performance": "2",
-          "Stealth": "1",
-          "Survival": "1"
-        },
-        "knowledges": {
-          "Academics": "2",
-          "Computer": "2",
-          "Finance": "2",
-          "Investigation": "3",
-          "Law": "3",
-          "Medicine": "0",
-          "Occult": "1",
-          "Politics": "2",
-          "Science": "0",
-          "Technology": "0"
-        }
-      },
-      "disciplines": {
-        "Dementation": "1",
-        "Potence": "1"
-      },
-      "backgrounds": {},
-      "merits": [
-        {
-          "name": "Oracular Ability (3pt, V20 Core p.483)",
-          "value": "3",
-          "desc": "You can see and interpret signs and omens regarding the future and present."
-        },
-        {
-          "name": "Common Sense (1pt, V20 Core p.476)",
-          "value": "1",
-          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
-        }
-      ],
-      "flaws": [
-        {
-          "name": "Lame (3pt, V20 Core p.488)",
-          "value": "3",
-          "desc": "Your legs are damaged. Walking speed is 1/4 normal, running is impossible."
-        }
-      ],
-      "equipment": [],
-      "specialties": {}
-    },
-    {
-      "name": "George Michael — Amish Veteran Combat Specialist",
-      "clan": "Ghoul",
-      "generation": "N/A",
-      "sire": "Frederic King (Malkavian)",
-      "domitor": "Frederic King (Malkavian)",
-      "concept": "Amish Veteran Combat Specialist — Frederic King's firearms specialist. (V20 Core p.87; V20 Core p.497-498)",
-      "nature": "Conformist — Seeks stability in chaos (V20 Core, p.97)",
-      "demeanor": "Fanatic — Frederic loyalty as new covenant (V20 Core, p.97)",
-      "player": "",
-      "type": "Ghoul",
-      "xp": "0",
-      "portrait": "",
-      "humanity": "6",
-      "willpower": "5",
-      "blood_pool": "",
-      "blood_per_turn": "",
-      "virtues": {
-        "Conscience/Conviction": "3",
-        "Self-Control": "3",
-        "Courage": "3"
-      },
-      "attributes": {
-        "physical": {
-          "Strength": "3",
-          "Dexterity": "4",
-          "Stamina": "4"
-        },
-        "social": {
-          "Charisma": "2",
-          "Manipulation": "2",
-          "Appearance": "2"
-        },
-        "mental": {
-          "Perception": "4 (Tactical)",
-          "Intelligence": "2",
-          "Wits": "3"
-        }
-      },
-      "abilities": {
-        "talents": {
-          "Alertness": "3",
-          "Athletics": "3",
-          "Awareness": "2",
-          "Brawl": "2",
-          "Empathy": "2",
-          "Expression": "0",
-          "Intimidation": "1",
-          "Leadership": "1",
-          "Streetwise": "2",
-          "Subterfuge": "0"
-        },
-        "skills": {
-          "Animal Ken": "",
-          "Crafts": "2",
-          "Drive": "3",
-          "Etiquette": "1",
-          "Firearms": "4 (Marksmanship)",
-          "Larceny": "1",
-          "Melee": "1",
-          "Performance": "0",
-          "Stealth": "3",
-          "Survival": "2"
-        },
-        "knowledges": {
-          "Academics": "1",
-          "Computer": "1",
-          "Finance": "0",
-          "Investigation": "1",
-          "Law": "1",
-          "Medicine": "2",
-          "Occult": "0",
-          "Politics": "0",
-          "Science": "0",
-          "Technology": "2"
-        }
-      },
-      "disciplines": {
-        "Auspex": "1",
-        "Potence": "1"
-      },
-      "backgrounds": {},
-      "merits": [
-        {
-          "name": "Friendly Face (1pt, V20 Core p.477)",
-          "value": "1",
-          "desc": "You have a face that reminds everyone of someone, leaving you at -1 difficulty on all appropriate Social-based rolls involving strangers (first meeting only)."
-        },
-        {
-          "name": "Magic Resistance (2pt, V20 Core p.481)",
-          "value": "2",
-          "desc": "You have an inherent resistance to magic. The difficulty of all spells (Tremere rituals, etc.) is two higher when directed at you. You may never learn Thaumaturgy."
-        },
-        {
-          "name": "Lawman's Friend",
-          "value": "2",
-          "desc": "The local Sheriff or Bishop likes you. He overlooks minor trespasses and warns you of crackdowns."
-        }
-      ],
-      "flaws": [
-        {
-          "name": "PTSD (2pt, V20 Core p.488)",
-          "value": "2",
-          "desc": ""
-        }
-      ],
-      "equipment": [],
-      "specialties": {}
-    },
-    {
-      "name": "Jade Nguyen — The Aspiring Actress Ghoul - Dead",
-      "clan": "Ghoul",
-      "generation": "N/A",
-      "sire": "Unnamed Toreador or Ventrue patron",
-      "domitor": "Unnamed Toreador or Ventrue patron",
-      "concept": "Aspiring Actress Ghoul — A Toreador/Ventrue ghoul studying at the Stellaris Conservatory. (V20 Core p.87; V20 Core p.497-498)",
-      "nature": "Gallant — Performs life as a scene she is directing (V20 Core, p.97)",
-      "demeanor": "Celebrant — Finds joy in the passion of performance (V20 Core, p.96)",
-      "player": "",
-      "type": "Ghoul",
-      "xp": "0",
-      "portrait": "",
-      "humanity": "8",
-      "willpower": "6",
-      "blood_pool": "",
-      "blood_per_turn": "",
-      "virtues": {
-        "Conscience/Conviction": "4",
-        "Self-Control": "3",
-        "Courage": "3"
-      },
-      "attributes": {
-        "physical": {
-          "Strength": "",
-          "Dexterity": "",
-          "Stamina": ""
-        },
-        "social": {
-          "Charisma": "4",
-          "Manipulation": "4",
-          "Appearance": "5"
-        },
-        "mental": {
-          "Perception": "",
-          "Intelligence": "",
-          "Wits": ""
-        }
-      },
-      "abilities": {
-        "talents": {
-          "Alertness": "",
-          "Athletics": "",
-          "Awareness": "",
-          "Brawl": "",
-          "Empathy": "4",
-          "Expression": "4",
-          "Intimidation": "",
-          "Leadership": "",
-          "Streetwise": "",
-          "Subterfuge": "3"
-        },
-        "skills": {
-          "Animal Ken": "",
-          "Crafts": "",
-          "Drive": "",
-          "Etiquette": "3",
-          "Firearms": "",
-          "Larceny": "",
-          "Melee": "",
-          "Performance": "5",
-          "Stealth": "",
-          "Survival": ""
-        },
-        "knowledges": {
-          "Academics": "",
-          "Computer": "",
-          "Finance": "",
-          "Investigation": "",
-          "Law": "",
-          "Medicine": "",
-          "Occult": "",
-          "Politics": "",
-          "Science": "",
-          "Technology": ""
-        }
-      },
-      "disciplines": {
-        "Potence": "1",
-        "Presence": "1"
-      },
-      "backgrounds": {},
-      "merits": [
-        {
-          "name": "Enchanting Voice (2pt, V20 Core p.477)",
-          "value": "2",
-          "desc": ""
-        },
-        {
-          "name": "Seductress (1pt, V20 Core p.484)",
-          "value": "1",
-          "desc": ""
-        }
-      ],
-      "flaws": [
-        {
-          "name": "Addiction (3pt, V20 Core p.486) — Kindred Vitae",
-          "value": "3",
-          "desc": ""
-        }
-      ],
-      "equipment": [],
-      "specialties": {}
-    },
-    {
       "name": "Chris Partlow",
       "clan": "Ghoul",
       "generation": "",
@@ -2019,112 +1588,6 @@
       "flaws": [],
       "equipment": [],
       "specialties": {}
-    },
-    {
-      "name": "Mrs. Martha Gable — The Faithful Matriarch",
-      "clan": "Mortal",
-      "generation": "N/A",
-      "sire": "N/A",
-      "domitor": "",
-      "concept": "Old Christian Facebook Lady & Volunteer Coordinator. Manages church prayer chains, local bake sales, and charity drives. Sees Frederik as a holy, ascetic minister under a solemn vow of silence recovering from an ordeal.",
-      "nature": "Caregiver — Deeply fulfilled by looking after those in physical or spiritual need.",
-      "demeanor": "Traditionalist — Respectful, church-going elderly grandmother who values faith, manners, and community.",
-      "player": "",
-      "type": "Mortal",
-      "xp": "0",
-      "portrait": "",
-      "humanity": "8",
-      "willpower": "4",
-      "blood_pool": "",
-      "blood_per_turn": "",
-      "virtues": {
-        "Conscience/Conviction": "4",
-        "Self-Control": "4",
-        "Courage": "2"
-      },
-      "attributes": {
-        "physical": {
-          "Strength": "1",
-          "Dexterity": "2",
-          "Stamina": "2"
-        },
-        "social": {
-          "Charisma": "3",
-          "Manipulation": "2",
-          "Appearance": "2"
-        },
-        "mental": {
-          "Perception": "3",
-          "Intelligence": "2",
-          "Wits": "2"
-        }
-      },
-      "abilities": {
-        "talents": {
-          "Alertness": "1",
-          "Athletics": "",
-          "Awareness": "",
-          "Brawl": "",
-          "Empathy": "3",
-          "Expression": "2",
-          "Intimidation": "",
-          "Leadership": "",
-          "Streetwise": "",
-          "Subterfuge": ""
-        },
-        "skills": {
-          "Animal Ken": "",
-          "Crafts": "2",
-          "Drive": "2",
-          "Etiquette": "3",
-          "Firearms": "",
-          "Larceny": "",
-          "Melee": "",
-          "Performance": "",
-          "Stealth": "",
-          "Survival": ""
-        },
-        "knowledges": {
-          "Academics": "1",
-          "Computer": "1",
-          "Finance": "1",
-          "Investigation": "",
-          "Law": "",
-          "Medicine": "1",
-          "Occult": "",
-          "Politics": "",
-          "Science": "",
-          "Technology": ""
-        }
-      },
-      "disciplines": {},
-      "backgrounds": {
-        "Allies": "2",
-        "Contacts": "2",
-        "Resources": "2"
-      },
-      "merits": [
-        {
-          "name": "Common Sense",
-          "value": "1",
-          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
-        }
-      ],
-      "flaws": [
-        {
-          "name": "Technologically Challenged",
-          "value": "1",
-          "desc": "You struggle with modern devices; relies strictly on simple iPad taps, Facebook Messenger, and phone calls."
-        }
-      ],
-      "equipment": [
-        "Gold-rimmed reading glasses on a beaded lanyard",
-        "iPad in a floral quilted case (Facebook notifications on maximum volume)",
-        "Floral handbag with peppermint & butterscotch hard candies",
-        "Sunday church bulletin",
-        "Keys to 2004 Buick LeSabre"
-      ],
-      "specialties": {}
     }
   ],
   "sessions": [],
@@ -2201,7 +1664,7 @@
       "characters": [
         {
           "id": 14,
-          "name": "Maximo Vane",
+          "name": "Maximo \"Max\" Vane",
           "is_pc": false,
           "relationship": "operates"
         }
@@ -2218,44 +1681,8 @@
       "is_pc_location": true,
       "characters": [
         {
-          "id": 2,
-          "name": "Isabel Turner",
-          "is_pc": true,
-          "relationship": "owner"
-        },
-        {
           "id": 0,
           "name": "Liam",
-          "is_pc": true,
-          "relationship": "frequents"
-        },
-        {
-          "id": 1,
-          "name": "Frederic",
-          "is_pc": true,
-          "relationship": "frequents"
-        },
-        {
-          "id": 3,
-          "name": "Shane",
-          "is_pc": true,
-          "relationship": "frequents"
-        },
-        {
-          "id": 4,
-          "name": "Katrine",
-          "is_pc": true,
-          "relationship": "frequents"
-        },
-        {
-          "id": 5,
-          "name": "John",
-          "is_pc": true,
-          "relationship": "frequents"
-        },
-        {
-          "id": 6,
-          "name": "George",
           "is_pc": true,
           "relationship": "frequents"
         }
@@ -2637,36 +2064,6 @@
           "name": "Liam Johnson",
           "is_pc": true,
           "relationship": "operates"
-        },
-        {
-          "id": 1,
-          "name": "Frederic King",
-          "is_pc": true,
-          "relationship": "operates"
-        },
-        {
-          "id": 2,
-          "name": "Isabel Turner",
-          "is_pc": true,
-          "relationship": "operates"
-        },
-        {
-          "id": 4,
-          "name": "Katrine Sterling",
-          "is_pc": true,
-          "relationship": "operates"
-        },
-        {
-          "id": 5,
-          "name": "John Carmac",
-          "is_pc": true,
-          "relationship": "operates"
-        },
-        {
-          "id": 6,
-          "name": "George Michael",
-          "is_pc": true,
-          "relationship": "operates"
         }
       ]
     },
@@ -2678,15 +2075,8 @@
       "lng": -117.939,
       "description": "A run-down, cash-only motel on the outskirts of West Covina. Frederic King and his retinue of ghouls frequently rent out a block of rooms at the far end of the lot for discrete daylight resting and off-the-books meetings. A classic L-shaped, two-story motor inn with peeling mint-green paint and a flickering neon sign. The rooms at the back face a concrete wall, offering perfect seclusion and heavy, light-blocking drapes.",
       "notes": "",
-      "is_pc_location": true,
-      "characters": [
-        {
-          "id": 1,
-          "name": "Frederic King",
-          "is_pc": true,
-          "relationship": "frequents"
-        }
-      ]
+      "is_pc_location": false,
+      "characters": []
     },
     {
       "name": "Double R Diner",
