@@ -1601,6 +1601,7 @@ window.CODEX_DATA = {
       "description": "Established in the 1960s, the Dorothy Chandler Pavilion has stood as a beacon of Los Angeles culture and high society. Under the glittering chandeliers, Kindred elites whisper secrets and broker deals that shape the city's future. It operates as the Prince's primary Elysium, a neutral ground where the Masquerade is paramount and violence is strictly forbidden. Over decades, it has witnessed the rise and fall of countless Kindred factions, cementing its place as the center of formal Kindred society. The Pavilion is a grand, sweeping structure of glass, marble, and curved concrete. Inside, plush red carpets, crystal chandeliers, and wide staircases provide an opulent setting, contrasting the stark realities of Kindred existence.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 1,
@@ -1617,24 +1618,6 @@ window.CODEX_DATA = {
       ]
     },
     {
-      "name": "Bar Afterlife",
-      "district": "Downtown LA",
-      "map_type": "hangout",
-      "lat": 33.93,
-      "lng": -118.2537,
-      "description": "Opening its doors in the late 1990s as a speakeasy, Bar Afterlife quickly evolved into a high-end downtown establishment. Salvador Garcia curates its operations as an exclusive philosophical salon for the Camarilla. Here, neonates and ancillae alike debate the finer points of the Traditions and Kindred philosophy, free from mortal eavesdropping. Hidden behind an unmarked steel door in an alley, the bar features exposed brick walls, dim incandescent lighting, and leather booths. A small stage occasionally hosts spoken-word poetry or jazz.",
-      "notes": "",
-      "is_pc_location": false,
-      "characters": [
-        {
-          "id": 7,
-          "name": "Salvador Garcia",
-          "is_pc": false,
-          "relationship": "operates"
-        }
-      ]
-    },
-    {
       "name": "Waggoner Boutique Litigation Firm",
       "district": "Downtown LA",
       "map_type": "business",
@@ -1643,6 +1626,7 @@ window.CODEX_DATA = {
       "description": "An elite corporate law firm that has quietly served the Camarilla's legal needs for decades. Managed by Mark E. Waggoner and Abraham DuSable, the firm specializes in managing complex Kindred real-estate trusts, establishing shell corporations, and providing legal shielding against mortal scrutiny. Occupying a high floor in a modern high-rise, the offices are decorated in minimalist, expensive taste with panoramic views of the city, frosted glass partitions, and a massive mahogany conference table.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 20,
@@ -1653,37 +1637,56 @@ window.CODEX_DATA = {
       ]
     },
     {
-      "name": "St. Claire's Hospital",
-      "district": "Downtown LA",
-      "map_type": "blood",
-      "lat": 34.054,
-      "lng": -118.267,
-      "description": "A bustling downtown hospital that handles a massive volume of trauma cases. Maximo Vane utilizes his position as a night-shift janitor to navigate the hospital corridors unnoticed, quietly procuring blood bags and covering the tracks of reckless Kindred feeding in the ER. A sprawling, chaotic medical complex. The upper floors are modern and sterile, but the basement levels—where the morgue, laundry, and supplies are located—are dimly lit, industrial, and rarely frequented.",
-      "notes": "",
-      "is_pc_location": false,
-      "characters": [
-        {
-          "id": 14,
-          "name": "Maximo \"Max\" Vane",
-          "is_pc": false,
-          "relationship": "operates"
-        }
-      ]
-    },
-    {
       "name": "The Wilshire Regency, Unit 34",
       "district": "Downtown LA",
       "map_type": "haven",
-      "lat": 34.0488,
-      "lng": -118.2518,
+      "lat": 34.0538,
+      "lng": -118.2642,
       "description": "A high-end duplex occupying the 17th floor of a Downtown luxury residential tower. Acquired through mortal shell companies, it serves as Isabel's primary haven and an occasional safe house for her coterie. Floor-to-ceiling blast-tinted windows overlook the Downtown skyline. The interior is a sprawling expanse of minimalist luxury, featuring soundproofed walls and state-of-the-art security.",
       "notes": "",
       "is_pc_location": true,
+      "is_haven": true,
       "characters": [
+        {
+          "id": 2,
+          "name": "Anthohimondrona Tsuoranoannddy",
+          "is_pc": false,
+          "relationship": "owner"
+        },
         {
           "id": 0,
           "name": "Liam",
           "is_pc": true,
+          "relationship": "frequents"
+        },
+        {
+          "id": 1,
+          "name": "Meredith Vereira",
+          "is_pc": false,
+          "relationship": "frequents"
+        },
+        {
+          "id": 3,
+          "name": "Amanda Byers",
+          "is_pc": false,
+          "relationship": "frequents"
+        },
+        {
+          "id": 4,
+          "name": "\"Big\" Ed Hurley",
+          "is_pc": false,
+          "relationship": "frequents"
+        },
+        {
+          "id": 5,
+          "name": "Audrey Horne",
+          "is_pc": false,
+          "relationship": "frequents"
+        },
+        {
+          "id": 6,
+          "name": "Laleh Al-Khoury",
+          "is_pc": false,
           "relationship": "frequents"
         }
       ]
@@ -1697,7 +1700,15 @@ window.CODEX_DATA = {
       "description": "An abandoned, sealed-off intersection of three subway service tunnels deep beneath the streets of Downtown. It provides little more than absolute darkness and structural shielding from the sun. A run-down, mostly empty expanse of weeping concrete and rusted rebar, accessed via a heavy iron manhole cover. It is utterly devoid of comfort, reeking of ozone and standing water.",
       "notes": "",
       "is_pc_location": false,
-      "characters": []
+      "is_haven": true,
+      "characters": [
+        {
+          "id": 3,
+          "name": "Amanda Byers",
+          "is_pc": false,
+          "relationship": "owner"
+        }
+      ]
     },
     {
       "name": "Los Angeles City Hall & County Hall of Records",
@@ -1708,6 +1719,7 @@ window.CODEX_DATA = {
       "description": "The 27-story municipal nexus of Los Angeles, housing city council chambers, property deeds, vital archives, and civil records.",
       "notes": "High-security municipal building. Ideal for bureaucratic manipulation and deed investigation.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
@@ -1719,6 +1731,7 @@ window.CODEX_DATA = {
       "description": "Massive 1914 subterranean vaulted cistern 80 feet beneath the downtown rail yards, serving as the sovereign underground palace, communications relay, and communal sanctuary of Los Angeles's Nosferatu Warrens.",
       "notes": "Requires Athletics (Diff 7) or secret Nosferatu tunnel knowledge to enter through submerged siphons. Security: Obfuscate 5 warding glyphs and acoustic vibration sensors.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 28,
@@ -1743,6 +1756,7 @@ window.CODEX_DATA = {
       "description": "Dimly lit historic 1905 cocktail lounge operating under an antique 19th-century liquor license allowing package to-go liquor. Serves as the informal late-night gathering dive for Camarilla internal affairs investigators, hounds, and neonate auditors.",
       "notes": "Feeding Difficulty: 5 among drunk hipsters and late-night revelers. Safe for discrete blood exchanges in private back booths.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 10,
@@ -1761,6 +1775,7 @@ window.CODEX_DATA = {
       "description": "Historic 1938 ceremonial plaza featuring grand pagoda gateways, stone Foo dogs, neon lotus lanterns, and private upper-floor tea salons. The sovereign diplomatic heart of the Quincunx and Kuei-jin in Los Angeles.",
       "notes": "Recognized sovereign Quincunx territory. Western Kindred entering without formal diplomatic escort or Shen invitation suffer heavy social penalties (Diff 8 on all Social rolls).",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
@@ -1772,35 +1787,19 @@ window.CODEX_DATA = {
       "description": "Legendary speakeasy hidden behind an unmarked vintage wooden door in the back of Cole's French Dip. Dimly lit, wood-paneled craft cocktail sanctum favored by discrete neonates and confidential couriers.",
       "notes": "No standing room permitted; intimate table seating ensures quiet conversations are contained. Subterfuge and Etiquette Diff 6.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
-    },
-    {
-      "name": "Neon Temple",
-      "district": "Beverly Hills & Bel Air",
-      "map_type": "elysium",
-      "lat": 34.0736,
-      "lng": -118.4004,
-      "description": "Once a sprawling private compound, the Neon Temple was seized during an early Anarch uprising. Now, Jeremy MacNeil commands it as a fortified central hub and heavily monitored Anarch leadership stronghold, coordinating the defense of the Free States from its secure command center. A massive estate hidden behind high ivy-covered walls and wrought-iron gates. The grounds feature state-of-the-art security cameras, reinforced structures, and a surprisingly utilitarian command bunker beneath the main house.",
-      "notes": "",
-      "is_pc_location": false,
-      "characters": [
-        {
-          "id": 8,
-          "name": "Jeremy MacNeil",
-          "is_pc": false,
-          "relationship": "operates"
-        }
-      ]
     },
     {
       "name": "Club Zombie",
       "district": "Beverly Hills & Bel Air",
       "map_type": "hangout",
-      "lat": 34.075,
-      "lng": -118.405,
+      "lat": 34.0675,
+      "lng": -118.4055,
       "description": "An elite cultural sanctuary and VIP lounge catering to Kindred seeking high-end entertainment without the stifling rules of Elysium. Louis Charles Fortier de la Bellière oversees the club, ensuring it remains a profitable venture and a neutral meeting ground for diverse factions. A highly exclusive nightclub featuring velvet ropes, pulsating electronic music, and secluded VIP booths draped in sheer fabrics, designed for private conversations and discreet feeding.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 34,
@@ -1814,11 +1813,12 @@ window.CODEX_DATA = {
       "name": "Pacific Breeze Apartments, Unit 12B",
       "district": "Torrance & South Bay",
       "map_type": "haven",
-      "lat": 33.8358,
-      "lng": -118.3406,
+      "lat": 33.843,
+      "lng": -118.358,
       "description": "A cheap, unassuming one-bedroom apartment in a dense residential block of Torrance. It serves as Liam Johnson's low-profile haven, easily blending in with the mortal working-class churn. A plain, ground-floor unit in a slightly weathered stucco complex. The blinds are perpetually drawn, and the interior is sparse, favoring function and low rent over aesthetics.",
       "notes": "",
       "is_pc_location": true,
+      "is_haven": true,
       "characters": [
         {
           "id": 0,
@@ -1837,6 +1837,7 @@ window.CODEX_DATA = {
       "description": "Legendary 1940s West Coast jazz and live music sanctuary located on Pier Avenue in Hermosa Beach. The brick-walled haven is the preferred strategy parlour for Toreador rebels and South Bay border defenders.",
       "notes": "Live music creates acoustic masking (+2 Diff to external listening devices). Excellent location for discreet Anarch border councils.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
@@ -1848,6 +1849,7 @@ window.CODEX_DATA = {
       "description": "Restored 1912 Pacific Electric red-brick train depot surrounded by industrial manufacturing warehouses and surplus yards. Covert tactical staging base for mortal vampire hunters.",
       "notes": "Covert armory and staging base for mortal hunters (Imbued). Kindred approaching the perimeter are subject to passive thermal sensors and hidden perimeter cameras.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 121,
@@ -1872,6 +1874,7 @@ window.CODEX_DATA = {
       "description": "Abandoned railway tunnels cutting through the rugged terrain. Satan-Hearted Bonetopick has transformed these forgotten passages into a nightmarish breeding ground for fleshcrafted hound monstrosities, preparing bio-weapons for Sabbat war parties. Dark, cavernous, and echoing with unearthly howls. The tunnels are lined with visceral organic matter and makeshift cages containing horrifying amalgamations of flesh and bone.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 63,
@@ -1890,28 +1893,31 @@ window.CODEX_DATA = {
       "description": "Fortified stone monastery and Cold War command redoubt in the sandstone bluffs of the Santa Susana Pass; supreme Sabbat crusade headquarters.",
       "notes": "Supreme Sabbat Sect Headquarters and command haven.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
       "name": "The Rawhide Saloon & Canyon Roadhouse",
       "district": "Northern San Fernando Valley",
       "map_type": "hangout",
-      "lat": 34.258,
-      "lng": -118.605,
+      "lat": 34.257,
+      "lng": -118.593,
       "description": "Gritty, neon-lit roadhouse at the base of Chatsworth Pass catering to outlaw bikers, truckers, and Sabbat frontline shock troops.",
       "notes": "Sabbat frontline biker roadhouse and shovelhead recruitment hangout.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
       "name": "GameRealm Retro Arcade & Midnight LAN Lounge",
       "district": "Northern San Fernando Valley",
       "map_type": "hangout",
-      "lat": 34.168,
-      "lng": -118.349,
+      "lat": 34.1648,
+      "lng": -118.3685,
       "description": "Bustling 24-hour retro arcade and esports gaming venue featuring vintage arcade cabinets, CRT fighting-game rigs, and high-speed LAN booths. Front and tech headquarters for Anarch electronic warfare specialists.",
       "notes": "Computers / Hacking rolls made inside the VIP LAN suite gain +2 dice due to dedicated multi-gigabit fiber backbones and hardware VPN routers. Feeding Diff: 6 among caffeinated nocturnal gamers.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 9,
@@ -1930,6 +1936,7 @@ window.CODEX_DATA = {
       "description": "Classic mid-century bowling alley featuring a dimly lit retro cocktail lounge, neon bowling lanes, and vintage arcade cabinets. Behind the crash of bowling pins, Sabbat pack logisticians coordinate covert weapon shipments.",
       "notes": "Acoustic cover from pinfall gives -2 Difficulty to concealing verbal conversations from mundane eavesdroppers. Rear loading bay handles heavy crates unobserved.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
@@ -1941,17 +1948,19 @@ window.CODEX_DATA = {
       "description": "Los Angeles's oldest continuously operating tiki bar (founded 1958), featuring bamboo walls, retro jukebox, Polynesian carvings, and the secret 'Drooling Bastard' cocktail society. Shadowy refuge for eccentric Kindred outcasts.",
       "notes": "Deep ambient darkness grants +1 die to Obfuscate declarations made from the corner bamboo booths.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
       "name": "Pinnacle Vault",
       "district": "Pasadena, Glendale & East LA (Camarilla)",
       "map_type": "hangout",
-      "lat": 34.14,
-      "lng": -118.25,
-      "description": "Front for performance art and money laundering, recently subjected to a raid. An opulent underground gallery space currently showing signs of forced entry.",
+      "lat": 34.1465,
+      "lng": -118.1405,
+      "description": "An acclaimed modern architectural building in Pasadena functioning as a contemporary art gallery and high-security private asset depository. Lot & Structure: 2,800 m² lot (2002 modern architectural art gallery building & secure private vault facility) 3-story 2002 modern architectural building by MDA Johnson Favaro; open-air oculus staircase; polished concrete floors; loft-like galleries. Perimeter: Commercial property line; modern limestone, plaster, and glass facade; concrete planter blast bollards. Access & POE: 1. Main Union St glass double doors. 2. Subterranean parking garage ramp. 3. Rear secure loading dock. Layout: Ground-floor contemporary art exhibition gallery, modern reception rotunda, open-air central staircase atrium. Restricted: 2nd-floor private art appraisal suites, 3rd-floor executive offices, Sub-level 1 private high-security asset vaults. Tactical Reality: Glass reception airlock with magnetic turnstiles; narrow undulating concrete staircase connecting gallery to secure lower vault. Egress: Pressurized concrete fire stairwells discharging directly onto Union St and adjacent service alley. Defenses & Havens: Climate-controlled subterranean fine-art and bullion vault 6 meters below grade (Ewald Borsodi's daylight haven). Automated clean-agent FM-200 gaseous fire suppression fail-safe in vault; remote-triggered magnetic steel security grilles.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 13,
@@ -1970,6 +1979,7 @@ window.CODEX_DATA = {
       "description": "A private, reinforced aircraft maintenance facility situated on the northern perimeter of Hollywood Burbank Airport. Repurposed by Archon Theo Bell as a secure Camarilla forward operating base and tactical staging post during the counter-offensive against the Sabbat. A cavernous industrial hangar with high corrugated steel arches, smelling heavily of jet propellant and machine oil.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": true,
       "characters": [
         {
           "id": 127,
@@ -1986,14 +1996,53 @@ window.CODEX_DATA = {
       ]
     },
     {
+      "name": "Bar Afterlife",
+      "district": "Pasadena, Glendale & East LA (Camarilla)",
+      "map_type": "hangout",
+      "lat": 34.022,
+      "lng": -118.162,
+      "description": "Opening in the late 1990s as an underground Latin-rock and electronic haven, Bar Afterlife quickly evolved into a legendary fixture of the East Los Angeles nightlife scene along historic Whittier Boulevard. Operated by Brujah ideologue Salvador Garcia, the venue serves as a neutral gathering place where Anarchs, Autarkis, and open-minded Camarilla Kindred meet under a shared truce, enjoying loud acoustics and clandestine conversation.",
+      "notes": "",
+      "is_pc_location": false,
+      "is_haven": false,
+      "characters": [
+        {
+          "id": 7,
+          "name": "Salvador Garcia",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
+      "name": "St. Claire's Hospital",
+      "district": "Pasadena, Glendale & East LA (Camarilla)",
+      "map_type": "blood",
+      "lat": 33.969,
+      "lng": -118.048,
+      "description": "A sprawling 500-bed acute-care trauma center and medical pavilion situated along the Washington Boulevard healthcare corridor in Whittier. Operating under the guise of a nocturnal sanitarium and emergency hospital, Maximo 'Max' Vane utilizes his night-shift custodial position and mental presence to skim vital blood stores and curate the dramatic personal lives of the night surgical staff.",
+      "notes": "",
+      "is_pc_location": false,
+      "is_haven": false,
+      "characters": [
+        {
+          "id": 14,
+          "name": "Maximo \"Max\" Vane",
+          "is_pc": false,
+          "relationship": "operates"
+        }
+      ]
+    },
+    {
       "name": "The Velvet Manifesto",
       "district": "West Los Angeles (Anarch)",
       "map_type": "hangout",
-      "lat": 34.0522,
-      "lng": -118.445,
-      "description": "Ultra-exclusive gentleman's club and brothel catering strictly to multimillionaires. A lavishly decorated, unmarked townhouse with heavy velvet drapes.",
+      "lat": 34.0945,
+      "lng": -118.3685,
+      "description": "An imposing 3-story French Revival brick manor rising directly from the West Hollywood sidewalk with zero garden setback. Lot & Structure: 1,100 m² urban lot (1928 French Revival 3-story brick urban manor flush to sidewalk) 3-story 1928 French Revival brick manor by Leland Bryant; steeply pitched slate roof; decorative copper finials; dormers; stone trim. Perimeter: Building exterior wall forms the lot boundary; 3 stories of solid brick rising directly from the concrete sidewalk; zero front garden. Access & POE: 1. Heavy carved double oak and bronze front entrance on Crescent Heights Blvd. 2. Subterranean valet garage ramp. 3. Rear service alley door. Layout: Ground-floor grand velvet salon, marble cocktail bar, intimate curtained dining alcoves, reception rotunda. Restricted: 2nd-floor private VIP salons, 3rd-floor executive suite (Matilda Monclair's quarters), subterranean biometric vault. Tactical Reality: Heavy bronze front door opens into narrow vestibule; grand curved central staircase creates vertical defensive bottleneck. Egress: Discreet subterranean fire exit tunnel connecting basement directly to rear residential alley behind Fountain Ave. Defenses & Havens: Reinforced subterranean bank-grade vault 4 meters below grade beneath wine cellar (Matilda Monclair's daytime haven). Concealed panic buttons in every private booth; high-decibel acoustic deterrents; drop-down steel shutters sealing street portals.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 134,
@@ -2007,11 +2056,12 @@ window.CODEX_DATA = {
       "name": "The Canvas Underground",
       "district": "West Los Angeles (Anarch)",
       "map_type": "hangout",
-      "lat": 34.04,
-      "lng": -118.46,
+      "lat": 34.0335,
+      "lng": -118.371,
       "description": "Independent artist collectives and radical theater spaces. A converted industrial warehouse adorned with chaotic, shifting art pieces.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
@@ -2023,17 +2073,19 @@ window.CODEX_DATA = {
       "description": "Famed bohemian promenade, world-renowned concrete skate park, graffiti art walls, and midnight drum circles along the ocean. The spiritual haven and rally ground for Los Angeles's Thin-Blooded Kindred.",
       "notes": "Thin-Blooded Kindred find shelter and mutual aid here. Streetwise rolls gain -1 Difficulty when locating contraband or seeking outcasts.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": []
     },
     {
       "name": "West Covina Estate",
       "district": "Outlying Areas & Specialized Domains",
       "map_type": "haven",
-      "lat": 34.068,
-      "lng": -117.938,
+      "lat": 34.0325,
+      "lng": -117.925,
       "description": "Acquired in the late 1990s as Clan Giovanni's primary sovereign stronghold in the eastern San Gabriel Valley. Colloquially dubbed Villa di Bellarosa by the family, the estate operates on paper under the Bellarosa Holdings & Culinary Arts Foundation — an airtight legal trust managed by estate attorney Alberto Giovanni. The property provides absolute autonomy from both the Camarilla court and Anarch baronies, functioning as an independent diplomatic sanctuary and the primary logistical staging ground for Lucia Giovanni's dual empire: high-end culinary media syndication on the surface, and subterranean spirit banquets, corpse-processing, and necromantic consulting for elite kindred in the crypts below. Secluded in the oak-shaded heights of the South Hills in West Covina, the estate is shielded by 3.6-meter wrought-iron perimeter walls with discrete camera gargoyles and hydraulic driveway bollards. The main residence is a grand Mediterranean Renaissance palazzo of pale Roman travertine and terracotta roofing, featuring 5.5-meter coffered ceilings, Carrara marble fireplaces, Renaissance martyrdom paintings, and a Michelin-grade commercial test kitchen. Behind a secure wine vault, a hydraulic elevator descends 9 meters into a chilled (3°C) subterranean mortuary crypt equipped with stainless dissection tables, anatomical blast freezers, and a sunken circular amphitheater paved in black obsidian slabs ringed with salt channels and cold-iron braziers.",
       "notes": "",
       "is_pc_location": false,
+      "is_haven": true,
       "characters": [
         {
           "id": 23,
@@ -2058,11 +2110,48 @@ window.CODEX_DATA = {
       "description": "Spanning roughly 10,100 m² (parish grounds & perimeter) along East Amar Road in West Covina, the Church of the New Dawn is the heavily fortified primary domain of the PC coterie. Operating under the mundane zoning and cover of an alternative spiritual ministry, the compound combines civilian community amenities - including an athletic gym, private cinema, fellowship dormitories, and an indoor shooting range with a secure armory - with rigorous defensive infrastructure. The renovated bell tower serves as a high-altitude tactical watchpoint and sniper nest overseeing the perimeter and approach routes. Below ground, an extensive network of service tunnels and drainage canals links the daylight-proof, warded basement haven to municipal culverts and emergency escape routes, secured by perimeter deterrent trenches and discrete utility fail-safes.",
       "notes": "Main Domain & Operational Bastion of the PC Coterie. Zoning: Church / Religious Assembly 10,100 m² lot (parish grounds & perimeter). Facilities: Sanctuary, Dormitories, Gym, Cinema/Screening Room, Indoor Shooting Range, Secure Armory. Defenses: Bell Tower Sniper Nest & Thermal Overwatch (Katrine/Odin feed), Concealed Natural Gas Blast Fail-Safe Line, Perimeter Deterrent Trenches, Subterranean Service Tunnels & Drainage Runoff Routes.",
       "is_pc_location": true,
+      "is_haven": false,
       "characters": [
         {
           "id": 0,
           "name": "Liam Johnson",
           "is_pc": true,
+          "relationship": "operates"
+        },
+        {
+          "id": 1,
+          "name": "Meredith Vereira",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 2,
+          "name": "Anthohimondrona Tsuoranoannddy",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 3,
+          "name": "Amanda Byers",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 4,
+          "name": "\"Big\" Ed Hurley",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 5,
+          "name": "Audrey Horne",
+          "is_pc": false,
+          "relationship": "operates"
+        },
+        {
+          "id": 6,
+          "name": "Laleh Al-Khoury",
+          "is_pc": false,
           "relationship": "operates"
         }
       ]
@@ -2071,22 +2160,31 @@ window.CODEX_DATA = {
       "name": "Starlight Motor Inn",
       "district": "Outlying Areas & Specialized Domains",
       "map_type": "haven",
-      "lat": 34.0686,
-      "lng": -117.939,
+      "lat": 34.088,
+      "lng": -117.904,
       "description": "A run-down, cash-only motel on the outskirts of West Covina. Frederic King and his retinue of ghouls frequently rent out a block of rooms at the far end of the lot for discrete daylight resting and off-the-books meetings. A classic L-shaped, two-story motor inn with peeling mint-green paint and a flickering neon sign. The rooms at the back face a concrete wall, offering perfect seclusion and heavy, light-blocking drapes.",
       "notes": "",
       "is_pc_location": false,
-      "characters": []
+      "is_haven": true,
+      "characters": [
+        {
+          "id": 1,
+          "name": "Meredith Vereira",
+          "is_pc": false,
+          "relationship": "frequents"
+        }
+      ]
     },
     {
       "name": "Double R Diner",
       "district": "Long Beach (Camarilla)",
       "map_type": "hangout",
-      "lat": 33.768,
-      "lng": -118.195,
+      "lat": 33.7725,
+      "lng": -118.1995,
       "description": "Iconic 24-hour chrome-and-vinyl diner serving legendary cherry pie and strong coffee. Operated by Norma Jennings and Shelly Johnson, it functions as a neutral parley sanctuary and the operational base for Special Agent Dale Cooper's LAPD investigations.",
       "notes": "Elysium / Neutral ground.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 18,
@@ -2112,11 +2210,12 @@ window.CODEX_DATA = {
       "name": "The Last Round",
       "district": "Culver City & Santa Monica (Anarch)",
       "map_type": "hangout",
-      "lat": 34.025,
-      "lng": -118.396,
+      "lat": 34.0095,
+      "lng": -118.416,
       "description": "A legendary Anarch stronghold, The Last Round is a local working-class bar serving as a front for community defense militias. Armando 'Nines' Rodriguez established it as a safe haven and rallying point for Kindred who reject the Camarilla's strictures. The bar has weathered numerous raids and skirmishes, its walls bearing the scars of past conflicts. It remains the beating heart of the Anarch movement in LA, where political debates turn into brawls and revolutionary plans are hatched over cheap beer and blood. It is fiercely defended by a loyal cadre of Brujah and unaligned neonates. A gritty, dimly lit dive bar with scuffed hardwood floors, a battered mahogany bar, and vintage neon beer signs buzzing faintly. Pool tables dominate the back room, and the air is heavy with the smell of stale smoke, spilled liquor, and old blood.",
       "notes": "Anarch Elysium and stronghold.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 33,
@@ -2135,12 +2234,32 @@ window.CODEX_DATA = {
       "description": "World-famous 1909 ocean pier featuring the historic 1916 Looff Hippodrome carousel and neon Ferris wheel. The crashing surf and nighttime sea mist make it the open-air coastal domain of Anarch Gangrel guardians.",
       "notes": "Gangrel characters gain +1 die to Animalism rolls when interacting with marine fauna and coastal gulls. Pier pylons provide concealment for coastal ingress.",
       "is_pc_location": false,
+      "is_haven": false,
       "characters": [
         {
           "id": 27,
           "name": "Salomon \"Big Sal\" Two-Rivers",
           "is_pc": false,
           "relationship": "Coastal Guardian"
+        }
+      ]
+    },
+    {
+      "name": "Neon Temple",
+      "district": "Culver City & Santa Monica (Anarch)",
+      "map_type": "elysium",
+      "lat": 34.027,
+      "lng": -118.382,
+      "description": "The spiritual and political capital of the Anarch Free States, operating under the cover of a creative sound and event warehouse. Lot & Structure: 4,800 m² lot (converted industrial warehouse nightclub & Anarch council sanctuary) Single-story 1954 heavy industrial bow-truss warehouse; 30-ft clear-span timber ceilings; raw concrete slab; soundproof drywall. Perimeter: 3-meter (10-ft) reinforced industrial corrugated steel wall with razor-wire crown and laser beam tripwires. Access & POE: 1. Main Hayden Ave industrial roll-up pedestrian door. 2. Heavy steel freight bay roll-up doors. 3. Rear alley service portal. Layout: Grand open-span warehouse dancefloor, neon-lit assembly hall, central perimeter bar, mezzanine DJ platform. Restricted: Jeremy MacNeil's war council chamber, encrypted server & mesh radio room, VIP green room, subterranean weapons vault. Tactical Reality: Gated truck sally port bottlenecks vehicular access; main pedestrian entrance features baffled sound-lock security corridor. Egress: Concealed rear service portal exiting into narrow rail-spur drainage lane leading north toward National Blvd. Defenses & Havens: Soundproof, reinforced subterranean server archive vault 4 meters beneath concrete slab (Jeremy MacNeil's daytime roost). Perimeter high-intensity strobe banks (50,000 lumens); silent duress lines alerting Anarch defense cells across Culver City.",
+      "notes": "",
+      "is_pc_location": false,
+      "is_haven": false,
+      "characters": [
+        {
+          "id": 8,
+          "name": "Jeremy MacNeil",
+          "is_pc": false,
+          "relationship": "operates"
         }
       ]
     }

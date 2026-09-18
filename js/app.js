@@ -452,7 +452,7 @@ function getFilteredLocations() {
       if (cat === 'pc_haven') {
         if (!loc.is_pc_location) return false;
       } else if (cat === 'haven') {
-        if (!loc.is_haven || loc.is_pc_location) return false;
+        if (!(loc.is_haven || loc.map_type === 'haven') || loc.is_pc_location) return false;
       } else if (cat === 'elysium') {
         if (loc.map_type !== 'elysium') return false;
       } else if (cat === 'club') {
@@ -480,7 +480,7 @@ function getFilteredLocations() {
 
 function buildPopupHTML(loc) {
   var isPc = !!loc.is_pc_location;
-  var isHaven = !!loc.is_haven;
+  var isHaven = !!(loc.is_haven || loc.map_type === 'haven');
   var cfg = getMapConfigForType(loc.map_type, isPc);
 
   var html = '<div class="map-noir-popup" style="min-width:240px;max-width:320px;font-family:var(--font-sans);color:#e4e4eb;line-height:1.5;">';
@@ -655,7 +655,7 @@ function renderMapDirectory() {
   var html = '';
   filtered.forEach(function(loc) {
     var isPc = loc.is_pc_location;
-    var isHaven = loc.is_haven;
+    var isHaven = !!(loc.is_haven || loc.map_type === 'haven');
 
     html += '<div class="loc-directory-card' + (isPc ? ' pc-card' : '') + '">';
     html += '  <div class="loc-dir-header">';
