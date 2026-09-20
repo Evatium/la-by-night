@@ -284,26 +284,6 @@
       ]
     },
     {
-      "id": 122,
-      "name": "Jacob Singer",
-      "aliases": "The Soldier · Imbued Breach Specialist",
-      "concept": "Ex-army conspiracy veteran wielding Judgment & Martyrdom Virtues (Discern, Smolder, Ravage) to create supernatural kill zones.",
-      "faction": "Hunter",
-      "clan": "Mortal (Imbued)",
-      "portrait": "portraits/npc_122.webp",
-      "tropes": [
-        "The Old Soldier",
-        "The Conspiracy Nut (Right)",
-        "I Told You They Existed"
-      ],
-      "functions": [
-        "Breach-and-clear and overwatch.",
-        "Discern: night vision + superior Second Sight — vampires read paler, veins visible, watch them breathe, clock the fangs.",
-        "Smolder: Obtenebration-2-style smoke that deadens mortal and most supernatural senses; hunters see through it with Second Sight.",
-        "Ravage (Martyrdom 3): 6m-range lethal vs supernaturals; mortals stunned but unharmed; caster takes 1 bashing."
-      ]
-    },
-    {
       "id": 8,
       "name": "Jeremy MacNeil",
       "aliases": "The Legend · Free State Founder",
@@ -2289,12 +2269,6 @@
           "name": "Joshua Preston",
           "is_pc": false,
           "relationship": "Tactical Assault Specialist"
-        },
-        {
-          "id": 122,
-          "name": "Jacob Singer",
-          "is_pc": false,
-          "relationship": "Trapmaster & Demolitions"
         }
       ]
     },
