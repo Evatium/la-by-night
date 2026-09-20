@@ -1374,6 +1374,437 @@ window.CODEX_DATA = {
       "specialties": {}
     },
     {
+      "name": "Katrine Sterling",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "Frederic King (Malkavian)",
+      "domitor": "Frederic King (Malkavian)",
+      "concept": "Disgraced Drone Technician — Malkavian ghoul and hacker. (V20 Core p.87; V20 Core p.497-498: Ghouls)",
+      "nature": "Visionary — Seeks inner peace and engineering return (V20 Core, p.103)",
+      "demeanor": "Perfectionist — Impossible standards (V20 Core, p.102)",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "5",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "2",
+        "Self-Control": "2",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "2",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "2",
+          "Manipulation": "2",
+          "Appearance": "3"
+        },
+        "mental": {
+          "Perception": "4",
+          "Intelligence": "4",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "2",
+          "Athletics": "0",
+          "Awareness": "1",
+          "Brawl": "0",
+          "Empathy": "1",
+          "Expression": "0",
+          "Intimidation": "0",
+          "Leadership": "0",
+          "Streetwise": "1",
+          "Subterfuge": "1"
+        },
+        "skills": {
+          "Animal Ken": "1",
+          "Crafts": "3",
+          "Drive": "1",
+          "Etiquette": "0",
+          "Firearms": "1",
+          "Larceny": "3",
+          "Melee": "0",
+          "Performance": "0",
+          "Stealth": "2",
+          "Survival": "0"
+        },
+        "knowledges": {
+          "Academics": "4",
+          "Computer": "4",
+          "Finance": "2",
+          "Investigation": "3",
+          "Law": "2",
+          "Medicine": "0",
+          "Occult": "3",
+          "Politics": "2",
+          "Science": "4",
+          "Technology": "3"
+        }
+      },
+      "disciplines": {
+        "Obfuscate": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "Computer Aptitude (2pt, V20 Core p.476)",
+          "value": "2",
+          "desc": "You are familiar with and talented in the uses of computer equipment. All rolls involving computers are at -2 difficulty for you."
+        },
+        {
+          "name": "Concentration (1pt, V20 Core p.476)",
+          "value": "1",
+          "desc": "You have the ability to focus your mind and shut out any distractions or annoyances. You are unaffected by penalties from distracting circumstances."
+        },
+        {
+          "name": "Coldly Logical",
+          "value": "1",
+          "desc": "You have a knack for separating factual reporting from emotional coloration. -1 difficulty on all rolls requiring logic or seeing through emotional clouding."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Short (1pt, V20 Core p.490)",
+          "value": "1",
+          "desc": "You are well below average height (4.5 ft / 1.5m or less). Running speed is half of average. Reach is limited."
+        },
+        {
+          "name": "Shy",
+          "value": "1",
+          "desc": "You are ill at ease with people. +2 difficulty on Social rolls with strangers. +3 if center of attention."
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "John Carmac",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "Frederic King (Malkavian)",
+      "domitor": "Frederic King (Malkavian)",
+      "concept": "Modern Amish Marketing — Ghoul managing Masquerade narratives for Frederic King. (V20 Core p.87; V20 Core p.497-498)",
+      "nature": "Conformist — Balances upbringing with dark service (V20 Core, p.97)",
+      "demeanor": "Fanatic — Frederic's service is new congregation (V20 Core, p.97)",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "6",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "2",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "4",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "2",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "1",
+          "Athletics": "1",
+          "Awareness": "2",
+          "Brawl": "0",
+          "Empathy": "3",
+          "Expression": "3",
+          "Intimidation": "1",
+          "Leadership": "3",
+          "Streetwise": "3",
+          "Subterfuge": "2"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "3",
+          "Etiquette": "2",
+          "Firearms": "1",
+          "Larceny": "0",
+          "Melee": "0",
+          "Performance": "2",
+          "Stealth": "1",
+          "Survival": "1"
+        },
+        "knowledges": {
+          "Academics": "2",
+          "Computer": "2",
+          "Finance": "2",
+          "Investigation": "3",
+          "Law": "3",
+          "Medicine": "0",
+          "Occult": "1",
+          "Politics": "2",
+          "Science": "0",
+          "Technology": "0"
+        }
+      },
+      "disciplines": {
+        "Dementation": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "Oracular Ability (3pt, V20 Core p.483)",
+          "value": "3",
+          "desc": "You can see and interpret signs and omens regarding the future and present."
+        },
+        {
+          "name": "Common Sense (1pt, V20 Core p.476)",
+          "value": "1",
+          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Lame (3pt, V20 Core p.488)",
+          "value": "3",
+          "desc": "Your legs are damaged. Walking speed is 1/4 normal, running is impossible."
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "George Michael",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "Frederic King (Malkavian)",
+      "domitor": "Frederic King (Malkavian)",
+      "concept": "Amish Veteran Combat Specialist — Frederic King's firearms specialist. (V20 Core p.87; V20 Core p.497-498)",
+      "nature": "Conformist — Seeks stability in chaos (V20 Core, p.97)",
+      "demeanor": "Fanatic — Frederic loyalty as new covenant (V20 Core, p.97)",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "6",
+      "willpower": "5",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "3",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "3",
+          "Dexterity": "4",
+          "Stamina": "4"
+        },
+        "social": {
+          "Charisma": "2",
+          "Manipulation": "2",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "4 (Tactical)",
+          "Intelligence": "2",
+          "Wits": "3"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "3",
+          "Athletics": "3",
+          "Awareness": "2",
+          "Brawl": "2",
+          "Empathy": "2",
+          "Expression": "0",
+          "Intimidation": "1",
+          "Leadership": "1",
+          "Streetwise": "2",
+          "Subterfuge": "0"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "2",
+          "Drive": "3",
+          "Etiquette": "1",
+          "Firearms": "4 (Marksmanship)",
+          "Larceny": "1",
+          "Melee": "1",
+          "Performance": "0",
+          "Stealth": "3",
+          "Survival": "2"
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "0",
+          "Investigation": "1",
+          "Law": "1",
+          "Medicine": "2",
+          "Occult": "0",
+          "Politics": "0",
+          "Science": "0",
+          "Technology": "2"
+        }
+      },
+      "disciplines": {
+        "Auspex": "1",
+        "Potence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "Friendly Face (1pt, V20 Core p.477)",
+          "value": "1",
+          "desc": "You have a face that reminds everyone of someone, leaving you at -1 difficulty on all appropriate Social-based rolls involving strangers (first meeting only)."
+        },
+        {
+          "name": "Magic Resistance (2pt, V20 Core p.481)",
+          "value": "2",
+          "desc": "You have an inherent resistance to magic. The difficulty of all spells (Tremere rituals, etc.) is two higher when directed at you. You may never learn Thaumaturgy."
+        },
+        {
+          "name": "Lawman's Friend",
+          "value": "2",
+          "desc": "The local Sheriff or Bishop likes you. He overlooks minor trespasses and warns you of crackdowns."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "PTSD (2pt, V20 Core p.488)",
+          "value": "2",
+          "desc": ""
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "Jade Nguyen",
+      "clan": "Ghoul",
+      "generation": "N/A",
+      "sire": "Unnamed Toreador or Ventrue patron",
+      "domitor": "Unnamed Toreador or Ventrue patron",
+      "concept": "Aspiring Actress Ghoul — A Toreador/Ventrue ghoul studying at the Stellaris Conservatory. (V20 Core p.87; V20 Core p.497-498)",
+      "nature": "Gallant — Performs life as a scene she is directing (V20 Core, p.97)",
+      "demeanor": "Celebrant — Finds joy in the passion of performance (V20 Core, p.96)",
+      "player": "",
+      "type": "Ghoul",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "8",
+      "willpower": "6",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "4",
+        "Self-Control": "3",
+        "Courage": "3"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "",
+          "Dexterity": "",
+          "Stamina": ""
+        },
+        "social": {
+          "Charisma": "4",
+          "Manipulation": "4",
+          "Appearance": "5"
+        },
+        "mental": {
+          "Perception": "",
+          "Intelligence": "",
+          "Wits": ""
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "",
+          "Athletics": "",
+          "Awareness": "",
+          "Brawl": "",
+          "Empathy": "4",
+          "Expression": "4",
+          "Intimidation": "",
+          "Leadership": "",
+          "Streetwise": "",
+          "Subterfuge": "3"
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "",
+          "Drive": "",
+          "Etiquette": "3",
+          "Firearms": "",
+          "Larceny": "",
+          "Melee": "",
+          "Performance": "5",
+          "Stealth": "",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "",
+          "Computer": "",
+          "Finance": "",
+          "Investigation": "",
+          "Law": "",
+          "Medicine": "",
+          "Occult": "",
+          "Politics": "",
+          "Science": "",
+          "Technology": ""
+        }
+      },
+      "disciplines": {
+        "Potence": "1",
+        "Presence": "1"
+      },
+      "backgrounds": {},
+      "merits": [
+        {
+          "name": "Enchanting Voice (2pt, V20 Core p.477)",
+          "value": "2",
+          "desc": ""
+        },
+        {
+          "name": "Seductress (1pt, V20 Core p.484)",
+          "value": "1",
+          "desc": ""
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Addiction (3pt, V20 Core p.486) — Kindred Vitae",
+          "value": "3",
+          "desc": ""
+        }
+      ],
+      "equipment": [],
+      "specialties": {}
+    },
+    {
       "name": "Chris Partlow",
       "clan": "Ghoul",
       "generation": "",
@@ -1587,6 +2018,112 @@ window.CODEX_DATA = {
       ],
       "flaws": [],
       "equipment": [],
+      "specialties": {}
+    },
+    {
+      "name": "Mrs. Martha Gable",
+      "clan": "Mortal",
+      "generation": "N/A",
+      "sire": "N/A",
+      "domitor": "",
+      "concept": "Old Christian Facebook Lady & Volunteer Coordinator. Manages church prayer chains, local bake sales, and charity drives. Sees Frederik as a holy, ascetic minister under a solemn vow of silence recovering from an ordeal.",
+      "nature": "Caregiver — Deeply fulfilled by looking after those in physical or spiritual need.",
+      "demeanor": "Traditionalist — Respectful, church-going elderly grandmother who values faith, manners, and community.",
+      "player": "",
+      "type": "Mortal",
+      "xp": "0",
+      "portrait": "",
+      "humanity": "8",
+      "willpower": "4",
+      "blood_pool": "",
+      "blood_per_turn": "",
+      "virtues": {
+        "Conscience/Conviction": "4",
+        "Self-Control": "4",
+        "Courage": "2"
+      },
+      "attributes": {
+        "physical": {
+          "Strength": "1",
+          "Dexterity": "2",
+          "Stamina": "2"
+        },
+        "social": {
+          "Charisma": "3",
+          "Manipulation": "2",
+          "Appearance": "2"
+        },
+        "mental": {
+          "Perception": "3",
+          "Intelligence": "2",
+          "Wits": "2"
+        }
+      },
+      "abilities": {
+        "talents": {
+          "Alertness": "1",
+          "Athletics": "",
+          "Awareness": "",
+          "Brawl": "",
+          "Empathy": "3",
+          "Expression": "2",
+          "Intimidation": "",
+          "Leadership": "",
+          "Streetwise": "",
+          "Subterfuge": ""
+        },
+        "skills": {
+          "Animal Ken": "",
+          "Crafts": "2",
+          "Drive": "2",
+          "Etiquette": "3",
+          "Firearms": "",
+          "Larceny": "",
+          "Melee": "",
+          "Performance": "",
+          "Stealth": "",
+          "Survival": ""
+        },
+        "knowledges": {
+          "Academics": "1",
+          "Computer": "1",
+          "Finance": "1",
+          "Investigation": "",
+          "Law": "",
+          "Medicine": "1",
+          "Occult": "",
+          "Politics": "",
+          "Science": "",
+          "Technology": ""
+        }
+      },
+      "disciplines": {},
+      "backgrounds": {
+        "Allies": "2",
+        "Contacts": "2",
+        "Resources": "2"
+      },
+      "merits": [
+        {
+          "name": "Common Sense",
+          "value": "1",
+          "desc": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense."
+        }
+      ],
+      "flaws": [
+        {
+          "name": "Technologically Challenged",
+          "value": "1",
+          "desc": "You struggle with modern devices; relies strictly on simple iPad taps, Facebook Messenger, and phone calls."
+        }
+      ],
+      "equipment": [
+        "Gold-rimmed reading glasses on a beaded lanyard",
+        "iPad in a floral quilted case (Facebook notifications on maximum volume)",
+        "Floral handbag with peppermint & butterscotch hard candies",
+        "Sunday church bulletin",
+        "Keys to 2004 Buick LeSabre"
+      ],
       "specialties": {}
     }
   ],
