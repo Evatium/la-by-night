@@ -914,8 +914,47 @@ function renderArmory() {
     html += '  <div class="armory-header">';
     html += '    <span class="armory-name">' + escapeHtml(item.name) + '</span>';
     var displayType = item.type || (item.category ? item.category.replace('weapon_', '') : 'item');
-    html += '    <span class="armory-type">' + escapeHtml(displayType) + '</span>';
+    html += '    <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end;">';
+    html += '      <span class="armory-type">' + escapeHtml(displayType) + '</span>';
+    if (item.legality) {
+      var legLower = item.legality.toLowerCase();
+      var legClass = 'legality-muted';
+      if (legLower.includes('legal otc') || legLower.includes('legal in california') || legLower.includes('legal (')) {
+        legClass = 'legality-green';
+      } else if (legLower.includes('regulated') || legLower.includes('restricted') || legLower.includes('legal to buy')) {
+        legClass = 'legality-amber';
+      } else if (legLower.includes('prohibited') || legLower.includes('illegal') || legLower.includes('nfa') || legLower.includes('destructive')) {
+        legClass = 'legality-red';
+      } else if (legLower.includes('technocratic')) {
+        legClass = 'legality-cyan';
+      } else if (legLower.includes('occult')) {
+        legClass = 'legality-purple';
+      }
+      html += '      <span class="armory-legality-badge ' + legClass + '">' + escapeHtml(item.legality) + '</span>';
+    }
+    html += '    </div>';
     html += '  </div>';
+
+    // Pricing Bar
+    if ((item.price !== null && item.price !== undefined) || (item.price_black_market !== null && item.price_black_market !== undefined) || item.is_purchasable) {
+      var hasPrice = false;
+      var priceHtml = '  <div class="armory-pricing-bar">';
+      if (item.price !== null && item.price !== undefined) {
+        hasPrice = true;
+        priceHtml += '    <div class="armory-price-pill msrp"><span class="armory-price-label">MSRP</span><span class="armory-price-val">$' + Number(item.price).toLocaleString() + '</span></div>';
+      } else if (item.is_purchasable && item.legality !== 'Environmental / Inherent') {
+        hasPrice = true;
+        priceHtml += '    <div class="armory-price-pill msrp-na"><span class="armory-price-label">MSRP</span><span class="armory-price-val">N/A (Illicit)</span></div>';
+      }
+      if (item.price_black_market !== null && item.price_black_market !== undefined) {
+        hasPrice = true;
+        priceHtml += '    <div class="armory-price-pill street"><span class="armory-price-label">Street</span><span class="armory-price-val">$' + Number(item.price_black_market).toLocaleString() + '</span></div>';
+      }
+      priceHtml += '  </div>';
+      if (hasPrice) {
+        html += priceHtml;
+      }
+    }
 
     var statList = [];
     if (item.damage) statList.push({label: 'Damage', val: item.damage + (item.damage_type ? '/' + item.damage_type : '')});
@@ -925,6 +964,8 @@ function renderArmory() {
     if (item.range) statList.push({label: 'Range', val: '' + item.range});
     if (item.rate) statList.push({label: 'Rate', val: '' + item.rate});
     if (item.clip) statList.push({label: 'Clip', val: '' + item.clip});
+    if (item.blast_area) statList.push({label: 'Blast', val: '' + item.blast_area});
+    if (item.blast_power) statList.push({label: 'Power', val: '' + item.blast_power});
     if (item.conceal) {
       var cMap = {'P':'Pocket','J':'Jacket','T':'Trenchcoat','N':'None'};
       statList.push({label: 'Conceal', val: cMap[item.conceal] || item.conceal});
@@ -1021,13 +1062,16 @@ function initGlobalSearch() {
 
     var items = (state.data && state.data.items) || [];
     var matchItems = items.filter(function(i) {
-      return (i.name + ' ' + (i.notes||'') + ' ' + (i.type||'')).toLowerCase().includes(q);
+      return (i.name + ' ' + (i.notes||'') + ' ' + (i.type||'') + ' ' + (i.legality||'')).toLowerCase().includes(q);
     }).slice(0, 6);
     if (matchItems.length > 0) {
-      h += '<div style="font-size:11px;color:#d4af37;margin:12px 0 6px 0;font-weight:700;">ARMORY (' + matchItems.length + ')</div>';
+      h += '<div style="font-size:11px;color:var(--gold);margin:12px 0 6px 0;font-weight:700;">ARMORY (' + matchItems.length + ')</div>';
       matchItems.forEach(function(i) {
-        h += '<div style="background:#1c1c27;padding:8px;border-radius:6px;margin-bottom:4px;font-size:12px;">';
-        h += '  <strong>' + escapeHtml(i.name) + '</strong> - ' + escapeHtml(i.notes || (i.damage ? 'Damage ' + i.damage : ''));
+        var priceStr = '';
+        if (i.price !== null && i.price !== undefined) priceStr += 'MSRP: $' + Number(i.price).toLocaleString() + ' ';
+        if (i.price_black_market !== null && i.price_black_market !== undefined) priceStr += 'Street: $' + Number(i.price_black_market).toLocaleString();
+        h += '<div style="background:var(--bg-surface);padding:8px;border-radius:6px;margin-bottom:4px;font-size:12px;cursor:pointer;" onclick="closeGlobalSearch();switchTab(\'armory\');">';
+        h += '  <strong>' + escapeHtml(i.name) + '</strong> ' + (priceStr ? '<span style="color:var(--gold);font-size:11px;">(' + escapeHtml(priceStr.trim()) + ')</span>' : '') + ' - <span style="color:var(--text-muted);">' + escapeHtml(i.notes || (i.damage ? 'Damage ' + i.damage : '')) + '</span>';
         h += '</div>';
       });
     }

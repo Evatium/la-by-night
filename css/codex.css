@@ -787,6 +787,102 @@ body {
   text-transform: uppercase;
 }
 
+.armory-legality-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.armory-legality-badge.legality-green {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+.armory-legality-badge.legality-amber {
+  border-color: rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.12);
+  color: #facc15;
+}
+
+.armory-legality-badge.legality-red {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.armory-legality-badge.legality-cyan {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+}
+
+.armory-legality-badge.legality-purple {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+}
+
+.armory-legality-badge.legality-muted {
+  border-color: var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-dim);
+}
+
+.armory-pricing-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.armory-price-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.armory-price-pill.msrp {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+}
+
+.armory-price-pill.msrp-na {
+  background: rgba(156, 163, 175, 0.1);
+  border: 1px solid rgba(156, 163, 175, 0.25);
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.armory-price-pill.street {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+}
+
+.armory-price-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.armory-price-val {
+  font-weight: 700;
+}
+
 .armory-stats-table {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -6110,7 +6110,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "One-handed axe"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "One-handed axe",
+      "price": 30,
+      "price_black_market": 45,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 2,
@@ -6125,7 +6132,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Throwing axe"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Throwing axe",
+      "price": 45,
+      "price_black_market": 70,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 3,
@@ -6140,7 +6154,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Two-handed fire axe"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Two-handed fire axe",
+      "price": 50,
+      "price_black_market": 75,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 4,
@@ -6155,7 +6176,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Massive two-handed axe"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Massive two-handed axe",
+      "price": 220,
+      "price_black_market": 350,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 5,
@@ -6170,7 +6198,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Halberd, glaive, etc."
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Halberd, glaive, etc.",
+      "price": 180,
+      "price_black_market": 280,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 6,
@@ -6185,7 +6220,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Thin dagger"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Thin dagger",
+      "price": 40,
+      "price_black_market": 60,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 7,
@@ -6200,7 +6242,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Standard blade"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard blade",
+      "price": 35,
+      "price_black_market": 50,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 8,
@@ -6215,7 +6264,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Gladius, wakizashi"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Gladius, wakizashi",
+      "price": 120,
+      "price_black_market": 180,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 9,
@@ -6230,7 +6286,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Longsword, broadsword"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Longsword, broadsword",
+      "price": 250,
+      "price_black_market": 380,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 10,
@@ -6245,7 +6308,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Samurai sword"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Samurai sword",
+      "price": 350,
+      "price_black_market": 500,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 11,
@@ -6260,7 +6330,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Claymore, zweihander"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Claymore, zweihander",
+      "price": 400,
+      "price_black_market": 600,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 12,
@@ -6275,7 +6352,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Defensive truncheon-dagger"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Defensive truncheon-dagger",
+      "price": 60,
+      "price_black_market": 90,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 13,
@@ -6290,7 +6374,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Paired hook swords"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Paired hook swords",
+      "price": 95,
+      "price_black_market": 150,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 14,
@@ -6305,7 +6396,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Police baton"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Police baton",
+      "price": 45,
+      "price_black_market": 90,
+      "legality": "Regulated in California",
+      "is_purchasable": true
     },
     {
       "id": 15,
@@ -6320,7 +6418,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Standard wooden bat"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard wooden bat",
+      "price": 30,
+      "price_black_market": 40,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 16,
@@ -6335,7 +6440,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Improvised weapon & tool"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Improvised weapon & tool",
+      "price": 20,
+      "price_black_market": 30,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 17,
@@ -6350,7 +6462,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Bo staff, quarterstaff"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Bo staff, quarterstaff",
+      "price": 25,
+      "price_black_market": 35,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 18,
@@ -6365,7 +6484,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Reinforced metal staff"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Reinforced metal staff",
+      "price": 50,
+      "price_black_market": 75,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 19,
@@ -6380,7 +6506,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Medieval mace"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Medieval mace",
+      "price": 110,
+      "price_black_market": 175,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 20,
@@ -6395,7 +6528,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Flail"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Flail",
+      "price": 25,
+      "price_black_market": 75,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 21,
@@ -6410,7 +6550,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Board with nails"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Board with nails",
+      "price": 10,
+      "price_black_market": 30,
+      "legality": "Legal (Improvised)",
+      "is_purchasable": true
     },
     {
       "id": 22,
@@ -6425,7 +6572,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Massive spiked club"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Massive spiked club",
+      "price": 20,
+      "price_black_market": 50,
+      "legality": "Legal (Improvised)",
+      "is_purchasable": true
     },
     {
       "id": 23,
@@ -6440,7 +6594,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Blackjack"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Blackjack",
+      "price": 30,
+      "price_black_market": 80,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 24,
@@ -6455,7 +6616,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Adds lethal to punch"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Adds lethal to punch",
+      "price": 20,
+      "price_black_market": 60,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 25,
@@ -6470,7 +6638,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Armored glove with spikes"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Armored glove with spikes",
+      "price": 90,
+      "price_black_market": 140,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 26,
@@ -6485,7 +6660,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Wolverine-style"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Wolverine-style",
+      "price": 45,
+      "price_black_market": 75,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 27,
@@ -6500,7 +6682,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Large claw blades"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Large claw blades",
+      "price": 70,
+      "price_black_market": 110,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 28,
@@ -6515,7 +6704,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Punch dagger"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Punch dagger",
+      "price": 85,
+      "price_black_market": 130,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 29,
@@ -6530,7 +6726,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Tessen, iron fan"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Tessen, iron fan",
+      "price": 65,
+      "price_black_market": 100,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 30,
@@ -6545,7 +6748,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Large ring blade"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Large ring blade",
+      "price": 80,
+      "price_black_market": 120,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 31,
@@ -6560,7 +6770,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Heavy chain"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy chain",
+      "price": 25,
+      "price_black_market": 35,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 32,
@@ -6575,7 +6792,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Flexible bladed chain"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Flexible bladed chain",
+      "price": 45,
+      "price_black_market": 70,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 33,
@@ -6590,7 +6814,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Chain & sickle"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Chain & sickle",
+      "price": 60,
+      "price_black_market": 95,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 34,
@@ -6605,7 +6836,14 @@
       "clip": "",
       "conceal": "T",
       "rating": "",
-      "notes": "Weighted chain"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Weighted chain",
+      "price": 35,
+      "price_black_market": 75,
+      "legality": "Restricted in California",
+      "is_purchasable": true
     },
     {
       "id": 35,
@@ -6620,7 +6858,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Multi-tailed whip"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Multi-tailed whip",
+      "price": 45,
+      "price_black_market": 65,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 36,
@@ -6635,7 +6880,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Barbed whip"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Barbed whip",
+      "price": 40,
+      "price_black_market": 90,
+      "legality": "Legal (Custom Craft)",
+      "is_purchasable": true
     },
     {
       "id": 37,
@@ -6650,7 +6902,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Standard leather whip"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard leather whip",
+      "price": 50,
+      "price_black_market": 75,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 38,
@@ -6665,7 +6924,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Heavy bullwhip"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy bullwhip",
+      "price": 120,
+      "price_black_market": 180,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 39,
@@ -6680,7 +6946,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Smashed glass bottle"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Smashed glass bottle",
+      "price": 0,
+      "price_black_market": 0,
+      "legality": "Legal (Found Object)",
+      "is_purchasable": true
     },
     {
       "id": 40,
@@ -6695,7 +6968,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Gas-powered saw"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Gas-powered saw",
+      "price": 350,
+      "price_black_market": 450,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 41,
@@ -6710,7 +6990,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Swung at an opponent"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Swung at an opponent",
+      "price": 25,
+      "price_black_market": 25,
+      "legality": "Legal (Furniture)",
+      "is_purchasable": true
     },
     {
       "id": 42,
@@ -6725,7 +7012,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Heavy furniture"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy furniture",
+      "price": 75,
+      "price_black_market": 75,
+      "legality": "Legal (Furniture)",
+      "is_purchasable": true
     },
     {
       "id": 43,
@@ -6740,7 +7034,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Balanced for throwing"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Balanced for throwing",
+      "price": 40,
+      "price_black_market": 60,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 44,
@@ -6755,7 +7056,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Throwing star; fixed 3 damage"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Throwing star; fixed 3 damage",
+      "price": 20,
+      "price_black_market": 65,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 45,
@@ -6770,7 +7078,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Javelin"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Javelin",
+      "price": 110,
+      "price_black_market": 160,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 46,
@@ -6785,7 +7100,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Hand-thrown rock"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Hand-thrown rock",
+      "price": 0,
+      "price_black_market": 0,
+      "legality": "Legal (Found Object)",
+      "is_purchasable": true
     },
     {
       "id": 47,
@@ -6800,7 +7122,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Heavy rock or brick"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy rock or brick",
+      "price": 0,
+      "price_black_market": 0,
+      "legality": "Legal (Found Object)",
+      "is_purchasable": true
     },
     {
       "id": 48,
@@ -6815,7 +7144,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Balanced throwing axe"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Balanced throwing axe",
+      "price": 45,
+      "price_black_market": 70,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 49,
@@ -6830,7 +7166,14 @@
       "clip": 6,
       "conceal": "P",
       "rating": "",
-      "notes": "Standard snub-nose revolver"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard snub-nose revolver",
+      "price": 500,
+      "price_black_market": 800,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 50,
@@ -6845,7 +7188,14 @@
       "clip": 6,
       "conceal": "J",
       "rating": "",
-      "notes": "Dirty Harry special"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Dirty Harry special",
+      "price": 1050,
+      "price_black_market": 1600,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 51,
@@ -6860,7 +7210,14 @@
       "clip": "17+1",
       "conceal": "P",
       "rating": "",
-      "notes": "Standard 9mm"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard 9mm",
+      "price": 580,
+      "price_black_market": 1100,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 52,
@@ -6875,7 +7232,14 @@
       "clip": "7+1",
       "conceal": "J",
       "rating": "",
-      "notes": ".50 AE hand cannon"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": ".50 AE hand cannon",
+      "price": 2100,
+      "price_black_market": 3200,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 53,
@@ -6890,7 +7254,14 @@
       "clip": "5+1",
       "conceal": "N",
       "rating": "",
-      "notes": "Bolt-action sniper rifle"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Bolt-action sniper rifle",
+      "price": 850,
+      "price_black_market": 1300,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 54,
@@ -6905,7 +7276,14 @@
       "clip": "30+1",
       "conceal": "J",
       "rating": "",
-      "notes": "Compact machine pistol"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Compact machine pistol",
+      "price": 12000,
+      "price_black_market": 3500,
+      "legality": "NFA / Machine Gun",
+      "is_purchasable": true
     },
     {
       "id": 55,
@@ -6920,7 +7298,14 @@
       "clip": "30+1",
       "conceal": "T",
       "rating": "",
-      "notes": "Tactical submachine gun"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Tactical submachine gun",
+      "price": 40000,
+      "price_black_market": 6500,
+      "legality": "NFA / Machine Gun",
+      "is_purchasable": true
     },
     {
       "id": 56,
@@ -6935,7 +7320,14 @@
       "clip": "42+1",
       "conceal": "N",
       "rating": "",
-      "notes": "Full-auto capable rifle"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Full-auto capable rifle",
+      "price": 28000,
+      "price_black_market": 3800,
+      "legality": "NFA / Machine Gun",
+      "is_purchasable": true
     },
     {
       "id": 57,
@@ -6950,7 +7342,14 @@
       "clip": 2,
       "conceal": "J",
       "rating": "",
-      "notes": "Double-barrel, short"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Double-barrel, short",
+      "price": null,
+      "price_black_market": 500,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 58,
@@ -6965,7 +7364,14 @@
       "clip": "5+1",
       "conceal": "N",
       "rating": "",
-      "notes": "Pump-action"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Pump-action",
+      "price": 550,
+      "price_black_market": 850,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 59,
@@ -6980,7 +7386,14 @@
       "clip": "8+1",
       "conceal": "N",
       "rating": "",
-      "notes": "Combat shotgun"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Combat shotgun",
+      "price": 2100,
+      "price_black_market": 3000,
+      "legality": "Regulated (FFL / DROS)",
+      "is_purchasable": true
     },
     {
       "id": 60,
@@ -6995,7 +7408,14 @@
       "clip": "20+1",
       "conceal": "N",
       "rating": "",
-      "notes": "Full-auto shotgun"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Full-auto shotgun",
+      "price": null,
+      "price_black_market": 12000,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 61,
@@ -7010,7 +7430,14 @@
       "clip": 12,
       "conceal": "J",
       "rating": "",
-      "notes": "Standard Technocracy sidearm"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard Technocracy sidearm",
+      "price": null,
+      "price_black_market": 18000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 62,
@@ -7025,7 +7452,14 @@
       "clip": "12+1",
       "conceal": "J",
       "rating": "",
-      "notes": "With laser sight"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "With laser sight",
+      "price": null,
+      "price_black_market": 22000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 63,
@@ -7040,7 +7474,14 @@
       "clip": 10,
       "conceal": "T",
       "rating": "",
-      "notes": "Force pistol"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Force pistol",
+      "price": null,
+      "price_black_market": 45000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 64,
@@ -7055,7 +7496,14 @@
       "clip": "50+1",
       "conceal": "T",
       "rating": "",
-      "notes": "Sniper rifle"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Sniper rifle",
+      "price": null,
+      "price_black_market": 55000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 65,
@@ -7070,7 +7518,14 @@
       "clip": 200,
       "conceal": "N",
       "rating": "",
-      "notes": "Heavy assault weapon"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy assault weapon",
+      "price": null,
+      "price_black_market": 85000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 66,
@@ -7085,7 +7540,14 @@
       "clip": "500+",
       "conceal": "N",
       "rating": "",
-      "notes": "HIT Mark mounted"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "HIT Mark mounted",
+      "price": null,
+      "price_black_market": 120000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 67,
@@ -7100,7 +7562,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "Horse bow"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Horse bow",
+      "price": 140,
+      "price_black_market": 190,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 68,
@@ -7115,7 +7584,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "Compound or recurve"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Compound or recurve",
+      "price": 450,
+      "price_black_market": 600,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 69,
@@ -7130,7 +7606,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "English longbow"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "English longbow",
+      "price": 280,
+      "price_black_market": 380,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 70,
@@ -7145,7 +7628,14 @@
       "clip": 2,
       "conceal": "J",
       "rating": "",
-      "notes": "Compact tactical crossbow"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Compact tactical crossbow",
+      "price": 120,
+      "price_black_market": 180,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 71,
@@ -7160,7 +7650,14 @@
       "clip": 1,
       "conceal": "T",
       "rating": "",
-      "notes": "Standard crossbow"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Standard crossbow",
+      "price": 350,
+      "price_black_market": 500,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 72,
@@ -7175,7 +7672,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "Arbalest"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Arbalest",
+      "price": 850,
+      "price_black_market": 1200,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 73,
@@ -7190,7 +7694,14 @@
       "clip": 200,
       "conceal": "N",
       "rating": "",
-      "notes": "M1919 Browning"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "M1919 Browning",
+      "price": 22000,
+      "price_black_market": 9500,
+      "legality": "NFA / Machine Gun",
+      "is_purchasable": true
     },
     {
       "id": 74,
@@ -7205,7 +7716,14 @@
       "clip": 200,
       "conceal": "N",
       "rating": "",
-      "notes": "Autocannon"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Autocannon",
+      "price": null,
+      "price_black_market": 60000,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 75,
@@ -7220,7 +7738,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "Single-shot grenade launcher"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Single-shot grenade launcher",
+      "price": null,
+      "price_black_market": 7500,
+      "legality": "NFA / Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 76,
@@ -7235,7 +7760,14 @@
       "clip": 1,
       "conceal": "N",
       "rating": "",
-      "notes": "Automatic grenade launcher"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Automatic grenade launcher",
+      "price": null,
+      "price_black_market": 35000,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 77,
@@ -7250,7 +7782,14 @@
       "clip": "500+",
       "conceal": "N",
       "rating": "",
-      "notes": "Napalm or gas"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Napalm or gas",
+      "price": 900,
+      "price_black_market": 4500,
+      "legality": "Restricted in California",
+      "is_purchasable": true
     },
     {
       "id": 78,
@@ -7265,7 +7804,14 @@
       "clip": 5,
       "conceal": "N",
       "rating": "",
-      "notes": "RPG-7, LAW"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "RPG-7, LAW",
+      "price": null,
+      "price_black_market": 4000,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 79,
@@ -7280,7 +7826,14 @@
       "clip": 1,
       "conceal": "P",
       "rating": "",
-      "notes": "Electrical; bashing"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Electrical; bashing",
+      "price": 500,
+      "price_black_market": 750,
+      "legality": "Legal in California",
+      "is_purchasable": true
     },
     {
       "id": 80,
@@ -7295,7 +7848,14 @@
       "clip": 1,
       "conceal": "P",
       "rating": "",
-      "notes": "Tear gas cloud"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Tear gas cloud",
+      "price": 380,
+      "price_black_market": 600,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 81,
@@ -7310,7 +7870,14 @@
       "clip": 1,
       "conceal": "P",
       "rating": "",
-      "notes": "Chemical sedative"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Chemical sedative",
+      "price": 45,
+      "price_black_market": 70,
+      "legality": "Legal in California",
+      "is_purchasable": true
     },
     {
       "id": 82,
@@ -7325,7 +7892,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Aggravated to spirits/vampires; normal to physical"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Aggravated to spirits/vampires; normal to physical",
+      "price": null,
+      "price_black_market": 350,
+      "legality": "Occult / Relic",
+      "is_purchasable": true
     },
     {
       "id": 83,
@@ -7340,7 +7914,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Mini-grenades; -1 die/yd (max -6); shotguns/Technocrat"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Mini-grenades; -1 die/yd (max -6); shotguns/Technocrat",
+      "price": null,
+      "price_black_market": 450,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 84,
@@ -7355,7 +7936,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Armor -2 vs modern; double vs thick armor; shotguns"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Armor -2 vs modern; double vs thick armor; shotguns",
+      "price": 30,
+      "price_black_market": 150,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 85,
@@ -7370,7 +7958,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "2 dice agg for 1 turn after; ignites flammables"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "2 dice agg for 1 turn after; ignites flammables",
+      "price": 40,
+      "price_black_market": 200,
+      "legality": "Prohibited in California",
+      "is_purchasable": true
     },
     {
       "id": 86,
@@ -7385,7 +7980,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "All damage is bashing"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "All damage is bashing",
+      "price": 35,
+      "price_black_market": 50,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 87,
@@ -7400,7 +8002,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Electrical; Technocratic only"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Electrical; Technocratic only",
+      "price": null,
+      "price_black_market": 500,
+      "legality": "Restricted / Discontinued",
+      "is_purchasable": true
     },
     {
       "id": 88,
@@ -7415,7 +8024,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "2m radius tear gas; shotguns/Technocratic"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "2m radius tear gas; shotguns/Technocratic",
+      "price": 60,
+      "price_black_market": 180,
+      "legality": "Regulated LE Supply",
+      "is_purchasable": true
     },
     {
       "id": 89,
@@ -7430,7 +8046,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Reduce armor protection by 1"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Reduce armor protection by 1",
+      "price": null,
+      "price_black_market": 250,
+      "legality": "Strictly Illegal Federally",
+      "is_purchasable": true
     },
     {
       "id": 90,
@@ -7445,7 +8068,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Reduces ranged difficulty by 1"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Reduces ranged difficulty by 1",
+      "price": 120,
+      "price_black_market": 160,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 91,
@@ -7460,7 +8090,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "+2 dice to first shot pool"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "+2 dice to first shot pool",
+      "price": 650,
+      "price_black_market": 850,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 92,
@@ -7475,7 +8112,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Dark only; also see in darkness"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Dark only; also see in darkness",
+      "price": 2800,
+      "price_black_market": 3800,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 93,
@@ -7490,7 +8134,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "High-tech targeting system"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "High-tech targeting system",
+      "price": 6500,
+      "price_black_market": 15000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 94,
@@ -7505,7 +8156,14 @@
       "clip": "",
       "conceal": "",
       "rating": 1,
-      "notes": "Thick skin, fur, or scales"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Thick skin, fur, or scales",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 95,
@@ -7520,7 +8178,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "Thick natural armor"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Thick natural armor",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 96,
@@ -7535,7 +8200,14 @@
       "clip": "",
       "conceal": "",
       "rating": 3,
-      "notes": "Very thick hide"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Very thick hide",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 97,
@@ -7550,7 +8222,14 @@
       "clip": "",
       "conceal": "",
       "rating": "1-4",
-      "notes": "Implanted subdermal armor"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Implanted subdermal armor",
+      "price": null,
+      "price_black_market": 45000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 98,
@@ -7565,7 +8244,14 @@
       "clip": "",
       "conceal": "",
       "rating": "1-2",
-      "notes": "Kevlar-lined normal clothes"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Kevlar-lined normal clothes",
+      "price": 1800,
+      "price_black_market": 2600,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 99,
@@ -7580,7 +8266,14 @@
       "clip": "",
       "conceal": "",
       "rating": "1-5",
-      "notes": "High-tech fabric armor"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "High-tech fabric armor",
+      "price": null,
+      "price_black_market": 18000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 100,
@@ -7595,7 +8288,14 @@
       "clip": "",
       "conceal": "",
       "rating": 1,
-      "notes": "Heavy leather"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Heavy leather",
+      "price": 250,
+      "price_black_market": 300,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 101,
@@ -7610,7 +8310,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "Long leather coat"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Long leather coat",
+      "price": 320,
+      "price_black_market": 400,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 102,
@@ -7625,7 +8332,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "Costume chainmail"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Costume chainmail",
+      "price": 130,
+      "price_black_market": 180,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 103,
@@ -7640,7 +8354,14 @@
       "clip": "",
       "conceal": "",
       "rating": 4,
-      "notes": "Steel chainmail shirt"
+      "dex_penalty": 1,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Steel chainmail shirt",
+      "price": 550,
+      "price_black_market": 800,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 104,
@@ -7655,7 +8376,14 @@
       "clip": "",
       "conceal": "",
       "rating": 3,
-      "notes": "Front and back plates"
+      "dex_penalty": 1,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Front and back plates",
+      "price": 350,
+      "price_black_market": 500,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 105,
@@ -7670,7 +8398,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "Full medieval plate armor"
+      "dex_penalty": 2,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Full medieval plate armor",
+      "price": 4500,
+      "price_black_market": 6500,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 106,
@@ -7685,7 +8420,14 @@
       "clip": "",
       "conceal": "",
       "rating": 3,
-      "notes": "Concealable vest"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Concealable vest",
+      "price": 500,
+      "price_black_market": 950,
+      "legality": "Restricted in California",
+      "is_purchasable": true
     },
     {
       "id": 107,
@@ -7700,7 +8442,14 @@
       "clip": "",
       "conceal": "",
       "rating": 4,
-      "notes": "Military flak jacket"
+      "dex_penalty": 1,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Military flak jacket",
+      "price": 250,
+      "price_black_market": 550,
+      "legality": "Restricted in California",
+      "is_purchasable": true
     },
     {
       "id": 108,
@@ -7715,7 +8464,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "Full riot gear"
+      "dex_penalty": 2,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Full riot gear",
+      "price": 850,
+      "price_black_market": 1400,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 109,
@@ -7730,7 +8486,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Dragon Skin or equivalent"
+      "dex_penalty": 1,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Dragon Skin or equivalent",
+      "price": 1200,
+      "price_black_market": 2200,
+      "legality": "Restricted in California",
+      "is_purchasable": true
     },
     {
       "id": 110,
@@ -7745,7 +8508,14 @@
       "clip": "",
       "conceal": "",
       "rating": "3 (soak) / +1 diff",
-      "notes": "Technocratic full body armor"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Technocratic full body armor",
+      "price": null,
+      "price_black_market": 180000,
+      "legality": "Technocratic / Black-Tech",
+      "is_purchasable": true
     },
     {
       "id": 111,
@@ -7760,7 +8530,14 @@
       "clip": "",
       "conceal": "",
       "rating": 1,
-      "notes": "+1 difficulty to hit wielder"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "+1 difficulty to hit wielder",
+      "price": 15,
+      "price_black_market": 15,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 112,
@@ -7775,7 +8552,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "+2 difficulty to hit wielder"
+      "dex_penalty": 0,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "+2 difficulty to hit wielder",
+      "price": 90,
+      "price_black_market": 130,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 113,
@@ -7790,7 +8574,14 @@
       "clip": "",
       "conceal": "",
       "rating": 4,
-      "notes": "+2 difficulty to hit wielder"
+      "dex_penalty": 1,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "+2 difficulty to hit wielder",
+      "price": 140,
+      "price_black_market": 200,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 114,
@@ -7805,7 +8596,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "+2 difficulty to hit wielder"
+      "dex_penalty": 2,
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "+2 difficulty to hit wielder",
+      "price": 220,
+      "price_black_market": 450,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 115,
@@ -7820,7 +8618,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Stun/concussion"
+      "dex_penalty": "",
+      "blast_area": 3,
+      "blast_power": "8 dice",
+      "notes": "Stun/concussion",
+      "price": null,
+      "price_black_market": 250,
+      "legality": "NFA / Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 116,
@@ -7835,7 +8640,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Armor at half protection"
+      "dex_penalty": "",
+      "blast_area": 3,
+      "blast_power": "12 dice",
+      "notes": "Armor at half protection",
+      "price": null,
+      "price_black_market": 450,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 117,
@@ -7850,7 +8662,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Incendiary; burning"
+      "dex_penalty": "",
+      "blast_area": 2,
+      "blast_power": "8 dice",
+      "notes": "Incendiary; burning",
+      "price": 6,
+      "price_black_market": 75,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 118,
@@ -7865,7 +8684,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Varies by construction"
+      "dex_penalty": "",
+      "blast_area": "3-5",
+      "blast_power": "8-15 dice",
+      "notes": "Varies by construction",
+      "price": 50,
+      "price_black_market": 600,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 119,
@@ -7880,7 +8706,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Kills user"
+      "dex_penalty": "",
+      "blast_area": "4-6",
+      "blast_power": "10-15 dice",
+      "notes": "Kills user",
+      "price": 150,
+      "price_black_market": 1800,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 120,
@@ -7895,7 +8728,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Burns"
+      "dex_penalty": "",
+      "blast_area": 3,
+      "blast_power": "2 dice (fire)",
+      "notes": "Burns",
+      "price": 5,
+      "price_black_market": 5,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 121,
@@ -7910,7 +8750,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Car bomb"
+      "dex_penalty": "",
+      "blast_area": 5,
+      "blast_power": "12 dice",
+      "notes": "Car bomb",
+      "price": 250,
+      "price_black_market": 250,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 122,
@@ -7925,7 +8772,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Explodes on ignition"
+      "dex_penalty": "",
+      "blast_area": 5,
+      "blast_power": "20 dice",
+      "notes": "Explodes on ignition",
+      "price": null,
+      "price_black_market": 8500,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 123,
@@ -7940,7 +8794,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Large vehicle bomb"
+      "dex_penalty": "",
+      "blast_area": 20,
+      "blast_power": "30 dice",
+      "notes": "Large vehicle bomb",
+      "price": null,
+      "price_black_market": 35000,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 124,
@@ -7955,7 +8816,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "+ blinding effect"
+      "dex_penalty": "",
+      "blast_area": 1,
+      "blast_power": "3-5 dice",
+      "notes": "+ blinding effect",
+      "price": 35,
+      "price_black_market": 80,
+      "legality": "Regulated Explosive",
+      "is_purchasable": true
     },
     {
       "id": 125,
@@ -7970,7 +8838,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Stable explosive"
+      "dex_penalty": "",
+      "blast_area": "3-5",
+      "blast_power": "6 dice/stick",
+      "notes": "Stable explosive",
+      "price": null,
+      "price_black_market": 120,
+      "legality": "Regulated Explosive",
+      "is_purchasable": true
     },
     {
       "id": 126,
@@ -7985,7 +8860,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Highly unstable"
+      "dex_penalty": "",
+      "blast_area": 4,
+      "blast_power": "10-15 dice",
+      "notes": "Highly unstable",
+      "price": null,
+      "price_black_market": 350,
+      "legality": "Regulated Explosive",
+      "is_purchasable": true
     },
     {
       "id": 127,
@@ -8000,7 +8882,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Shaped charges possible"
+      "dex_penalty": "",
+      "blast_area": "1-6",
+      "blast_power": "10-50 dice",
+      "notes": "Shaped charges possible",
+      "price": null,
+      "price_black_market": 750,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 128,
@@ -8015,7 +8904,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Burns 10 turns; water won't extinguish"
+      "dex_penalty": "",
+      "blast_area": "10-50",
+      "blast_power": "1 die/turn x10",
+      "notes": "Burns 10 turns; water won't extinguish",
+      "price": 60,
+      "price_black_market": 400,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 129,
@@ -8030,7 +8926,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Shaped charge"
+      "dex_penalty": "",
+      "blast_area": "3-6",
+      "blast_power": "10-15 dice",
+      "notes": "Shaped charge",
+      "price": null,
+      "price_black_market": 750,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 130,
@@ -8045,7 +8948,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Howitzer or mortar round"
+      "dex_penalty": "",
+      "blast_area": 10,
+      "blast_power": "20-30 dice",
+      "notes": "Howitzer or mortar round",
+      "price": null,
+      "price_black_market": 3500,
+      "legality": "Military Destructive Device",
+      "is_purchasable": true
     },
     {
       "id": 131,
@@ -8060,7 +8970,14 @@
       "clip": "",
       "conceal": "",
       "rating": 1,
-      "notes": "Intoxicant"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Intoxicant",
+      "price": 25,
+      "price_black_market": 25,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 132,
@@ -8075,7 +8992,14 @@
       "clip": "",
       "conceal": "",
       "rating": 1,
-      "notes": "Stimulant; +1 die to physical for scene, then crash"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Stimulant; +1 die to physical for scene, then crash",
+      "price": null,
+      "price_black_market": 80,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 133,
@@ -8090,7 +9014,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "Strong stimulant"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Strong stimulant",
+      "price": null,
+      "price_black_market": 60,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 134,
@@ -8105,7 +9036,14 @@
       "clip": "",
       "conceal": "",
       "rating": 2,
-      "notes": "Wood alcohol; blindness"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Wood alcohol; blindness",
+      "price": 15,
+      "price_black_market": 20,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 135,
@@ -8120,7 +9058,14 @@
       "clip": "",
       "conceal": "",
       "rating": 3,
-      "notes": "Food poisoning"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Food poisoning",
+      "price": 0,
+      "price_black_market": 80,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 136,
@@ -8135,7 +9080,14 @@
       "clip": "",
       "conceal": "",
       "rating": 3,
-      "notes": "Deadly nightshade"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Deadly nightshade",
+      "price": 25,
+      "price_black_market": 150,
+      "legality": "Legal to Buy / Carry Restricted",
+      "is_purchasable": true
     },
     {
       "id": 137,
@@ -8150,7 +9102,14 @@
       "clip": "",
       "conceal": "",
       "rating": 4,
-      "notes": "Bacterial food poisoning"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Bacterial food poisoning",
+      "price": 0,
+      "price_black_market": 250,
+      "legality": "Illegal Contraband",
+      "is_purchasable": true
     },
     {
       "id": 138,
@@ -8165,7 +9124,14 @@
       "clip": "",
       "conceal": "",
       "rating": 4,
-      "notes": "Household cleaner; respiratory"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Household cleaner; respiratory",
+      "price": 4,
+      "price_black_market": 4,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 139,
@@ -8180,7 +9146,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "Household chemical"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Household chemical",
+      "price": 5,
+      "price_black_market": 5,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 140,
@@ -8195,7 +9168,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "Respiratory agent; cloud"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Respiratory agent; cloud",
+      "price": 180,
+      "price_black_market": 650,
+      "legality": "Regulated Industrial Chemical",
+      "is_purchasable": true
     },
     {
       "id": 141,
@@ -8210,7 +9190,14 @@
       "clip": "",
       "conceal": "",
       "rating": 5,
-      "notes": "Toxic sludge"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Toxic sludge",
+      "price": 0,
+      "price_black_market": 100,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 142,
@@ -8225,7 +9212,14 @@
       "clip": "",
       "conceal": "",
       "rating": 6,
-      "notes": "Chemical burns"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Chemical burns",
+      "price": 45,
+      "price_black_market": 160,
+      "legality": "Regulated Industrial Chemical",
+      "is_purchasable": true
     },
     {
       "id": 143,
@@ -8240,7 +9234,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Nerve gas"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Nerve gas",
+      "price": null,
+      "price_black_market": 85000,
+      "legality": "Strictly Illegal Federally",
+      "is_purchasable": true
     },
     {
       "id": 144,
@@ -8255,7 +9256,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Fast-acting poison"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Fast-acting poison",
+      "price": null,
+      "price_black_market": 500,
+      "legality": "Regulated Industrial Chemical",
+      "is_purchasable": true
     },
     {
       "id": 145,
@@ -8270,7 +9278,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Hemorrhagic fever; cloud transmission"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Hemorrhagic fever; cloud transmission",
+      "price": null,
+      "price_black_market": 250000,
+      "legality": "Strictly Illegal Federally",
+      "is_purchasable": true
     },
     {
       "id": 146,
@@ -8285,7 +9300,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Bacterial weapon"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Bacterial weapon",
+      "price": null,
+      "price_black_market": 120000,
+      "legality": "Strictly Illegal Federally",
+      "is_purchasable": true
     },
     {
       "id": 147,
@@ -8300,7 +9322,14 @@
       "clip": "",
       "conceal": "",
       "rating": 7,
-      "notes": "Yersinia pestis"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Yersinia pestis",
+      "price": null,
+      "price_black_market": 45000,
+      "legality": "Strictly Illegal Federally",
+      "is_purchasable": true
     },
     {
       "id": 148,
@@ -8315,7 +9344,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "1st degree; part of body"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "1st degree; part of body",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 149,
@@ -8330,7 +9366,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "2nd degree"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "2nd degree",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 150,
@@ -8345,7 +9388,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "3rd degree"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "3rd degree",
+      "price": 45,
+      "price_black_market": 60,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 151,
@@ -8360,7 +9410,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Part of body"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Part of body",
+      "price": 30,
+      "price_black_market": 40,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 152,
@@ -8375,7 +9432,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Half of body"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Half of body",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 153,
@@ -8390,7 +9454,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Full body engulfed"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Full body engulfed",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 154,
@@ -8405,7 +9476,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Total immolation"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Total immolation",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 155,
@@ -8420,7 +9498,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Household current"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Household current",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 156,
@@ -8435,7 +9520,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Security fence"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Security fence",
+      "price": 3500,
+      "price_black_market": 4500,
+      "legality": "Legal OTC",
+      "is_purchasable": true
     },
     {
       "id": 157,
@@ -8450,7 +9542,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Industrial"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Industrial",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 158,
@@ -8465,7 +9564,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "High voltage"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "High voltage",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 159,
@@ -8480,7 +9586,14 @@
       "clip": 100,
       "conceal": "N",
       "rating": "",
-      "notes": "M2 Browning heavy machine gun"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "M2 Browning heavy machine gun",
+      "price": 50000,
+      "price_black_market": 22000,
+      "legality": "NFA / Machine Gun",
+      "is_purchasable": true
     },
     {
       "id": 160,
@@ -8495,7 +9608,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Chemical fire; hard to extinguish"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Chemical fire; hard to extinguish",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 161,
@@ -8510,7 +9630,14 @@
       "clip": "",
       "conceal": "",
       "rating": "",
-      "notes": "Electrical fire"
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Electrical fire",
+      "price": null,
+      "price_black_market": null,
+      "legality": "Environmental / Inherent",
+      "is_purchasable": false
     },
     {
       "id": 162,
@@ -8525,7 +9652,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Wrapped in black silk. Used as a focus for Vision of Shadow and Abyss scrying rituals."
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Wrapped in black silk. Used as a focus for Vision of Shadow and Abyss scrying rituals.",
+      "price": 120,
+      "price_black_market": 2500,
+      "legality": "Occult / Relic",
+      "is_purchasable": true
     },
     {
       "id": 163,
@@ -8540,7 +9674,14 @@
       "clip": "",
       "conceal": "P",
       "rating": "",
-      "notes": "Dedicated silver-inlaid obsidian blade used for Claiming the Dark and other blood-rites."
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Dedicated silver-inlaid obsidian blade used for Claiming the Dark and other blood-rites.",
+      "price": 280,
+      "price_black_market": 4500,
+      "legality": "Occult / Relic",
+      "is_purchasable": true
     },
     {
       "id": 164,
@@ -8555,7 +9696,14 @@
       "clip": "",
       "conceal": "N",
       "rating": "",
-      "notes": "Roman Catholic cassock and collar worn without irony; features an inverted obsidian crucifix and stole embroidered in pre-Vulgate Abyssal script."
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Roman Catholic cassock and collar worn without irony; features an inverted obsidian crucifix and stole embroidered in pre-Vulgate Abyssal script.",
+      "price": 350,
+      "price_black_market": 1500,
+      "legality": "Occult / Relic",
+      "is_purchasable": true
     },
     {
       "id": 165,
@@ -8570,7 +9718,14 @@
       "clip": "",
       "conceal": "J",
       "rating": "",
-      "notes": "Blackmail material and intimate sins collected from half the Sabbat pack under the seal of confession."
+      "dex_penalty": "",
+      "blast_area": "",
+      "blast_power": "",
+      "notes": "Blackmail material and intimate sins collected from half the Sabbat pack under the seal of confession.",
+      "price": null,
+      "price_black_market": 50000,
+      "legality": "Occult / Relic",
+      "is_purchasable": true
     }
   ]
 }
