@@ -5,7 +5,7 @@ var DEFAULT_PORTRAIT = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/20
 
 var state = {
   data: null,
-  activeTab: 'kindred',
+  activeTab: 'pcs',
   pcCategoryFilter: 'all',
   npcFilter: 'all',
   mapCategoryFilter: 'all',
@@ -62,7 +62,7 @@ function setupUI() {
   renderSessions();
   initGlobalSearch();
   
-  var hash = window.location.hash.replace('#', '') || 'kindred';
+  var hash = window.location.hash.replace('#', '') || 'pcs';
   switchTab(hash);
 }
 
@@ -77,7 +77,7 @@ function setupNavigation() {
   });
 
   window.addEventListener('hashchange', function() {
-    var hash = window.location.hash.replace('#', '') || 'kindred';
+    var hash = window.location.hash.replace('#', '') || 'pcs';
     switchTab(hash);
   });
 }
@@ -198,7 +198,7 @@ function openDossier(npcId) {
 
   var h = '';
   h += '<div class="dossier-hero">';
-  h += '  <div class="dossier-portrait-wrap">';
+  h += '  <div class="dossier-portrait-wrap" onclick="openPortraitLightbox(\'' + portraitSrc + '\', \'' + escapeHtml(npc.name).replace(/'/g, "\\'") + '\', \'' + escapeHtml(npc.clan || 'Kindred').replace(/'/g, "\\'") + '\')" style="cursor:zoom-in;" title="Click to enlarge portrait">';
   h += '    <img class="dossier-portrait" src="' + portraitSrc + '" alt="' + escapeHtml(npc.name) + '">';
   h += '  </div>';
   h += '  <div class="dossier-meta">';
@@ -1153,38 +1153,45 @@ function renderPlayerCharacters() {
       typeBadge = '<span class="badge-pc-vampire">[Vampire - ' + escapeHtml(pc.clan || 'Kindred') + ']</span>';
     }
 
-    html += '<div class="pc-compact-card" onclick="openPcSheet(' + realIdx + ')" role="button" tabindex="0">';
-    html += '  <div class="pc-compact-header">';
-    html += '    <div>';
-    html += '      <div class="pc-compact-name">' + escapeHtml(pc.name) + '</div>';
-    if (pc.player) {
-      html += '      <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Player: ' + escapeHtml(pc.player) + '</div>';
-    }
-    html += '    </div>';
-    html += '    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">';
-    html +=        typeBadge;
-    if (!isGhoul && !isMortal && pc.generation) {
-      html += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation) + '</span>';
-    }
-    html += '    </div>';
-    html += '  </div>';
+    var portraitSrc = pc.portrait || DEFAULT_PORTRAIT;
 
-    html += '  <div class="pc-compact-meta">';
+    html += '<div class="pc-compact-card has-thumb" onclick="openPcSheet(' + realIdx + ')" role="button" tabindex="0">';
+    html += '  <div class="pc-card-layout">';
+    html += '    <div class="pc-card-portrait-wrap">';
+    html += '      <img class="pc-card-thumb" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '" loading="lazy">';
+    html += '    </div>';
+    html += '    <div class="pc-card-body-wrap">';
+    html += '      <div class="pc-compact-header">';
+    html += '        <div>';
+    html += '          <div class="pc-compact-name">' + escapeHtml(pc.name) + '</div>';
+    if (pc.player) {
+      html += '          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Player: ' + escapeHtml(pc.player) + '</div>';
+    }
+    html += '        </div>';
+    html += '        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">';
+    html +=            typeBadge;
+    if (!isGhoul && !isMortal && pc.generation) {
+      html += '          <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);">' + escapeHtml(pc.generation) + '</span>';
+    }
+    html += '        </div>';
+    html += '      </div>';
+    html += '      <div class="pc-compact-meta">';
     if (pc.concept) {
-      html += '    <div class="pc-compact-meta-item"><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
+      html += '        <div class="pc-compact-meta-item"><strong>Concept:</strong> ' + escapeHtml(pc.concept) + '</div>';
     }
     if (isGhoul && pc.domitor) {
-      html += '    <div class="pc-compact-meta-item"><strong>Domitor:</strong> ' + escapeHtml(pc.domitor) + '</div>';
+      html += '        <div class="pc-compact-meta-item"><strong>Domitor:</strong> ' + escapeHtml(pc.domitor) + '</div>';
     } else if (!isGhoul && !isMortal && pc.sire && pc.sire !== 'N/A') {
-      html += '    <div class="pc-compact-meta-item"><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
+      html += '        <div class="pc-compact-meta-item"><strong>Sire:</strong> ' + escapeHtml(pc.sire) + '</div>';
     }
     if (pc.nature && pc.demeanor) {
-      html += '    <div class="pc-compact-meta-item"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
+      html += '        <div class="pc-compact-meta-item"><strong>Archetype:</strong> ' + escapeHtml(pc.nature) + ' / ' + escapeHtml(pc.demeanor) + '</div>';
     }
-    html += '  </div>';
-
-    html += '  <div class="pc-compact-footer">';
-    html += '    <button type="button" class="btn-view-sheet-pill">View Character Sheet &rarr;</button>';
+    html += '      </div>';
+    html += '      <div class="pc-compact-footer">';
+    html += '        <button type="button" class="btn-view-sheet-pill">View Character Sheet &rarr;</button>';
+    html += '      </div>';
+    html += '    </div>';
     html += '  </div>';
     html += '</div>';
   });
@@ -1225,7 +1232,7 @@ function openPcSheet(idx) {
 
   // 1. Hero Showcase (Portrait revealed inside sheet modal on click)
   h += '<div class="pc-view-hero">';
-  h += '  <img class="pc-portrait-lg" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '">';
+  h += '  <img class="pc-portrait-lg" src="' + portraitSrc + '" alt="' + escapeHtml(pc.name) + '" onclick="openPortraitLightbox(\'' + portraitSrc + '\', \'' + escapeHtml(pc.name).replace(/'/g, "\\'") + '\', \'' + escapeHtml(pc.clan || 'Kindred').replace(/'/g, "\\'") + '\')" style="cursor:zoom-in;" title="Click to enlarge portrait">';
   h += '  <div class="pc-hero-meta">';
   h += '    <div class="pc-hero-title">' + escapeHtml(pc.name) + '</div>';
   if (pc.player) h += '<div style="font-size:12px;color:var(--text-muted);">Player: ' + escapeHtml(pc.player) + '</div>';
@@ -1630,3 +1637,35 @@ function rollV20Dice() {
 
   document.getElementById('dice-result-wrap').style.display = 'block';
 }
+
+/* ─── PORTRAIT LIGHTBOX VIEWER ─── */
+function openPortraitLightbox(imgSrc, title, subtitle) {
+  if (!imgSrc || imgSrc === DEFAULT_PORTRAIT) return;
+  var modal = document.getElementById('portrait-lightbox-modal');
+  var img = document.getElementById('lightbox-img');
+  var titleEl = document.getElementById('lightbox-title');
+  var subEl = document.getElementById('lightbox-subtitle');
+  if (!modal || !img) return;
+
+  img.src = imgSrc;
+  img.alt = title || 'Character Portrait';
+  if (titleEl) titleEl.textContent = title || '';
+  if (subEl) subEl.textContent = subtitle || '';
+
+  modal.classList.add('active');
+}
+
+function closePortraitLightbox() {
+  var modal = document.getElementById('portrait-lightbox-modal');
+  if (modal) modal.classList.remove('active');
+}
+
+// Global Escape key listener to close active modals
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePortraitLightbox();
+    closePcSheet();
+    closeDossier();
+    closeGlobalSearch();
+  }
+});

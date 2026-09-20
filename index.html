@@ -155,8 +155,8 @@
         </svg>
       </button>
       <div class="header-tab-indicator">
-        <h1 id="header-tab-title" class="header-tab-title">Kindred</h1>
-        <span id="header-tab-subtitle" class="header-tab-subtitle">NPC Dossiers</span>
+        <h1 id="header-tab-title" class="header-tab-title">Player Characters</h1>
+        <span id="header-tab-subtitle" class="header-tab-subtitle">Kindred &amp; Ghouls</span>
       </div>
     </div>
     <button type="button" class="header-search-btn" onclick="openGlobalSearch()">
@@ -171,7 +171,7 @@
   <!-- PANELS -->
   <main id="main-content">
     <!-- KINDRED PANEL -->
-    <section id="view-kindred" class="view-panel active">
+    <section id="view-kindred" class="view-panel">
       <div class="filter-bar" id="npc-filter-bar">
         <button type="button" class="filter-pill active" onclick="setNpcFilter('all', this)">All Sects</button>
         <button type="button" class="filter-pill" onclick="setNpcFilter('camarilla', this)">Camarilla</button>
@@ -184,7 +184,7 @@
     </section>
 
     <!-- PLAYER CHARACTERS (PCS & GHOULS) PANEL -->
-    <section id="view-pcs" class="view-panel">
+    <section id="view-pcs" class="view-panel active">
       <div class="filter-bar" id="pc-filter-bar" style="margin-bottom:14px;">
         <button type="button" class="filter-pill active" onclick="setPcCategoryFilter('all', this)">All Characters</button>
         <button type="button" class="filter-pill" onclick="setPcCategoryFilter('vampire', this)">Kindred (Vampires)</button>
@@ -363,6 +363,18 @@
         <input type="text" id="global-search-input" class="search-input" placeholder="Search Kindred, weapons, rules..." autocomplete="off">
       </div>
       <div id="global-search-results"></div>
+    </div>
+  </div>
+
+  <!-- PORTRAIT LIGHTBOX MODAL (FULL-RES ARTWORK VIEWER) -->
+  <div class="modal-overlay" id="portrait-lightbox-modal" onclick="if(event.target===this)closePortraitLightbox()">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close-btn" onclick="closePortraitLightbox()" aria-label="Close Lightbox">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Portrait">
+      <div class="lightbox-caption">
+        <div id="lightbox-title" class="lightbox-title"></div>
+        <div id="lightbox-subtitle" class="lightbox-subtitle"></div>
+      </div>
     </div>
   </div>
 
