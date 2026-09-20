@@ -1092,6 +1092,15 @@ function getStatNum(obj, key) {
   return parseInt(val) || 0;
 }
 
+function getStatSpec(obj, key) {
+  if (!obj) return '';
+  var raw = obj[key] !== undefined ? obj[key] : (obj[key.toLowerCase()] !== undefined ? obj[key.toLowerCase()] : '');
+  if (typeof raw === 'string' && raw.includes('(') && raw.includes(')')) {
+    return raw.substring(raw.indexOf('(') + 1, raw.indexOf(')')).trim();
+  }
+  return '';
+}
+
 /* ─── PLAYER CHARACTERS (KINDRED & GHOULS) VIEW ENGINE ─── */
 function setPcCategoryFilter(cat, btn) {
   state.pcCategoryFilter = cat;
@@ -1339,50 +1348,59 @@ function openPcSheet(idx) {
 
   h += '<div class="pc-attr-grid">';
 
-  // Talents
-  h += '<div class="pc-attr-col">';
-  h += '  <div class="pc-attr-col-header">Talents</div>';
+  function renderAbilityCol(title, catItems, stdList) {
+    var colHtml = '<div class="pc-attr-col">';
+    colHtml += '  <div class="pc-attr-col-header">' + title + '</div>';
+
+    // 1. Standard traits (always rendered, 0 dots if unpossessed)
+    stdList.forEach(function(trait) {
+      var val = getStatNum(catItems, trait);
+      var spec = getStatSpec(catItems, trait);
+      colHtml += '  <div class="pc-attr-row">';
+      colHtml += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+      colHtml += '      <span>' + trait + '</span>';
+      if (spec) {
+        colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);">' + escapeHtml(spec) + '</span>';
+      }
+      colHtml += '    </div>';
+      colHtml += '    <div style="display:flex;align-items:center;gap:6px;">';
+      colHtml += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
+      colHtml += '    </div>';
+      colHtml += '  </div>';
+    });
+
+    // 2. Custom/secondary traits
+    var stdLower = stdList.map(function(s) { return s.toLowerCase(); });
+    Object.keys(catItems).forEach(function(k) {
+      if (stdLower.indexOf(k.toLowerCase()) === -1) {
+        var val = getStatNum(catItems, k);
+        var spec = getStatSpec(catItems, k);
+        var cleanName = k.replace(/_/g, ' ');
+        colHtml += '  <div class="pc-attr-row">';
+        colHtml += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+        colHtml += '      <span>' + escapeHtml(cleanName) + '</span>';
+        if (spec) {
+          colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);">' + escapeHtml(spec) + '</span>';
+        }
+        colHtml += '    </div>';
+        colHtml += '    <div style="display:flex;align-items:center;gap:6px;">';
+        colHtml += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
+        colHtml += '    </div>';
+        colHtml += '  </div>';
+      }
+    });
+
+    colHtml += '</div>';
+    return colHtml;
+  }
+
   var talentList = ['Alertness', 'Athletics', 'Awareness', 'Brawl', 'Empathy', 'Expression', 'Intimidation', 'Leadership', 'Streetwise', 'Subterfuge'];
-  talentList.forEach(function(t) {
-    var val = getStatNum(talents, t);
-    if (val > 0) {
-      h += '  <div class="pc-attr-row">';
-      h += '    <span>' + t + '</span>';
-      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
-      h += '  </div>';
-    }
-  });
-  h += '</div>';
-
-  // Skills
-  h += '<div class="pc-attr-col">';
-  h += '  <div class="pc-attr-col-header">Skills</div>';
   var skillList = ['Animal Ken', 'Crafts', 'Drive', 'Etiquette', 'Firearms', 'Larceny', 'Melee', 'Performance', 'Stealth', 'Survival'];
-  skillList.forEach(function(s) {
-    var val = getStatNum(skills, s);
-    if (val > 0) {
-      h += '  <div class="pc-attr-row">';
-      h += '    <span>' + s + '</span>';
-      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
-      h += '  </div>';
-    }
-  });
-  h += '</div>';
-
-  // Knowledges
-  h += '<div class="pc-attr-col">';
-  h += '  <div class="pc-attr-col-header">Knowledges</div>';
   var knowList = ['Academics', 'Computer', 'Finance', 'Investigation', 'Law', 'Medicine', 'Occult', 'Politics', 'Science', 'Technology'];
-  knowList.forEach(function(k) {
-    var val = getStatNum(knowledges, k);
-    if (val > 0) {
-      h += '  <div class="pc-attr-row">';
-      h += '    <span>' + k + '</span>';
-      h += '    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5) + '</div>';
-      h += '  </div>';
-    }
-  });
-  h += '</div>';
+
+  h += renderAbilityCol('Talents', talents, talentList);
+  h += renderAbilityCol('Skills', skills, skillList);
+  h += renderAbilityCol('Knowledges', knowledges, knowList);
 
   h += '</div>';
 

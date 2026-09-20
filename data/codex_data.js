@@ -5363,6 +5363,12 @@ window.CODEX_DATA = {
         "source": "Session 11, 14 & 23 Plot"
       },
       {
+        "section": "LA Campaign: Factions, Sects & Networks",
+        "title": "SchreckNET & Nosferatu Counter-Intrusion Protocols",
+        "content": "The subterranean digital defense infrastructure maintained by Clan Nosferatu (overseen in Los Angeles by Primogen Silas 'Root' Thorne). When mortal hackers or unauthorized surveillance systems attempt to tap municipal fiber or camera grids in Nosferatu-monitored zones, the network defends itself through three primary anomalous protocols: 1) The Negative Latency Loop (packets route into infinite black holes returning impossible negative or 9999ms latency that bounces back onto the intruder's own machine under spoofed MAC addresses); 2) The Rot Filter (intercepted optical feeds do not cut to black, but stream synthetic visual artifacts, video snow, lens grease, and looping 3-second timestamp drifts that mask movement without raising mortal alarms); 3) The Loopback Echo (aggressive port scans on hidden nodes trigger a single unprompted ICMP ping from 127.0.0.1:0000 bearing the plain-text string 'WATCHING THE WATCHERS').",
+        "source": "Session 24 Prep & Lore of the Clans"
+      },
+      {
         "section": "LA Campaign: The Coterie & Inner Circle",
         "title": "Balthazar",
         "content": "A battle-hardened, intensely paranoid former Camarilla sheriff and enforcer. Driven by an obsessive vendetta against Tzimisce fleshcrafters and Sabbat sleeper agents, Balthazar constantly rotates through hidden safehouses to avoid surveillance while conducting brutal interrogations.",
