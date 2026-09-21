@@ -2117,8 +2117,89 @@ body {
   white-space: nowrap;
 }
 
+.downtime-dice-builder {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 4px;
+}
+
+.downtime-dice-builder select {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-main);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  padding: 5px 8px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  max-width: 170px;
+}
+
+.downtime-dice-builder select:focus {
+  border-color: var(--gold);
+}
+
+.downtime-dice-plus {
+  font-weight: 700;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.downtime-pool-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.downtime-spec-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+  border-radius: 4px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.downtime-custom-roll-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 3px 6px;
+  font-size: 11px;
+  transition: all 0.15s ease;
+  margin-left: auto;
+}
+
+.downtime-custom-roll-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .downtime-roll-input {
   flex: 1;
+  width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;

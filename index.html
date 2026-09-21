@@ -362,20 +362,20 @@
           <div class="downtime-char-select-wrap">
             <label for="downtime-char-select" class="downtime-label">Active Character</label>
             <select id="downtime-char-select" class="downtime-select">
-              <option value="liam_johnson">Liam Johnson ("L.J.")</option>
-              <option value="frederic_king">Frederic King</option>
-              <option value="isabel_turner">Isabel Turner</option>
-              <option value="shane_mercer">Elliot "Shane" Mercer</option>
+              <optgroup label="Kindred (Coterie)">
+                <option value="liam_johnson">Liam Johnson ("L.J.")</option>
+                <option value="frederic_king">Frederic King</option>
+                <option value="isabel_turner">Isabel Turner</option>
+                <option value="shane_mercer">Elliot "Shane" Mercer</option>
+              </optgroup>
+              <optgroup label="Ghouls & Retainers">
+                <option value="katrine_sterling">Katrine Sterling (Ghoul)</option>
+                <option value="john_carmac">John Carmac (Ghoul)</option>
+                <option value="george_michael">George Michael (Ghoul)</option>
+                <option value="rachel_teller">Rachel Teller (Ghoul)</option>
+                <option value="chris_partlow">Chris Partlow (Ghoul)</option>
+              </optgroup>
             </select>
-          </div>
-          <div class="downtime-top-actions">
-            <button type="button" id="btn-top-webhook-settings" class="btn-downtime-outline" onclick="openWebhookModal()" title="Configure Webhook URL">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-              </svg>
-              <span>Webhook</span>
-            </button>
           </div>
         </div>
       </div>
@@ -410,13 +410,6 @@
           </button>
         </div>
         <div class="downtime-footer-right">
-          <button type="button" id="btn-webhook-settings" class="btn-downtime-link" onclick="openWebhookModal()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
-            <span>Webhook Settings</span>
-          </button>
           <div id="downtime-autosave-status" class="downtime-autosave-status">Draft ready</div>
         </div>
       </div>
@@ -463,31 +456,6 @@
     </div>
   </div>
 
-  <!-- DOWNTIME WEBHOOK SETTINGS MODAL -->
-  <div class="modal-overlay" id="downtime-webhook-modal" onclick="if(event.target===this)closeWebhookModal()">
-    <div class="modal-sheet" style="max-width:550px;">
-      <button type="button" class="modal-close-btn" onclick="closeWebhookModal()">&times;</button>
-      <div style="margin-bottom:16px;">
-        <h3 style="font-family:var(--font-serif);font-size:18px;color:var(--gold);margin-bottom:6px;">Google Sheets Webhook Settings</h3>
-        <p style="font-size:12px;color:var(--text-muted);line-height:1.5;">
-          Paste your deployed Google Apps Script Web App URL below. When you submit your downtime, your 7-day actions and dice rolls will be automatically written to your character's tab in the master chronicle spreadsheet.
-        </p>
-      </div>
-      <div style="margin-bottom:18px;">
-        <label for="input-webhook-url" style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;">
-          Apps Script Web App URL
-        </label>
-        <input type="url" id="input-webhook-url" class="search-input" placeholder="https://script.google.com/macros/s/.../exec" style="width:100%;font-size:13px;padding:10px 12px;">
-        <div style="font-size:11px;color:var(--text-dim);margin-top:6px;">
-          Saved securely in your browser's <code style="color:var(--gold);">localStorage</code>.
-        </div>
-      </div>
-      <div style="display:flex;justify-content:flex-end;gap:10px;">
-        <button type="button" class="btn-downtime-outline" onclick="closeWebhookModal()">Cancel</button>
-        <button type="button" id="btn-save-webhook" class="btn-downtime-primary" onclick="saveWebhookUrl()">Save Webhook</button>
-      </div>
-    </div>
-  </div>
 
   <!-- DATA & SCRIPTS -->
   <script src="data/codex_data.js"></script>
