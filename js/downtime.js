@@ -186,12 +186,11 @@
     }
   ];
 
-  // Standard V20 Attribute & Ability Catalogs
+  // Standard V20 Attribute & Ability Catalogs (Attributes: Physical, Social, Mental only)
   var V20_ATTRS = {
     'Physical': ['Strength', 'Dexterity', 'Stamina'],
     'Social': ['Charisma', 'Manipulation', 'Appearance'],
-    'Mental': ['Perception', 'Intelligence', 'Wits'],
-    'Special': ['Willpower']
+    'Mental': ['Perception', 'Intelligence', 'Wits']
   };
 
   var V20_ABILS = {
@@ -215,10 +214,10 @@
     loadDraftForCharacter(activeCharKey);
   }
 
-  // Get active character data from CODEX_DATA.pcs or fallback
+  // Get active character data from live CODEX_DATA.pcs
   function getCharacterSheet(charKey) {
     if (window.CODEX_DATA && Array.isArray(window.CODEX_DATA.pcs)) {
-      var key = charKey.toLowerCase();
+      var key = (charKey || '').toLowerCase();
       var pcs = window.CODEX_DATA.pcs;
       for (var i = 0; i < pcs.length; i++) {
         var p = pcs[i];
@@ -237,17 +236,45 @@
     return null;
   }
 
-  // Retrieve numerical rating for an attribute
+  // Merged live character sheet with fallback metadata
+  function getMergedCharacter(charKey) {
+    var pc = getCharacterSheet(charKey) || {};
+    var meta = DOWNTIME_PCS[charKey] || {};
+    
+    var isGhoul = (pc.type === 'Ghoul') || (meta.type === 'Ghoul') || (pc.clan === 'Ghoul');
+    var bp = pc.blood_pool || meta.blood_pool || (isGhoul ? '1/1' : '10/10');
+    var wp = pc.willpower || meta.willpower || '5/5';
+    var health = pc.health || meta.health || 'Full / Uninjured';
+    var isInjured = (health.toLowerCase().indexOf('injured') !== -1) || 
+                    (health.toLowerCase().indexOf('incapacitated') !== -1) || 
+                    (health.toLowerCase().indexOf('wounded') !== -1) || 
+                    Boolean(meta.is_injured);
+
+    return {
+      id: charKey,
+      sheet_name: meta.sheet_name || charKey,
+      name: pc.name || meta.name || charKey,
+      clan: pc.clan || meta.clan || (isGhoul ? 'Ghoul' : 'Kindred'),
+      generation: pc.generation || meta.generation || (isGhoul ? 'Ghoul' : 'Unknown'),
+      type: isGhoul ? 'Ghoul' : 'Kindred',
+      domitor: pc.domitor || meta.domitor || pc.sire || '',
+      blood_pool: bp,
+      willpower: wp,
+      health: health,
+      is_injured: isInjured,
+      humanity: pc.humanity || meta.humanity || '7',
+      notes: meta.notes || '',
+      attributes: pc.attributes || {},
+      abilities: pc.abilities || {},
+      specialties: pc.specialties || {}
+    };
+  }
+
+  // Retrieve numerical rating for an attribute (strictly Physical, Social, Mental)
   function getAttrRating(charKey, attrName) {
     if (!attrName || attrName === 'None' || attrName === 'Automatic') return 0;
     var pc = getCharacterSheet(charKey);
-    if (!pc) return 1; // standard human default
-
-    if (attrName === 'Willpower') {
-      var wpRaw = pc.willpower || '5';
-      var wpParts = String(wpRaw).split('/');
-      return parseInt(wpParts[0], 10) || 5;
-    }
+    if (!pc) return 1;
 
     if (pc.attributes) {
       for (var cat in pc.attributes) {
@@ -324,8 +351,8 @@
 
   // Determine categories to render based on character type
   function getActiveCategories() {
-    var pcMeta = DOWNTIME_PCS[activeCharKey];
-    if (pcMeta && pcMeta.type === 'Ghoul') {
+    var pc = getMergedCharacter(activeCharKey);
+    if (pc && pc.type === 'Ghoul') {
       return GHOUL_CATEGORIES;
     }
     return KINDRED_CATEGORIES;
@@ -369,8 +396,9 @@
     var container = document.getElementById('downtime-days-container');
     if (!container) return;
 
+    var pc = getMergedCharacter(activeCharKey);
     var categories = getActiveCategories();
-    var isGhoul = (DOWNTIME_PCS[activeCharKey] && DOWNTIME_PCS[activeCharKey].type === 'Ghoul');
+    var isGhoul = (pc.type === 'Ghoul');
 
     var html = '';
     DOWNTIME_DAYS.forEach(function(d) {
@@ -569,7 +597,7 @@
     var banner = document.getElementById('downtime-status-banner');
     if (!banner) return;
 
-    var pc = DOWNTIME_PCS[activeCharKey] || DOWNTIME_PCS['liam_johnson'];
+    var pc = getMergedCharacter(activeCharKey);
     var healthClass = pc.is_injured ? 'health-warning' : 'health';
     var isGhoul = (pc.type === 'Ghoul');
 
@@ -622,7 +650,8 @@
   function collectFormData() {
     var daysData = [];
     var categories = getActiveCategories();
-    var isGhoul = (DOWNTIME_PCS[activeCharKey] && DOWNTIME_PCS[activeCharKey].type === 'Ghoul');
+    var pc = getMergedCharacter(activeCharKey);
+    var isGhoul = (pc.type === 'Ghoul');
 
     DOWNTIME_DAYS.forEach(function(d) {
       var dayObj = {
@@ -741,8 +770,9 @@
 
     var statusEl = document.getElementById('downtime-autosave-status');
     if (statusEl) {
+      var charObj = getMergedCharacter(charKey);
       if (data) {
-        statusEl.textContent = 'Loaded saved draft for ' + (DOWNTIME_PCS[charKey] ? DOWNTIME_PCS[charKey].name : charKey);
+        statusEl.textContent = 'Loaded saved draft for ' + (charObj ? charObj.name : charKey);
       } else {
         statusEl.textContent = 'New draft ready';
       }
@@ -751,7 +781,7 @@
 
   // Clear/Reset Draft
   function clearDowntimeDraft() {
-    var pc = DOWNTIME_PCS[activeCharKey];
+    var pc = getMergedCharacter(activeCharKey);
     var charName = pc ? pc.name : activeCharKey;
     if (!confirm('Are you sure you want to clear the downtime draft for ' + charName + '?')) {
       return;
@@ -783,7 +813,7 @@
 
   // Submit Downtime (Direct, Seamless, 1-Click)
   function submitDowntime() {
-    var pc = DOWNTIME_PCS[activeCharKey] || DOWNTIME_PCS['liam_johnson'];
+    var pc = getMergedCharacter(activeCharKey);
     var data = collectFormData();
 
     var submittedAt = new Date().toISOString();
