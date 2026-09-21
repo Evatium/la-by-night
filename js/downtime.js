@@ -1,6 +1,8 @@
 /* LA by Night — Player Codex Downtime Planner Engine */
 'use strict';
 
+window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIaoaSNQOGFXOhCLmaNOs4ubzpLM9VQkQEt95RQIn81F0RjsiJHUY48NtuTM/exec';
+
 (function() {
   // 1. PC Configurations & Canon Metadata (Kindred & Ghouls)
   var DOWNTIME_PCS = {
