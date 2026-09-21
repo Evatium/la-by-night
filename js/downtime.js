@@ -183,13 +183,6 @@
       });
     }
 
-    // Button: Copy for Discord
-    var btnCopy = document.getElementById('btn-copy-discord');
-    if (btnCopy) {
-      btnCopy.addEventListener('click', function() {
-        copyDowntimeForDiscord();
-      });
-    }
 
     // Button: Clear Draft
     var btnClear = document.getElementById('btn-clear-draft');
@@ -355,70 +348,6 @@
     if (statusEl) statusEl.textContent = 'Draft cleared';
 
     showToast('Draft cleared for ' + charName, 'info');
-  }
-
-  // Copy 7-Day Downtime for Discord
-  function copyDowntimeForDiscord() {
-    var pc = DOWNTIME_PCS[activeCharKey] || DOWNTIME_PCS['liam_johnson'];
-    var data = collectFormData();
-
-    var lines = [];
-    lines.push('# 🦇 LA BY NIGHT — DOWNTIME SUBMISSION');
-    lines.push('**Character:** ' + pc.name + ' (' + pc.clan + ' — ' + pc.generation + ' Gen)');
-    lines.push('**Status:** Blood: ' + pc.blood_pool + ' | Willpower: ' + pc.willpower + ' | Health: ' + pc.health);
-    lines.push('**House Rule:** Heal additional Aggravated damage at 1 WP + 5 BP per level in a single day');
-    lines.push('');
-    lines.push('---');
-
-    data.forEach(function(d) {
-      lines.push('');
-      lines.push('### 📅 ' + d.label + ' — ' + d.date);
-
-      DOWNTIME_CATEGORIES.forEach(function(cat) {
-        var entry = d[cat.key] || { description: '', roll: '' };
-        var desc = entry.description ? entry.description.replace(/\n/g, ' ') : '*[None specified]*';
-        var rollText = entry.roll ? ' `[Roll: ' + entry.roll + ']`' : '';
-        lines.push('- **' + cat.emoji + ' ' + cat.title + ':** ' + desc + rollText);
-      });
-    });
-
-    var fullText = lines.join('\n');
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(fullText)
-        .then(function() {
-          showToast('📋 Downtime copied to clipboard for Discord!', 'success');
-        })
-        .catch(function(err) {
-          console.warn('Clipboard writeText failed, falling back:', err);
-          fallbackCopyText(fullText);
-        });
-    } else {
-      fallbackCopyText(fullText);
-    }
-  }
-
-  function fallbackCopyText(text) {
-    var textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.top = '0';
-    textArea.style.left = '0';
-    textArea.style.position = 'fixed';
-    textArea.style.opacity = '0';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      var successful = document.execCommand('copy');
-      if (successful) {
-        showToast('📋 Downtime copied to clipboard for Discord!', 'success');
-      } else {
-        showToast('Unable to copy automatically. Please copy manually.', 'error');
-      }
-    } catch (err) {
-      showToast('Copy failed: ' + err, 'error');
-    }
-    document.body.removeChild(textArea);
   }
 
   // Submit Downtime to Google Sheet via Webhook
