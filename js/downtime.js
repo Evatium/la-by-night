@@ -445,15 +445,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
         html += '        <select class="downtime-abil-select" data-day="' + d.day + '" data-cat="' + cat.key + '" onchange="onDiceDropdownChange(' + d.day + ', \'' + cat.key + '\')">';
         html +=            buildAbilOptions(activeCharKey, initialAbil);
         html += '        </select>';
-        html += '        <select class="downtime-diff-select" data-day="' + d.day + '" data-cat="' + cat.key + '" onchange="onDiceDropdownChange(' + d.day + ', \'' + cat.key + '\')">';
-        html += '          <option value="Diff 4">Diff 4</option>';
-        html += '          <option value="Diff 5">Diff 5</option>';
-        html += '          <option value="Diff 6" selected>Diff 6 (Standard)</option>';
-        html += '          <option value="Diff 7">Diff 7</option>';
-        html += '          <option value="Diff 8">Diff 8</option>';
-        html += '          <option value="Diff 9">Diff 9</option>';
-        html += '          <option value="Auto 0">Auto 0 (Automatic)</option>';
-        html += '        </select>';
         html += '        <span class="downtime-pool-badge" id="pool-badge-' + d.day + '-' + cat.key + '">0 Dice</span>';
         html += '        <span class="downtime-spec-badge" id="spec-badge-' + d.day + '-' + cat.key + '" style="display:none;"></span>';
         html += '        <button type="button" class="downtime-custom-roll-btn" title="Toggle custom roll input" onclick="toggleCustomRoll(' + d.day + ', \'' + cat.key + '\')">✏️ Custom</button>';
@@ -482,7 +473,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
   function recalculatePool(day, catKey) {
     var attrSel = document.querySelector('.downtime-attr-select[data-day="' + day + '"][data-cat="' + catKey + '"]');
     var abilSel = document.querySelector('.downtime-abil-select[data-day="' + day + '"][data-cat="' + catKey + '"]');
-    var diffSel = document.querySelector('.downtime-diff-select[data-day="' + day + '"][data-cat="' + catKey + '"]');
     var poolBadge = document.getElementById('pool-badge-' + day + '-' + catKey);
     var specBadge = document.getElementById('spec-badge-' + day + '-' + catKey);
     var rollInput = document.querySelector('.downtime-roll-input[data-day="' + day + '"][data-cat="' + catKey + '-roll"]');
@@ -491,7 +481,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
 
     var attrName = attrSel.value;
     var abilName = abilSel.value;
-    var diffVal = diffSel ? diffSel.value : 'Diff 6';
 
     if (attrName === 'None') {
       poolBadge.textContent = 'Auto 0';
@@ -513,7 +502,7 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     if (attrSpec) specs.push(attrSpec);
     if (abilSpec && abilSpec !== attrSpec) specs.push(abilSpec);
 
-    poolBadge.textContent = totalPool + ' Dice (' + diffVal + ')';
+    poolBadge.textContent = totalPool + ' Dice';
 
     if (specBadge) {
       if (specs.length > 0) {
@@ -528,9 +517,9 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     if (rollInput && rollInput.style.display === 'none') {
       var rollStr = '';
       if (abilName && abilName !== 'None') {
-        rollStr = attrName + ' (' + attrDots + ') + ' + abilName + ' (' + abilDots + ') = ' + totalPool + ' Dice (' + diffVal + ')';
+        rollStr = attrName + ' (' + attrDots + ') + ' + abilName + ' (' + abilDots + ') = ' + totalPool + ' Dice';
       } else {
-        rollStr = attrName + ' (' + attrDots + ') = ' + totalPool + ' Dice (' + diffVal + ')';
+        rollStr = attrName + ' (' + attrDots + ') = ' + totalPool + ' Dice';
       }
       if (specs.length > 0) {
         rollStr += ' [★ ' + specs.join(', ') + ']';
@@ -659,15 +648,13 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
         var pRoll = document.querySelector('.downtime-roll-input[data-day="' + d.day + '"][data-cat="primary-roll"]');
         var pAttr = document.querySelector('.downtime-attr-select[data-day="' + d.day + '"][data-cat="primary"]');
         var pAbil = document.querySelector('.downtime-abil-select[data-day="' + d.day + '"][data-cat="primary"]');
-        var pDiff = document.querySelector('.downtime-diff-select[data-day="' + d.day + '"][data-cat="primary"]');
 
         dayObj.feeding = { description: '', roll: '' };
         dayObj.primary = {
           description: pDesc ? pDesc.value.trim() : '',
           roll: pRoll ? pRoll.value.trim() : '',
           attr: pAttr ? pAttr.value : '',
-          abil: pAbil ? pAbil.value : '',
-          diff: pDiff ? pDiff.value : ''
+          abil: pAbil ? pAbil.value : ''
         };
         dayObj.secondary = { description: '', roll: '' };
         dayObj.tertiary = { description: '', roll: '' };
@@ -678,14 +665,12 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
           var rollEl = document.querySelector('.downtime-roll-input[data-day="' + d.day + '"][data-cat="' + cat.key + '-roll"]');
           var attrEl = document.querySelector('.downtime-attr-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
           var abilEl = document.querySelector('.downtime-abil-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
-          var diffEl = document.querySelector('.downtime-diff-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
 
           dayObj[cat.key] = {
             description: descEl ? descEl.value.trim() : '',
             roll: rollEl ? rollEl.value.trim() : '',
             attr: attrEl ? attrEl.value : '',
-            abil: abilEl ? abilEl.value : '',
-            diff: diffEl ? diffEl.value : ''
+            abil: abilEl ? abilEl.value : ''
           };
         });
       }
@@ -746,7 +731,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
         var rollEl = document.querySelector('.downtime-roll-input[data-day="' + d.day + '"][data-cat="' + cat.key + '-roll"]');
         var attrSel = document.querySelector('.downtime-attr-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
         var abilSel = document.querySelector('.downtime-abil-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
-        var diffSel = document.querySelector('.downtime-diff-select[data-day="' + d.day + '"][data-cat="' + cat.key + '"]');
 
         if (dayData && dayData[cat.key]) {
           var item = dayData[cat.key];
@@ -754,7 +738,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
           if (rollEl && item.roll !== undefined) rollEl.value = item.roll;
           if (attrSel && item.attr) attrSel.value = item.attr;
           if (abilSel && item.abil) abilSel.value = item.abil;
-          if (diffSel && item.diff) diffSel.value = item.diff;
         }
 
         recalculatePool(d.day, cat.key);
