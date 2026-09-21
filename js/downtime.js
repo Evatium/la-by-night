@@ -204,8 +204,12 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
   var activeCharKey = 'liam_johnson';
   var autoSaveTimer = null;
 
+  var isInitialized = false;
+
   // Initialize Downtime Planner
   function initDowntime() {
+    if (isInitialized) return;
+    isInitialized = true;
     renderDaysContainer();
     setupEventListeners();
     updateCharacterBanner();
@@ -579,21 +583,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
       });
     }
 
-    // Button: Submit Downtime
-    var btnSubmit = document.getElementById('btn-submit-downtime');
-    if (btnSubmit) {
-      btnSubmit.addEventListener('click', function() {
-        submitDowntime();
-      });
-    }
-
-    // Button: Clear Draft
-    var btnClear = document.getElementById('btn-clear-draft');
-    if (btnClear) {
-      btnClear.addEventListener('click', function() {
-        clearDowntimeDraft();
-      });
-    }
   }
 
   // Update Character Status Banner
@@ -910,7 +899,17 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
   }
 
   // Toast Notification System
+  var lastToastText = '';
+  var lastToastTime = 0;
+
   function showToast(message, type, duration) {
+    var now = Date.now();
+    if (message === lastToastText && (now - lastToastTime) < 1200) {
+      return; // Ignore duplicate toast within 1.2 seconds
+    }
+    lastToastText = message;
+    lastToastTime = now;
+
     type = type || 'info';
     duration = duration || 3500;
 
