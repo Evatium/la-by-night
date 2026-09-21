@@ -205,15 +205,17 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
   var autoSaveTimer = null;
 
   // Initialize Downtime Planner
-  document.addEventListener('DOMContentLoaded', function() {
-    initDowntime();
-  });
-
   function initDowntime() {
     renderDaysContainer();
     setupEventListeners();
     updateCharacterBanner();
     loadDraftForCharacter(activeCharKey);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDowntime);
+  } else {
+    initDowntime();
   }
 
   // Get active character data from live CODEX_DATA.pcs
@@ -889,15 +891,15 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
         throw new Error(json.message || 'Submission error');
       }
 
-      var msg = (json && json.message) ? json.message : ('Downtime successfully saved for ' + pc.name + '!');
-      showToast('✅ ' + msg, 'success');
+      var msg = (json && json.message) ? json.message : ('Downtime successfully saved in Google Sheet for ' + pc.name + '!');
+      showToast('✅ ' + msg, 'success', 5000);
       saveDraftForCharacter(activeCharKey);
     })
     .catch(function(err) {
-      console.warn('Network submission failed, falling back to local storage and export:', err);
+      console.error('Network submission failed:', err);
       // Save locally so work is never lost
       saveDraftForCharacter(activeCharKey);
-      showToast('✅ Draft saved locally for ' + pc.name + '! (Offline / Server sync pending)', 'info');
+      showToast('❌ Submission failed: ' + (err.message || 'Network error') + '. Draft saved locally.', 'error', 6000);
     })
     .finally(function() {
       if (btnSubmit) {
@@ -944,5 +946,10 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
+
+  // Expose to window for inline HTML onclick handlers
+  window.submitDowntime = submitDowntime;
+  window.clearDowntimeDraft = clearDowntimeDraft;
+  window.initDowntime = initDowntime;
 
 })();
