@@ -27,7 +27,8 @@ var TAB_CONFIG = {
   'rules': { title: 'Rules & Systems', sub: 'V20 Reference' },
   'armory': { title: 'Armory', sub: 'Weapons & Equipment' },
   'sessions': { title: 'Chronicle Briefings', sub: 'Session Debriefs' },
-  'dice': { title: 'V20 Dice Engine', sub: 'Probability Roller' }
+  'dice': { title: 'V20 Dice Engine', sub: 'Probability Roller' },
+  'downtime': { title: 'Downtime Planner', sub: 'Night-by-Night Logistics' }
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1136,11 +1137,22 @@ function getStatNum(obj, key) {
   return parseInt(val) || 0;
 }
 
-function getStatSpec(obj, key) {
-  if (!obj) return '';
-  var raw = obj[key] !== undefined ? obj[key] : (obj[key.toLowerCase()] !== undefined ? obj[key.toLowerCase()] : '');
-  if (typeof raw === 'string' && raw.includes('(') && raw.includes(')')) {
-    return raw.substring(raw.indexOf('(') + 1, raw.indexOf(')')).trim();
+function getStatSpec(obj, key, pc) {
+  if (!obj && !pc) return '';
+  // 1. Check inline string e.g. "4 (Specialty)"
+  if (obj) {
+    var raw = obj[key] !== undefined ? obj[key] : (obj[key.toLowerCase()] !== undefined ? obj[key.toLowerCase()] : '');
+    if (typeof raw === 'string' && raw.includes('(') && raw.includes(')')) {
+      return raw.substring(raw.indexOf('(') + 1, raw.indexOf(')')).trim();
+    }
+  }
+  // 2. Check pc.specialties dict
+  if (pc && pc.specialties && typeof pc.specialties === 'object') {
+    var specVal = pc.specialties[key] || pc.specialties[key.toLowerCase()] || pc.specialties[key.replace(/ /g, '_').toLowerCase()];
+    if (specVal) {
+      if (Array.isArray(specVal)) return specVal.filter(Boolean).join(', ');
+      return String(specVal).trim();
+    }
   }
   return '';
 }
@@ -1344,6 +1356,130 @@ function openPcSheet(idx) {
   h += '  </div>';
   h += '</div>';
 
+  // 2.5 In-Sheet Dynamic Action Dice Roller
+  h += '<div class="pc-sheet-roller-card" style="margin-top:12px;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:8px;padding:12px 14px;">';
+  h += '  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px;">';
+  h += '    <div style="display:flex;align-items:center;gap:8px;">';
+  h += '      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gold);">V20 Action Dice Roller</span>';
+  h += '      <span id="pc-sheet-pool-badge" class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid rgba(212,175,55,0.35);">Pool: 0d10</span>';
+  h += '    </div>';
+  h += '    <div id="pc-sheet-spec-indicator" style="font-size:11px;color:var(--gold);font-style:italic;"></div>';
+  h += '  </div>';
+
+  h += '  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));gap:10px;margin-bottom:10px;">';
+
+  // Attribute selector
+  h += '    <div>';
+  h += '      <label style="display:block;font-size:11px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;font-weight:600;">Attribute</label>';
+  h += '      <select id="pc-roller-attr" onchange="updatePcSheetPool()" style="width:100%;padding:6px 8px;background:var(--bg-input);border:1px solid var(--border-subtle);border-radius:4px;color:var(--text-main);font-size:12px;">';
+  h += '        <option value="0" data-dots="0" data-spec="">— None (0) —</option>';
+  h += '        <optgroup label="Physical">';
+  ['Strength', 'Dexterity', 'Stamina'].forEach(function(a) {
+    var dots = getStatNum(phys, a) || 1;
+    var sp = getStatSpec(phys, a, pc);
+    var label = a + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + a + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '        <optgroup label="Social">';
+  ['Charisma', 'Manipulation', 'Appearance'].forEach(function(a) {
+    var dots = getStatNum(soc, a) || 1;
+    var sp = getStatSpec(soc, a, pc);
+    var label = a + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + a + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '        <optgroup label="Mental">';
+  ['Perception', 'Intelligence', 'Wits'].forEach(function(a) {
+    var dots = getStatNum(ment, a) || 1;
+    var sp = getStatSpec(ment, a, pc);
+    var label = a + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + a + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '      </select>';
+  h += '    </div>';
+
+  // Ability selector
+  var ab = pc.abilities || {};
+  var talents = ab.talents || {};
+  var skills = ab.skills || {};
+  var knowledges = ab.knowledges || {};
+  var talentList = ['Alertness', 'Athletics', 'Awareness', 'Brawl', 'Empathy', 'Expression', 'Intimidation', 'Leadership', 'Streetwise', 'Subterfuge'];
+  var skillList = ['Animal Ken', 'Crafts', 'Drive', 'Etiquette', 'Firearms', 'Larceny', 'Melee', 'Performance', 'Stealth', 'Survival'];
+  var knowList = ['Academics', 'Computer', 'Finance', 'Investigation', 'Law', 'Medicine', 'Occult', 'Politics', 'Science', 'Technology'];
+
+  h += '    <div>';
+  h += '      <label style="display:block;font-size:11px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;font-weight:600;">Ability</label>';
+  h += '      <select id="pc-roller-abil" onchange="updatePcSheetPool()" style="width:100%;padding:6px 8px;background:var(--bg-input);border:1px solid var(--border-subtle);border-radius:4px;color:var(--text-main);font-size:12px;">';
+  h += '        <option value="0" data-dots="0" data-spec="">— None (0) —</option>';
+  h += '        <optgroup label="Talents">';
+  talentList.forEach(function(t) {
+    var dots = getStatNum(talents, t);
+    var sp = getStatSpec(talents, t, pc);
+    var label = t + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + t + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '        <optgroup label="Skills">';
+  skillList.forEach(function(s) {
+    var dots = getStatNum(skills, s);
+    var sp = getStatSpec(skills, s, pc);
+    var label = s + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + s + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '        <optgroup label="Knowledges">';
+  knowList.forEach(function(k) {
+    var dots = getStatNum(knowledges, k);
+    var sp = getStatSpec(knowledges, k, pc);
+    var label = k + ' (' + dots + (sp ? ' - ' + sp : '') + ')';
+    h += '        <option value="' + dots + '" data-dots="' + dots + '" data-spec="' + escapeHtml(sp) + '" data-name="' + k + '">' + escapeHtml(label) + '</option>';
+  });
+  h += '        </optgroup>';
+  h += '      </select>';
+  h += '    </div>';
+
+  // Modifier and Difficulty
+  h += '    <div style="display:flex;gap:8px;">';
+  h += '      <div style="flex:1;">';
+  h += '        <label style="display:block;font-size:11px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;font-weight:600;">Mod (+/-)</label>';
+  h += '        <input type="number" id="pc-roller-mod" value="0" min="-10" max="10" onchange="updatePcSheetPool()" oninput="updatePcSheetPool()" style="width:100%;padding:6px 8px;background:var(--bg-input);border:1px solid var(--border-subtle);border-radius:4px;color:var(--text-main);font-size:12px;text-align:center;">';
+  h += '      </div>';
+  h += '      <div style="flex:1;">';
+  h += '        <label style="display:block;font-size:11px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;font-weight:600;">Diff</label>';
+  h += '        <select id="pc-roller-diff" style="width:100%;padding:6px 8px;background:var(--bg-input);border:1px solid var(--border-subtle);border-radius:4px;color:var(--text-main);font-size:12px;text-align:center;">';
+  for (var d = 2; d <= 10; d++) {
+    h += '          <option value="' + d + '" ' + (d === 6 ? 'selected' : '') + '>' + d + (d === 6 ? ' (Std)' : '') + '</option>';
+  }
+  h += '        </select>';
+  h += '      </div>';
+  h += '    </div>';
+  h += '  </div>';
+
+  // Toggles and Roll Button
+  h += '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:6px;border-top:1px solid var(--border-subtle);">';
+  h += '    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">';
+  h += '      <label style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--text-secondary);cursor:pointer;">';
+  h += '        <input type="checkbox" id="pc-roller-specialty" style="accent-color:var(--gold);"> Specialty (10s count as 2)';
+  h += '      </label>';
+  h += '      <label style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--text-secondary);cursor:pointer;">';
+  h += '        <input type="checkbox" id="pc-roller-willpower" style="accent-color:var(--crimson-vivid);"> Spend Willpower (+1 auto-success)';
+  h += '      </label>';
+  h += '    </div>';
+  h += '    <button type="button" id="pc-roller-btn" class="btn btn-primary" onclick="rollPcSheetDice()" style="padding:6px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;background:var(--crimson-vivid);border:none;border-radius:4px;cursor:pointer;">Roll Action</button>';
+  h += '  </div>';
+
+  // Result Area
+  h += '  <div id="pc-roller-result-wrap" style="display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border-subtle);">';
+  h += '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">';
+  h += '      <span id="pc-roller-verdict" style="font-size:14px;font-weight:800;letter-spacing:0.5px;"></span>';
+  h += '      <span id="pc-roller-breakdown" style="font-size:11px;color:var(--text-muted);"></span>';
+  h += '    </div>';
+  h += '    <div id="pc-roller-tray" class="dice-tray" style="margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;"></div>';
+  h += '  </div>';
+  h += '</div>';
+
   // 3. Attributes Grid
   h += '<div class="pc-attr-grid">';
   
@@ -1352,8 +1488,14 @@ function openPcSheet(idx) {
   h += '  <div class="pc-attr-col-header">Physical</div>';
   ['Strength', 'Dexterity', 'Stamina'].forEach(function(attr) {
     var val = getStatNum(phys, attr) || 1;
+    var spec = getStatSpec(phys, attr, pc);
     h += '  <div class="pc-attr-row">';
-    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+    h += '      <span>' + attr + '</span>';
+    if (spec) {
+      h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);"><span class="spec-star">&#9733;</span> ' + escapeHtml(spec) + '</span>';
+    }
+    h += '    </div>';
     h += '    <div style="display:flex;align-items:center;gap:6px;">';
     h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
     h += '    </div>';
@@ -1366,8 +1508,14 @@ function openPcSheet(idx) {
   h += '  <div class="pc-attr-col-header">Social</div>';
   ['Charisma', 'Manipulation', 'Appearance'].forEach(function(attr) {
     var val = getStatNum(soc, attr) || 1;
+    var spec = getStatSpec(soc, attr, pc);
     h += '  <div class="pc-attr-row">';
-    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+    h += '      <span>' + attr + '</span>';
+    if (spec) {
+      h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);"><span class="spec-star">&#9733;</span> ' + escapeHtml(spec) + '</span>';
+    }
+    h += '    </div>';
     h += '    <div style="display:flex;align-items:center;gap:6px;">';
     h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
     h += '    </div>';
@@ -1380,8 +1528,14 @@ function openPcSheet(idx) {
   h += '  <div class="pc-attr-col-header">Mental</div>';
   ['Perception', 'Intelligence', 'Wits'].forEach(function(attr) {
     var val = getStatNum(ment, attr) || 1;
+    var spec = getStatSpec(ment, attr, pc);
     h += '  <div class="pc-attr-row">';
-    h += '    <span>' + attr + '</span>';
+    h += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+    h += '      <span>' + attr + '</span>';
+    if (spec) {
+      h += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);"><span class="spec-star">&#9733;</span> ' + escapeHtml(spec) + '</span>';
+    }
+    h += '    </div>';
     h += '    <div style="display:flex;align-items:center;gap:6px;">';
     h += '      <span style="font-size:11px;color:var(--text-muted);">' + val + '</span> ' + renderDots(val, 5);
     h += '    </div>';
@@ -1392,11 +1546,6 @@ function openPcSheet(idx) {
   h += '</div>';
 
   // 4. Abilities Grid
-  var ab = pc.abilities || {};
-  var talents = ab.talents || {};
-  var skills = ab.skills || {};
-  var knowledges = ab.knowledges || {};
-
   h += '<div class="pc-attr-grid">';
 
   function renderAbilityCol(title, catItems, stdList) {
@@ -1406,12 +1555,12 @@ function openPcSheet(idx) {
     // 1. Standard traits (always rendered, 0 dots if unpossessed)
     stdList.forEach(function(trait) {
       var val = getStatNum(catItems, trait);
-      var spec = getStatSpec(catItems, trait);
+      var spec = getStatSpec(catItems, trait, pc);
       colHtml += '  <div class="pc-attr-row">';
       colHtml += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
       colHtml += '      <span>' + trait + '</span>';
       if (spec) {
-        colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);">' + escapeHtml(spec) + '</span>';
+        colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);"><span class="spec-star">&#9733;</span> ' + escapeHtml(spec) + '</span>';
       }
       colHtml += '    </div>';
       colHtml += '    <div style="display:flex;align-items:center;gap:6px;">';
@@ -1425,13 +1574,13 @@ function openPcSheet(idx) {
     Object.keys(catItems).forEach(function(k) {
       if (stdLower.indexOf(k.toLowerCase()) === -1) {
         var val = getStatNum(catItems, k);
-        var spec = getStatSpec(catItems, k);
+        var spec = getStatSpec(catItems, k, pc);
         var cleanName = k.replace(/_/g, ' ');
         colHtml += '  <div class="pc-attr-row">';
         colHtml += '    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
         colHtml += '      <span>' + escapeHtml(cleanName) + '</span>';
         if (spec) {
-          colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);">' + escapeHtml(spec) + '</span>';
+          colHtml += '      <span class="badge" style="background:rgba(212,175,55,0.15);color:var(--gold);font-size:10px;padding:1px 5px;border-radius:3px;border:1px solid rgba(212,175,55,0.3);"><span class="spec-star">&#9733;</span> ' + escapeHtml(spec) + '</span>';
         }
         colHtml += '    </div>';
         colHtml += '    <div style="display:flex;align-items:center;gap:6px;">';
@@ -1444,10 +1593,6 @@ function openPcSheet(idx) {
     colHtml += '</div>';
     return colHtml;
   }
-
-  var talentList = ['Alertness', 'Athletics', 'Awareness', 'Brawl', 'Empathy', 'Expression', 'Intimidation', 'Leadership', 'Streetwise', 'Subterfuge'];
-  var skillList = ['Animal Ken', 'Crafts', 'Drive', 'Etiquette', 'Firearms', 'Larceny', 'Melee', 'Performance', 'Stealth', 'Survival'];
-  var knowList = ['Academics', 'Computer', 'Finance', 'Investigation', 'Law', 'Medicine', 'Occult', 'Politics', 'Science', 'Technology'];
 
   h += renderAbilityCol('Talents', talents, talentList);
   h += renderAbilityCol('Skills', skills, skillList);
@@ -1549,11 +1694,159 @@ function openPcSheet(idx) {
 
   content.innerHTML = h;
   modal.classList.add('active');
+  updatePcSheetPool();
 }
 
 function closePcSheet() {
   var modal = document.getElementById('pc-sheet-modal');
   if (modal) modal.classList.remove('active');
+}
+
+function updatePcSheetPool() {
+  var attrSel = document.getElementById('pc-roller-attr');
+  var abilSel = document.getElementById('pc-roller-abil');
+  var modInp = document.getElementById('pc-roller-mod');
+  var badge = document.getElementById('pc-sheet-pool-badge');
+  var btn = document.getElementById('pc-roller-btn');
+  var specToggle = document.getElementById('pc-roller-specialty');
+  var specInd = document.getElementById('pc-sheet-spec-indicator');
+
+  if (!attrSel || !abilSel || !modInp) return;
+
+  var attrDots = parseInt(attrSel.value) || 0;
+  var abilDots = parseInt(abilSel.value) || 0;
+  var mod = parseInt(modInp.value) || 0;
+
+  var attrOpt = attrSel.options[attrSel.selectedIndex];
+  var abilOpt = abilSel.options[abilSel.selectedIndex];
+
+  var attrSpec = attrOpt ? (attrOpt.getAttribute('data-spec') || '') : '';
+  var abilSpec = abilOpt ? (abilOpt.getAttribute('data-spec') || '') : '';
+
+  // Auto-toggle specialty if either trait has a specialty or dots >= 4
+  var hasSpec = !!(attrSpec || abilSpec || attrDots >= 4 || abilDots >= 4);
+  if (specToggle && !specToggle.dataset.userToggled) {
+    specToggle.checked = hasSpec;
+  }
+
+  var specNames = [];
+  if (attrSpec) specNames.push(attrSpec);
+  if (abilSpec) specNames.push(abilSpec);
+  if (specInd) {
+    specInd.textContent = specNames.length > 0 ? ('Specialty: ' + specNames.join(' / ')) : '';
+  }
+
+  var pool = Math.max(1, attrDots + abilDots + mod);
+  if (badge) {
+    badge.textContent = 'Pool: ' + pool + 'd10';
+  }
+  if (btn) {
+    var diff = document.getElementById('pc-roller-diff') ? document.getElementById('pc-roller-diff').value : 6;
+    btn.textContent = 'Roll Action (' + pool + 'd10 vs Diff ' + diff + ')';
+  }
+}
+
+function rollPcSheetDice() {
+  var attrSel = document.getElementById('pc-roller-attr');
+  var abilSel = document.getElementById('pc-roller-abil');
+  var modInp = document.getElementById('pc-roller-mod');
+  var diffSel = document.getElementById('pc-roller-diff');
+  var specToggle = document.getElementById('pc-roller-specialty');
+  var wpToggle = document.getElementById('pc-roller-willpower');
+
+  var attrDots = attrSel ? (parseInt(attrSel.value) || 0) : 0;
+  var abilDots = abilSel ? (parseInt(abilSel.value) || 0) : 0;
+  var mod = modInp ? (parseInt(modInp.value) || 0) : 0;
+  var pool = Math.max(1, attrDots + abilDots + mod);
+  var diff = diffSel ? (parseInt(diffSel.value) || 6) : 6;
+  var specialty = specToggle ? specToggle.checked : false;
+  var willpower = wpToggle ? wpToggle.checked : false;
+
+  var rolls = [];
+  var rawSuccesses = 0;
+  var tens = 0;
+  var ones = 0;
+
+  for (var i = 0; i < pool; i++) {
+    var r = Math.floor(Math.random() * 10) + 1;
+    rolls.push(r);
+    if (r >= diff) rawSuccesses++;
+    if (r === 10) tens++;
+    if (r === 1) ones++;
+  }
+
+  var bonusSpecialtySuccesses = specialty ? tens : 0;
+  var totalRolledSuccesses = rawSuccesses + bonusSpecialtySuccesses;
+
+  var netSuccesses = 0;
+  var verdict = '';
+  var verdictColor = '';
+
+  if (willpower) {
+    var rolledNet = Math.max(0, totalRolledSuccesses - ones);
+    netSuccesses = rolledNet + 1;
+    verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
+    verdictColor = '#10b981';
+  } else {
+    var rolledNet = totalRolledSuccesses - ones;
+    if (totalRolledSuccesses === 0 && ones > 0) {
+      netSuccesses = -ones;
+      verdict = 'BOTCH! (' + ones + ' ' + (ones === 1 ? 'One' : 'Ones') + ')';
+      verdictColor = '#ef4444';
+    } else if (rolledNet <= 0) {
+      netSuccesses = 0;
+      verdict = 'FAILURE (0 Net Successes)';
+      verdictColor = '#9c9cae';
+    } else {
+      netSuccesses = rolledNet;
+      verdict = 'SUCCESS (' + netSuccesses + ' ' + (netSuccesses === 1 ? 'Success' : 'Successes') + ')';
+      verdictColor = '#10b981';
+    }
+  }
+
+  var verdictEl = document.getElementById('pc-roller-verdict');
+  if (verdictEl) {
+    verdictEl.textContent = verdict;
+    verdictEl.style.color = verdictColor;
+  }
+
+  var tray = document.getElementById('pc-roller-tray');
+  if (tray) {
+    var trayHtml = rolls.map(function(r) {
+      var cls = 'fail';
+      var label = r;
+      if (r === 10) {
+        cls = 'crit';
+        if (specialty) label = '10<span style="font-size:9px;display:block;line-height:1;margin-top:2px;">(x2)</span>';
+      } else if (r >= diff) {
+        cls = 'success';
+      } else if (r === 1) {
+        cls = 'botch';
+      }
+      return '<div class="dice-die ' + cls + '">' + label + '</div>';
+    }).join('');
+
+    if (willpower) {
+      trayHtml += '<div class="dice-die wp-die" title="Willpower Auto-Success">+1 WP</div>';
+    }
+    tray.innerHTML = trayHtml;
+  }
+
+  var breakdown = document.getElementById('pc-roller-breakdown');
+  if (breakdown) {
+    var bd = pool + 'd10 vs Diff ' + diff;
+    if (specialty) bd += ' [Specialty]';
+    if (willpower) bd += ' [Willpower]';
+    bd += ' | ' + totalRolledSuccesses + ' rolled';
+    if (specialty && tens > 0) bd += ' (+' + tens + ' crit)';
+    bd += ', ' + ones + ' ' + (ones === 1 ? 'one' : 'ones');
+    if (willpower) bd += ', +1 WP auto';
+    bd += ' = Net ' + netSuccesses;
+    breakdown.textContent = bd;
+  }
+
+  var resultWrap = document.getElementById('pc-roller-result-wrap');
+  if (resultWrap) resultWrap.style.display = 'block';
 }
 
 function renderSessions() {

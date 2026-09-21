@@ -807,7 +807,7 @@ window.CODEX_DATA = {
       "demeanor": "Survivor",
       "player": "",
       "type": "Vampire",
-      "xp": "21",
+      "xp": "25",
       "portrait": "portraits/pc_Liam_Johnson___L_J.webp",
       "humanity": "5",
       "willpower": "3/5",
@@ -876,7 +876,7 @@ window.CODEX_DATA = {
       "disciplines": {
         "Potence": "3",
         "Celerity": "4",
-        "Presence": "1",
+        "Presence": "2",
         "Fortitude": "2"
       },
       "backgrounds": {
@@ -957,7 +957,7 @@ window.CODEX_DATA = {
       "demeanor": "Idealist",
       "player": "",
       "type": "Vampire",
-      "xp": "25",
+      "xp": "31",
       "portrait": "portraits/pc_Frederic_King.webp",
       "humanity": "9",
       "willpower": "6/7",
@@ -1016,7 +1016,7 @@ window.CODEX_DATA = {
           "Finance": "",
           "Investigation": "2",
           "Law": "",
-          "Medicine": "",
+          "Medicine": "1",
           "Occult": "3",
           "Politics": "",
           "Science": "",
@@ -1074,7 +1074,14 @@ window.CODEX_DATA = {
         }
       ],
       "equipment": [],
-      "specialties": {}
+      "specialties": {
+        "Dexterity": "Lightning Reflexes",
+        "Stamina": "Tough as Nails",
+        "Manipulation": "Conjurer of Facts",
+        "Perception": "Insightful",
+        "Alertness": "Noises",
+        "Athletics": "Acrobatics"
+      }
     },
     {
       "name": "Isabel Turner",
@@ -1087,7 +1094,7 @@ window.CODEX_DATA = {
       "demeanor": "Child",
       "player": "",
       "type": "Vampire",
-      "xp": "36",
+      "xp": "45",
       "portrait": "portraits/pc_Isabel_Turner.webp",
       "humanity": "6",
       "willpower": "5/6",
@@ -1214,11 +1221,11 @@ window.CODEX_DATA = {
       "demeanor": "Conformist",
       "player": "",
       "type": "Vampire",
-      "xp": "6",
+      "xp": "1",
       "portrait": "portraits/pc_Elliot__Shane__Mercer.webp",
       "humanity": "7",
       "willpower": "5/7",
-      "blood_pool": "9/10",
+      "blood_pool": "8/10",
       "blood_per_turn": "",
       "virtues": {
         "Conscience/Conviction": "4",
@@ -1289,7 +1296,8 @@ window.CODEX_DATA = {
         "Mentor": "1",
         "Contacts": "2",
         "Haven": "2",
-        "Domain": "4"
+        "Domain": "4",
+        "Retainers": "1"
       },
       "merits": [
         {
@@ -1348,6 +1356,11 @@ window.CODEX_DATA = {
           "name": "Boon (1 pt)",
           "value": "1",
           "desc": "Shane owes Lydia for her help with the hunters."
+        },
+        {
+          "name": "Open Wound",
+          "value": "2",
+          "desc": "You have a wound that refuses to heal and drips blood, costing 1 extra blood point per night. -1 Social difficulty if visible."
         }
       ],
       "equipment": [],
@@ -1678,7 +1691,10 @@ window.CODEX_DATA = {
         }
       ],
       "equipment": [],
-      "specialties": {}
+      "specialties": {
+        "Perception": "Tactical",
+        "Firearms": "Marksmanship"
+      }
     },
     {
       "name": "Chris Partlow",
@@ -1796,7 +1812,10 @@ window.CODEX_DATA = {
         }
       ],
       "equipment": [],
-      "specialties": {}
+      "specialties": {
+        "Firearms": "Marksmanship",
+        "Stealth": "Silent Movement"
+      }
     },
     {
       "name": "Rachel Teller",

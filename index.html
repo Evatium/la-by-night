@@ -124,6 +124,19 @@
           </span>
           V20 Dice Roller
         </a>
+        <a href="#downtime" class="drawer-item" data-drawer-tab="downtime" onclick="navigateFromDrawer('downtime')">
+          <span class="drawer-icon-svg" style="color:var(--crimson-vivid);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <path d="M12 14v4"></path>
+              <path d="M10 16h4"></path>
+            </svg>
+          </span>
+          Downtime Planner
+        </a>
       </div>
 
       <!-- Section: SESSIONS -->
@@ -336,6 +349,85 @@
         </div>
       </div>
     </section>
+
+    <!-- DOWNTIME PLANNER PANEL -->
+    <section id="view-downtime" class="view-panel">
+      <!-- Top Bar: Header & Character Selector -->
+      <div class="downtime-top-bar">
+        <div class="downtime-title-wrap">
+          <h2 class="downtime-heading">Downtime Planner</h2>
+          <span class="downtime-subheading">Post-Session 24 · Aug 2 – Aug 8, 2026</span>
+        </div>
+        <div class="downtime-selector-row">
+          <div class="downtime-char-select-wrap">
+            <label for="downtime-char-select" class="downtime-label">Active Character</label>
+            <select id="downtime-char-select" class="downtime-select">
+              <option value="liam_johnson">Liam Johnson ("L.J.")</option>
+              <option value="frederic_king">Frederic King</option>
+              <option value="isabel_turner">Isabel Turner</option>
+              <option value="shane_mercer">Elliot "Shane" Mercer</option>
+            </select>
+          </div>
+          <div class="downtime-top-actions">
+            <button type="button" id="btn-top-webhook-settings" class="btn-downtime-outline" onclick="openWebhookModal()" title="Configure Webhook URL">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Webhook</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Character Status Banner -->
+      <div id="downtime-status-banner" class="downtime-status-banner">
+        <!-- Rendered dynamically via downtime.js -->
+      </div>
+
+      <!-- 7-Day Accordion / Cards Container -->
+      <div id="downtime-days-container" class="downtime-days-container">
+        <!-- Rendered dynamically via downtime.js -->
+      </div>
+
+      <!-- Action Footer / Controls -->
+      <div class="downtime-footer-bar">
+        <div class="downtime-footer-left">
+          <button type="button" id="btn-submit-downtime" class="btn-downtime-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <span>Submit to Google Sheet</span>
+          </button>
+          <button type="button" id="btn-copy-discord" class="btn-downtime-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>📋 Copy for Discord</span>
+          </button>
+          <button type="button" id="btn-clear-draft" class="btn-downtime-danger">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>Clear / Reset Draft</span>
+          </button>
+        </div>
+        <div class="downtime-footer-right">
+          <button type="button" id="btn-webhook-settings" class="btn-downtime-link" onclick="openWebhookModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            <span>Webhook Settings</span>
+          </button>
+          <div id="downtime-autosave-status" class="downtime-autosave-status">Draft ready</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- DOSSIER MODAL (REDACTED FOR NPCS) -->
@@ -378,9 +470,36 @@
     </div>
   </div>
 
+  <!-- DOWNTIME WEBHOOK SETTINGS MODAL -->
+  <div class="modal-overlay" id="downtime-webhook-modal" onclick="if(event.target===this)closeWebhookModal()">
+    <div class="modal-sheet" style="max-width:550px;">
+      <button type="button" class="modal-close-btn" onclick="closeWebhookModal()">&times;</button>
+      <div style="margin-bottom:16px;">
+        <h3 style="font-family:var(--font-serif);font-size:18px;color:var(--gold);margin-bottom:6px;">Google Sheets Webhook Settings</h3>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.5;">
+          Paste your deployed Google Apps Script Web App URL below. When you submit your downtime, your 7-day actions and dice rolls will be automatically written to your character's tab in the master chronicle spreadsheet.
+        </p>
+      </div>
+      <div style="margin-bottom:18px;">
+        <label for="input-webhook-url" style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:6px;">
+          Apps Script Web App URL
+        </label>
+        <input type="url" id="input-webhook-url" class="search-input" placeholder="https://script.google.com/macros/s/.../exec" style="width:100%;font-size:13px;padding:10px 12px;">
+        <div style="font-size:11px;color:var(--text-dim);margin-top:6px;">
+          Saved securely in your browser's <code style="color:var(--gold);">localStorage</code>.
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;">
+        <button type="button" class="btn-downtime-outline" onclick="closeWebhookModal()">Cancel</button>
+        <button type="button" id="btn-save-webhook" class="btn-downtime-primary" onclick="saveWebhookUrl()">Save Webhook</button>
+      </div>
+    </div>
+  </div>
+
   <!-- DATA & SCRIPTS -->
   <script src="data/codex_data.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAezAx1FCYFvPiYkzZcDIgI9glvCr8_TY&libraries=places,geometry,marker&v=weekly"></script>
   <script src="js/app.js"></script>
+  <script src="js/downtime.js"></script>
 </body>
 </html>
