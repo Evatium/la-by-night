@@ -366,11 +366,25 @@
     var pc = DOWNTIME_PCS[activeCharKey] || DOWNTIME_PCS['liam_johnson'];
     var data = collectFormData();
 
-    // Prepare payload in Format A (compatible with Google Apps Script Webhook Engine)
+    var submittedAt = new Date().toISOString();
+    var submissionId = 'sub_' + pc.id + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+    var contentStr = JSON.stringify(data);
+    var simpleHash = 0;
+    for (var hIdx = 0; hIdx < contentStr.length; hIdx++) {
+      simpleHash = ((simpleHash << 5) - simpleHash) + contentStr.charCodeAt(hIdx);
+      simpleHash |= 0;
+    }
+
+    // Prepare payload with unique identifier and metadata
     var payload = {
+      submission_id: submissionId,
+      window_id: 'post_session_24',
+      character_id: pc.id,
       character: pc.name,
       sheet_name: pc.sheet_name,
-      timestamp: new Date().toISOString(),
+      submitted_at: submittedAt,
+      timestamp: submittedAt,
+      content_hash: 'h_' + Math.abs(simpleHash).toString(16),
       days: data.map(function(d) {
         return {
           day: d.day,
