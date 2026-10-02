@@ -15,6 +15,8 @@ var state = {
   disciplinesCategory: 'core',
   glossarySection: 'all',
   selectedDisciplineFilters: [],
+  disciplineMatchMode: 'any',
+  activeSuggestionIndex: -1,
   rulesSearchQuery: '',
   armoryFilter: 'weapon_ranged',
   map: null,
@@ -1350,9 +1352,15 @@ function renderRules() {
         subnavHtml += '  <div class="discipline-matrix-header">';
         var filterCount = state.selectedDisciplineFilters.length;
         subnavHtml += '    <span>Filter Combos by Discipline ' + (filterCount > 0 ? '(' + filterCount + ' Active)' : '') + ':</span>';
-        if (filterCount > 0) {
-          subnavHtml += '    <button type="button" onclick="clearDisciplineFilters()" style="background:none;border:none;color:var(--crimson-vivid);font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;">&times; Clear Filters (' + filterCount + ')</button>';
+        subnavHtml += '    <div style="display:flex;align-items:center;gap:10px;">';
+        if (filterCount > 1) {
+          var isAllMode = (state.disciplineMatchMode === 'all');
+          subnavHtml += '      <button type="button" class="subnav-pill" onclick="toggleDisciplineMatchMode()" style="padding:2px 8px;font-size:11px;background:' + (isAllMode ? 'var(--gold)' : 'var(--bg-surface)') + ';color:' + (isAllMode ? '#0a0a0e' : 'var(--text-muted)') + ';font-weight:700;">Mode: ' + (isAllMode ? 'Require ALL (AND)' : 'Require ANY (OR)') + '</button>';
         }
+        if (filterCount > 0) {
+          subnavHtml += '      <button type="button" onclick="clearDisciplineFilters()" style="background:none;border:none;color:var(--crimson-vivid);font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;">&times; Clear Filters (' + filterCount + ')</button>';
+        }
+        subnavHtml += '    </div>';
         subnavHtml += '  </div>';
         subnavHtml += '  <div class="discipline-matrix-chips">';
         ALL_FILTER_DISCIPLINES.forEach(function(disc) {
@@ -1374,6 +1382,11 @@ function renderRules() {
   } else if (filter === 'glossary') {
     renderGlossaryView(container);
   }
+}
+
+function toggleDisciplineMatchMode() {
+  state.disciplineMatchMode = (state.disciplineMatchMode === 'all' ? 'any' : 'all');
+  renderRules();
 }
 
 function scrollToCombatTopic(idx) {
@@ -1476,10 +1489,31 @@ function renderDisciplinesView(container) {
 
 function renderGlossaryView(container) {
   var glossary = state.data.glossary || {};
-  var entries = glossary.entries || [];
   var sec = state.glossarySection || 'all';
   var q = (state.rulesSearchQuery || '').toLowerCase().trim();
   var discFilters = state.selectedDisciplineFilters || [];
+
+  // Determine source entries: support all 224 combination disciplines cleanly
+  var entries = [];
+  var allCombos = (state.data && state.data.combination_disciplines) || [];
+
+  if (sec === 'Combination Disciplines') {
+    entries = allCombos.map(function(c) {
+      var item = Object.assign({}, c);
+      item.section = 'Combination Disciplines';
+      return item;
+    });
+  } else if (sec === 'all') {
+    var nonCombos = (glossary.entries || []).filter(function(e) { return e.section !== 'Combination Disciplines'; });
+    var comboItems = allCombos.map(function(c) {
+      var item = Object.assign({}, c);
+      item.section = 'Combination Disciplines';
+      return item;
+    });
+    entries = nonCombos.concat(comboItems);
+  } else {
+    entries = glossary.entries || [];
+  }
 
   // Filter entries
   var filtered = entries.filter(function(e) {
@@ -1495,19 +1529,27 @@ function renderGlossaryView(container) {
     // 2. Discipline Filter Matrix (for combination disciplines)
     if (discFilters.length > 0 && e.section === 'Combination Disciplines') {
       var comboDiscs = e.disciplines || [];
-      var hasAny = discFilters.some(function(f) {
-        return comboDiscs.some(function(cd) { return cd.toLowerCase() === f.toLowerCase(); });
-      });
-      if (!hasAny) return false;
+      if (state.disciplineMatchMode === 'all') {
+        var hasAll = discFilters.every(function(f) {
+          return comboDiscs.some(function(cd) { return cd.toLowerCase() === f.toLowerCase(); });
+        });
+        if (!hasAll) return false;
+      } else {
+        var hasAny = discFilters.some(function(f) {
+          return comboDiscs.some(function(cd) { return cd.toLowerCase() === f.toLowerCase(); });
+        });
+        if (!hasAny) return false;
+      }
     }
 
     // 3. Search Query Filter
     if (q) {
       var tMatch = (e.title || '').toLowerCase().indexOf(q) !== -1;
+      var nMatch = (e.name || '').toLowerCase().indexOf(q) !== -1;
       var cMatch = (e.content || '').toLowerCase().indexOf(q) !== -1;
       var pMatch = (e.prereqs || '').toLowerCase().indexOf(q) !== -1;
       var clanMatch = (e.clan || '').toLowerCase().indexOf(q) !== -1;
-      return tMatch || cMatch || pMatch || clanMatch;
+      return tMatch || nMatch || cMatch || pMatch || clanMatch;
     }
 
     return true;
@@ -1569,6 +1611,8 @@ function renderGlossaryView(container) {
       }
       if (entry.is_v20) {
         html += '<span class="glossary-source-pill" style="color:var(--gold);font-weight:600;">[Official V20]</span>';
+      } else {
+        html += '<span class="glossary-source-pill" style="color:#a78bfa;font-weight:600;">[STV Supplemental]</span>';
       }
     }
     if (entry.source) {
@@ -1611,21 +1655,57 @@ function renderCombatView(container) {
   container.innerHTML = html;
 }
 
-// Global click-outside & Escape key handlers for rules search suggestions
+// Global click-outside & Keyboard navigation handlers for rules search suggestions
 document.addEventListener('click', function(e) {
   var dropdown = document.getElementById('rules-search-suggestions');
   var input = document.getElementById('rules-search-input');
   if (dropdown && input && !dropdown.contains(e.target) && e.target !== input) {
     dropdown.style.display = 'none';
+    state.activeSuggestionIndex = -1;
   }
 });
 
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    var dropdown = document.getElementById('rules-search-suggestions');
-    if (dropdown) dropdown.style.display = 'none';
+  var dropdown = document.getElementById('rules-search-suggestions');
+  if (!dropdown || dropdown.style.display === 'none') {
+    if (e.key === 'Escape' && dropdown) dropdown.style.display = 'none';
+    return;
+  }
+
+  var items = dropdown.querySelectorAll('.suggestion-item');
+  if (!items.length) return;
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    state.activeSuggestionIndex++;
+    if (state.activeSuggestionIndex >= items.length) state.activeSuggestionIndex = 0;
+    updateSuggestionHighlight(items);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    state.activeSuggestionIndex--;
+    if (state.activeSuggestionIndex < 0) state.activeSuggestionIndex = items.length - 1;
+    updateSuggestionHighlight(items);
+  } else if (e.key === 'Enter') {
+    if (state.activeSuggestionIndex >= 0 && state.activeSuggestionIndex < items.length) {
+      e.preventDefault();
+      items[state.activeSuggestionIndex].click();
+    }
+  } else if (e.key === 'Escape') {
+    dropdown.style.display = 'none';
+    state.activeSuggestionIndex = -1;
   }
 });
+
+function updateSuggestionHighlight(items) {
+  items.forEach(function(item, idx) {
+    if (idx === state.activeSuggestionIndex) {
+      item.classList.add('active');
+      item.scrollIntoView({ block: 'nearest' });
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
 
 function renderArmory() {
   var container = document.getElementById('armory-grid');
