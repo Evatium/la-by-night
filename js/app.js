@@ -12,6 +12,10 @@ var state = {
   mapSearchQuery: '',
   mapViewMode: 'map',
   rulesFilter: 'disciplines',
+  disciplinesCategory: 'core',
+  glossarySection: 'all',
+  selectedDisciplineFilters: [],
+  rulesSearchQuery: '',
   armoryFilter: 'weapon_ranged',
   map: null,
   infoWindow: null,
@@ -786,87 +790,455 @@ function toggleTerritories(btn) {
   });
 }
 
-function renderRules() {
-  var container = document.getElementById('rules-content');
-  if (!container || !state.data) return;
+/* ─── V20 RULES & SYSTEMS OVERHAUL (OPTION B: FILTER MATRIX) ─── */
 
-  var filter = state.rulesFilter;
-  var html = '';
+var CORE_DISCIPLINES = [
+  'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation',
+  'Dominate', 'Fortitude', 'Necromancy', 'Obfuscate', 'Obtenebration',
+  'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis',
+  'Thaumaturgy', 'Vicissitude'
+];
 
-  if (filter === 'disciplines') {
-    var discMap = state.data.disciplines || {};
-    var discKeys = Object.keys(discMap).sort();
+var ALL_FILTER_DISCIPLINES = [
+  'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Daimoinon',
+  'Dementation', 'Dominate', 'Flight', 'Fortitude', 'Melpominee',
+  'Mytherceria', 'Necromancy', 'Obeah', 'Obfuscate', 'Obtenebration',
+  'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis',
+  'Thanatosis', 'Thaumaturgy', 'Valeren', 'Vicissitude', 'Visceratika'
+];
 
-    html += '<div class="accordion-group">';
-    discKeys.forEach(function(key, idx) {
-      var d = discMap[key];
-      var powers = d.powers || [];
+function highlightMatch(text, query) {
+  if (!text) return '';
+  if (!query) return escapeHtml(text);
+  var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  var regex = new RegExp('(' + escapedQuery + ')', 'gi');
+  return escapeHtml(text).replace(regex, '<span class="suggestion-match">$1</span>');
+}
 
-      html += '<div class="accordion-item" id="disc-acc-' + idx + '">';
-      html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
-      html += '    <span class="accordion-title">' + escapeHtml(d.name || key) + '</span>';
-      html += '    <span class="accordion-arrow">&#9660;</span>';
-      html += '  </div>';
-      html += '  <div class="accordion-body">';
-      if (d.description) {
-        html += '    <p style="font-style:italic;margin-bottom:10px;">' + escapeHtml(d.description) + '</p>';
-      }
-      powers.forEach(function(p) {
-        var dotsStr = '●'.repeat(p.level || 1);
-        html += '    <div class="discipline-power-card">';
-        html += '      <div class="discipline-power-header">';
-        html += '        <span class="power-name">' + escapeHtml(p.name) + '</span>';
-        html += '        <span class="power-dots">' + dotsStr + '</span>';
-        html += '      </div>';
-        if (p.system || p.cost || p.dice_pool) {
-          html += '      <div style="font-size:11px;color:#d4af37;margin-bottom:4px;">';
-          if (p.cost) html += '<strong>Cost:</strong> ' + escapeHtml(p.cost) + ' &bull; ';
-          if (p.dice_pool) html += '<strong>Pool:</strong> ' + escapeHtml(p.dice_pool);
-          html += '      </div>';
-        }
-        html += '      <div class="power-desc">' + escapeHtml(p.description || p.system || '') + '</div>';
-        html += '    </div>';
-      });
-      html += '  </div>';
-      html += '</div>';
-    });
-    html += '</div>';
-  } else if (filter === 'combat') {
-    var mechanics = state.data.mechanics || [];
-    html += '<div class="accordion-group">';
-    mechanics.forEach(function(m, idx) {
-      html += '<div class="accordion-item ' + (idx === 0 ? 'open' : '') + '">';
-      html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
-      html += '    <span class="accordion-title">' + escapeHtml(m.title) + '</span>';
-      html += '    <span class="accordion-arrow">&#9660;</span>';
-      html += '  </div>';
-      html += '  <div class="accordion-body">';
-      html += '    <pre style="white-space:pre-wrap;font-family:inherit;font-size:12px;line-height:1.6;">' + escapeHtml(m.content) + '</pre>';
-      html += '  </div>';
-      html += '</div>';
-    });
-    html += '</div>';
-  } else if (filter === 'glossary') {
-    var glossary = (state.data.glossary && state.data.glossary.terms) || state.data.glossary || {};
-    var terms = Object.keys(glossary).sort();
+function parseCodexMarkdown(md) {
+  if (!md) return '';
+  var lines = md.split(/\r?\n/);
+  var out = [];
+  var inTable = false;
+  var tableRows = [];
+  var inList = false;
 
-    html += '<div class="accordion-group">';
-    terms.forEach(function(term) {
-      var def = typeof glossary[term] === 'string' ? glossary[term] : (glossary[term].definition || glossary[term].desc || '');
-      html += '<div class="accordion-item">';
-      html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
-      html += '    <span class="accordion-title">' + escapeHtml(term) + '</span>';
-      html += '    <span class="accordion-arrow">&#9660;</span>';
-      html += '  </div>';
-      html += '  <div class="accordion-body">';
-      html += '    <p>' + escapeHtml(def) + '</p>';
-      html += '  </div>';
-      html += '</div>';
-    });
-    html += '</div>';
+  function parseInline(text) {
+    if (!text) return '';
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-family:monospace;font-size:11px;">$1</code>');
   }
 
-  container.innerHTML = html;
+  function flushTable() {
+    if (!tableRows.length) return;
+    var html = '<div class="codex-table-wrap"><table class="codex-table">';
+    var headerDone = false;
+    for (var r = 0; r < tableRows.length; r++) {
+      var rowStr = tableRows[r].trim();
+      if (!rowStr) continue;
+      if (rowStr.charAt(0) === '|') rowStr = rowStr.slice(1);
+      if (rowStr.charAt(rowStr.length - 1) === '|') rowStr = rowStr.slice(0, -1);
+      var cells = rowStr.split('|').map(function(c) { return c.trim(); });
+      var isSep = cells.every(function(c) { return /^:?-+:?$/.test(c); });
+      if (isSep) continue;
+
+      if (!headerDone) {
+        html += '<thead><tr>';
+        cells.forEach(function(c) { html += '<th>' + parseInline(c) + '</th>'; });
+        html += '</tr></thead><tbody>';
+        headerDone = true;
+      } else {
+        html += '<tr>';
+        cells.forEach(function(c) { html += '<td>' + parseInline(c) + '</td>'; });
+        html += '</tr>';
+      }
+    }
+    if (headerDone) html += '</tbody>';
+    html += '</table></div>';
+    out.push(html);
+    tableRows = [];
+    inTable = false;
+  }
+
+  function flushList() {
+    if (inList) {
+      out.push('</ul>');
+      inList = false;
+    }
+  }
+
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    var trimmed = line.trim();
+
+    if (trimmed.charAt(0) === '|') {
+      flushList();
+      tableRows.push(trimmed);
+      inTable = true;
+      continue;
+    } else if (inTable) {
+      flushTable();
+    }
+
+    if (!trimmed) {
+      flushList();
+      continue;
+    }
+
+    if (trimmed.charAt(0) === '>') {
+      flushList();
+      var calloutText = trimmed.replace(/^>\s*/, '');
+      out.push('<div class="codex-callout">' + parseInline(calloutText) + '</div>');
+      continue;
+    }
+
+    if (trimmed.indexOf('### ') === 0) {
+      flushList();
+      out.push('<h4 class="codex-h3">' + parseInline(trimmed.slice(4)) + '</h4>');
+      continue;
+    }
+    if (trimmed.indexOf('## ') === 0) {
+      flushList();
+      out.push('<h3 class="codex-h2">' + parseInline(trimmed.slice(3)) + '</h3>');
+      continue;
+    }
+    if (trimmed.indexOf('# ') === 0) {
+      flushList();
+      out.push('<h2 class="codex-h1">' + parseInline(trimmed.slice(2)) + '</h2>');
+      continue;
+    }
+
+    if (trimmed.indexOf('- ') === 0 || trimmed.indexOf('* ') === 0) {
+      if (!inList) {
+        out.push('<ul style="margin:8px 0 12px 20px;padding:0;display:flex;flex-direction:column;gap:5px;">');
+        inList = true;
+      }
+      out.push('<li style="color:#dcdce8;font-size:12.5px;line-height:1.5;">' + parseInline(trimmed.slice(2)) + '</li>');
+      continue;
+    } else {
+      flushList();
+    }
+
+    out.push('<p style="font-size:12.5px;line-height:1.6;color:var(--text-secondary);margin:6px 0;">' + parseInline(trimmed) + '</p>');
+  }
+
+  flushTable();
+  flushList();
+  return out.join('\n');
+}
+
+function formatGlossaryContent(content) {
+  if (!content) return '';
+  var escaped = escapeHtml(content);
+  escaped = escaped
+    .replace(/(System:)/g, '<strong style="color:var(--gold);">$1</strong>')
+    .replace(/(Cost:)/g, '<strong style="color:var(--gold);">$1</strong>')
+    .replace(/(Dice Pool:)/g, '<strong style="color:var(--gold);">$1</strong>')
+    .replace(/(Difficulty:)/g, '<strong style="color:var(--gold);">$1</strong>')
+    .replace(/(XP Cost:)/g, '<strong style="color:var(--crimson-vivid);">$1</strong>')
+    .replace(/(Clan\/Affiliation:)/g, '<strong style="color:var(--gold);">$1</strong>')
+    .replace(/\n\n+/g, '</p><p style="margin:6px 0;">')
+    .replace(/\n/g, '<br>');
+  return '<p style="margin:6px 0;">' + escaped + '</p>';
+}
+
+function handleRulesSearchInput(query) {
+  state.rulesSearchQuery = query || '';
+  renderRulesSearchSuggestions(query);
+  renderRules();
+}
+
+function filterRulesSearch(query) {
+  handleRulesSearchInput(query);
+}
+
+function renderRulesSearchSuggestions(query) {
+  var dropdown = document.getElementById('rules-search-suggestions');
+  if (!dropdown) return;
+  var q = (query || '').toLowerCase().trim();
+  if (q.length < 2) {
+    dropdown.style.display = 'none';
+    dropdown.innerHTML = '';
+    return;
+  }
+
+  var suggestions = [];
+  var seenKeys = {};
+
+  // 1. Combination Disciplines
+  var combos = (state.data && state.data.combination_disciplines) || [];
+  combos.forEach(function(c) {
+    var name = c.name || c.title || '';
+    var nameLower = name.toLowerCase();
+    var clanLower = (c.clan || '').toLowerCase();
+    var prereqLower = (c.prereqs || (c.disciplines ? c.disciplines.join(' ') : '')).toLowerCase();
+    var contentLower = (c.content || '').toLowerCase();
+
+    var score = 0;
+    if (nameLower === q) score = 100;
+    else if (nameLower.indexOf(q) === 0) score = 85;
+    else if (nameLower.indexOf(q) !== -1) score = 70;
+    else if (prereqLower.indexOf(q) !== -1) score = 55;
+    else if (clanLower.indexOf(q) !== -1) score = 50;
+    else if (contentLower.indexOf(q) !== -1) score = 30;
+
+    if (score > 0) {
+      var key = 'combo:' + name;
+      if (!seenKeys[key]) {
+        seenKeys[key] = true;
+        suggestions.push({
+          score: score,
+          title: name,
+          badgeText: 'Combo',
+          badgeClass: 'badge-combo',
+          snippet: c.prereqs ? 'Prereqs: ' + c.prereqs : (c.content ? c.content.slice(0, 80) + '...' : ''),
+          type: 'combo',
+          targetTitle: name,
+          targetSection: 'Combination Disciplines'
+        });
+      }
+    }
+  });
+
+  // 2. Disciplines & Powers
+  var discList = (state.data && state.data.disciplines) || [];
+  if (Array.isArray(discList)) {
+    discList.forEach(function(d) {
+      var dname = d.name || '';
+      var dnameLower = dname.toLowerCase();
+      var dscore = 0;
+      if (dnameLower === q) dscore = 95;
+      else if (dnameLower.indexOf(q) === 0) dscore = 80;
+      else if (dnameLower.indexOf(q) !== -1) dscore = 65;
+
+      if (dscore > 0) {
+        var key = 'disc:' + dname;
+        if (!seenKeys[key]) {
+          seenKeys[key] = true;
+          suggestions.push({
+            score: dscore,
+            title: dname,
+            badgeText: 'Discipline',
+            badgeClass: 'badge-disc',
+            snippet: (d.powers ? d.powers.length + ' powers' : '') + (d.clans ? ' • ' + (Array.isArray(d.clans) ? d.clans.join(', ') : d.clans) : ''),
+            type: 'discipline',
+            targetTitle: dname,
+            targetSection: ''
+          });
+        }
+      }
+
+      (d.powers || []).forEach(function(p) {
+        var pname = p.name || '';
+        var pnameLower = pname.toLowerCase();
+        var pscore = 0;
+        if (pnameLower === q) pscore = 90;
+        else if (pnameLower.indexOf(q) === 0) pscore = 75;
+        else if (pnameLower.indexOf(q) !== -1) pscore = 60;
+        else if ((p.description || '').toLowerCase().indexOf(q) !== -1) pscore = 25;
+
+        if (pscore > 0) {
+          var pkey = 'power:' + pname;
+          if (!seenKeys[pkey]) {
+            seenKeys[pkey] = true;
+            suggestions.push({
+              score: pscore,
+              title: pname + ' (' + dname + ' ' + (p.level || '') + ')',
+              badgeText: 'Power',
+              badgeClass: 'badge-disc',
+              snippet: p.description ? p.description.slice(0, 80) + '...' : '',
+              type: 'power',
+              targetTitle: dname,
+              targetPower: pname
+            });
+          }
+        }
+      });
+    });
+  }
+
+  // 3. Glossary Entries (Secondary Abilities & Lexicon)
+  var glossEntries = (state.data && state.data.glossary && state.data.glossary.entries) || [];
+  glossEntries.forEach(function(entry) {
+    if (entry.section === 'Combination Disciplines') return;
+    var etitle = entry.title || '';
+    var etitleLower = etitle.toLowerCase();
+    var econtentLower = (entry.content || '').toLowerCase();
+
+    var escore = 0;
+    if (etitleLower === q) escore = 95;
+    else if (etitleLower.indexOf(q) === 0) escore = 80;
+    else if (etitleLower.indexOf(q) !== -1) escore = 65;
+    else if (econtentLower.indexOf(q) !== -1) escore = 25;
+
+    if (escore > 0) {
+      var isSec = entry.section === 'Secondary Abilities & Specialized Skills';
+      var key = (isSec ? 'sec:' : 'lex:') + etitle;
+      if (!seenKeys[key]) {
+        seenKeys[key] = true;
+        suggestions.push({
+          score: escore,
+          title: etitle,
+          badgeText: isSec ? 'Secondary' : 'Lexicon',
+          badgeClass: isSec ? 'badge-sec' : 'badge-lex',
+          snippet: entry.content ? entry.content.slice(0, 80) + '...' : '',
+          type: isSec ? 'secondary' : 'lexicon',
+          targetTitle: etitle,
+          targetSection: entry.section
+        });
+      }
+    }
+  });
+
+  // 4. Combat Mechanics
+  var mechanics = (state.data && state.data.mechanics) || [];
+  mechanics.forEach(function(m, idx) {
+    var mtitle = m.title || '';
+    var mtitleLower = mtitle.toLowerCase();
+    var mcontentLower = (m.content || '').toLowerCase();
+
+    var mscore = 0;
+    if (mtitleLower === q) mscore = 90;
+    else if (mtitleLower.indexOf(q) === 0) mscore = 75;
+    else if (mtitleLower.indexOf(q) !== -1) mscore = 60;
+    else if (mcontentLower.indexOf(q) !== -1) mscore = 25;
+
+    if (mscore > 0) {
+      var key = 'combat:' + mtitle;
+      if (!seenKeys[key]) {
+        seenKeys[key] = true;
+        suggestions.push({
+          score: mscore,
+          title: mtitle,
+          badgeText: 'Combat',
+          badgeClass: 'badge-combat',
+          snippet: 'V20 Systems: ' + mtitle,
+          type: 'combat',
+          targetTitle: mtitle,
+          targetIdx: idx
+        });
+      }
+    }
+  });
+
+  suggestions.sort(function(a, b) { return b.score - a.score; });
+  var topResults = suggestions.slice(0, 8);
+
+  if (topResults.length === 0) {
+    dropdown.innerHTML = '<div style="padding:10px 14px;color:var(--text-muted);font-size:12px;font-style:italic;">No matching rules, powers, or terms found.</div>';
+    dropdown.style.display = 'block';
+    return;
+  }
+
+  var html = '';
+  topResults.forEach(function(item) {
+    var safeTitle = escapeHtml(item.targetTitle).replace(/'/g, "\\'");
+    var safeSec = escapeHtml(item.targetSection || '').replace(/'/g, "\\'");
+    var safePwr = escapeHtml(item.targetPower || '').replace(/'/g, "\\'");
+    var idxArg = (item.targetIdx !== undefined && item.targetIdx !== null) ? item.targetIdx : 'null';
+
+    html += '<div class="suggestion-item" onclick="selectRulesSuggestion(\'' + item.type + '\', \'' + safeTitle + '\', \'' + safeSec + '\', ' + idxArg + ', \'' + safePwr + '\')">';
+    html += '  <div class="suggestion-title">';
+    html += '    <span>' + highlightMatch(item.title, q) + '</span>';
+    html += '    <span class="badge-suggestion ' + item.badgeClass + '">' + item.badgeText + '</span>';
+    html += '  </div>';
+    if (item.snippet) {
+      html += '  <div class="suggestion-snippet">' + highlightMatch(item.snippet, q) + '</div>';
+    }
+    html += '</div>';
+  });
+
+  dropdown.innerHTML = html;
+  dropdown.style.display = 'block';
+}
+
+function selectRulesSuggestion(type, targetTitle, targetSection, targetIdx, targetPower) {
+  var dropdown = document.getElementById('rules-search-suggestions');
+  if (dropdown) dropdown.style.display = 'none';
+
+  var searchInput = document.getElementById('rules-search-input');
+  if (searchInput) searchInput.value = '';
+  state.rulesSearchQuery = '';
+
+  if (type === 'combo') {
+    state.rulesFilter = 'glossary';
+    state.glossarySection = 'Combination Disciplines';
+    state.selectedDisciplineFilters = [];
+    updateRulesFilterButtons('glossary');
+    renderRules();
+    setTimeout(function() {
+      var cards = document.querySelectorAll('.glossary-card');
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        if (card.getAttribute('data-title') === targetTitle) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('highlight-flash');
+          setTimeout(function() { card.classList.remove('highlight-flash'); }, 2200);
+          break;
+        }
+      }
+    }, 120);
+  } else if (type === 'discipline' || type === 'power') {
+    state.rulesFilter = 'disciplines';
+    state.disciplinesCategory = 'all';
+    updateRulesFilterButtons('disciplines');
+    renderRules();
+    setTimeout(function() {
+      var items = document.querySelectorAll('#rules-content .accordion-item');
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        if (it.getAttribute('data-disc') === targetTitle) {
+          it.classList.add('open');
+          it.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          it.classList.add('highlight-flash');
+          setTimeout(function() { it.classList.remove('highlight-flash'); }, 2200);
+          break;
+        }
+      }
+    }, 120);
+  } else if (type === 'combat') {
+    state.rulesFilter = 'combat';
+    updateRulesFilterButtons('combat');
+    renderRules();
+    setTimeout(function() {
+      var item = document.getElementById('combat-topic-' + targetIdx);
+      if (item) {
+        item.classList.add('open');
+        item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        item.classList.add('highlight-flash');
+        setTimeout(function() { item.classList.remove('highlight-flash'); }, 2200);
+      }
+    }, 120);
+  } else if (type === 'secondary' || type === 'lexicon') {
+    state.rulesFilter = 'glossary';
+    state.glossarySection = targetSection || 'all';
+    updateRulesFilterButtons('glossary');
+    renderRules();
+    setTimeout(function() {
+      var cards = document.querySelectorAll('.glossary-card');
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        if (card.getAttribute('data-title') === targetTitle) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('highlight-flash');
+          setTimeout(function() { card.classList.remove('highlight-flash'); }, 2200);
+          break;
+        }
+      }
+    }, 120);
+  }
+}
+
+function updateRulesFilterButtons(activeFilter) {
+  document.querySelectorAll('#rules-filter-bar .filter-pill').forEach(function(p) {
+    var fn = p.getAttribute('onclick') || '';
+    p.classList.toggle('active', fn.indexOf(activeFilter) !== -1);
+  });
 }
 
 function setRulesFilter(cat, btn) {
@@ -878,20 +1250,382 @@ function setRulesFilter(cat, btn) {
   renderRules();
 }
 
+function setDisciplinesCategory(cat) {
+  state.disciplinesCategory = cat;
+  if (cat === 'combos') {
+    state.rulesFilter = 'glossary';
+    state.glossarySection = 'Combination Disciplines';
+    updateRulesFilterButtons('glossary');
+  }
+  renderRules();
+}
+
+function setGlossarySection(sec) {
+  state.glossarySection = sec;
+  renderRules();
+}
+
+function toggleDisciplineFilter(disc) {
+  var idx = state.selectedDisciplineFilters.indexOf(disc);
+  if (idx === -1) {
+    state.selectedDisciplineFilters.push(disc);
+  } else {
+    state.selectedDisciplineFilters.splice(idx, 1);
+  }
+  if (state.rulesFilter !== 'glossary') {
+    state.rulesFilter = 'glossary';
+    updateRulesFilterButtons('glossary');
+  }
+  state.glossarySection = 'Combination Disciplines';
+  renderRules();
+}
+
+function clearDisciplineFilters() {
+  state.selectedDisciplineFilters = [];
+  renderRules();
+}
+
+function openCombosForDiscipline(discName) {
+  state.selectedDisciplineFilters = [discName];
+  state.rulesFilter = 'glossary';
+  state.glossarySection = 'Combination Disciplines';
+  updateRulesFilterButtons('glossary');
+  renderRules();
+  var subnav = document.getElementById('rules-subnav-container');
+  if (subnav) subnav.scrollIntoView({ behavior: 'smooth' });
+}
+
 function toggleAccordion(header) {
   var item = header.parentElement;
   item.classList.toggle('open');
 }
 
-function filterRulesSearch(query) {
-  var q = (query || '').toLowerCase().trim();
-  var items = document.querySelectorAll('#rules-content .accordion-item');
-  items.forEach(function(el) {
-    var text = el.innerText.toLowerCase();
-    el.style.display = text.includes(q) ? 'block' : 'none';
-    if (q && text.includes(q)) el.classList.add('open');
-  });
+function renderRules() {
+  var container = document.getElementById('rules-content');
+  var subnav = document.getElementById('rules-subnav-container');
+  if (!container || !state.data) return;
+
+  var filter = state.rulesFilter;
+
+  // Render Subnav
+  if (subnav) {
+    var subnavHtml = '';
+    if (filter === 'disciplines') {
+      subnavHtml += '<div class="rules-subnav-bar">';
+      subnavHtml += '  <button type="button" class="subnav-pill ' + (state.disciplinesCategory === 'core' ? 'active' : '') + '" onclick="setDisciplinesCategory(\'core\')">Core 13 &amp; Physical</button>';
+      subnavHtml += '  <button type="button" class="subnav-pill ' + (state.disciplinesCategory === 'bloodlines' ? 'active' : '') + '" onclick="setDisciplinesCategory(\'bloodlines\')">Bloodlines</button>';
+      subnavHtml += '  <button type="button" class="subnav-pill ' + (state.disciplinesCategory === 'combos' ? 'active' : '') + '" onclick="setDisciplinesCategory(\'combos\')">Combination Disciplines &rarr;</button>';
+      subnavHtml += '  <button type="button" class="subnav-pill ' + (state.disciplinesCategory === 'all' ? 'active' : '') + '" onclick="setDisciplinesCategory(\'all\')">All Disciplines</button>';
+      subnavHtml += '</div>';
+    } else if (filter === 'combat') {
+      var mechanics = state.data.mechanics || [];
+      subnavHtml += '<div class="rules-subnav-bar">';
+      mechanics.forEach(function(m, idx) {
+        subnavHtml += '<button type="button" class="subnav-pill" onclick="scrollToCombatTopic(' + idx + ')">' + escapeHtml(m.title) + '</button>';
+      });
+      subnavHtml += '</div>';
+    } else if (filter === 'glossary') {
+      subnavHtml += '<div class="rules-subnav-bar">';
+      var sections = [
+        { key: 'all', label: 'All Topics' },
+        { key: 'Combination Disciplines', label: 'Combination Disciplines' },
+        { key: 'Secondary Abilities & Specialized Skills', label: 'Secondary Abilities' },
+        { key: 'Common Parlance', label: 'Common Parlance' },
+        { key: 'Vulgar Argot', label: 'Vulgar Argot' },
+        { key: 'Old Form', label: 'Old Form' },
+        { key: 'Anarch Free State & Los Angeles Terms', label: 'Anarch Terms' },
+        { key: 'Sabbat & The Sword of Caine', label: 'Sabbat Terms' },
+        { key: 'Occult, Sorcery & Rituals', label: 'Occult & Sorcery' },
+        { key: 'LA Campaign', label: 'LA Chronicle Lore' }
+      ];
+      sections.forEach(function(s) {
+        var isActive = (state.glossarySection === s.key);
+        subnavHtml += '<button type="button" class="subnav-pill ' + (isActive ? 'active' : '') + '" onclick="setGlossarySection(\'' + s.key + '\')">' + escapeHtml(s.label) + '</button>';
+      });
+      subnavHtml += '</div>';
+
+      // If viewing Combination Disciplines or All Topics, show the Discipline Matrix Filter!
+      if (state.glossarySection === 'Combination Disciplines' || state.glossarySection === 'all') {
+        subnavHtml += '<div class="discipline-matrix-wrap">';
+        subnavHtml += '  <div class="discipline-matrix-header">';
+        var filterCount = state.selectedDisciplineFilters.length;
+        subnavHtml += '    <span>Filter Combos by Discipline ' + (filterCount > 0 ? '(' + filterCount + ' Active)' : '') + ':</span>';
+        if (filterCount > 0) {
+          subnavHtml += '    <button type="button" onclick="clearDisciplineFilters()" style="background:none;border:none;color:var(--crimson-vivid);font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;">&times; Clear Filters (' + filterCount + ')</button>';
+        }
+        subnavHtml += '  </div>';
+        subnavHtml += '  <div class="discipline-matrix-chips">';
+        ALL_FILTER_DISCIPLINES.forEach(function(disc) {
+          var isDiscActive = state.selectedDisciplineFilters.indexOf(disc) !== -1;
+          subnavHtml += '<button type="button" class="disc-matrix-chip ' + (isDiscActive ? 'active' : '') + '" onclick="toggleDisciplineFilter(\'' + disc + '\')">' + escapeHtml(disc) + '</button>';
+        });
+        subnavHtml += '  </div>';
+        subnavHtml += '</div>';
+      }
+    }
+    subnav.innerHTML = subnavHtml;
+  }
+
+  // Render Content
+  if (filter === 'disciplines') {
+    renderDisciplinesView(container);
+  } else if (filter === 'combat') {
+    renderCombatView(container);
+  } else if (filter === 'glossary') {
+    renderGlossaryView(container);
+  }
 }
+
+function scrollToCombatTopic(idx) {
+  var item = document.getElementById('combat-topic-' + idx);
+  if (item) {
+    item.classList.add('open');
+    item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function renderDisciplinesView(container) {
+  var discList = state.data.disciplines || [];
+  if (!Array.isArray(discList)) {
+    discList = Object.keys(discList).map(function(k) { return discList[k]; });
+  }
+
+  var cat = state.disciplinesCategory || 'core';
+  var q = (state.rulesSearchQuery || '').toLowerCase().trim();
+
+  var filtered = discList.filter(function(d) {
+    var name = d.name || '';
+    var isCore = CORE_DISCIPLINES.indexOf(name) !== -1;
+    if (cat === 'core' && !isCore) return false;
+    if (cat === 'bloodlines' && isCore) return false;
+
+    if (q) {
+      var nameMatch = name.toLowerCase().indexOf(q) !== -1;
+      var descMatch = (d.description || '').toLowerCase().indexOf(q) !== -1;
+      var clansMatch = (Array.isArray(d.clans) ? d.clans.join(' ') : (d.clans || '')).toLowerCase().indexOf(q) !== -1;
+      var powerMatch = (d.powers || []).some(function(p) {
+        return (p.name || '').toLowerCase().indexOf(q) !== -1 || (p.description || '').toLowerCase().indexOf(q) !== -1;
+      });
+      return nameMatch || descMatch || clansMatch || powerMatch;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);font-style:italic;">No disciplines match your active filter or search query.</div>';
+    return;
+  }
+
+  var html = '<div class="accordion-group">';
+  filtered.forEach(function(d, idx) {
+    var dname = d.name || 'Unknown';
+    var clans = d.clans ? (Array.isArray(d.clans) ? d.clans.join(', ') : d.clans) : '';
+    var powers = d.powers || [];
+    var isOpen = (idx === 0 && !q);
+
+    html += '<div class="accordion-item ' + (isOpen ? 'open' : '') + '" data-disc="' + escapeHtml(dname) + '" id="disc-item-' + idx + '">';
+    html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
+    html += '    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">';
+    html += '      <span class="accordion-title">' + highlightMatch(dname, q) + '</span>';
+    if (clans) {
+      html += '      <span class="glossary-source-pill" style="color:var(--gold);">' + escapeHtml(clans) + '</span>';
+    }
+    html += '    </div>';
+    html += '    <span class="accordion-arrow">&#9660;</span>';
+    html += '  </div>';
+    html += '  <div class="accordion-body">';
+    if (d.description) {
+      html += '    <p style="font-style:italic;color:var(--text-secondary);margin-bottom:14px;line-height:1.5;">' + highlightMatch(d.description, q) + '</p>';
+    }
+    html += '    <div style="display:flex;flex-direction:column;gap:10px;">';
+    powers.forEach(function(p) {
+      var dotsStr = p.level ? '●'.repeat(Math.min(p.level, 10)) : 'Base';
+      html += '      <div class="discipline-power-card">';
+      html += '        <div class="discipline-power-header">';
+      html += '          <span class="power-name">' + highlightMatch(p.name, q) + '</span>';
+      html += '          <span class="power-dots">' + dotsStr + '</span>';
+      html += '        </div>';
+      if (p.cost || p.dice_pool || p.difficulty || p.duration) {
+        html += '        <div class="power-meta-chips">';
+        if (p.cost) html += '<span class="power-meta-chip"><strong>Cost:</strong> ' + escapeHtml(p.cost) + '</span>';
+        if (p.dice_pool) html += '<span class="power-meta-chip"><strong>Pool:</strong> ' + escapeHtml(p.dice_pool) + '</span>';
+        if (p.difficulty) html += '<span class="power-meta-chip"><strong>Diff:</strong> ' + escapeHtml(p.difficulty) + '</span>';
+        if (p.duration) html += '<span class="power-meta-chip"><strong>Duration:</strong> ' + escapeHtml(p.duration) + '</span>';
+        html += '        </div>';
+      }
+      var pDesc = p.description || p.system || '';
+      html += '        <div class="power-desc">' + highlightMatch(pDesc, q) + '</div>';
+      html += '      </div>';
+    });
+    html += '    </div>';
+
+    // Link to Combination Disciplines
+    html += '    <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">';
+    html += '      <button type="button" class="disc-combo-link-btn" onclick="openCombosForDiscipline(\'' + escapeHtml(dname).replace(/'/g, "\\'") + '\')">';
+    html += '        <span>&#9874;</span> View Combination Disciplines requiring ' + escapeHtml(dname) + ' &rarr;';
+    html += '      </button>';
+    html += '    </div>';
+
+    html += '  </div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+function renderGlossaryView(container) {
+  var glossary = state.data.glossary || {};
+  var entries = glossary.entries || [];
+  var sec = state.glossarySection || 'all';
+  var q = (state.rulesSearchQuery || '').toLowerCase().trim();
+  var discFilters = state.selectedDisciplineFilters || [];
+
+  // Filter entries
+  var filtered = entries.filter(function(e) {
+    // 1. Section Filter
+    if (sec !== 'all') {
+      if (sec === 'LA Campaign') {
+        if (!e.section || e.section.indexOf('LA Campaign') === -1) return false;
+      } else {
+        if (e.section !== sec) return false;
+      }
+    }
+
+    // 2. Discipline Filter Matrix (for combination disciplines)
+    if (discFilters.length > 0 && e.section === 'Combination Disciplines') {
+      var comboDiscs = e.disciplines || [];
+      var hasAny = discFilters.some(function(f) {
+        return comboDiscs.some(function(cd) { return cd.toLowerCase() === f.toLowerCase(); });
+      });
+      if (!hasAny) return false;
+    }
+
+    // 3. Search Query Filter
+    if (q) {
+      var tMatch = (e.title || '').toLowerCase().indexOf(q) !== -1;
+      var cMatch = (e.content || '').toLowerCase().indexOf(q) !== -1;
+      var pMatch = (e.prereqs || '').toLowerCase().indexOf(q) !== -1;
+      var clanMatch = (e.clan || '').toLowerCase().indexOf(q) !== -1;
+      return tMatch || cMatch || pMatch || clanMatch;
+    }
+
+    return true;
+  });
+
+  // Sort combination disciplines that match multiple filters first
+  if (discFilters.length > 1 && (sec === 'Combination Disciplines' || sec === 'all')) {
+    filtered.sort(function(a, b) {
+      if (a.section === 'Combination Disciplines' && b.section === 'Combination Disciplines') {
+        var aMatches = (a.disciplines || []).filter(function(d) {
+          return discFilters.some(function(f) { return f.toLowerCase() === d.toLowerCase(); });
+        }).length;
+        var bMatches = (b.disciplines || []).filter(function(d) {
+          return discFilters.some(function(f) { return f.toLowerCase() === d.toLowerCase(); });
+        }).length;
+        return bMatches - aMatches;
+      }
+      return 0;
+    });
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);font-style:italic;">No glossary entries match your active selection or search query.</div>';
+    return;
+  }
+
+  var html = '<div class="glossary-grid">';
+  filtered.forEach(function(entry, idx) {
+    var isCombo = (entry.section === 'Combination Disciplines');
+    var isSec = (entry.section === 'Secondary Abilities & Specialized Skills');
+    var displayName = entry.name || entry.title || 'Untitled';
+
+    html += '<div class="glossary-card" data-title="' + escapeHtml(displayName) + '" id="glossary-card-' + idx + '">';
+    html += '  <div class="glossary-header">';
+    html += '    <div class="glossary-title-row">';
+    html += '      <h4 class="glossary-title">' + highlightMatch(displayName, q) + '</h4>';
+    if (isCombo) {
+      html += '      <span class="glossary-badge badge-combo-card">Combo Power</span>';
+    } else if (isSec) {
+      var abilType = entry.type || 'Secondary Ability';
+      html += '      <span class="glossary-badge badge-sec-card">' + escapeHtml(abilType) + '</span>';
+    } else {
+      html += '      <span class="glossary-badge badge-lex-card">' + escapeHtml(entry.section || 'Glossary') + '</span>';
+    }
+    html += '    </div>';
+
+    // Meta Row (Prereqs, XP, Clan, Source)
+    html += '    <div class="glossary-meta-row">';
+    if (isCombo) {
+      if (entry.prereqs) {
+        html += '<span class="chip-disc-req">' + escapeHtml(entry.prereqs) + '</span>';
+      }
+      if (entry.xp) {
+        var xpLabel = entry.xp + ' XP' + (entry.xp_type === 'canonical' ? '' : ' (Calc)');
+        html += '<span class="chip-xp" title="' + (entry.xp_type === 'canonical' ? 'Canonical book XP cost' : 'Calculated: highest prerequisite dot × 6') + '">' + xpLabel + '</span>';
+      }
+      if (entry.clan) {
+        html += '<span class="glossary-source-pill" style="color:var(--crimson-vivid);font-weight:600;">' + escapeHtml(entry.clan) + '</span>';
+      }
+      if (entry.is_v20) {
+        html += '<span class="glossary-source-pill" style="color:var(--gold);font-weight:600;">[Official V20]</span>';
+      }
+    }
+    if (entry.source) {
+      html += '<span class="glossary-source-pill">' + escapeHtml(entry.source) + '</span>';
+    }
+    html += '    </div>';
+    html += '  </div>';
+
+    // Content
+    html += '  <div class="glossary-content">' + formatGlossaryContent(entry.content) + '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+function renderCombatView(container) {
+  var mechanics = state.data.mechanics || [];
+  var q = (state.rulesSearchQuery || '').toLowerCase().trim();
+
+  var html = '<div class="accordion-group">';
+  mechanics.forEach(function(m, idx) {
+    var title = m.title || 'Combat & Systems';
+    var isMatch = q && (title.toLowerCase().indexOf(q) !== -1 || (m.content || '').toLowerCase().indexOf(q) !== -1);
+    var isOpen = (idx === 0 || isMatch);
+
+    html += '<div class="accordion-item ' + (isOpen ? 'open' : '') + '" id="combat-topic-' + idx + '">';
+    html += '  <div class="accordion-header" onclick="toggleAccordion(this)">';
+    html += '    <span class="accordion-title">' + highlightMatch(title, q) + '</span>';
+    html += '    <span class="accordion-arrow">&#9660;</span>';
+    html += '  </div>';
+    html += '  <div class="accordion-body">';
+    html += parseCodexMarkdown(m.content);
+    html += '  </div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+// Global click-outside & Escape key handlers for rules search suggestions
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('rules-search-suggestions');
+  var input = document.getElementById('rules-search-input');
+  if (dropdown && input && !dropdown.contains(e.target) && e.target !== input) {
+    dropdown.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var dropdown = document.getElementById('rules-search-suggestions');
+    if (dropdown) dropdown.style.display = 'none';
+  }
+});
 
 function renderArmory() {
   var container = document.getElementById('armory-grid');

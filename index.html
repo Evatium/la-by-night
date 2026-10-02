@@ -253,9 +253,11 @@
         <button type="button" class="filter-pill" onclick="setRulesFilter('combat', this)">Combat &amp; Systems</button>
         <button type="button" class="filter-pill" onclick="setRulesFilter('glossary', this)">Glossary</button>
       </div>
-      <div class="rules-search-wrap">
-        <input type="text" class="search-input" id="rules-search-input" placeholder="Search rules, powers, terms..." oninput="filterRulesSearch(this.value)">
+      <div class="rules-search-wrap" style="position:relative;">
+        <input type="text" class="search-input" id="rules-search-input" placeholder="Search rules, powers, terms..." oninput="handleRulesSearchInput(this.value)" autocomplete="off">
+        <div id="rules-search-suggestions" class="search-suggestions-dropdown" style="display:none;"></div>
       </div>
+      <div id="rules-subnav-container"></div>
       <div id="rules-content">
         <!-- Rendered via app.js -->
       </div>
