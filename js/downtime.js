@@ -440,7 +440,7 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
         html += '        </select>';
         html += '        <span class="downtime-pool-badge" id="pool-badge-' + d.day + '-' + cat.key + '">0 Dice</span>';
         html += '        <span class="downtime-spec-badge" id="spec-badge-' + d.day + '-' + cat.key + '" style="display:none;"></span>';
-        html += '        <button type="button" class="downtime-custom-roll-btn" title="Toggle custom roll input" onclick="toggleCustomRoll(' + d.day + ', \'' + cat.key + '\')">✏️ Custom</button>';
+        html += '        <button type="button" class="downtime-custom-roll-btn" title="Toggle custom roll input" onclick="toggleCustomRoll(' + d.day + ', \'' + cat.key + '\')">Custom</button>';
         html += '      </div>';
 
         // Hidden / Custom roll input for overrides or storage
@@ -857,14 +857,14 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
       }
 
       var msg = (json && json.message) ? json.message : ('Downtime successfully saved in Google Sheet for ' + pc.name + '!');
-      showToast('✅ ' + msg, 'success', 5000);
+      showToast(msg, 'success', 5000);
       saveDraftForCharacter(activeCharKey);
     })
     .catch(function(err) {
       console.error('Network submission failed:', err);
       // Save locally so work is never lost
       saveDraftForCharacter(activeCharKey);
-      showToast('❌ Submission failed: ' + (err.message || 'Network error') + '. Draft saved locally.', 'error', 6000);
+      showToast('Submission failed: ' + (err.message || 'Network error') + '. Draft saved locally.', 'error', 6000);
     })
     .finally(function() {
       if (btnSubmit) {
