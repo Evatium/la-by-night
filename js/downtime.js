@@ -9,7 +9,7 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     'liam_johnson': {
       id: 'liam_johnson',
       sheet_name: 'Liam_Johnson',
-      name: 'Liam Johnson ("L.J.")',
+      name: 'Liam "LJ" Johnson',
       clan: 'Brujah',
       generation: '8th',
       type: 'Kindred',
@@ -107,12 +107,12 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
       clan: 'Ghoul',
       generation: 'Ghoul',
       type: 'Ghoul',
-      domitor: 'Liam Johnson',
+      domitor: 'Liam "LJ" Johnson',
       blood_pool: '1/1',
       willpower: '6/6',
       health: 'Full / Uninjured',
       is_injured: false,
-      notes: 'Bound to Liam Johnson (Rating 2). Underground street racer, scout, and mechanic. Ghoul rules: No hunting; 1 Primary Goal per day.'
+      notes: 'Bound to Liam "LJ" Johnson (Rating 2). Underground street racer, scout, and mechanic. Ghoul rules: No hunting; 1 Primary Goal per day.'
     },
     'chris_partlow': {
       id: 'chris_partlow',

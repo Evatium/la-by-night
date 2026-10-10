@@ -797,7 +797,7 @@
   ],
   "pcs": [
     {
-      "name": "Liam Johnson (\"L.J.\")",
+      "name": "Liam \"LJ\" Johnson",
       "clan": "Brujah",
       "generation": "8th",
       "sire": "Clayton White",
@@ -808,7 +808,7 @@
       "player": "",
       "type": "Vampire",
       "xp": "25",
-      "portrait": "portraits/pc_Liam_Johnson___L_J.webp",
+      "portrait": "portraits/pc_Liam__LJ__Johnson.webp",
       "humanity": "5",
       "willpower": "4/5",
       "blood_pool": "10/15",
@@ -1100,7 +1100,7 @@
       "portrait": "portraits/pc_Isabel_Turner.webp",
       "humanity": "6",
       "willpower": "6/6",
-      "blood_pool": "10/14",
+      "blood_pool": "12/14",
       "blood_per_turn": "2",
       "health": "Full / Uninjured",
       "virtues": {
@@ -1829,8 +1829,8 @@
       "name": "Rachel Teller",
       "clan": "Ghoul",
       "generation": "",
-      "sire": "Liam Johnson",
-      "domitor": "Liam Johnson",
+      "sire": "Liam \"LJ\" Johnson",
+      "domitor": "Liam \"LJ\" Johnson",
       "concept": "",
       "nature": "",
       "demeanor": "",
@@ -2259,16 +2259,9 @@
       "lng": -118.358,
       "description": "A cheap, unassuming one-bedroom apartment in a dense residential block of Torrance. It serves as Liam Johnson's low-profile haven, easily blending in with the mortal working-class churn. A plain, ground-floor unit in a slightly weathered stucco complex. The blinds are perpetually drawn, and the interior is sparse, favoring function and low rent over aesthetics.",
       "notes": "",
-      "is_pc_location": true,
+      "is_pc_location": false,
       "is_haven": true,
-      "characters": [
-        {
-          "id": 0,
-          "name": "Liam Johnson",
-          "is_pc": true,
-          "relationship": "owner"
-        }
-      ]
+      "characters": []
     },
     {
       "name": "The Lighthouse Cafe",
@@ -2545,15 +2538,9 @@
       "lng": -117.9103,
       "description": "Spanning roughly 10,100 m² (parish grounds & perimeter) along East Amar Road in West Covina, the Church of the New Dawn is the heavily fortified primary domain of the PC coterie. Operating under the mundane zoning and cover of an alternative spiritual ministry, the compound combines civilian community amenities - including an athletic gym, private cinema, fellowship dormitories, and an indoor shooting range with a secure armory - with rigorous defensive infrastructure. The renovated bell tower serves as a high-altitude tactical watchpoint and sniper nest overseeing the perimeter and approach routes. Below ground, an extensive network of service tunnels and drainage canals links the daylight-proof, warded basement haven to municipal culverts and emergency escape routes, secured by perimeter deterrent trenches and discrete utility fail-safes.",
       "notes": "Main Domain & Operational Bastion of the PC Coterie. Zoning: Church / Religious Assembly 10,100 m² lot (parish grounds & perimeter). Facilities: Sanctuary, Dormitories, Gym, Cinema/Screening Room, Indoor Shooting Range, Secure Armory. Defenses: Bell Tower Sniper Nest & Thermal Overwatch (Katrine/Odin feed), Concealed Natural Gas Blast Fail-Safe Line, Perimeter Deterrent Trenches, Subterranean Service Tunnels & Drainage Runoff Routes.",
-      "is_pc_location": true,
+      "is_pc_location": false,
       "is_haven": false,
       "characters": [
-        {
-          "id": 0,
-          "name": "Liam Johnson",
-          "is_pc": true,
-          "relationship": "operates"
-        },
         {
           "id": 1,
           "name": "Meredith Vereira",
@@ -9808,7 +9795,7 @@
       },
       {
         "section": "LA Campaign: The Coterie & Inner Circle",
-        "title": "Liam Johnson ('L.J.')",
+        "title": "Liam \"LJ\" Johnson",
         "content": "8th Generation Brujah player character. An elite wheelman and criminal GTA specialist with 5 dots in Drive and potent Celerity. Liam won his signature muscle car in a street race against Hector and maintains close ties with the Latin Kings auto theft syndicate.",
         "source": "pcs.json & Session 4 Plot"
       },
