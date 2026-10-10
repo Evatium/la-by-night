@@ -146,7 +146,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     {
       key: 'feeding',
       title: 'Feeding / Hunting',
-      emoji: '🩸',
       descPlaceholder: 'Where & how are you feeding? Vessel, approach, disciplines used...',
       defaultAttr: 'Manipulation',
       defaultAbil: 'Subterfuge'
@@ -154,7 +153,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     {
       key: 'primary',
       title: 'Primary Action',
-      emoji: '🎯',
       descPlaceholder: 'Main project, summit, research, or major task for the night...',
       defaultAttr: 'Intelligence',
       defaultAbil: 'Occult'
@@ -162,7 +160,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     {
       key: 'secondary',
       title: 'Secondary Action',
-      emoji: '⚡',
       descPlaceholder: 'Secondary undertaking or social check-in...',
       defaultAttr: 'Wits',
       defaultAbil: 'Streetwise'
@@ -170,7 +167,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     {
       key: 'tertiary',
       title: 'Tertiary Action',
-      emoji: '🔧',
       descPlaceholder: 'Minor routine, ghoul check, phone calls, or equipment upkeep...',
       defaultAttr: 'Perception',
       defaultAbil: 'Alertness'
@@ -181,7 +177,6 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
     {
       key: 'primary',
       title: 'Primary Goal / Assignment',
-      emoji: '🎯',
       descPlaceholder: 'Assigned mission, surveillance, drone ops, logistics, or personal task for the day...',
       defaultAttr: 'Perception',
       defaultAbil: 'Alertness'
@@ -429,9 +424,7 @@ window.DOWNTIME_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzovjUzIa
 
         html += '    <div class="downtime-action-group">';
         html += '      <div class="downtime-action-header">';
-        html += '        <span class="downtime-action-title ' + cat.key + '">';
-        html += '          <span>' + cat.emoji + '</span> ' + cat.title;
-        html += '        </span>';
+        html += '        <span class="downtime-action-title ' + cat.key + '">' + cat.title + '</span>';
         html += '      </div>';
         html += '      <textarea class="downtime-textarea" data-day="' + d.day + '" data-cat="' + cat.key + '" placeholder="' + cat.descPlaceholder + '"></textarea>';
 
